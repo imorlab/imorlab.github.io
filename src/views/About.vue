@@ -11,7 +11,7 @@
         Sobre <span class="text-accent">Mí</span>
       </h1>
 
-      <div class="grid lg:grid-cols-2 gap-12">
+      <div class="grid lg:grid-cols-1 gap-12">
         <!-- Profile Section -->
         <div class="space-y-8">
           <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
@@ -95,6 +95,20 @@
                 <Icon icon="heroicons:globe-alt" class="w-6 h-6 text-accent" />
                 <span>Desarrollo Web</span>
               </div>
+            </div>
+          </div>
+
+          <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <h2 class="text-2xl font-semibold mb-4 flex items-center gap-2">
+              <Icon icon="heroicons:chart-bar" class="w-8 h-8 text-accent" />
+              Estadísticas de GitHub
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <img 
+                :src="'https://github-readme-stats.vercel.app/api/top-langs/?username=imorlab&layout=compact&theme=dark&hide_border=true&title_color=64ffda&text_color=ffffff&bg_color=242424'" 
+                alt="Most Used Languages" 
+                class="w-full rounded-lg"
+              />
             </div>
           </div>
         </div>
