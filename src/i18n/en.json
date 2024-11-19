@@ -6,6 +6,17 @@
     "projects": "Projects",
     "contact": "Contact"
   },
+  "theme": {
+    "switch": "Switch theme",
+    "dark": "Dark mode",
+    "light": "Light mode",
+    "system": "System theme"
+  },
+  "lang": {
+    "switch": "Switch language",
+    "en": "English",
+    "es": "Español"
+  },
   "home": {
     "greeting": "Hi! I'm",
     "role": "Full Stack Web Developer",

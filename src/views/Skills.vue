@@ -14,7 +14,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Frontend -->
-        <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+        <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
           <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
             <Icon icon="heroicons:computer-desktop" class="w-6 h-6 text-accent" />
             {{ $t('skills.frontend') }}
@@ -44,7 +44,7 @@
         </div>
 
         <!-- Backend -->
-        <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+        <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
           <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
             <Icon icon="heroicons:server" class="w-6 h-6 text-accent" />
             {{ $t('skills.backend') }}
@@ -70,7 +70,7 @@
         </div>
 
         <!-- Database -->
-        <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+        <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
           <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
             <Icon icon="heroicons:circle-stack" class="w-6 h-6 text-accent" />
             {{ $t('skills.database') }}
@@ -92,7 +92,7 @@
         </div>
 
         <!-- Tools -->
-        <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+        <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
           <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
             <Icon icon="heroicons:wrench" class="w-6 h-6 text-accent" />
             {{ $t('skills.tools') }}
@@ -123,7 +123,13 @@ import { Icon } from '@iconify/vue'
 
 <style scoped>
 .soft-skill-icon {
-  @apply w-16 h-16 flex items-center justify-center rounded-full 
-         bg-accent/10 text-accent group-hover:bg-accent/20 transition-all duration-300;
+  @apply w-16 h-16 flex items-center justify-center rounded-full
+         bg-accent-10 text-accent group-hover:bg-accent-20 transition-all duration-300;
+}
+
+.skill-item {
+  @apply flex items-center gap-4 p-4 rounded-lg
+         bg-accent-10 hover:bg-accent-20
+         transition-all duration-300;
 }
 </style>

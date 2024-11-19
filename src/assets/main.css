@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Light theme */
+  --color-primary: #f8f9fa;
+  --color-primary-dark: #1a1a1a;
+  --color-accent: #0891b2;
+  --color-accent-dark: #0e7490;
+  --color-accent-10: rgba(8, 145, 178, 0.1);
+  --color-accent-20: rgba(8, 145, 178, 0.2);
+  --color-accent-40: rgba(8, 145, 178, 0.4);
+  --color-accent-60: rgba(8, 145, 178, 0.6);
+  --color-accent-80: rgba(8, 145, 178, 0.8);
+}
+
+/* Dark theme */
+.dark {
+  --color-primary: #1a1a1a;
+  --color-primary-dark: #f8f9fa;
+  --color-accent: #64ffda;
+  --color-accent-dark: #4fd1c5;
+  --color-accent-10: rgba(100, 255, 218, 0.1);
+  --color-accent-20: rgba(100, 255, 218, 0.2);
+  --color-accent-40: rgba(100, 255, 218, 0.4);
+  --color-accent-60: rgba(100, 255, 218, 0.6);
+  --color-accent-80: rgba(100, 255, 218, 0.8);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-dark);
+}
+
 @layer base {
   body {
     @apply bg-primary text-white;
