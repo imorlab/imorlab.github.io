@@ -13,18 +13,21 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <!-- Text Content -->
           <div class="z-10">
-            <h1 class="text-4xl sm:text-6xl font-bold mb-4">
-              <span class="text-accent">Hola, soy</span>
-              <div class="mt-2">Israel Moreno</div>
-            </h1>
-            <p class="text-xl sm:text-2xl text-gray-300 mb-6">
-              Desarrollador Web Full Stack
-            </p>
-            <p class="text-gray-400 mb-8 text-lg max-w-lg">
-              Especializado en crear experiencias web únicas y funcionales.
-              Transformando ideas en realidad digital con pasión por la innovación
-              y el diseño limpio.
-            </p>
+            <div class="max-w-4xl mx-auto text-center">
+              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+                <span class="text-gray-300">{{ $t('home.greeting') }}</span>
+                <span class="text-accent block mt-2">Israel Moreno</span>
+              </h1>
+              <p class="text-xl sm:text-2xl text-gray-300 mb-8">{{ $t('home.role') }}</p>
+              <p class="text-lg text-gray-400 mb-12">{{ $t('home.description') }}</p>
+              <RouterLink
+                to="/about"
+                class="inline-flex items-center px-6 py-3 border border-accent text-accent hover:bg-accent hover:text-white transition-colors duration-300 rounded-lg text-lg font-medium"
+              >
+                {{ $t('home.cta') }}
+                <Icon icon="heroicons:arrow-right" class="ml-2 w-5 h-5" />
+              </RouterLink>
+            </div>
             <div class="flex flex-wrap gap-4">
               <router-link to="/projects" 
                 class="btn-primary flex items-center gap-2 group">

@@ -6,153 +6,96 @@
       <div class="absolute -left-1/4 -bottom-1/4 w-3/4 h-3/4 bg-accent/5 rounded-full blur-3xl"></div>
     </div>
 
-    <div class="section-container py-20 relative z-10">
-      <h1 class="text-4xl font-bold text-center mb-16">
-        <span class="text-accent">Mis</span> Habilidades
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+      <h1 class="text-4xl font-bold mb-12 flex items-center gap-3">
+        <Icon icon="heroicons:wrench-screwdriver" class="w-10 h-10 text-accent" />
+        {{ $t('skills.title') }}
       </h1>
 
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Soft Skills -->
-        <div class="skill-card md:col-span-2 lg:col-span-3">
-          <div class="skill-header">
-            <Icon icon="heroicons:user-group" class="w-8 h-8 text-accent" />
-            <h2 class="text-xl font-semibold">Soft Skills</h2>
-          </div>
-          <div class="soft-skills-grid">
-            <div class="soft-skill-item group">
-              <div class="soft-skill-icon">
-                <Icon icon="heroicons:light-bulb" class="w-8 h-8" />
-              </div>
-              <span>Resolución de Problemas</span>
-            </div>
-            <div class="soft-skill-item group">
-              <div class="soft-skill-icon">
-                <Icon icon="heroicons:chat-bubble-left-right" class="w-8 h-8" />
-              </div>
-              <span>Comunicación Efectiva</span>
-            </div>
-            <div class="soft-skill-item group">
-              <div class="soft-skill-icon">
-                <Icon icon="heroicons:clock" class="w-8 h-8" />
-              </div>
-              <span>Gestión del Tiempo</span>
-            </div>
-            <div class="soft-skill-item group">
-              <div class="soft-skill-icon">
-                <Icon icon="heroicons:users" class="w-8 h-8" />
-              </div>
-              <span>Trabajo en Equipo</span>
-            </div>
-            <div class="soft-skill-item group">
-              <div class="soft-skill-icon">
-                <Icon icon="heroicons:academic-cap" class="w-8 h-8" />
-              </div>
-              <span>Aprendizaje Continuo</span>
-            </div>
-            <div class="soft-skill-item group">
-              <div class="soft-skill-icon">
-                <Icon icon="heroicons:puzzle-piece" class="w-8 h-8" />
-              </div>
-              <span>Pensamiento Analítico</span>
-            </div>
-          </div>
-        </div>
-        <!-- Frontend Development -->
-        <div class="skill-card">
-          <div class="skill-header">
-            <Icon icon="heroicons:code-bracket-square" class="w-8 h-8 text-accent" />
-            <h2 class="text-xl font-semibold">Frontend Development</h2>
-          </div>
-          <div class="skill-content">
-            <div class="skill-grid">
-              <div class="skill-item">
-                <Icon icon="logos:html-5" class="skill-icon" />
-                <span>HTML5</span>
-              </div>
-              <div class="skill-item">
-                <Icon icon="logos:css-3" class="skill-icon" />
-                <span>CSS3</span>
-              </div>
-              <div class="skill-item">
-                <Icon icon="logos:javascript" class="skill-icon" />
-                <span>JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <Icon icon="logos:vue" class="skill-icon" />
-                <span>Vue.js</span>
-              </div>
-            </div>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Frontend -->
+        <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+          <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+            <Icon icon="heroicons:computer-desktop" class="w-6 h-6 text-accent" />
+            {{ $t('skills.frontend') }}
+          </h2>
+          <ul class="space-y-2">
+            <li>
+              <Icon icon="logos:html-5" class="w-6 h-6" />
+              <span>HTML5</span>
+            </li>
+            <li>
+              <Icon icon="logos:css-3" class="w-6 h-6" />
+              <span>CSS3</span>
+            </li>
+            <li>
+              <Icon icon="logos:javascript" class="w-6 h-6" />
+              <span>JavaScript</span>
+            </li>
+            <li>
+              <Icon icon="logos:vue" class="w-6 h-6" />
+              <span>Vue.js</span>
+            </li>
+          </ul>
         </div>
 
-        <!-- CSS Frameworks -->
-        <div class="skill-card">
-          <div class="skill-header">
-            <Icon icon="heroicons:paint-brush" class="w-8 h-8 text-accent" />
-            <h2 class="text-xl font-semibold">CSS Frameworks</h2>
-          </div>
-          <div class="skill-content">
-            <div class="skill-grid">
-              <div class="skill-item">
-                <Icon icon="logos:bootstrap" class="skill-icon" />
-                <span>Bootstrap</span>
-              </div>
-              <div class="skill-item">
-                <Icon icon="logos:tailwindcss-icon" class="skill-icon" />
-                <span>Tailwind CSS</span>
-              </div>
-            </div>
-          </div>
+        <!-- Backend -->
+        <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+          <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+            <Icon icon="heroicons:server" class="w-6 h-6 text-accent" />
+            {{ $t('skills.backend') }}
+          </h2>
+          <ul class="space-y-2">
+            <li>
+              <Icon icon="logos:php" class="w-6 h-6" />
+              <span>PHP</span>
+            </li>
+            <li>
+              <Icon icon="logos:laravel" class="w-6 h-6" />
+              <span>Laravel</span>
+            </li>
+            <li>
+              <Icon icon="logos:mysql" class="w-6 h-6" />
+              <span>MySQL</span>
+            </li>
+          </ul>
         </div>
 
-        <!-- Backend Development -->
-        <div class="skill-card">
-          <div class="skill-header">
-            <Icon icon="heroicons:server" class="w-8 h-8 text-accent" />
-            <h2 class="text-xl font-semibold">Backend Development</h2>
-          </div>
-          <div class="skill-content">
-            <div class="skill-grid">
-              <div class="skill-item">
-                <Icon icon="logos:php" class="skill-icon" />
-                <span>PHP</span>
-              </div>
-              <div class="skill-item">
-                <Icon icon="logos:laravel" class="skill-icon" />
-                <span>Laravel</span>
-              </div>
-              <div class="skill-item">
-                <Icon icon="logos:mysql" class="skill-icon" />
-                <span>MySQL</span>
-              </div>
-            </div>
-          </div>
+        <!-- Database -->
+        <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+          <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+            <Icon icon="heroicons:circle-stack" class="w-6 h-6 text-accent" />
+            {{ $t('skills.database') }}
+          </h2>
+          <ul class="space-y-2">
+            <li>
+              <Icon icon="logos:mysql" class="w-6 h-6" />
+              <span>MySQL</span>
+            </li>
+          </ul>
         </div>
 
-        <!-- Development Tools -->
-        <div class="skill-card">
-          <div class="skill-header">
-            <Icon icon="heroicons:wrench-screwdriver" class="w-8 h-8 text-accent" />
-            <h2 class="text-xl font-semibold">Development Tools</h2>
-          </div>
-          <div class="skill-content">
-            <div class="skill-grid">
-              <div class="skill-item">
-                <Icon icon="logos:git-icon" class="skill-icon" />
-                <span>Git</span>
-              </div>
-              <div class="skill-item">
-                <Icon icon="logos:github-icon" class="skill-icon" />
-                <span>GitHub</span>
-              </div>
-              <div class="skill-item">
-                <Icon icon="logos:postman-icon" class="skill-icon" />
-                <span>Postman</span>
-              </div>
-            </div>
-          </div>
+        <!-- Tools -->
+        <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+          <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+            <Icon icon="heroicons:wrench" class="w-6 h-6 text-accent" />
+            {{ $t('skills.tools') }}
+          </h2>
+          <ul class="space-y-2">
+            <li>
+              <Icon icon="logos:git-icon" class="w-6 h-6" />
+              <span>Git</span>
+            </li>
+            <li>
+              <Icon icon="logos:github-icon" class="w-6 h-6" />
+              <span>GitHub</span>
+            </li>
+            <li>
+              <Icon icon="logos:postman-icon" class="w-6 h-6" />
+              <span>Postman</span>
+            </li>
+          </ul>
         </div>
-
       </div>
     </div>
   </div>

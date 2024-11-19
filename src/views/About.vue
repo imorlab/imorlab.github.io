@@ -16,14 +16,13 @@
         <div class="space-y-8">
           <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
-              <Icon icon="heroicons:user-circle" class="w-8 h-8 text-accent" />
-              Perfil Profesional
+              <Icon icon="heroicons:user" class="w-8 h-8 text-accent" />
+              {{ $t('about.title') }}
             </h2>
-            <p class="text-gray-300 leading-relaxed">
-              Soy un desarrollador web full-stack apasionado por crear experiencias digitales excepcionales. 
-              Con experiencia en tecnologías frontend y backend, me especializo en construir aplicaciones web 
-              modernas y escalables utilizando Vue.js, PHP y Laravel.
-            </p>
+            <div class="space-y-4">
+              <p class="text-gray-300">{{ $t('about.intro') }}</p>
+              <p class="text-gray-300">{{ $t('about.description') }}</p>
+            </div>
           </div>
 
           <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
@@ -44,6 +43,33 @@
 
         <!-- Experience Section -->
         <div class="space-y-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+            <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+              <div class="flex flex-col items-center">
+                <span class="text-3xl font-bold text-accent">3+</span>
+                <span class="text-sm text-gray-300 mt-2">{{ $t('about.experience.years') }}</span>
+              </div>
+            </div>
+            <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+              <div class="flex flex-col items-center">
+                <span class="text-3xl font-bold text-accent">20+</span>
+                <span class="text-sm text-gray-300 mt-2">{{ $t('about.experience.projects') }}</span>
+              </div>
+            </div>
+            <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+              <div class="flex flex-col items-center">
+                <span class="text-3xl font-bold text-accent">15+</span>
+                <span class="text-sm text-gray-300 mt-2">{{ $t('about.experience.technologies') }}</span>
+              </div>
+            </div>
+            <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+              <div class="flex flex-col items-center">
+                <span class="text-3xl font-bold text-accent">5+</span>
+                <span class="text-sm text-gray-300 mt-2">{{ $t('about.experience.development') }}</span>
+              </div>
+            </div>
+          </div>
+
           <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:briefcase" class="w-8 h-8 text-accent" />
@@ -74,7 +100,7 @@
           </div>
 
           <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
-            <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+            <h2 class="text-2xl font-semibold mb-4 flex items-center gap-2">
               <Icon icon="heroicons:heart" class="w-8 h-8 text-accent" />
               Intereses
             </h2>
@@ -101,12 +127,12 @@
           <div class="bg-secondary/50 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl font-semibold mb-4 flex items-center gap-2">
               <Icon icon="heroicons:chart-bar" class="w-8 h-8 text-accent" />
-              Estadísticas de GitHub
+              {{ $t('about.github.title') }}
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <img 
                 :src="'https://github-readme-stats.vercel.app/api/top-langs/?username=imorlab&layout=compact&theme=dark&hide_border=true&title_color=64ffda&text_color=ffffff&bg_color=242424'" 
-                alt="Most Used Languages" 
+                :alt="$t('about.github.languages')" 
                 class="w-full rounded-lg"
               />
             </div>

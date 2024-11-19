@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "home": {
+    "greeting": "¡Hola! Soy",
+    "role": "Desarrollador Web Full Stack",
+    "description": "Apasionado por crear experiencias web excepcionales y soluciones innovadoras.",
+    "cta": "Conóceme más"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "intro": "¡Hola! Soy Israel Moreno, un desarrollador web full stack con sede en España.",
+    "description": "Me especializo en crear soluciones web innovadoras y eficientes. Con experiencia en el desarrollo tanto frontend como backend, disfruto construyendo aplicaciones web que no solo son funcionales sino también intuitivas y agradables de usar.",
+    "experience": {
+      "title": "Experiencia",
+      "years": "Años de experiencia",
+      "projects": "Proyectos completados",
+      "technologies": "Tecnologías",
+      "development": "Desarrollo Web"
+    },
+    "github": {
+      "title": "Estadísticas de GitHub",
+      "languages": "Lenguajes más usados"
+    }
+  },
+  "skills": {
+    "title": "Habilidades",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Bases de datos",
+    "tools": "Herramientas"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "viewMore": "Ver más",
+    "viewLess": "Ver menos",
+    "visitSite": "Visitar sitio",
+    "viewCode": "Ver código"
+  },
+  "contact": {
+    "title": "Contacto",
+    "getInTouch": "¡Hablemos!",
+    "description": "¿Tienes un proyecto en mente? ¡Me encantaría escucharlo!",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "send": "Enviar mensaje"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados"
+  }
+}
