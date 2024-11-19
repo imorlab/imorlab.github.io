@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Icon } from '@iconify/vue'
 
@@ -41,7 +41,6 @@ const currentLocale = computed(() => locale.value)
 const changeLocale = (newLocale) => {
   locale.value = newLocale
   isOpen.value = false
-  // Opcional: guardar la preferencia en localStorage
   localStorage.setItem('locale', newLocale)
 }
 
@@ -52,10 +51,8 @@ const handleClickOutside = (event) => {
   }
 }
 
-// Agregar/remover event listener
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
-  // Cargar preferencia de idioma guardada
   const savedLocale = localStorage.getItem('locale')
   if (savedLocale && availableLocales.includes(savedLocale)) {
     locale.value = savedLocale

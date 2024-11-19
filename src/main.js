@@ -1,10 +1,22 @@
 import { createApp } from 'vue'
-import { createI18n } from 'vue-i18n'
-import './style.css'
 import App from './App.vue'
 import router from './router'
-import i18n from './i18n'
+import { createI18n } from 'vue-i18n'
+import es from './i18n/es.json'
+import en from './i18n/en.json'
 import './assets/main.css'
+import './style.css'
+
+const i18n = createI18n({
+  legacy: false,
+  locale: 'es',
+  fallbackLocale: 'en',
+  messages: {
+    es,
+    en
+  },
+  globalInjection: true
+})
 
 const app = createApp(App)
 

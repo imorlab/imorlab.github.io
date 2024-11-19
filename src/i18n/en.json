@@ -10,7 +10,8 @@
     "greeting": "Hi! I'm",
     "role": "Full Stack Web Developer",
     "description": "Passionate about creating exceptional web experiences and innovative solutions.",
-    "cta": "Get to know me"
+    "cta": "Get to know me",
+    "contact": "Contact"
   },
   "about": {
     "title": "About me",

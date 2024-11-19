@@ -20,21 +20,25 @@
             {{ $t('skills.frontend') }}
           </h2>
           <ul class="space-y-2">
-            <li>
+            <li class="flex items-center gap-2">
               <Icon icon="logos:html-5" class="w-6 h-6" />
               <span>HTML5</span>
             </li>
-            <li>
+            <li class="flex items-center gap-2">
               <Icon icon="logos:css-3" class="w-6 h-6" />
               <span>CSS3</span>
             </li>
-            <li>
+            <li class="flex items-center gap-2">
               <Icon icon="logos:javascript" class="w-6 h-6" />
               <span>JavaScript</span>
             </li>
-            <li>
+            <li class="flex items-center gap-2">
               <Icon icon="logos:vue" class="w-6 h-6" />
               <span>Vue.js</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon icon="logos:tailwindcss-icon" class="w-6 h-6" />
+              <span>Tailwind CSS</span>
             </li>
           </ul>
         </div>
@@ -46,17 +50,21 @@
             {{ $t('skills.backend') }}
           </h2>
           <ul class="space-y-2">
-            <li>
+            <li class="flex items-center gap-2">
               <Icon icon="logos:php" class="w-6 h-6" />
               <span>PHP</span>
             </li>
-            <li>
+            <li class="flex items-center gap-2">
               <Icon icon="logos:laravel" class="w-6 h-6" />
               <span>Laravel</span>
             </li>
-            <li>
-              <Icon icon="logos:mysql" class="w-6 h-6" />
-              <span>MySQL</span>
+            <li class="flex items-center gap-2">
+              <Icon icon="logos:nodejs-icon" class="w-6 h-6" />
+              <span>Node.js</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon icon="logos:python" class="w-6 h-6" />
+              <span>Python</span>
             </li>
           </ul>
         </div>
@@ -68,9 +76,17 @@
             {{ $t('skills.database') }}
           </h2>
           <ul class="space-y-2">
-            <li>
+            <li class="flex items-center gap-2">
               <Icon icon="logos:mysql" class="w-6 h-6" />
               <span>MySQL</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon icon="logos:postgresql" class="w-6 h-6" />
+              <span>PostgreSQL</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon icon="logos:mongodb-icon" class="w-6 h-6" />
+              <span>MongoDB</span>
             </li>
           </ul>
         </div>
@@ -82,17 +98,17 @@
             {{ $t('skills.tools') }}
           </h2>
           <ul class="space-y-2">
-            <li>
+            <li class="flex items-center gap-2">
               <Icon icon="logos:git-icon" class="w-6 h-6" />
               <span>Git</span>
             </li>
-            <li>
-              <Icon icon="logos:github-icon" class="w-6 h-6" />
-              <span>GitHub</span>
+            <li class="flex items-center gap-2">
+              <Icon icon="logos:docker-icon" class="w-6 h-6" />
+              <span>Docker</span>
             </li>
-            <li>
-              <Icon icon="logos:postman-icon" class="w-6 h-6" />
-              <span>Postman</span>
+            <li class="flex items-center gap-2">
+              <Icon icon="logos:aws" class="w-6 h-6" />
+              <span>AWS</span>
             </li>
           </ul>
         </div>
@@ -106,50 +122,8 @@ import { Icon } from '@iconify/vue'
 </script>
 
 <style scoped>
-.section-container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-
-.skill-card {
-  @apply bg-secondary/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300;
-}
-
-.skill-header {
-  @apply flex items-center gap-3 mb-6 pb-4 border-b border-accent/20;
-}
-
-.skill-content {
-  @apply p-2;
-}
-
-.skill-grid {
-  @apply grid grid-cols-2 gap-6;
-}
-
-.skill-item {
-  @apply flex flex-col items-center gap-3 p-4 rounded-lg bg-secondary/30 
-         hover:bg-secondary/50 hover:scale-105 transition-all duration-300;
-}
-
-.skill-icon {
-  @apply w-12 h-12;
-}
-
-.soft-skills-grid {
-  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6;
-}
-
-.soft-skill-item {
-  @apply flex flex-col items-center gap-3 p-4 text-center rounded-lg 
-         bg-secondary/30 hover:bg-secondary/50 transition-all duration-300;
-}
-
 .soft-skill-icon {
   @apply w-16 h-16 flex items-center justify-center rounded-full 
          bg-accent/10 text-accent group-hover:bg-accent/20 transition-all duration-300;
-}
-
-.soft-skill-item span {
-  @apply text-sm text-gray-300;
 }
 </style>

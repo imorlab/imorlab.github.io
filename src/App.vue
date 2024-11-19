@@ -5,20 +5,20 @@
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <!-- Logo -->
-          <router-link to="/" class="text-xl font-bold text-accent">
+          <RouterLink to="/" class="text-xl font-bold text-accent">
             IM<span class="text-white">.</span>
-          </router-link>
+          </RouterLink>
 
           <!-- Navigation Links -->
           <div class="hidden md:flex items-center space-x-8">
-            <router-link 
-              v-for="(link, index) in navLinks" 
-              :key="index"
+            <RouterLink 
+              v-for="link in navLinks" 
+              :key="link.to"
               :to="link.to"
               class="text-sm font-medium text-gray-300 hover:text-accent transition-colors duration-200"
             >
               {{ $t(link.text) }}
-            </router-link>
+            </RouterLink>
           </div>
 
           <!-- Language Switcher -->
@@ -31,38 +31,10 @@
             @click="isMenuOpen = !isMenuOpen"
             class="md:hidden p-2 rounded-md text-gray-300 hover:text-accent focus:outline-none"
           >
-            <svg
-              v-if="!isMenuOpen"
-              class="block h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-            <svg
-              v-else
-              class="block h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            <Icon 
+              :icon="isMenuOpen ? 'heroicons:x-mark' : 'heroicons:bars-3'"
+              class="w-6 h-6"
+            />
           </button>
         </div>
 
@@ -72,15 +44,15 @@
           class="md:hidden"
         >
           <div class="px-2 pt-2 pb-3 space-y-1">
-            <router-link 
-              v-for="(link, index) in navLinks" 
-              :key="index"
+            <RouterLink 
+              v-for="link in navLinks" 
+              :key="link.to"
               :to="link.to"
               class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-accent transition-colors duration-200"
               @click="isMenuOpen = false"
             >
               {{ $t(link.text) }}
-            </router-link>
+            </RouterLink>
             <!-- Language Switcher in mobile menu -->
             <div class="px-3 py-2">
               <LanguageSwitcher />
@@ -92,21 +64,21 @@
 
     <!-- Main Content -->
     <main class="pt-16">
-      <router-view v-slot="{ Component }">
-        <transition
+      <RouterView v-slot="{ Component }">
+        <Transition
           name="page"
           mode="out-in"
         >
           <component :is="Component" />
-        </transition>
-      </router-view>
+        </Transition>
+      </RouterView>
     </main>
 
     <!-- Footer -->
     <footer class="bg-secondary py-6">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-center text-sm text-gray-400">
-          {{ new Date().getFullYear() }} Israel Moreno.
+          {{ new Date().getFullYear() }} Israel Moreno. {{ $t('footer.rights') }}
         </p>
       </div>
     </footer>
@@ -115,6 +87,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { RouterLink, RouterView } from 'vue-router'
 import { Icon } from '@iconify/vue'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
 
