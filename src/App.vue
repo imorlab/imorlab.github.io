@@ -98,7 +98,6 @@ const isDark = ref(document.documentElement.classList.contains('dark'))
 const navItems = [
   { route: '/', label: 'nav.home' },
   { route: '/about', label: 'nav.about' },
-  { route: '/skills', label: 'nav.skills' },
   { route: '/projects', label: 'nav.projects' },
   { route: '/contact', label: 'nav.contact' }
 ]
