@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/imorlab-portfolio/',
+  base: process.env.NODE_ENV === 'production' ? '/imorlab-portfolio/' : '/',
   plugins: [
     vue({
       template: {
