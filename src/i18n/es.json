@@ -42,6 +42,13 @@
   },
   "skills": {
     "title": "Habilidades",
+    "soft": "Habilidades blandas",
+    "communication": "Comunicación",
+    "teamwork": "Trabajo en equipo",
+    "problemSolving": "Resolución de problemas",
+    "timeManagement": "Gestión del tiempo",
+    "continuousLearning": "Aprendizaje continuo",
+    "adaptability": "Adaptabilidad",
     "frontend": "Frontend",
     "backend": "Backend",
     "database": "Bases de datos",

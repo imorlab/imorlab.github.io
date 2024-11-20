@@ -2,9 +2,9 @@
   <div class="min-h-screen bg-primary relative overflow-hidden">
     <!-- Background Effects -->
     <div class="fixed inset-0">
-      <div class="absolute -right-1/4 -top-1/4 w-3/4 h-3/4 bg-accent/5 rounded-full blur-3xl"></div>
-      <div class="absolute -left-1/4 -bottom-1/4 w-3/4 h-3/4 bg-accent/5 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-accent/3 rounded-full blur-3xl"></div>
+      <div class="absolute -right-1/4 -top-1/4 w-3/4 h-3/4 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute -left-1/4 -bottom-1/4 w-3/4 h-3/4 bg-accent/10 rounded-full blur-3xl animate-pulse [animation-delay:2s]"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-accent/8 rounded-full blur-3xl animate-pulse [animation-delay:4s]"></div>
     </div>
 
     <!-- Hero Section -->

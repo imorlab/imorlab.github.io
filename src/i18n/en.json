@@ -42,6 +42,13 @@
   },
   "skills": {
     "title": "Skills",
+    "softSkills": "Soft Skills",
+    "communication": "Communication",
+    "teamwork": "Teamwork",
+    "problemSolving": "Problem Solving",
+    "timeManagement": "Time Management",
+    "continuousLearning": "Continuous Learning",
+    "adaptability": "Adaptability",
     "frontend": "Frontend",
     "backend": "Backend",
     "database": "Databases",

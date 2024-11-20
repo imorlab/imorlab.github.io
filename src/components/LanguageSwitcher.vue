@@ -2,7 +2,13 @@
   <div class="relative">
     <button
       @click="isOpen = !isOpen"
-      class="flex items-center gap-1 text-sm font-medium text-gray-300 hover:text-accent transition-colors duration-200"
+      class="flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-accent bg-transparent"
+      :class="[
+        isDark
+          ? 'text-gray-300'
+          : 'text-gray-600'
+      ]"
+      type="button"
     >
       <span class="uppercase">{{ currentLocale }}</span>
       <Icon
@@ -14,13 +20,24 @@
     <!-- Dropdown menu -->
     <div
       v-if="isOpen"
-      class="absolute right-0 mt-2 py-2 w-24 bg-secondary rounded-lg shadow-lg z-50"
+      class="absolute right-0 mt-2 py-2 w-24 rounded-lg shadow-lg z-50 border transition-colors duration-200"
+      :class="[
+        isDark
+          ? 'bg-primary border-gray-700'
+          : 'bg-white border-gray-200'
+      ]"
     >
       <button
         v-for="locale in availableLocales"
         :key="locale"
         @click="changeLocale(locale)"
-        class="block w-full px-4 py-2 text-sm text-left text-gray-300 hover:text-accent hover:bg-gray-800 transition-colors duration-200"
+        class="block w-full px-4 py-2 text-sm text-left transition-colors duration-200 hover:text-accent bg-transparent"
+        :class="[
+          isDark
+            ? 'text-gray-300 hover:bg-gray-800/50'
+            : 'text-gray-600 hover:bg-gray-100'
+        ]"
+        type="button"
       >
         {{ locale.toUpperCase() }}
       </button>
@@ -35,20 +52,12 @@ import { Icon } from '@iconify/vue'
 
 const { locale, availableLocales } = useI18n()
 const isOpen = ref(false)
+const isDark = ref(true)
 
 const currentLocale = computed(() => locale.value)
 
-const changeLocale = (newLocale) => {
-  locale.value = newLocale
-  isOpen.value = false
-  localStorage.setItem('locale', newLocale)
-}
-
-// Cerrar el menú al hacer clic fuera
-const handleClickOutside = (event) => {
-  if (isOpen.value && !event.target.closest('.relative')) {
-    isOpen.value = false
-  }
+const updateTheme = () => {
+  isDark.value = document.documentElement.classList.contains('dark')
 }
 
 onMounted(() => {
@@ -57,9 +66,31 @@ onMounted(() => {
   if (savedLocale && availableLocales.includes(savedLocale)) {
     locale.value = savedLocale
   }
+  
+  // Observar cambios en el tema
+  updateTheme()
+  const observer = new MutationObserver(() => {
+    updateTheme()
+  })
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class']
+  })
 })
 
 onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside)
 })
+
+const changeLocale = (newLocale) => {
+  locale.value = newLocale
+  isOpen.value = false
+  localStorage.setItem('locale', newLocale)
+}
+
+const handleClickOutside = (event) => {
+  if (isOpen.value && !event.target.closest('.relative')) {
+    isOpen.value = false
+  }
+}
 </script>

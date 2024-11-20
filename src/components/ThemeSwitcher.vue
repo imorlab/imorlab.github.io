@@ -3,22 +3,32 @@
     <button
       @click="toggleTheme"
       class="flex items-center justify-center w-10 h-10 rounded-lg
-             border-2 transition-all duration-300 text-xl"
+            transition-all duration-300 text-xl cursor-pointer"
       :class="[
         isDark
-          ? 'bg-primary'
-          : 'bg-white'
+          ? 'bg-primary hover:bg-primary/80'
+          : 'bg-white hover:bg-gray-100'
       ]"
       :aria-label="$t('theme.switch')"
+      type="button"
     >
-      <span v-if="isDark">🌙</span>
-      <span v-else>☀️</span>
+      <span><Icon 
+        v-if="isDark" 
+        icon="heroicons:moon" 
+        class="w-6 h-6 text-accent"
+      />
+      <Icon 
+        v-else 
+        icon="heroicons:sun" 
+        class="w-6 h-6 text-accent"
+      /></span>
     </button>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { Icon } from '@iconify/vue'
 
 const isDark = ref(true)
 
@@ -41,6 +51,8 @@ onMounted(() => {
   const savedTheme = localStorage.getItem('theme')
   if (savedTheme) {
     isDark.value = savedTheme === 'dark'
+  } else {
+    isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
   }
   applyTheme()
 })

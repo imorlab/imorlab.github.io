@@ -12,6 +12,34 @@
         {{ $t('skills.title') }}
       </h1>
 
+      <!-- Soft Skills Row -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+        <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-4 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 flex flex-col items-center text-center">
+          <Icon icon="heroicons:chat-bubble-left-right" class="w-8 h-8 text-accent mb-2" />
+          <span class="text-sm">{{ $t('skills.communication') }}</span>
+        </div>
+        <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-4 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 flex flex-col items-center text-center">
+          <Icon icon="heroicons:user-group" class="w-8 h-8 text-accent mb-2" />
+          <span class="text-sm">{{ $t('skills.teamwork') }}</span>
+        </div>
+        <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-4 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 flex flex-col items-center text-center">
+          <Icon icon="heroicons:light-bulb" class="w-8 h-8 text-accent mb-2" />
+          <span class="text-sm">{{ $t('skills.problemSolving') }}</span>
+        </div>
+        <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-4 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 flex flex-col items-center text-center">
+          <Icon icon="heroicons:clock" class="w-8 h-8 text-accent mb-2" />
+          <span class="text-sm">{{ $t('skills.timeManagement') }}</span>
+        </div>
+        <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-4 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 flex flex-col items-center text-center">
+          <Icon icon="heroicons:academic-cap" class="w-8 h-8 text-accent mb-2" />
+          <span class="text-sm">{{ $t('skills.continuousLearning') }}</span>
+        </div>
+        <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-4 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 flex flex-col items-center text-center">
+          <Icon icon="heroicons:adjustments-horizontal" class="w-8 h-8 text-accent mb-2" />
+          <span class="text-sm">{{ $t('skills.adaptability') }}</span>
+        </div>
+      </div>
+      
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Frontend -->
         <div class="bg-accent-10 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">

@@ -16,8 +16,8 @@
                 v-for="item in navItems"
                 :key="item.route"
                 :to="item.route"
-                class="px-3 py-2 text-sm font-medium hover:text-accent transition-colors duration-300"
-                :class="{ 'text-accent': currentRoute === item.route }"
+                class="px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-accent"
+                :class="[$route.path === item.route ? 'text-accent font-bold' : 'text-gray-400']"
               >
                 {{ $t(item.label) }}
               </RouterLink>
