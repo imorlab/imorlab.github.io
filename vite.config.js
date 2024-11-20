@@ -6,11 +6,18 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   base: '/imorlab-portfolio/',
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag.includes('ion-')
+        }
+      }
+    })
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
     }
   }
 })
