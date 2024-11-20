@@ -1,7 +1,9 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About",
+    "about": "About Me",
+    "about_first": "About",
+    "about_second": "Me",
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact"
@@ -25,19 +27,104 @@
     "contact": "Contact"
   },
   "about": {
-    "title": "About me",
-    "intro": "Hi! I'm Israel Moreno, a full stack web developer based in Spain.",
-    "description": "I specialize in creating innovative and efficient web solutions. With experience in both frontend and backend development, I enjoy building web applications that are not only functional but also intuitive and enjoyable to use.",
-    "experience": {
-      "title": "Experience",
-      "years": "Years of experience",
-      "projects": "Completed projects",
-      "technologies": "Technologies",
-      "development": "Web Development"
+    "title": "About Me",
+    "title_first": "About",
+    "title_second": "Me",
+    "intro": "Hello! I'm Israel Moreno, a full stack web developer based in Spain.",
+    "description": "I'm a web developer with over 3 years of experience in the industry, specializing in Laravel (PHP) development. I've participated in various projects, including reservation management systems, OpenAI integration, and payment gateway implementations. My expertise spans PHP, HTML, JavaScript, and CSS.",
+    "mission": "My focus is on developing innovative and efficient solutions, optimizing processes, and adapting to each project's needs. I consider myself organized, motivated, and committed to teamwork and continuous improvement.",
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "degree": "Higher Technical Certificate",
+          "field": "Web Application Development",
+          "school": "Cesur",
+          "period": "2020",
+          "skills": "Web development, JSON, and modern web technologies"
+        },
+        {
+          "degree": "University Access",
+          "field": "University Entrance Examination",
+          "school": "National University of Distance Education - U.N.E.D.",
+          "period": "2015"
+        }
+      ]
     },
-    "github": {
-      "title": "GitHub Stats",
-      "languages": "Most Used Languages"
+    "experience": {
+      "title": "Professional Experience",
+      "stats": {
+        "years": "3+",
+        "projects": "20+",
+        "technologies": "15+",
+        "development": "Web"
+      },
+      "positions": [
+        {
+          "role": "Web Developer",
+          "company": "beon. worldwide",
+          "period": "May 2023 - Present",
+          "location": "Seville, Andalusia, Spain (Hybrid)",
+          "type": "Full-time",
+          "skills": ["PHP", "Laravel", "JavaScript", "MySQL", "Git", "API Integration"]
+        },
+        {
+          "role": "Web Developer",
+          "company": "Iwan21",
+          "period": "March 2020 - June 2020",
+          "location": "Seville, Andalusia, Spain",
+          "type": "Internship",
+          "responsibilities": [
+            "Development of applications using PHP, Javascript, MySQL",
+            "Web application maintenance",
+            "HTML, CSS, Bootstrap layout",
+            "XML and JSON data handling",
+            "Daily work optimization using Odoo"
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "title": "Technologies & Skills",
+      "categories": {
+        "backend": {
+          "title": "Backend",
+          "icon": "heroicons:server",
+          "items": ["PHP", "Laravel", "MySQL"]
+        },
+        "frontend": {
+          "title": "Frontend",
+          "icon": "heroicons:computer-desktop",
+          "items": ["JavaScript", "HTML5", "CSS3", "Bootstrap", "Tailwind"]
+        },
+        "tools": {
+          "title": "Tools",
+          "icon": "heroicons:wrench-screwdriver",
+          "items": ["Git", "GitHub", "Trello"]
+        },
+        "design": {
+          "title": "Design",
+          "icon": "heroicons:paint-brush",
+          "items": ["Adobe XD", "Adobe Photoshop"]
+        },
+        "cms": {
+          "title": "CMS",
+          "icon": "heroicons:document-text",
+          "items": ["WordPress"]
+        },
+        "soft": {
+          "title": "Soft Skills",
+          "icon": "heroicons:user-group",
+          "items": [
+            "Teamwork",
+            "Effective Communication",
+            "Problem Solving",
+            "Adaptability",
+            "Time Management",
+            "Continuous Learning"
+          ]
+        }
+      }
     }
   },
   "skills": {

@@ -1,7 +1,9 @@
 {
   "nav": {
     "home": "Inicio",
-    "about": "Sobre mí",
+    "about": "Sobre Mí",
+    "about_first": "Sobre",
+    "about_second": "Mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
     "contact": "Contacto"
@@ -25,19 +27,104 @@
     "contact": "Contactar"
   },
   "about": {
-    "title": "Sobre mí",
+    "title": "Sobre Mí",
+    "title_first": "Sobre",
+    "title_second": "Mí",
     "intro": "¡Hola! Soy Israel Moreno, un desarrollador web full stack con sede en España.",
-    "description": "Me especializo en crear soluciones web innovadoras y eficientes. Con experiencia en el desarrollo tanto frontend como backend, disfruto construyendo aplicaciones web que no solo son funcionales sino también intuitivas y agradables de usar.",
-    "experience": {
-      "title": "Experiencia",
-      "years": "Años de experiencia",
-      "projects": "Proyectos completados",
-      "technologies": "Tecnologías",
-      "development": "Desarrollo Web"
+    "description": "Soy programador web con más de 3 años de experiencia en el sector, especializándome en el desarrollo con Laravel (PHP). He participado en diversos proyectos, incluyendo gestión de reservas, integración con la IA de OpenAI e implementación de pasarelas de pago. Mi experiencia abarca PHP, HTML, JavaScript y CSS.",
+    "mission": "Mi enfoque se centra en desarrollar soluciones innovadoras y eficientes, optimizando procesos y adaptándome a las necesidades de cada proyecto. Me considero una persona organizada, motivada y comprometida con el trabajo en equipo y la mejora continua.",
+    "education": {
+      "title": "Educación",
+      "items": [
+        {
+          "degree": "Ciclo Formativo de Grado Superior",
+          "field": "Desarrollo de Aplicaciones Web",
+          "school": "Cesur",
+          "period": "2020",
+          "skills": "Desarrollo web, JSON y tecnologías web modernas"
+        },
+        {
+          "degree": "Acceso a la Universidad",
+          "field": "Prueba de acceso a la Universidad",
+          "school": "Universidad Nacional de Educación a Distancia - U.N.E.D.",
+          "period": "2015"
+        }
+      ]
     },
-    "github": {
-      "title": "Estadísticas de GitHub",
-      "languages": "Lenguajes más usados"
+    "experience": {
+      "title": "Experiencia Profesional",
+      "stats": {
+        "years": "3+",
+        "projects": "20+",
+        "technologies": "15+",
+        "development": "Web"
+      },
+      "positions": [
+        {
+          "role": "Web Developer",
+          "company": "beon. worldwide",
+          "period": "Mayo 2023 - Actualidad",
+          "location": "Sevilla, Andalucía, España (Híbrido)",
+          "type": "Jornada completa",
+          "skills": ["PHP", "Laravel", "JavaScript", "MySQL", "Git", "API Integration"]
+        },
+        {
+          "role": "Programador Web",
+          "company": "Iwan21",
+          "period": "Marzo 2020 - Junio 2020",
+          "location": "Sevilla, Andalucía, España",
+          "type": "Prácticas",
+          "responsibilities": [
+            "Desarrollo de aplicaciones utilizando PHP, Javascript, MySQL",
+            "Mantenimiento de aplicaciones web",
+            "Maquetación HTML, CSS, Bootstrap",
+            "Manejo de datos XML, JSON",
+            "Optimización del trabajo diario utilizando Odoo"
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "title": "Tecnologías y Habilidades",
+      "categories": {
+        "backend": {
+          "title": "Backend",
+          "icon": "heroicons:server",
+          "items": ["PHP", "Laravel", "MySQL"]
+        },
+        "frontend": {
+          "title": "Frontend",
+          "icon": "heroicons:computer-desktop",
+          "items": ["JavaScript", "HTML5", "CSS3", "Bootstrap", "Tailwind"]
+        },
+        "tools": {
+          "title": "Herramientas",
+          "icon": "heroicons:wrench-screwdriver",
+          "items": ["Git", "GitHub", "Trello"]
+        },
+        "design": {
+          "title": "Diseño",
+          "icon": "heroicons:paint-brush",
+          "items": ["Adobe XD", "Adobe Photoshop"]
+        },
+        "cms": {
+          "title": "CMS",
+          "icon": "heroicons:document-text",
+          "items": ["WordPress"]
+        },
+        "soft": {
+          "title": "Habilidades Blandas",
+          "icon": "heroicons:user-group",
+          "items": [
+            "Trabajo en equipo",
+            "Comunicación efectiva",
+            "Resolución de problemas",
+            "Adaptabilidad",
+            "Gestión del tiempo",
+            "Aprendizaje continuo"
+          ]
+        }
+      }
     }
   },
   "skills": {

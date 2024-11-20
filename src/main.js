@@ -15,7 +15,12 @@ const i18n = createI18n({
     es,
     en
   },
-  globalInjection: true
+  globalInjection: true,
+  flatJson: false,
+  warnHtmlInMessage: 'off',
+  silentTranslationWarn: true,
+  missingWarn: false,
+  fallbackWarn: false
 })
 
 const app = createApp(App)
