@@ -3,11 +3,11 @@
     <button
       @click="toggleTheme"
       class="flex items-center justify-center w-10 h-10 rounded-lg
-            transition-all duration-300 text-xl cursor-pointer"
+            transition-all duration-300 text-xl cursor-pointer hover:text-accent"
       :class="[
         isDark
-          ? 'bg-primary hover:bg-primary/80'
-          : 'bg-white hover:bg-gray-100'
+          ? 'bg-primary/10 hover:bg-primary/30'
+          : 'bg-white/10 hover:bg-white/30'
       ]"
       :aria-label="$t('theme.switch')"
       type="button"

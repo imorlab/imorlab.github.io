@@ -1,11 +1,5 @@
 <template>
-  <div class="min-h-screen bg-primary relative overflow-hidden">
-    <!-- Background Effects -->
-    <div class="fixed inset-0">
-      <div class="absolute -right-1/4 -top-1/4 w-3/4 h-3/4 bg-accent/5 rounded-full blur-3xl"></div>
-      <div class="absolute -left-1/4 -bottom-1/4 w-3/4 h-3/4 bg-accent/5 rounded-full blur-3xl"></div>
-    </div>
-
+  <div class="min-h-[calc(100vh-4rem)] pt-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
       <h1 class="text-4xl font-bold mb-12 flex items-center gap-3">
         <Icon icon="heroicons:wrench-screwdriver" class="w-10 h-10 text-accent" />
