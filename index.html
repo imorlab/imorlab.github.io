@@ -1,10 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue</title>
+    <title>Israel Moreno - Portfolio</title>
+    <script type="text/javascript">
+      (function() {
+        const { pathname, hostname, protocol } = window.location;
+        
+        // Solo redirige en GitHub Pages
+        if (hostname.includes('github.io')) {
+          const segments = pathname.split('/');
+          const repo = segments[1];
+          if (segments.length > 2 && segments[1] === 'imorlab-portfolio') {
+            const path = segments.slice(2).join('/') || '';
+            window.location.replace(`${protocol}//${hostname}/${repo}/?route=${path}`);
+          }
+        }
+      })();
+
+      // Manejo de la ruta después de la redirección
+      (function() {
+        const query = window.location.search;
+        const params = new URLSearchParams(query);
+        const route = params.get('route');
+        
+        if (route) {
+          window.history.replaceState(null, null, route === '/' ? '' : route);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>

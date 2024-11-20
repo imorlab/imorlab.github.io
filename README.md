@@ -104,6 +104,6 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## Contacto
 
-- **Website:** [imorlab.github.io/imorlab-portfolio](https://imorlab.github.io/imorlab-portfolio/)
+- **Website:** [imorlab.com](https://imorlab.github.io/imorlab-portfolio/)
 - **GitHub:** [@imorlab](https://github.com/imorlab)
 - **LinkedIn:** [Israel Moreno](https://linkedin.com/in/imorlab)

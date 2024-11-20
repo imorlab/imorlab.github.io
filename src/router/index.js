@@ -4,13 +4,17 @@ import About from '../views/About.vue'
 import Projects from '../views/Projects.vue'
 import Contact from '../views/Contact.vue'
 
+const isProduction = import.meta.env.PROD
+const base = isProduction ? '/imorlab-portfolio/' : '/'
+
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(base),
   routes: [
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      alias: '/home'
     },
     {
       path: '/about',
@@ -26,6 +30,10 @@ const router = createRouter({
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/'
     }
   ]
 })
