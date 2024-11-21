@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About Me",
+    "about": "About",
     "about_first": "About",
     "about_second": "Me",
     "skills": "Skills",
@@ -27,7 +27,7 @@
     "contact": "Contact"
   },
   "about": {
-    "title": "About Me",
+    "title": "About",
     "title_first": "About",
     "title_second": "Me",
     "intro": "Hello! I'm Israel Moreno, a full stack web developer based in Spain.",
@@ -148,18 +148,18 @@
     "visitSite": "Visit site",
     "viewCode": "View code",
     "experience": "Over 2 years of professional experience",
-    "professionalWork": "Enterprise solution development",
-    "personalProjects": "Innovative personal projects",
+    "professionalWork": "Solution development",
+    "personalProjects": "Personal projects",
     "description": "Combining professional experience with personal projects"
   },
   "contact": {
     "title": "Contact",
-    "getInTouch": "Let's talk!",
-    "description": "Have a project in mind? I'd love to hear about it!",
+    "getInTouch": "Interested in working together? Get in touch with me",
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send message"
+    "send": "Send message",
+    "socialMedia": "Social Media"
   },
   "footer": {
     "rights": "All rights reserved"
