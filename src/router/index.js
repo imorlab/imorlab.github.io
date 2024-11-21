@@ -33,16 +33,18 @@ const router = createRouter({
     },
     {
       path: '/:pathMatch(.*)*',
-      redirect: (to) => {
-        // Si hay un hash en la URL, intentamos navegar a esa ruta
-        if (to.hash) {
-          const path = to.hash.substring(1);
-          return path || '/';
-        }
-        return '/';
-      }
+      redirect: '/'
     }
   ]
 })
+
+// Manejar la redirección inicial si es necesario
+if (typeof window !== 'undefined') {
+  const { pathname, search } = window.location
+  if (search && search.startsWith('?/')) {
+    const path = search.slice(2)
+    router.push(path || '/')
+  }
+}
 
 export default router

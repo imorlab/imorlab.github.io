@@ -4,19 +4,12 @@
     <meta charset="utf-8">
     <title>Israel Moreno Portfolio</title>
     <script type="text/javascript">
-      var segmentCount = 1;
-      var location = window.location;
-      var rootPath = '/imorlab-portfolio/';
-      var newPath = location.pathname.replace(rootPath, '');
-      
-      // Si la ruta ya contiene un redirect, volver a la página principal
-      if (location.search.includes('redirect=true')) {
-        window.location.href = rootPath;
-      } else {
-        // Redirigir preservando la ruta
-        var redirectUrl = rootPath + '?redirect=true#' + newPath;
-        window.location.replace(redirectUrl);
-      }
+      // Redirigir todas las rutas 404 a la raíz
+      var pathSegments = window.location.pathname.split('/');
+      var repoName = 'imorlab-portfolio';
+      var path = pathSegments.slice(pathSegments.indexOf(repoName) + 1).join('/');
+      var redirectUrl = '/' + repoName + '/?/' + path;
+      window.location.replace(redirectUrl);
     </script>
   </head>
   <body>
