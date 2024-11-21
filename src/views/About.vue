@@ -15,7 +15,7 @@
               <Icon icon="heroicons:user" class="w-8 h-8 text-accent" />
               {{ $t('about.title') }}
             </h2>
-            <div class="space-y-4">
+            <div class="space-y-4 text-start">
               <p class="text-gray-300">{{ $t('about.intro') }}</p>
               <p class="text-gray-300">{{ $t('about.description') }}</p>
               <p class="text-gray-300">{{ $t('about.mission') }}</p>
