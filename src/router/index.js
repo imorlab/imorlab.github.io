@@ -33,7 +33,14 @@ const router = createRouter({
     },
     {
       path: '/:pathMatch(.*)*',
-      redirect: '/'
+      redirect: (to) => {
+        // Si hay un hash en la URL, intentamos navegar a esa ruta
+        if (to.hash) {
+          const path = to.hash.substring(1);
+          return path || '/';
+        }
+        return '/';
+      }
     }
   ]
 })

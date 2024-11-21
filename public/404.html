@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <title>Israel Moreno Portfolio</title>
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1;
-
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      var segmentCount = 1;
+      var location = window.location;
+      var rootPath = '/imorlab-portfolio/';
+      var newPath = location.pathname.replace(rootPath, '');
+      
+      // Si la ruta ya contiene un redirect, volver a la página principal
+      if (location.search.includes('redirect=true')) {
+        window.location.href = rootPath;
+      } else {
+        // Redirigir preservando la ruta
+        var redirectUrl = rootPath + '?redirect=true#' + newPath;
+        window.location.replace(redirectUrl);
+      }
     </script>
   </head>
   <body>
