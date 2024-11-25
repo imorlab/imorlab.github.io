@@ -3,7 +3,7 @@
     <div class="w-full max-w-6xl mx-auto relative z-20">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <!-- Text Content -->
-        <div class="z-10">
+        <div class="z-10 order-2 md:order-1">
           <div class="max-w-4xl mx-auto text-center md:text-left">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
               <span class="text-gray-300">{{ $t('home.greeting') }}</span>
@@ -43,7 +43,7 @@
         </div>
 
         <!-- Profile Image -->
-        <div class="flex justify-center z-10">
+        <div class="flex justify-center z-10 order-1 md:order-2">
           <div class="relative group">
             <!-- Profile photo with glass effect -->
             <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden 

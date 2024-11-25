@@ -146,16 +146,21 @@
     "viewMore": "Ver más",
     "viewLess": "Ver menos",
     "visitSite": "Visitar sitio",
-    "viewCode": "Ver código"
+    "viewCode": "Ver código",
+    "experience": "Más de 2 años de experiencia profesional",
+    "professionalWork": "Desarrollo de soluciones",
+    "personalProjects": "Proyectos personales",
+    "description": "Combinando experiencia profesional con proyectos personales"
   },
   "contact": {
     "title": "Contacto",
-    "getInTouch": "¡Hablemos!",
+    "getInTouch": "¿Interesado en trabajar juntos? Ponte en contacto conmigo",
     "description": "¿Tienes un proyecto en mente? ¡Me encantaría escucharlo!",
     "name": "Nombre",
-    "email": "Correo electrónico",
+    "email": "Email",
     "message": "Mensaje",
-    "send": "Enviar mensaje"
+    "send": "Enviar mensaje",
+    "socialMedia": "Redes Sociales"
   },
   "footer": {
     "rights": "Todos los derechos reservados"

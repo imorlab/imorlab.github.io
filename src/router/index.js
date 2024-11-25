@@ -38,4 +38,13 @@ const router = createRouter({
   ]
 })
 
+// Manejar la redirección inicial si es necesario
+if (typeof window !== 'undefined') {
+  const { pathname, search } = window.location
+  if (search && search.startsWith('?/')) {
+    const path = search.slice(2)
+    router.push(path || '/')
+  }
+}
+
 export default router
