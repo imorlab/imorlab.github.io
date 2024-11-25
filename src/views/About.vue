@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-[calc(100vh-4rem)] pt-16">
+  <div class="min-h-[calc(100vh-4rem)]">
     <div class="section-container py-20 relative z-10">
-      <h1 class="text-4xl font-bold text-center mb-16">
+      <h1 class="text-4xl text-gray-500 dark:text-gray-100 font-bold text-center mb-16">
         {{ $t('about.title_first') }} <span class="text-accent">{{ $t('about.title_second') }}</span>
       </h1>
 
@@ -10,29 +10,29 @@
         <!-- Left Column -->
         <div class="space-y-8">
           <!-- Profile Section -->
-          <div class="bg-primary/10 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
-            <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+          <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:user" class="w-8 h-8 text-accent" />
               {{ $t('about.title') }}
             </h2>
             <div class="space-y-4">
-              <p class="text-gray-300">{{ $t('about.intro') }}</p>
-              <p class="text-gray-300">{{ $t('about.description') }}</p>
-              <p class="text-gray-300">{{ $t('about.mission') }}</p>
+              <p class="text-gray-500 dark:text-gray-100">{{ $t('about.intro') }}</p>
+              <p class="text-gray-500 dark:text-gray-100">{{ $t('about.description') }}</p>
+              <p class="text-gray-500 dark:text-gray-100">{{ $t('about.mission') }}</p>
             </div>
           </div>
 
           <!-- Education Section -->
-          <div class="bg-primary/10 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
-            <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+          <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:academic-cap" class="w-8 h-8 text-accent" />
               {{ $t('about.education.title') }}
             </h2>
             <div class="space-y-6">
               <div v-for="(edu, index) in educationItems" :key="index" class="border-l-2 border-accent pl-4 text-start">
                 <h3 class="font-semibold text-accent">{{ edu.degree }}</h3>
-                <p class="text-gray-400">{{ edu.field }}</p>
-                <p class="text-gray-400">{{ edu.school }}</p>
+                <p class="text-gray-400 dark:text-gray-100">{{ edu.field }}</p>
+                <p class="text-gray-400 dark:text-gray-100">{{ edu.school }}</p>
                 <p class="text-sm text-gray-500">{{ edu.period }}</p>
                 <p v-if="edu.skills" class="text-sm text-gray-400 mt-2">{{ edu.skills }}</p>
               </div>
@@ -40,21 +40,21 @@
           </div>
 
           <!-- Skills Section -->
-          <div class="bg-primary/10 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
-            <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+          <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:code-bracket" class="w-8 h-8 text-accent" />
               {{ $t('about.skills.title') }}
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div v-for="(category, key) in skillsCategories" :key="key" 
-                class="bg-primary/5 rounded-lg p-4 hover:bg-primary/10 transition-all duration-300">
+                class="bg-primary/5 rounded-lg p-4 hover:bg-primary/70 transition-all duration-300">
                 <h3 class="font-semibold text-accent flex items-center gap-2 mb-3">
                   <Icon :icon="category.icon" class="w-5 h-5" />
                   {{ category.title }}
                 </h3>
                 <div class="flex flex-wrap gap-2">
                   <span v-for="(item, i) in category.items" :key="i" 
-                    class="px-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-300 hover:bg-primary/30 transition-colors duration-300 cursor-default">
+                    class="px-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-500 hover:bg-primary/700 transition-colors duration-300 cursor-default">
                     {{ item }}
                   </span>
                 </div>
@@ -67,35 +67,35 @@
         <div class="space-y-8 text-start">
           <!-- Experience Stats -->
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="bg-primary/10 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.years') }}</span>
-                <span class="text-sm text-gray-300 mt-2 text-center">{{ $t('about.experience.title') }}</span>
+                <span class="text-sm text-gray-500 mt-2 text-center">{{ $t('about.experience.title') }}</span>
               </div>
             </div>
-            <div class="bg-primary/10 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.projects') }}</span>
-                <span class="text-sm text-gray-300 mt-2 text-center">Proyectos</span>
+                <span class="text-sm text-gray-500 mt-2 text-center">Proyectos</span>
               </div>
             </div>
-            <div class="bg-primary/10 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.technologies') }}</span>
-                <span class="text-sm text-gray-300 mt-2 text-center">Tecnologías</span>
+                <span class="text-sm text-gray-500 mt-2 text-center">Tecnologías</span>
               </div>
             </div>
-            <div class="bg-primary/10 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.development') }}</span>
-                <span class="text-sm text-gray-300 mt-2 text-center">Desarrollo</span>
+                <span class="text-sm text-gray-500 mt-2 text-center">Desarrollo</span>
               </div>
             </div>
           </div>
 
           <!-- Professional Experience -->
-          <div class="bg-primary/10 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
-            <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+          <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:briefcase" class="w-8 h-8 text-accent" />
               {{ $t('about.experience.title') }}
             </h2>
@@ -109,7 +109,7 @@
                 <p class="text-sm text-gray-500">{{ position.type }}</p>
                 <div v-if="position.skills" class="flex flex-wrap gap-2 mt-2">
                   <span v-for="(skill, i) in position.skills" :key="i"
-                    class="px-2 py-1 bg-primary/20 rounded-full text-xs text-gray-300">
+                    class="px-2 py-1 bg-primary/10 rounded-full text-xs text-gray-400">
                     {{ skill }}
                   </span>
                 </div>
@@ -125,8 +125,8 @@
           </div>
 
           <!-- GitHub Stats -->
-          <div class="bg-primary/10 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
-            <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+          <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:chart-bar" class="w-8 h-8 text-accent" />
               GitHub
             </h2>

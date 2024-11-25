@@ -1,5 +1,5 @@
 <template>
-  <div class="section-container min-h-screen py-20">
+  <div class="section-container min-h-screen">
     <h2 class="text-3xl font-bold mb-8 text-accent">Mis Proyectos</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Proyecto 1 -->
