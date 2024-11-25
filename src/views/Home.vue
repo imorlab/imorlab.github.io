@@ -6,18 +6,18 @@
         <div class="z-10 order-2 md:order-1">
           <div class="max-w-4xl mx-auto text-center md:text-left">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              <span class="text-gray-300">{{ $t('home.greeting') }}</span>
+              <span class="text-gray-400 dark:text-gray-100">{{ $t('home.greeting') }}</span>
               <span class="text-accent block mt-2">Israel Moreno</span>
             </h1>
-            <p class="text-xl sm:text-2xl text-gray-300 mb-8">{{ $t('home.role') }}</p>
+            <p class="text-xl sm:text-2xl text-gray-500 dark:text-gray-100 mb-8">{{ $t('home.role') }}</p>
             <p class="text-lg text-gray-400 mb-12">{{ $t('home.description') }}</p>
             <div class="flex flex-wrap gap-4 justify-center md:justify-start">
               <RouterLink
                 to="/about"
                 class="inline-flex items-center px-6 py-3 
                        border-2 border-accent
-                       text-accent hover:text-primary
-                       bg-transparent hover:bg-accent
+                       text-accent hover:text-gray-700
+                       bg-transparent hover:bg-accent/90
                        transition-all duration-300 rounded-lg 
                        text-lg font-medium
                        shadow-lg shadow-accent/20"
@@ -29,7 +29,7 @@
                 to="/contact"
                 class="inline-flex items-center px-6 py-3 
                        border-2 border-accent
-                       text-primary hover:text-accent
+                       text-gray-700 hover:text-accent
                        bg-accent hover:bg-transparent
                        transition-all duration-300 rounded-lg 
                        text-lg font-medium

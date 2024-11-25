@@ -2,7 +2,7 @@
   <div class="section-container min-h-screen py-20">
     <h2 class="text-3xl font-bold mb-8 text-accent text-center">{{ $t('contact.title') }}</h2>
     <div class="max-w-2xl mx-auto">
-      <p class="text-gray-300 mb-8 text-center">
+      <p class="text-gray-500 dark:text-gray-100 mb-8 text-center">
         {{ $t('contact.getInTouch') }}
       </p>
       
@@ -13,7 +13,7 @@
             type="text"
             id="name"
             name="name"
-            class="w-full px-4 py-2 bg-primary dark:bg-secondary border border-gray-200 dark:border-gray-600 rounded-md focus:outline-none focus:border-accent text-white"
+            class="w-full px-4 py-2 bg-primary dark:bg-gray-800/50 border border-gray-200 dark:border-gray-600 rounded-md focus:outline-none focus:border-accent text-gray-500 dark:text-gray-100"
             required
           />
         </div>
@@ -24,7 +24,7 @@
             type="email"
             id="email"
             name="email"
-            class="w-full px-4 py-2 bg-primary dark:bg-secondary border border-gray-200 dark:border-gray-600 rounded-md focus:outline-none focus:border-accent text-white"
+            class="w-full px-4 py-2 bg-primary dark:bg-gray-800/50 border border-gray-200 dark:border-gray-600 rounded-md focus:outline-none focus:border-accent text-gray-500 dark:text-gray-100"
             required
           />
         </div>
@@ -35,14 +35,14 @@
             id="message"
             name="message"
             rows="4"
-            class="w-full px-4 py-2 bg-gray-800/50 border border-gray-600 rounded-md focus:outline-none focus:border-accent text-gray-100"
+            class="w-full px-4 py-2 bg-primary dark:bg-gray-800/50 border border-gray-200 dark:border-gray-600 rounded-md focus:outline-none focus:border-accent text-gray-500 dark:text-gray-100"
             required
           ></textarea>
         </div>
 
         <button
           type="submit"
-          class="btn-primary w-full"
+          class="w-full px-4 py-2 bg-accent hover:bg-accent/80 focus:outline-none font-bold text-gray-100 dark:text-gray-700 rounded-md transition-all duration-300 border-0 hover:border-0"
         >
           {{ $t('contact.send') }}
         </button>
