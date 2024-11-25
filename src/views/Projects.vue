@@ -1,5 +1,5 @@
 <template>
-  <div class="section-container min-h-screen py-20 flex flex-col items-center justify-center px-4">
+  <div class="section-container py-20 min-h-screen flex flex-col items-center justify-center px-4">
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-accent mb-4">{{ $t('projects.title') }}</h2>
       <p class="text-xl text-gray-400 mb-2">{{ $t('projects.experience') }}</p>
