@@ -46,18 +46,43 @@
         <button
           type="submit"
           :disabled="loading"
-          class="w-full bg-accent hover:bg-accent/90 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200 disabled:opacity-50"
+          class="w-full bg-accent hover:bg-accent/90 text-white dark:text-gray-700 font-bold py-2 px-4 rounded-md transition-colors duration-200 disabled:opacity-50 border-0 hover:border-0 focus:outline-none focus:ring-2 focus:ring-accent/20"
         >
           {{ loading ? 'Enviando...' : 'Enviar mensaje' }}
         </button>
 
         <!-- Notificaciones -->
-        <div v-if="success" class="p-4 bg-green-100 text-green-700 rounded-md">
-          Mensaje enviado correctamente. ¡Gracias por contactar!
-        </div>
-        <div v-if="error" class="p-4 bg-red-100 text-red-700 rounded-md">
-          Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
-        </div>
+        <Transition
+          enter-active-class="transform transition duration-300 ease-out"
+          enter-from-class="translate-y-2 opacity-0"
+          enter-to-class="translate-y-0 opacity-100"
+          leave-active-class="transform transition duration-200 ease-in"
+          leave-from-class="translate-y-0 opacity-100"
+          leave-to-class="translate-y-2 opacity-0"
+        >
+          <div v-if="success" class="fixed bottom-8 right-8 flex items-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-check" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>¡Mensaje enviado correctamente!</span>
+          </div>
+        </Transition>
+
+        <Transition
+          enter-active-class="transform transition duration-300 ease-out"
+          enter-from-class="translate-y-2 opacity-0"
+          enter-to-class="translate-y-0 opacity-100"
+          leave-active-class="transform transition duration-200 ease-in"
+          leave-from-class="translate-y-0 opacity-100"
+          leave-to-class="translate-y-2 opacity-0"
+        >
+          <div v-if="error" class="fixed bottom-8 right-8 flex items-center space-x-2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <span>Error al enviar el mensaje. Inténtalo de nuevo.</span>
+          </div>
+        </Transition>
       </form>
 
       <div class="mt-12">
@@ -86,12 +111,24 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onUnmounted } from 'vue'
 import emailjs from '@emailjs/browser'
 
 const loading = ref(false)
 const success = ref(false)
 const error = ref(false)
+let timeoutId = null
+
+const hideNotification = () => {
+  timeoutId = setTimeout(() => {
+    success.value = false
+    error.value = false
+  }, 3000)
+}
+
+onUnmounted(() => {
+  if (timeoutId) clearTimeout(timeoutId)
+})
 
 const sendEmail = async (e) => {
   e.preventDefault()
@@ -107,10 +144,12 @@ const sendEmail = async (e) => {
       '1z-391vu4fYG3oFlt'
     )
     success.value = true
+    hideNotification()
     e.target.reset()
   } catch (err) {
     console.error('Error:', err)
     error.value = true
+    hideNotification()
   } finally {
     loading.value = false
   }
@@ -124,5 +163,21 @@ const sendEmail = async (e) => {
 
 .btn-primary {
   @apply bg-accent text-gray-900 font-medium px-6 py-2 rounded-md hover:bg-accent/80 transition-colors;
+}
+
+@keyframes check {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-check {
+  animation: check 0.5s ease-in-out;
 }
 </style>
