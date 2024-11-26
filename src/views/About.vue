@@ -62,8 +62,11 @@
                     />
                     <Icon 
                       v-else
-                      :icon="isDark && item.darkIcon ? item.darkIcon : item.icon" 
-                      class="w-6 h-6"
+                      :icon="isDark.value && item.darkIcon ? item.darkIcon : item.icon" 
+                      :class="[
+                        'w-6 h-6',
+                        isDark.value && item.name === 'GitHub' ? 'text-white' : ''
+                      ]"
                     />
                     {{ item.name }}
                   </span>
@@ -203,6 +206,5 @@ onMounted(() => {
   console.log('Messages:', messages.value)
   console.log('Education items:', educationItems.value)
   console.log('Skills categories:', skillsCategories.value)
-  console.log('Experience positions:', experiencePositions.value)
 })
 </script>
