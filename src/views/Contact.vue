@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8">
     <div class="w-full max-w-2xl mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-accent text-center">{{ $t('contact.title') }}</h2>
@@ -128,7 +129,7 @@
         <span>Error al enviar el mensaje. Inténtalo de nuevo.</span>
       </div>
     </Transition>
-  
+  </div>
 </template>
 
 <script setup>
