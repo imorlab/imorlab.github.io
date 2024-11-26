@@ -10,12 +10,12 @@
         <!-- Left Column -->
         <div class="space-y-8">
           <!-- Profile Section -->
-          <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+          <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:user" class="w-6 h-6 text-accent" />
               {{ $t('about.title') }}
             </h2>
-            <div class="space-y-4">
+            <div class="space-y-4 text-start">
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.intro') }}</p>
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.description') }}</p>
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.mission') }}</p>
@@ -23,7 +23,7 @@
           </div>
 
           <!-- Education Section -->
-          <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+          <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:academic-cap" class="w-6 h-6 text-accent" />
               {{ $t('about.education.title') }}
@@ -40,21 +40,21 @@
           </div>
 
           <!-- Skills Section -->
-          <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+          <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:code-bracket" class="w-6 h-6 text-accent" />
               {{ $t('about.skills.title') }}
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
               <div v-for="(category, key) in Object.entries(skillsCategories).filter(([k]) => k !== 'soft')" :key="key" 
-                class="bg-primary/5 rounded-lg p-4 hover:bg-primary/70 transition-all duration-300">
+                class="bg-primary/5 rounded-lg p-4 hover:border hover:border-accent transition-ease-in-out duration-300">
                 <h3 class="font-semibold text-accent flex items-center gap-2 mb-3">
                   <Icon :icon="category[1].icon" class="w-6 h-6" />
                   {{ category[1].title }}
                 </h3>
                 <div class="gap-2">
                   <span v-for="(item, i) in category[1].items" :key="i" 
-                    class="ps-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-500 dark:text-gray-300 hover:bg-primary/700 transition-colors duration-300 cursor-default flex items-center gap-2">
+                    class="ps-3 py-1.5 text-sm text-gray-500 dark:text-gray-300 hover:bg-primary/700 transition-colors duration-300 cursor-default flex items-center gap-2">
                     <component 
                       v-if="item.component"
                       :is="components.LivewireIcon"
@@ -75,7 +75,7 @@
             </div>
             <!-- Soft Skills Section -->
             <div v-if="skillsCategories.soft" class="mt-6">
-              <div class="bg-primary/5 rounded-lg p-4 hover:bg-primary/70 transition-all duration-300">
+              <div class="bg-primary/5 rounded-lg p-4 hover:border hover:border-accent transition-ease-in-out duration-300">
                 <h3 class="font-semibold text-accent flex items-center gap-2 mb-3">
                   <Icon :icon="skillsCategories.soft.icon" class="w-6 h-6" />
                   {{ skillsCategories.soft.title }}
@@ -95,34 +95,34 @@
         <div class="space-y-8 text-start">
           <!-- Experience Stats -->
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.years') }}</span>
-                <span class="text-sm text-gray-500 mt-2 text-center">{{ $t('about.experience.title') }}</span>
+                <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.title') }}</span>
               </div>
             </div>
-            <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.projects') }}</span>
-                <span class="text-sm text-gray-500 mt-2 text-center">{{ $t('about.experience.stats.projects_label') }}</span>
+                <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.stats.projects_label') }}</span>
               </div>
             </div>
-            <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.technologies') }}</span>
-                <span class="text-sm text-gray-500 mt-2 text-center">{{ $t('about.experience.stats.technologies_label') }}</span>
+                <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.stats.technologies_label') }}</span>
               </div>
             </div>
-            <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.development') }}</span>
-                <span class="text-sm text-gray-500 mt-2 text-center">{{ $t('about.experience.stats.development_label') }}</span>
+                <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.stats.development_label') }}</span>
               </div>
             </div>
           </div>
 
           <!-- Professional Experience -->
-          <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+          <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:briefcase" class="w-6 h-6 text-accent" />
               {{ $t('about.experience.title') }}
@@ -153,17 +153,36 @@
           </div>
 
           <!-- GitHub Stats -->
-          <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+          <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
               <Icon icon="heroicons:chart-bar" class="w-6 h-6 text-accent" />
               GitHub
             </h2>
-            <div class="flex justify-center">
-              <img 
-                :src="'https://github-readme-stats.vercel.app/api/top-langs/?username=imorlab&layout=compact&theme=dark&hide_border=true&title_color=64ffda&text_color=ffffff&bg_color=242424'" 
-                alt="GitHub Languages Stats" 
-                class="rounded-lg max-w-full"
-              />
+            <div class="space-y-4">
+              <div class="flex justify-center bg-primary/5 rounded-lg border border-accent p-4">
+                <div class="w-full">
+                  <h3 class="text-lg text-accent font-semibold mb-2 text-center">{{ t('about.github.contributions') }}</h3>
+                  <img 
+                    :src="chartUrl"
+                    alt="Israel Moreno's Github chart"
+                    class="w-full opacity-80"
+                  />
+                </div>
+              </div>
+              <div class="flex justify-center bg-primary/5 rounded-lg border border-accent p-4">
+                <img 
+                  :src="'https://github-readme-stats.vercel.app/api/top-langs/?username=imorlab&layout=compact&theme=dark&hide_border=true&title_color=64ffda&text_color=ffffff&bg_color=ffffff00&include_all_commits=true&count_private=true&hide=others'" 
+                  alt="GitHub Languages Stats" 
+                  class="rounded-lg max-w-full"
+                />
+              </div>
+              <div class="flex justify-center bg-primary/5 rounded-lg border border-accent p-4">
+                <img 
+                  :src="'https://github-readme-streak-stats.herokuapp.com?user=imorlab&theme=dark&hide_border=true&background=ffffff00&ring=64ffda&fire=64ffda&currStreakLabel=64ffda'" 
+                  alt="GitHub Streak Stats" 
+                  class="rounded-lg max-w-full"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -176,7 +195,8 @@
 import { Icon } from '@iconify/vue'
 import { useI18n } from 'vue-i18n'
 import LivewireIcon from '../components/icons/LivewireIcon.vue'
-import { computed, onMounted, markRaw } from 'vue'
+import { computed, onMounted, markRaw, ref } from 'vue'
+import { useTheme } from '../composables/theme'
 
 const { t, locale, messages } = useI18n()
 
@@ -197,14 +217,18 @@ const experiencePositions = computed(() => {
   return messages.value[locale.value].about.experience.positions || []
 })
 
-const isDark = computed(() => {
-  return document.documentElement.classList.contains('dark')
+const { isDark } = useTheme()
+
+const chartUrl = computed(() => {
+  return 'https://ghchart.rshah.org/imorlab'
 })
 
-onMounted(() => {
-  console.log('Current locale:', locale.value)
-  console.log('Messages:', messages.value)
-  console.log('Education items:', educationItems.value)
-  console.log('Skills categories:', skillsCategories.value)
-})
+// onMounted(() => {
+//   console.log('Current locale:', locale.value)
+//   console.log('Messages:', messages.value)
+//   console.log('Education items:', educationItems.value)
+//   console.log('Skills categories:', skillsCategories.value)
+//   console.log('Initial isDark value:', isDark.value)
+//   console.log('Initial chart URL:', chartUrl.value)
+// })
 </script>

@@ -88,6 +88,9 @@
         }
       ]
     },
+    "github": {
+      "contributions": "Contribuciones en el último año"
+    },
     "skills": {
       "title": "Habilidades",
       "categories": {
