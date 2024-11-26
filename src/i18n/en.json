@@ -17,12 +17,12 @@
   "lang": {
     "switch": "Switch language",
     "en": "English",
-    "es": "Español"
+    "es": "Spanish"
   },
   "home": {
     "greeting": "Hi! I'm",
     "role": "Full Stack Web Developer",
-    "description": "Passionate about creating exceptional web experiences and innovative solutions.",
+    "description": "Passionate about developing innovative and efficient solutions, optimizing processes and adapting to each project's needs.",
     "cta": "Get to know me",
     "contact": "Contact"
   },

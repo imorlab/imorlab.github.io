@@ -27,7 +27,7 @@
                   <div class="minimize"></div>
                   <div class="maximize"></div>
                 </div>
-                <div class="terminal-title">portfolio ~ projects</div>
+                <div class="terminal-title">imorlab ~ projects</div>
               </div>
               <!-- Terminal Content -->
               <div class="terminal-content">
@@ -108,7 +108,7 @@ onMounted(() => {
 }
 
 .notch {
-  @apply absolute top-0 left-1/2 -translate-x-1/2 w-[15%] h-[20px] bg-gray-800 rounded-b-lg z-10;
+  @apply absolute top-0 left-1/2 -translate-x-1/2 w-[15%] h-[10px] bg-gray-800 rounded-b-lg z-10;
   border: 2px solid #2a2a2a;
   border-top: none;
   background: linear-gradient(to bottom, #363636, #2a2a2a);
@@ -121,17 +121,24 @@ onMounted(() => {
 }
 
 .screen {
-  @apply w-full h-full bg-gray-950 rounded-[10px] overflow-hidden;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+  @apply w-full h-full rounded-[10px] overflow-hidden;
+  @apply bg-gray-950 dark:bg-gray-950;
+  @apply bg-white/90 dark:bg-gray-950;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
 }
 
 .terminal {
   @apply h-full flex flex-col;
+  @apply bg-white dark:bg-transparent;
 }
 
 .terminal-header {
-  @apply flex items-center px-4 py-2 bg-gray-900 border-b border-gray-800;
-  background: linear-gradient(to bottom, #363636, #2a2a2a);
+  @apply flex items-center px-4 py-2 border-b;
+  @apply bg-gray-100 border-gray-200 dark:bg-gray-900 dark:border-gray-800;
+  background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+  .dark & {
+    background: linear-gradient(to bottom, #363636, #2a2a2a);
+  }
 }
 
 .terminal-buttons {
@@ -159,11 +166,13 @@ onMounted(() => {
 }
 
 .terminal-title {
-  @apply flex-1 text-center text-sm text-gray-400 font-mono;
+  @apply flex-1 text-center text-sm font-mono;
+  @apply text-gray-600 dark:text-gray-400;
 }
 
 .terminal-content {
   @apply p-4 font-mono text-sm space-y-4 flex-1;
+  @apply bg-white dark:bg-transparent;
 }
 
 .command-block {
@@ -171,7 +180,8 @@ onMounted(() => {
 }
 
 .command {
-  @apply flex items-center text-accent;
+  @apply flex items-center;
+  @apply text-accent/90 dark:text-accent;
 }
 
 .prompt {
@@ -179,11 +189,13 @@ onMounted(() => {
 }
 
 .output {
-  @apply text-gray-400 pl-4;
+  @apply pl-4;
+  @apply text-gray-600 dark:text-gray-400;
 }
 
 .typing-text, .typing-text-2 {
   @apply inline-block overflow-hidden border-r-2 whitespace-nowrap;
+  @apply border-accent/70 dark:border-accent;
   animation: blink 0.75s step-end infinite;
 }
 

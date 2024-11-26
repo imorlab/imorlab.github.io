@@ -52,7 +52,8 @@ onMounted(() => {
   if (savedTheme) {
     isDark.value = savedTheme === 'dark'
   } else {
-    isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+    // Siempre iniciar en modo oscuro si no hay tema guardado
+    isDark.value = true
   }
   applyTheme()
 })
