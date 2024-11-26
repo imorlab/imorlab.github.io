@@ -22,7 +22,7 @@
   "home": {
     "greeting": "Hi! I'm",
     "role": "Full Stack Web Developer",
-    "description": "Passionate about developing innovative and efficient solutions, optimizing processes and adapting to each project's needs.",
+    "description": "I love the universe of web programming, design and web development, and general technology.",
     "cta": "Get to know me",
     "contact": "Contact"
   },
@@ -57,11 +57,11 @@
         "years": "3+",
         "projects": "20+",
         "technologies": "15+",
-        "development": "Web",
+        "development": "1000+",
         "years_label": "Years",
         "projects_label": "Projects",
         "technologies_label": "Technologies",
-        "development_label": "Development"
+        "development_label": "Commits"
       },
       "positions": [
         {
@@ -228,13 +228,17 @@
   "contact": {
     "title": "Contact",
     "getInTouch": "Interested in working together? Get in touch with me",
-    "name": "Name",
-    "email": "Email",
     "message": "Message",
     "send": "Send message",
-    "socialMedia": "Social Media"
+    "socialMedia": "Social Media",
+    "name": "Name",
+    "email": "Email",
+    "sending": "Sending...",
+    "success": "Message sent successfully!"
   },
   "footer": {
-    "rights": "All rights reserved"
+    "created": "Created by imorlab with",
+    "hosted": "Hosted on",
+    "rights": " All rights reserved. Left ones too."
   }
 }

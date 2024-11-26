@@ -8,9 +8,9 @@
         {{ $t('contact.getInTouch') }}
       </p>
       
-      <form @submit="sendEmail" class="space-y-6 mb-12">
+      <form @submit="sendEmail" class="space-y-6 mb-12 bg-gray-100/30 dark:bg-gray-800/30 border-2 border-accent dark:border-accent p-8 rounded-lg">
         <div>
-          <label for="from_name" class="block text-sm font-medium text-gray-500 dark:text-gray-100 mb-2">Nombre</label>
+          <label for="from_name" class="block text-sm font-medium text-gray-500 dark:text-gray-100 mb-2">{{ $t('contact.name') }}</label>
           <input
             type="text"
             id="from_name"
@@ -21,7 +21,7 @@
         </div>
 
         <div>
-          <label for="user_email" class="block text-sm font-medium text-gray-500 dark:text-gray-100 mb-2">Email</label>
+          <label for="user_email" class="block text-sm font-medium text-gray-500 dark:text-gray-100 mb-2">{{ $t('contact.email') }}</label>
           <input
             type="email"
             id="user_email"
@@ -32,7 +32,7 @@
         </div>
 
         <div>
-          <label for="message" class="block text-sm font-medium text-gray-500 dark:text-gray-100 mb-2">Mensaje</label>
+          <label for="message" class="block text-sm font-medium text-gray-500 dark:text-gray-100 mb-2">{{ $t('contact.message') }}</label>
           <textarea
             id="message"
             name="message"
@@ -50,12 +50,12 @@
           :disabled="loading"
           class="w-full bg-accent hover:bg-accent/90 text-white dark:text-gray-700 font-bold py-2 px-4 rounded-md transition-colors duration-200 disabled:opacity-50 border-0 hover:border-0 focus:outline-none focus:ring-2 focus:ring-accent/20"
         >
-          {{ loading ? 'Enviando...' : 'Enviar mensaje' }}
+          {{ loading ? $t('contact.sending') : $t('contact.send') }}
         </button>
       </form>
 
       <div class="mt-12">
-        <h3 class="text-xl font-semibold mb-4 text-accent">Redes Sociales</h3>
+        <h3 class="text-xl font-semibold mb-4 text-accent">{{ $t('contact.socialMedia') }}</h3>
         <div class="flex justify-center space-x-6">
           <a href="https://www.linkedin.com/in/israelmorenolabrador/" target="_blank" rel="noopener noreferrer" 
              class="flex items-center gap-2 text-gray-500 dark:text-gray-300 hover:text-accent transition-colors duration-300">

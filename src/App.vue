@@ -105,9 +105,20 @@
       <!-- Footer -->
       <footer class="bg-secondary py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p class="text-center text-sm text-gray-400">
-            {{ new Date().getFullYear() }} Israel Moreno. {{ $t('footer.rights') }}
-          </p>
+          <div class="flex flex-col items-center gap-2 text-sm text-gray-400 dark:text-gray-300">
+            <p>
+              {{ $t('footer.created') }}
+              <span 
+                @click="pulseHeart" 
+                class="text-purple-500 cursor-pointer text-lg inline-block transition-transform"
+                :class="{ 'heart-pulse': isPulsing }"
+              >💜</span>
+              {{ $t('footer.hosted') }} 
+              <a href="https://pages.github.com/" class="text-accent hover:text-accent/80 transition-colors duration-300">GitHub Pages</a>
+            </p>
+            
+            <p>Copyright {{ new Date().getFullYear() }}. {{ $t('footer.rights') }}</p>
+          </div>
         </div>
       </footer>
     </div>
@@ -153,17 +164,35 @@ const afterEnter = (el) => {
 }
 
 const isMenuOpen = ref(false)
+
+const isPulsing = ref(false)
+
+const pulseHeart = () => {
+  isPulsing.value = true
+  setTimeout(() => {
+    isPulsing.value = false
+  }, 1000)
+}
 </script>
 
 <style>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transform: translateY(20px);
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.heart-pulse {
+  animation: heartbeat 1s ease-in-out;
 }
 </style>

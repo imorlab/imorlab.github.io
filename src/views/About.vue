@@ -95,27 +95,35 @@
         <div class="space-y-8 text-start">
           <!-- Experience Stats -->
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-2 py-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
-                <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.years') }}</span>
+                <span class="text-3xl font-bold text-accent">
+                  +<NumberFlow :value="stats.years" :duration="3000" />
+                </span>
                 <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.title') }}</span>
               </div>
             </div>
-            <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-2 py-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
-                <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.projects') }}</span>
+                <span class="text-3xl font-bold text-accent">
+                  +<NumberFlow :value="stats.projects" :duration="3000" />
+                </span>
                 <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.stats.projects_label') }}</span>
               </div>
             </div>
-            <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/40 backdrop-blur-sm rounded-lg px-2 py-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
-                <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.technologies') }}</span>
+                <span class="text-3xl font-bold text-accent">
+                  +<NumberFlow :value="stats.technologies" :duration="3000" />
+                </span>
                 <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.stats.technologies_label') }}</span>
               </div>
             </div>
-            <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
+            <div class="bg-primary/40 backdrop-blur-sm rounded-lg px-2 py-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
-                <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.development') }}</span>
+                <span class="text-3xl font-bold text-accent">
+                  +<NumberFlow :value="stats.development" :duration="3000" />
+                </span>
                 <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.stats.development_label') }}</span>
               </div>
             </div>
@@ -197,6 +205,7 @@ import { useI18n } from 'vue-i18n'
 import LivewireIcon from '../components/icons/LivewireIcon.vue'
 import { computed, onMounted, markRaw, ref } from 'vue'
 import { useTheme } from '../composables/theme'
+import NumberFlow from '@number-flow/vue'
 
 const { t, locale, messages } = useI18n()
 
@@ -223,12 +232,22 @@ const chartUrl = computed(() => {
   return 'https://ghchart.rshah.org/imorlab'
 })
 
-// onMounted(() => {
-//   console.log('Current locale:', locale.value)
-//   console.log('Messages:', messages.value)
-//   console.log('Education items:', educationItems.value)
-//   console.log('Skills categories:', skillsCategories.value)
-//   console.log('Initial isDark value:', isDark.value)
-//   console.log('Initial chart URL:', chartUrl.value)
-// })
+const stats = ref({
+  years: 0,
+  projects: 0,
+  technologies: 0,
+  development: 0
+})
+
+onMounted(() => {
+  // Simular un pequeño retraso para la animación
+  setTimeout(() => {
+    stats.value = {
+      years: Number(t('about.experience.stats.years').replace('+', '')),
+      projects: Number(t('about.experience.stats.projects').replace('+', '')),
+      technologies: Number(t('about.experience.stats.technologies').replace('+', '')),
+      development: Number(t('about.experience.stats.development').replace('+', ''))
+    }
+  }, 500)
+})
 </script>

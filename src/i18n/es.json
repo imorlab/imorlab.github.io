@@ -22,7 +22,7 @@
   "home": {
     "greeting": "¡Hola! Soy",
     "role": "Desarrollador Web Full Stack",
-    "description": "Apasionado en desarrollar soluciones innovadoras y eficientes, optimizando procesos y adaptándome a las necesidades de cada proyecto.",
+    "description": "Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general.",
     "cta": "Conóceme más",
     "contact": "Contactar"
   },
@@ -57,11 +57,11 @@
         "years": "3+",
         "projects": "20+",
         "technologies": "15+",
-        "development": "Web",
+        "development": "1000+",
         "years_label": "Años",
         "projects_label": "Proyectos",
         "technologies_label": "Tecnologías",
-        "development_label": "Desarrollo"
+        "development_label": "Commits"
       },
       "positions": [
         {
@@ -228,14 +228,17 @@
   "contact": {
     "title": "Contacto",
     "getInTouch": "¿Interesado en trabajar juntos? Ponte en contacto conmigo",
-    "description": "¿Tienes un proyecto en mente? ¡Me encantaría escucharlo!",
-    "name": "Nombre",
-    "email": "Email",
     "message": "Mensaje",
     "send": "Enviar mensaje",
-    "socialMedia": "Redes Sociales"
+    "socialMedia": "Redes Sociales",
+    "name": "Nombre",
+    "email": "Email",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado correctamente!"
   },
   "footer": {
-    "rights": "Todos los derechos reservados"
+    "created": "Creado por imorlab con",
+    "hosted": "Alojado en",
+    "rights": " Todos los derechos reservados. Los izquierdos también."
   }
 }
