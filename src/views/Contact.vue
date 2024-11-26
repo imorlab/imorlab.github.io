@@ -1,6 +1,8 @@
 <template>
   <div class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8">
     <div class="w-full max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-accent text-center">{{ $t('contact.title') }}</h2>
+      
       <p class="text-gray-500 dark:text-gray-100 mb-8 text-center">
         {{ $t('contact.getInTouch') }}
       </p>
@@ -73,15 +75,10 @@
         </div>
       </div>
     </div>
-
-    <!-- Notificaciones movidas fuera del formulario -->
+  </div>
+    <!-- Notificaciones -->
     <Transition
-      enter-active-class="transform transition duration-300 ease-out"
-      enter-from-class="translate-y-2 opacity-0"
-      enter-to-class="translate-y-0 opacity-100"
-      leave-active-class="transform transition duration-200 ease-in"
-      leave-from-class="translate-y-0 opacity-100"
-      leave-to-class="translate-y-2 opacity-0"
+      name="notification"
     >
       <div 
         v-if="success" 
@@ -89,12 +86,13 @@
       >
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
-          class="h-6 w-6 animate-check" 
+          class="h-6 w-6" 
           fill="none" 
           viewBox="0 0 24 24" 
           stroke="currentColor"
         >
           <path 
+            class="draw-check"
             stroke-linecap="round" 
             stroke-linejoin="round" 
             stroke-width="2" 
@@ -106,12 +104,7 @@
     </Transition>
 
     <Transition
-      enter-active-class="transform transition duration-300 ease-out"
-      enter-from-class="translate-y-2 opacity-0"
-      enter-to-class="translate-y-0 opacity-100"
-      leave-active-class="transform transition duration-200 ease-in"
-      leave-from-class="translate-y-0 opacity-100"
-      leave-to-class="translate-y-2 opacity-0"
+      name="notification"
     >
       <div 
         v-if="error" 
@@ -125,6 +118,7 @@
           stroke="currentColor"
         >
           <path 
+            class="draw-x"
             stroke-linecap="round" 
             stroke-linejoin="round" 
             stroke-width="2" 
@@ -134,7 +128,7 @@
         <span>Error al enviar el mensaje. Inténtalo de nuevo.</span>
       </div>
     </Transition>
-  </div>
+  
 </template>
 
 <script setup>
@@ -193,19 +187,53 @@ const sendEmail = async (e) => {
   @apply bg-accent text-gray-900 font-medium px-6 py-2 rounded-md hover:bg-accent/80 transition-colors;
 }
 
-@keyframes check {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
+.draw-check {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: draw 0.3s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.draw-x {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: draw 0.3s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
-.animate-check {
-  animation: check 0.5s ease-in-out;
+.notification-enter-active {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.notification-leave-active {
+  animation: slideOut 0.2s ease-in forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
 </style>
