@@ -94,27 +94,93 @@
         "backend": {
           "title": "Backend",
           "icon": "heroicons:server",
-          "items": ["PHP", "Laravel", "MySQL"]
+          "items": [
+            {
+              "name": "PHP",
+              "icon": "devicon:php"
+            },
+            {
+              "name": "Laravel",
+              "icon": "devicon:laravel"
+            },
+            {
+              "name": "Livewire",
+              "component": "LivewireIcon"
+            },
+            {
+              "name": "MySQL",
+              "icon": "devicon:mysql"
+            }
+          ]
         },
         "frontend": {
           "title": "Frontend",
           "icon": "heroicons:computer-desktop",
-          "items": ["JavaScript", "HTML5", "CSS3", "Bootstrap", "Tailwind"]
+          "items": [
+            {
+              "name": "JavaScript",
+              "icon": "devicon:javascript"
+            },
+            {
+              "name": "HTML5",
+              "icon": "devicon:html5"
+            },
+            {
+              "name": "CSS3",
+              "icon": "devicon:css3"
+            },
+            {
+              "name": "Bootstrap",
+              "icon": "devicon:bootstrap"
+            },
+            {
+              "name": "Tailwind",
+              "icon": "devicon:tailwindcss"
+            }
+          ]
         },
         "tools": {
           "title": "Tools",
           "icon": "heroicons:wrench-screwdriver",
-          "items": ["Git", "GitHub", "Trello"]
+          "items": [
+            {
+              "name": "Git",
+              "icon": "devicon:git"
+            },
+            {
+              "name": "GitHub",
+              "icon": "mdi:github",
+              "darkIcon": "mdi:github-dark"
+            },
+            {
+              "name": "Trello",
+              "icon": "devicon:trello"
+            }
+          ]
         },
         "design": {
           "title": "Design",
           "icon": "heroicons:paint-brush",
-          "items": ["Adobe XD", "Adobe Photoshop"]
+          "items": [
+            {
+              "name": "Adobe XD",
+              "icon": "simple-icons:adobexd"
+            },
+            {
+              "name": "Photoshop",
+              "icon": "simple-icons:adobephotoshop"
+            }
+          ]
         },
         "cms": {
           "title": "CMS",
           "icon": "heroicons:document-text",
-          "items": ["WordPress"]
+          "items": [
+            {
+              "name": "WordPress",
+              "icon": "devicon:wordpress"
+            }
+          ]
         },
         "soft": {
           "title": "Soft Skills",

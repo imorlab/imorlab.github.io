@@ -12,7 +12,7 @@
           <!-- Profile Section -->
           <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
-              <Icon icon="heroicons:user" class="w-8 h-8 text-accent" />
+              <Icon icon="heroicons:user" class="w-6 h-6 text-accent" />
               {{ $t('about.title') }}
             </h2>
             <div class="space-y-4">
@@ -25,7 +25,7 @@
           <!-- Education Section -->
           <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
-              <Icon icon="heroicons:academic-cap" class="w-8 h-8 text-accent" />
+              <Icon icon="heroicons:academic-cap" class="w-6 h-6 text-accent" />
               {{ $t('about.education.title') }}
             </h2>
             <div class="space-y-6">
@@ -42,20 +42,30 @@
           <!-- Skills Section -->
           <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
-              <Icon icon="heroicons:code-bracket" class="w-8 h-8 text-accent" />
+              <Icon icon="heroicons:code-bracket" class="w-6 h-6 text-accent" />
               {{ $t('about.skills.title') }}
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
               <div v-for="(category, key) in Object.entries(skillsCategories).filter(([k]) => k !== 'soft')" :key="key" 
                 class="bg-primary/5 rounded-lg p-4 hover:bg-primary/70 transition-all duration-300">
                 <h3 class="font-semibold text-accent flex items-center gap-2 mb-3">
-                  <Icon :icon="category[1].icon" class="w-5 h-5" />
+                  <Icon :icon="category[1].icon" class="w-6 h-6" />
                   {{ category[1].title }}
                 </h3>
-                <div class="flex flex-wrap gap-2">
+                <div class="gap-2">
                   <span v-for="(item, i) in category[1].items" :key="i" 
-                    class="px-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-500 hover:bg-primary/700 transition-colors duration-300 cursor-default">
-                    {{ item }}
+                    class="ps-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-500 dark:text-gray-300 hover:bg-primary/700 transition-colors duration-300 cursor-default flex items-center gap-2">
+                    <component 
+                      v-if="item.component"
+                      :is="components.LivewireIcon"
+                      class="w-6 h-6"
+                    />
+                    <Icon 
+                      v-else
+                      :icon="isDark && item.darkIcon ? item.darkIcon : item.icon" 
+                      class="w-6 h-6"
+                    />
+                    {{ item.name }}
                   </span>
                 </div>
               </div>
@@ -64,12 +74,12 @@
             <div v-if="skillsCategories.soft" class="mt-6">
               <div class="bg-primary/5 rounded-lg p-4 hover:bg-primary/70 transition-all duration-300">
                 <h3 class="font-semibold text-accent flex items-center gap-2 mb-3">
-                  <Icon :icon="skillsCategories.soft.icon" class="w-5 h-5" />
+                  <Icon :icon="skillsCategories.soft.icon" class="w-6 h-6" />
                   {{ skillsCategories.soft.title }}
                 </h3>
                 <div class="flex flex-wrap gap-2">
                   <span v-for="(item, i) in skillsCategories.soft.items" :key="i" 
-                    class="px-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-500 hover:bg-primary/700 transition-colors duration-300 cursor-default">
+                    class="px-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-500 dark:text-gray-300 hover:bg-primary/700 transition-colors duration-300 cursor-default">
                     {{ item }}
                   </span>
                 </div>
@@ -111,7 +121,7 @@
           <!-- Professional Experience -->
           <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
-              <Icon icon="heroicons:briefcase" class="w-8 h-8 text-accent" />
+              <Icon icon="heroicons:briefcase" class="w-6 h-6 text-accent" />
               {{ $t('about.experience.title') }}
             </h2>
             <div class="space-y-8">
@@ -142,7 +152,7 @@
           <!-- GitHub Stats -->
           <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-8 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
             <h2 class="text-2xl text-gray-500 dark:text-gray-100 font-semibold mb-6 flex items-center gap-3">
-              <Icon icon="heroicons:chart-bar" class="w-8 h-8 text-accent" />
+              <Icon icon="heroicons:chart-bar" class="w-6 h-6 text-accent" />
               GitHub
             </h2>
             <div class="flex justify-center">
@@ -162,9 +172,15 @@
 <script setup>
 import { Icon } from '@iconify/vue'
 import { useI18n } from 'vue-i18n'
-import { computed, onMounted } from 'vue'
+import LivewireIcon from '../components/icons/LivewireIcon.vue'
+import { computed, onMounted, markRaw } from 'vue'
 
 const { t, locale, messages } = useI18n()
+
+// Registramos el componente LivewireIcon para uso dinámico
+const components = {
+  LivewireIcon: markRaw(LivewireIcon)
+}
 
 const educationItems = computed(() => {
   return messages.value[locale.value].about.education.items || []
@@ -176,6 +192,10 @@ const skillsCategories = computed(() => {
 
 const experiencePositions = computed(() => {
   return messages.value[locale.value].about.experience.positions || []
+})
+
+const isDark = computed(() => {
+  return document.documentElement.classList.contains('dark')
 })
 
 onMounted(() => {
