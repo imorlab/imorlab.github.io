@@ -2,8 +2,8 @@
   <div class="min-h-[calc(100vh-6rem)] pb-20 flex flex-col items-center justify-center px-4">
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-accent mb-4">{{ $t('projects.title') }}</h2>
-      <p class="text-xl text-gray-400 mb-2">{{ $t('projects.experience') }}</p>
-      <p class="text-lg text-gray-400">{{ $t('projects.description') }}</p>
+      <p class="text-xl text-gray-500 dark:text-gray-200 mb-2">{{ $t('projects.experience') }}</p>
+      <p class="text-lg text-gray-500 dark:text-gray-200">{{ $t('projects.description') }}</p>
     </div>
 
     <!-- MacBook Pro Container -->
