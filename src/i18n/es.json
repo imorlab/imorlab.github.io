@@ -89,7 +89,7 @@
       ]
     },
     "github": {
-      "contributions": "Contribuciones en el último año"
+      "contributions": "Contribuciones último año"
     },
     "skills": {
       "title": "Habilidades",
@@ -181,7 +181,7 @@
           "items": [
             {
               "name": "WordPress",
-              "icon": "devicon:wordpress"
+              "icon": "mdi:wordpress"
             }
           ]
         },

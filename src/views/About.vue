@@ -65,7 +65,8 @@
                       :icon="isDark.value && item.darkIcon ? item.darkIcon : item.icon" 
                       :class="[
                         'w-6 h-6',
-                        isDark.value && item.name === 'GitHub' ? 'text-white' : ''
+                        isDark.value && item.name === 'GitHub' ? 'text-white' : '',
+                        isDark.value && item.name === 'WordPress' ? 'text-white' : '',
                       ]"
                     />
                     {{ item.name }}
@@ -179,14 +180,14 @@
               </div>
               <div class="flex justify-center bg-primary/5 rounded-lg border border-accent p-4">
                 <img 
-                  :src="'https://github-readme-stats.vercel.app/api/top-langs/?username=imorlab&layout=compact&theme=dark&hide_border=true&title_color=64ffda&text_color=ffffff&bg_color=ffffff00&include_all_commits=true&count_private=true&hide=others'" 
+                  :src="githubStatsUrl" 
                   alt="GitHub Languages Stats" 
                   class="rounded-lg max-w-full"
                 />
               </div>
               <div class="flex justify-center bg-primary/5 rounded-lg border border-accent p-4">
                 <img 
-                  :src="'https://github-readme-streak-stats.herokuapp.com?user=imorlab&theme=dark&hide_border=true&background=ffffff00&ring=64ffda&fire=64ffda&currStreakLabel=64ffda'" 
+                  :src="streakStatsUrl" 
                   alt="GitHub Streak Stats" 
                   class="rounded-lg max-w-full"
                 />
@@ -230,6 +231,18 @@ const { isDark } = useTheme()
 
 const chartUrl = computed(() => {
   return 'https://ghchart.rshah.org/imorlab'
+})
+
+const accentColor = computed(() => {
+  return isDark.value ? '64ffda' : '0891b2'
+})
+
+const githubStatsUrl = computed(() => {
+  return `https://github-readme-stats.vercel.app/api/top-langs/?username=imorlab&layout=compact&theme=dark&hide_border=true&title_color=${accentColor.value}&text_color=${isDark.value ? 'ffffff' : '6B7280'}&bg_color=ffffff00&include_all_commits=true&count_private=true&hide=others`
+})
+
+const streakStatsUrl = computed(() => {
+  return `https://github-readme-streak-stats.herokuapp.com?user=imorlab&theme=dark&hide_border=true&background=ffffff00&ring=${accentColor.value}&fire=${accentColor.value}&currStreakLabel=${accentColor.value}&stroke=${isDark.value ? 'ffffff' : '6B7280'}&sideLabels=${isDark.value ? 'ffffff' : '6B7280'}&currStreakNum=${isDark.value ? 'ffffff' : '6B7280'}&sideNums=${isDark.value ? 'ffffff' : '6B7280'}&dates=${isDark.value ? 'ffffff' : '6B7280'}`
 })
 
 const stats = ref({
