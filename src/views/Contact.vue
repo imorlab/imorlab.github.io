@@ -1,7 +1,6 @@
 <template>
-  <div class="section-container min-h-screen py-20">
-    <h2 class="text-3xl font-bold mb-8 text-accent text-center">{{ $t('contact.title') }}</h2>
-    <div class="max-w-2xl mx-auto">
+  <div class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div class="w-full max-w-2xl mx-auto">
       <p class="text-gray-500 dark:text-gray-100 mb-8 text-center">
         {{ $t('contact.getInTouch') }}
       </p>
@@ -50,39 +49,6 @@
         >
           {{ loading ? 'Enviando...' : 'Enviar mensaje' }}
         </button>
-
-        <!-- Notificaciones -->
-        <Transition
-          enter-active-class="transform transition duration-300 ease-out"
-          enter-from-class="translate-y-2 opacity-0"
-          enter-to-class="translate-y-0 opacity-100"
-          leave-active-class="transform transition duration-200 ease-in"
-          leave-from-class="translate-y-0 opacity-100"
-          leave-to-class="translate-y-2 opacity-0"
-        >
-          <div v-if="success" class="fixed bottom-8 right-8 flex items-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-check" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>¡Mensaje enviado correctamente!</span>
-          </div>
-        </Transition>
-
-        <Transition
-          enter-active-class="transform transition duration-300 ease-out"
-          enter-from-class="translate-y-2 opacity-0"
-          enter-to-class="translate-y-0 opacity-100"
-          leave-active-class="transform transition duration-200 ease-in"
-          leave-from-class="translate-y-0 opacity-100"
-          leave-to-class="translate-y-2 opacity-0"
-        >
-          <div v-if="error" class="fixed bottom-8 right-8 flex items-center space-x-2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-            <span>Error al enviar el mensaje. Inténtalo de nuevo.</span>
-          </div>
-        </Transition>
       </form>
 
       <div class="mt-12">
@@ -107,6 +73,67 @@
         </div>
       </div>
     </div>
+
+    <!-- Notificaciones movidas fuera del formulario -->
+    <Transition
+      enter-active-class="transform transition duration-300 ease-out"
+      enter-from-class="translate-y-2 opacity-0"
+      enter-to-class="translate-y-0 opacity-100"
+      leave-active-class="transform transition duration-200 ease-in"
+      leave-from-class="translate-y-0 opacity-100"
+      leave-to-class="translate-y-2 opacity-0"
+    >
+      <div 
+        v-if="success" 
+        class="fixed bottom-8 right-8 flex items-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="h-6 w-6 animate-check" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+        <span>¡Mensaje enviado correctamente!</span>
+      </div>
+    </Transition>
+
+    <Transition
+      enter-active-class="transform transition duration-300 ease-out"
+      enter-from-class="translate-y-2 opacity-0"
+      enter-to-class="translate-y-0 opacity-100"
+      leave-active-class="transform transition duration-200 ease-in"
+      leave-from-class="translate-y-0 opacity-100"
+      leave-to-class="translate-y-2 opacity-0"
+    >
+      <div 
+        v-if="error" 
+        class="fixed bottom-8 right-8 flex items-center space-x-2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="h-6 w-6" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+        <span>Error al enviar el mensaje. Inténtalo de nuevo.</span>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -120,6 +147,7 @@ const error = ref(false)
 let timeoutId = null
 
 const hideNotification = () => {
+  if (timeoutId) clearTimeout(timeoutId)
   timeoutId = setTimeout(() => {
     success.value = false
     error.value = false
@@ -144,8 +172,8 @@ const sendEmail = async (e) => {
       '1z-391vu4fYG3oFlt'
     )
     success.value = true
-    hideNotification()
     e.target.reset()
+    hideNotification()
   } catch (err) {
     console.error('Error:', err)
     error.value = true
