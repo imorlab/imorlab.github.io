@@ -2,7 +2,7 @@
   <div class="relative">
     <button
       @click="isOpen = !isOpen"
-      class="flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-accent bg-transparent"
+      class="flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-accent bg-transparent border-0 hover:border-0 focus:outline-none focus:ring-2 focus:ring-accent/20"
       :class="[
         isDark
           ? 'text-gray-300'
@@ -31,7 +31,7 @@
         v-for="locale in availableLocales"
         :key="locale"
         @click="changeLocale(locale)"
-        class="block w-full px-4 py-2 text-sm text-left transition-colors duration-200 hover:text-accent bg-transparent"
+        class="block w-full px-4 py-2 text-sm text-left transition-colors duration-200 hover:text-accent bg-transparent border-0 hover:border-0"
         :class="[
           isDark
             ? 'text-gray-300 hover:bg-gray-800/50'

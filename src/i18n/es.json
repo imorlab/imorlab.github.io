@@ -57,7 +57,11 @@
         "years": "3+",
         "projects": "20+",
         "technologies": "15+",
-        "development": "Web"
+        "development": "Web",
+        "years_label": "Años",
+        "projects_label": "Proyectos",
+        "technologies_label": "Tecnologías",
+        "development_label": "Desarrollo"
       },
       "positions": [
         {
@@ -85,7 +89,7 @@
       ]
     },
     "skills": {
-      "title": "Tecnologías y Habilidades",
+      "title": "Habilidades",
       "categories": {
         "backend": {
           "title": "Backend",

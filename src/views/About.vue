@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-[calc(100vh-4rem)]">
-    <div class="section-container py-20 relative z-10">
+  <div class="min-h-[calc(100vh-4rem)] py-16">
+    <div class="max-w-7xl mx-auto px-0 lg:px-8 relative z-10">
       <h1 class="text-4xl text-gray-500 dark:text-gray-100 font-bold text-center mb-16">
         {{ $t('about.title_first') }} <span class="text-accent">{{ $t('about.title_second') }}</span>
       </h1>
@@ -45,15 +45,30 @@
               <Icon icon="heroicons:code-bracket" class="w-8 h-8 text-accent" />
               {{ $t('about.skills.title') }}
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div v-for="(category, key) in skillsCategories" :key="key" 
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div v-for="(category, key) in Object.entries(skillsCategories).filter(([k]) => k !== 'soft')" :key="key" 
                 class="bg-primary/5 rounded-lg p-4 hover:bg-primary/70 transition-all duration-300">
                 <h3 class="font-semibold text-accent flex items-center gap-2 mb-3">
-                  <Icon :icon="category.icon" class="w-5 h-5" />
-                  {{ category.title }}
+                  <Icon :icon="category[1].icon" class="w-5 h-5" />
+                  {{ category[1].title }}
                 </h3>
                 <div class="flex flex-wrap gap-2">
-                  <span v-for="(item, i) in category.items" :key="i" 
+                  <span v-for="(item, i) in category[1].items" :key="i" 
+                    class="px-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-500 hover:bg-primary/700 transition-colors duration-300 cursor-default">
+                    {{ item }}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- Soft Skills Section -->
+            <div v-if="skillsCategories.soft" class="mt-6">
+              <div class="bg-primary/5 rounded-lg p-4 hover:bg-primary/70 transition-all duration-300">
+                <h3 class="font-semibold text-accent flex items-center gap-2 mb-3">
+                  <Icon :icon="skillsCategories.soft.icon" class="w-5 h-5" />
+                  {{ skillsCategories.soft.title }}
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span v-for="(item, i) in skillsCategories.soft.items" :key="i" 
                     class="px-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-500 hover:bg-primary/700 transition-colors duration-300 cursor-default">
                     {{ item }}
                   </span>
@@ -76,19 +91,19 @@
             <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.projects') }}</span>
-                <span class="text-sm text-gray-500 mt-2 text-center">Proyectos</span>
+                <span class="text-sm text-gray-500 mt-2 text-center">{{ $t('about.experience.stats.projects_label') }}</span>
               </div>
             </div>
             <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.technologies') }}</span>
-                <span class="text-sm text-gray-500 mt-2 text-center">Tecnologías</span>
+                <span class="text-sm text-gray-500 mt-2 text-center">{{ $t('about.experience.stats.technologies_label') }}</span>
               </div>
             </div>
             <div class="bg-primary/70 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
                 <span class="text-3xl font-bold text-accent">{{ $t('about.experience.stats.development') }}</span>
-                <span class="text-sm text-gray-500 mt-2 text-center">Desarrollo</span>
+                <span class="text-sm text-gray-500 mt-2 text-center">{{ $t('about.experience.stats.development_label') }}</span>
               </div>
             </div>
           </div>
@@ -171,9 +186,3 @@ onMounted(() => {
   console.log('Experience positions:', experiencePositions.value)
 })
 </script>
-
-<style scoped>
-.section-container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-</style>
