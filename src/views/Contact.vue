@@ -8,22 +8,22 @@
       
       <form @submit="sendEmail" class="space-y-6 mb-12">
         <div>
-          <label for="name" class="block text-sm font-medium text-gray-500 dark:text-gray-100 mb-2">Nombre</label>
+          <label for="from_name" class="block text-sm font-medium text-gray-500 dark:text-gray-100 mb-2">Nombre</label>
           <input
             type="text"
-            id="name"
-            name="name"
+            id="from_name"
+            name="from_name"
             class="w-full px-4 py-2 bg-gray-100/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-600 rounded-md focus:outline-none focus:border-accent text-gray-500 dark:text-gray-100"
             required
           />
         </div>
 
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-500 dark:text-gray-100 mb-2">Email</label>
+          <label for="user_email" class="block text-sm font-medium text-gray-500 dark:text-gray-100 mb-2">Email</label>
           <input
             type="email"
-            id="email"
-            name="email"
+            id="user_email"
+            name="user_email"
             class="w-full px-4 py-2 bg-gray-100/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-600 rounded-md focus:outline-none focus:border-accent text-gray-500 dark:text-gray-100"
             required
           />
@@ -39,6 +39,9 @@
             required
           ></textarea>
         </div>
+
+        <!-- Campo oculto para el destinatario -->
+        <input type="hidden" name="to_name" value="Israel" />
 
         <button
           type="submit"
