@@ -41,10 +41,22 @@ const applyTheme = () => {
   const root = document.documentElement
   if (isDark.value) {
     root.classList.add('dark')
+    updateThemeColor('#64ffda')
   } else {
     root.classList.remove('dark')
+    updateThemeColor('#0891b2')
   }
   localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+}
+
+const updateThemeColor = (color) => {
+  let metaThemeColor = document.querySelector('meta[name="theme-color"]')
+  if (!metaThemeColor) {
+    metaThemeColor = document.createElement('meta')
+    metaThemeColor.name = 'theme-color'
+    document.head.appendChild(metaThemeColor)
+  }
+  metaThemeColor.setAttribute('content', color)
 }
 
 onMounted(() => {
