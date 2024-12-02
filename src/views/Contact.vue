@@ -159,18 +159,21 @@ const sendEmail = async (e) => {
   error.value = false
   success.value = false
 
+  const userEmail = e.target.user_email.value
+  const userName = e.target.from_name.value
+  const userMessage = e.target.message.value
+
   // Preparar plantilla de respuesta automática
   const autoReplyTemplate = {
-    reply_to: 'i13morenolabrador@gmail.com',
-    to_email: e.target.user_email.value,
-    to_name: e.target.from_name.value,
-    from_name: 'Israel Moreno',
-    message: e.target.message.value,
-    user_email: e.target.user_email.value // Añadido para mantener consistencia con la plantilla
+    to_name: userName,           // Nombre del usuario que contacta
+    to_email: userEmail,         // Email del usuario que contacta
+    from_name: 'Israel Moreno',  // Tu nombre
+    message: userMessage,        // El mensaje que te envió el usuario
+    reply_to: 'i13morenolabrador@gmail.com'  // Tu email para que puedan responderte
   }
 
   try {
-    // Enviar el correo original
+    // Enviar el correo original (a ti)
     await emailjs.sendForm(
       'service_bs109yc',
       'template_sg3d8xe',
@@ -178,7 +181,7 @@ const sendEmail = async (e) => {
       '1z-391vu4fYG3oFlt'
     )
 
-    // Enviar respuesta automática
+    // Enviar respuesta automática (al usuario)
     await emailjs.send(
       'service_bs109yc',
       'template_tp9vp6d',
@@ -190,7 +193,6 @@ const sendEmail = async (e) => {
     e.target.reset()
     hideNotification()
   } catch (err) {
-    console.error('Error:', err)
     error.value = true
     hideNotification()
   } finally {
