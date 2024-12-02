@@ -5,7 +5,6 @@ export function useTheme() {
 
   const updateTheme = () => {
     isDark.value = document.documentElement.classList.contains('dark')
-    console.log('Theme updated:', isDark.value ? 'dark' : 'light')
   }
 
   onMounted(() => {

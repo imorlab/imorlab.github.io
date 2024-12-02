@@ -159,33 +159,12 @@ const sendEmail = async (e) => {
   error.value = false
   success.value = false
 
-  const userEmail = e.target.user_email.value
-  const userName = e.target.from_name.value
-  const userMessage = e.target.message.value
-
-  // Preparar plantilla de respuesta automática
-  const autoReplyTemplate = {
-    to_name: userName,           // Nombre del usuario que contacta
-    to_email: userEmail,         // Email del usuario que contacta
-    from_name: 'Israel Moreno',  // Tu nombre
-    message: userMessage,        // El mensaje que te envió el usuario
-    reply_to: 'i13morenolabrador@gmail.com'  // Tu email para que puedan responderte
-  }
-
   try {
-    // Enviar el correo original (a ti)
+    // Enviar el correo
     await emailjs.sendForm(
       'service_bs109yc',
       'template_sg3d8xe',
       e.target,
-      '1z-391vu4fYG3oFlt'
-    )
-
-    // Enviar respuesta automática (al usuario)
-    await emailjs.send(
-      'service_bs109yc',
-      'template_tp9vp6d',
-      autoReplyTemplate,
       '1z-391vu4fYG3oFlt'
     )
 
