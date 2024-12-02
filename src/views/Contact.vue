@@ -159,13 +159,31 @@ const sendEmail = async (e) => {
   error.value = false
   success.value = false
 
+  // Preparar plantilla de respuesta automática
+  const autoReplyTemplate = {
+    to_email: e.target.user_email.value,
+    to_name: e.target.from_name.value,
+    from_name: 'Israel Moreno',
+    message: e.target.message.value
+  }
+
   try {
+    // Enviar el correo original
     await emailjs.sendForm(
       'service_bs109yc',
       'template_sg3d8xe',
       e.target,
       '1z-391vu4fYG3oFlt'
     )
+
+    // Enviar respuesta automática
+    await emailjs.send(
+      'service_bs109yc',
+      'template_tp9vp6d',
+      autoReplyTemplate,
+      '1z-391vu4fYG3oFlt'
+    )
+
     success.value = true
     e.target.reset()
     hideNotification()
