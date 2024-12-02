@@ -161,10 +161,12 @@ const sendEmail = async (e) => {
 
   // Preparar plantilla de respuesta automática
   const autoReplyTemplate = {
+    reply_to: 'i13morenolabrador@gmail.com',
     to_email: e.target.user_email.value,
     to_name: e.target.from_name.value,
     from_name: 'Israel Moreno',
-    message: e.target.message.value
+    message: e.target.message.value,
+    user_email: e.target.user_email.value // Añadido para mantener consistencia con la plantilla
   }
 
   try {
