@@ -160,25 +160,10 @@ const sendEmail = async (e) => {
   success.value = false
 
   try {
-    // Enviar el correo original
     await emailjs.sendForm(
       'service_bs109yc',
       'template_sg3d8xe',
       e.target,
-      '1z-391vu4fYG3oFlt'
-    )
-
-    // Preparar y enviar la auto-respuesta
-    const autoReplyData = {
-      from_name: e.target.from_name.value,
-      user_email: e.target.user_email.value,
-      message: e.target.message.value
-    }
-
-    await emailjs.send(
-      'service_bs109yc',
-      'template_tp9vp6d',
-      autoReplyData,
       '1z-391vu4fYG3oFlt'
     )
 
