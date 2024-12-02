@@ -159,12 +159,19 @@ const sendEmail = async (e) => {
   error.value = false
   success.value = false
 
+  const formData = {
+    from_name: e.target.from_name.value,
+    user_email: e.target.user_email.value,
+    message: e.target.message.value,
+    to_name: 'Israel',
+    reply_to: e.target.user_email.value
+  }
+
   try {
-    // Enviar el correo
-    await emailjs.sendForm(
+    await emailjs.send(
       'service_bs109yc',
       'template_sg3d8xe',
-      e.target,
+      formData,
       '1z-391vu4fYG3oFlt'
     )
 
