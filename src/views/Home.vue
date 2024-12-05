@@ -15,7 +15,10 @@
               <p class="text-xl sm:text-2xl text-gray-500 dark:text-gray-100 mb-8">{{ $t('home.role') }}</p>
             </div>
             <div ref="descriptionRef" class="overflow-hidden">
-              <p class="text-lg text-gray-500 dark:text-gray-300 mb-12">{{ $t('home.description') }}</p>
+              <p class="text-lg text-gray-500 dark:text-gray-300 mb-12">
+                <span>{{ fullText }}</span>
+                <span class="inline-block w-0.5 h-5 bg-accent animate-cursor-blink ml-0.5 -mb-0.5"></span>
+              </p>
             </div>
             <div ref="buttonsRef" class="flex flex-wrap gap-4 justify-center md:justify-start opacity-0">
               <RouterLink
@@ -70,67 +73,136 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { Icon } from '@iconify/vue'
+import { ref, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { Icon } from '@iconify/vue'
 import gsap from 'gsap'
 
-const { t } = useI18n()
-const isDark = ref(false)
+const { t, locale } = useI18n()
 
-// Referencias para animaciones
 const greetingRef = ref(null)
 const roleRef = ref(null)
 const descriptionRef = ref(null)
 const buttonsRef = ref(null)
 
+const fullText = ref('')
+const phrases = {
+  es: {
+    base: 'Me apasiona el universo de',
+    variations: [
+      ' la programación web',
+      'l diseño web',
+      'l desarrollo web',
+      ' la tecnología en general'
+    ]
+  },
+  en: {
+    base: 'I love the universe of',
+    variations: [
+      ' web programming',
+      ' web design',
+      ' web development',
+      ' technology in general'
+    ]
+  }
+}
+let currentPhraseIndex = 0
+let isDeleting = false
+let typeSpeed = 100
+let pauseEnd = 2000
+let isInitialText = true
+
+const getCurrentTexts = () => {
+  return phrases[locale.value] || phrases.en
+}
+
+const typeNextText = () => {
+  const currentTexts = getCurrentTexts()
+  const currentPhrase = isInitialText ? currentTexts.base : currentTexts.variations[currentPhraseIndex]
+  
+  if (isDeleting && !isInitialText) {
+    if (fullText.value === currentTexts.base) {
+      isDeleting = false
+      currentPhraseIndex = (currentPhraseIndex + 1) % currentTexts.variations.length
+      setTimeout(typeNextText, pauseEnd)
+      return
+    }
+    fullText.value = fullText.value.slice(0, -1)
+  } else {
+    const targetText = isInitialText ? currentPhrase : currentTexts.base + currentPhrase
+    if (fullText.value.length < targetText.length) {
+      fullText.value = targetText.slice(0, fullText.value.length + 1)
+    }
+    
+    if (isInitialText && fullText.value === currentTexts.base) {
+      isInitialText = false
+      setTimeout(typeNextText, typeSpeed)
+      return
+    }
+    
+    if (!isInitialText && fullText.value === currentTexts.base + currentPhrase) {
+      isDeleting = true
+      setTimeout(typeNextText, pauseEnd)
+      return
+    }
+  }
+
+  let nextSpeed = typeSpeed
+  if (isDeleting) nextSpeed = typeSpeed / 2
+
+  setTimeout(typeNextText, nextSpeed)
+}
+
+// Reiniciar animación cuando cambie el idioma
+watch(locale, () => {
+  fullText.value = ''
+  isInitialText = true
+  isDeleting = false
+  currentPhraseIndex = 0
+  setTimeout(typeNextText, 500)
+})
+
 onMounted(() => {
-  // Initial theme check
-  isDark.value = document.documentElement.classList.contains('dark')
+  setTimeout(typeNextText, 1000)
 
-  // Watch for theme changes
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.attributeName === 'class') {
-        isDark.value = document.documentElement.classList.contains('dark')
-      }
-    })
-  })
-
-  observer.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['class']
-  })
-
-  // Animaciones de entrada
-  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-
-  tl.from(greetingRef.value.children[0], {
-    y: '100%',
+  const tl = gsap.timeline()
+  tl.from(greetingRef.value, {
+    y: 100,
+    opacity: 0,
     duration: 1,
-    opacity: 0
+    ease: 'power4.out'
   })
-  .from(roleRef.value.children[0], {
-    y: 30,
-    duration: 0.8,
-    opacity: 0
+  .from(roleRef.value, {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: 'power4.out'
   }, '-=0.5')
-  .from(descriptionRef.value.children[0], {
-    y: 30,
-    duration: 0.8,
-    opacity: 0
+  .from(descriptionRef.value, {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: 'power4.out'
   }, '-=0.5')
   .to(buttonsRef.value, {
     opacity: 1,
-    duration: 0.8,
-    y: 0,
-    stagger: 0.2
-  }, '-=0.3')
+    duration: 1,
+    ease: 'power4.out'
+  }, '-=0.5')
 })
 </script>
 
-<style>
+<style scoped>
 .overflow-hidden {
   overflow: hidden;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: cursor-blink 1s infinite;
 }
 </style>
