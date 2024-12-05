@@ -4,21 +4,54 @@
     <div class="fixed inset-0 w-full h-full overflow-hidden z-0">
       <!-- Animated Background Orbs -->
       <div class="absolute inset-0">
-        <!-- Primary Orbs -->
-        <div class="absolute -right-1/3 -top-1/3 w-[100vw] h-[100vh] rounded-full blur-[60px]"
-             :class="isDark ? 'bg-accent/15 animate-float' : 'bg-accent/10 animate-float'"></div>
-        <div class="absolute -left-1/3 -bottom-1/3 w-[100vw] h-[100vh] rounded-full blur-[60px]"
-             :class="isDark ? 'bg-accent/15 animate-float-delayed' : 'bg-accent/10 animate-float-delayed'"></div>
+        <!-- Primary Dark Orbs -->
+        <div class="absolute -right-1/4 top-[10%] w-[60vw] h-[60vh] rounded-full blur-[120px] transition-all duration-200 ease-out will-change-transform animate-float"
+             :style="{ 
+               transform: `translate(${mouseX * -150}px, ${mouseY * -150}px) scale(${1 + Math.abs(mouseSpeed.value)})`,
+               opacity: isDark ? '0.25' : '0.30'
+             }"
+             :class="isDark ? 'bg-accent/25' : 'bg-accent/30'"></div>
+        <div class="absolute -left-1/4 -bottom-1/4 w-[60vw] h-[60vh] rounded-full blur-[120px] transition-all duration-200 ease-out will-change-transform animate-float-delayed"
+             :style="{ 
+               transform: `translate(${mouseX * 150}px, ${mouseY * 150}px) scale(${1 + Math.abs(mouseSpeed.value)})`,
+               opacity: isDark ? '0.25' : '0.30'
+             }"
+             :class="isDark ? 'bg-accent/25' : 'bg-accent/30'"></div>
         
-        <!-- Secondary Orbs -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vh] rounded-full blur-[80px]"
-             :class="isDark ? 'bg-accent/12 animate-pulse' : 'bg-accent/8 animate-pulse'"></div>
+        <!-- Dramatic Center Pulse -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] rounded-full blur-[140px] mix-blend-multiply transition-all duration-200 ease-out will-change-transform animate-pulse"
+             :style="{ 
+               transform: `translate(${mouseX * -200}px, ${mouseY * -200}px) scale(${1.2 + Math.abs(mouseSpeed.value)})`,
+               opacity: isDark ? 0.3 : 0.30
+             }"
+             :class="isDark ? 'bg-accent/30' : 'bg-accent/30'"></div>
         
-        <!-- Additional Floating Elements -->
-        <div class="absolute top-1/4 left-1/4 w-[80vw] h-[80vh] rounded-full blur-[50px]"
-             :class="isDark ? 'bg-accent/20 animate-float-slow' : 'bg-accent/12 animate-float-slow'"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-[60vw] h-[60vh] rounded-full blur-[50px]"
-             :class="isDark ? 'bg-accent/20 animate-float-slower' : 'bg-accent/12 animate-float-slower'"></div>
+        <!-- Dynamic Shadow Elements -->
+        <div class="absolute top-1/4 left-1/4 w-[40vw] h-[40vh] rounded-full blur-[100px] mix-blend-multiply transition-all duration-200 ease-out will-change-transform animate-float-slow"
+             :style="{ 
+               transform: `translate(${mouseX * 250}px, ${mouseY * 250}px) rotate(${mouseX * 30}deg)`,
+               opacity: isDark ? 0.35 : 0.30
+             }"
+             :class="isDark ? 'bg-accent/35' : 'bg-accent/30'"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vh] rounded-full blur-[100px] mix-blend-multiply transition-all duration-200 ease-out will-change-transform animate-float-slower"
+             :style="{ 
+               transform: `translate(${mouseX * -250}px, ${mouseY * -250}px) rotate(${mouseX * -30}deg)`,
+               opacity: isDark ? 0.35 : 0.30
+             }"
+             :class="isDark ? 'bg-accent/35' : 'bg-accent/30'"></div>
+        
+        <!-- Cursor Follower -->
+        <div class="absolute w-[60px] h-[60px] rounded-full blur-[30px] transition-all duration-75 pointer-events-none"
+             :style="{ 
+               transform: `translate(${lastMouseX.value}px, ${lastMouseY.value}px) translate(-50%, -50%)`,
+               boxShadow: `0 0 60px 30px ${isDark ? 'rgb(var(--color-accent) / 0.2)' : 'rgb(var(--color-accent) / 0.1)'}`,
+               opacity: Math.min(mouseSpeed.value + 0.2, 0.8)
+             }">
+        </div>
+        
+        <!-- Dark Mode Intensity Layer -->
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent transition-opacity duration-1000"
+             :class="isDark ? 'opacity-40' : 'opacity-0'"></div>
       </div>
     </div>
 
@@ -126,7 +159,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { RouterLink, RouterView } from 'vue-router'
 import { Icon } from '@iconify/vue'
@@ -134,9 +167,42 @@ import LanguageSwitcher from './components/LanguageSwitcher.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
 
 const route = useRoute()
-const currentRoute = computed(() => route.path)
+const isDark = ref(true)
+const isMenuOpen = ref(false)
 
-const isDark = ref(document.documentElement.classList.contains('dark'))
+const mouseX = ref(0)
+const mouseY = ref(0)
+const mouseSpeed = ref(0)
+const lastMouseX = ref(0)
+const lastMouseY = ref(0)
+
+const handleMouseMove = (e) => {
+  // Calcular la velocidad del ratón
+  const dx = e.clientX - lastMouseX.value
+  const dy = e.clientY - lastMouseY.value
+  mouseSpeed.value = Math.min(Math.sqrt(dx * dx + dy * dy) / 100, 1)
+  
+  // Actualizar posición
+  lastMouseX.value = e.clientX
+  lastMouseY.value = e.clientY
+  
+  // Normalizar la posición del ratón entre -1 y 1
+  mouseX.value = (e.clientX / window.innerWidth) * 2 - 1
+  mouseY.value = (e.clientY / window.innerHeight) * 2 - 1
+}
+
+// Calcular el factor de movimiento basado en la velocidad del ratón
+const movementFactor = computed(() => 1 + mouseSpeed.value * 2)
+
+onMounted(() => {
+  window.addEventListener('mousemove', handleMouseMove)
+  lastMouseX.value = window.innerWidth / 2
+  lastMouseY.value = window.innerHeight / 2
+})
+
+onUnmounted(() => {
+  window.removeEventListener('mousemove', handleMouseMove)
+})
 
 const navItems = [
   { route: '/', label: 'nav.home' },
@@ -162,8 +228,6 @@ const afterEnter = (el) => {
   el.style.transform = 'translateY(0)'
   el.style.transition = 'all 0.3s ease-in-out'
 }
-
-const isMenuOpen = ref(false)
 
 const isPulsing = ref(false)
 
@@ -194,5 +258,55 @@ const pulseHeart = () => {
 
 .heart-pulse {
   animation: heartbeat 1s ease-in-out;
+}
+
+.animate-float {
+  animation: float 10s infinite ease-in-out;
+}
+
+.animate-float-delayed {
+  animation: float-diagonal 10s infinite ease-in-out 2s;
+}
+
+.animate-float-slow {
+  animation: float-rotate 20s infinite ease-in-out;
+}
+
+.animate-float-slower {
+  animation: float-rotate-reverse 20s infinite ease-in-out 4s;
+}
+
+.animate-pulse {
+  animation: pulse 5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes float-diagonal {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(20px, 20px) rotate(-3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes float-rotate {
+  0% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-20px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+@keyframes float-rotate-reverse {
+  0% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(-5deg) translateY(20px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.2) rotate(2deg); opacity: 0.8; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
 </style>
