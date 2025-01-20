@@ -19,6 +19,15 @@
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.intro') }}</p>
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.description') }}</p>
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.mission') }}</p>
+              <div class="mt-6">
+                <button
+                  @click="generateAndDownloadCV"
+                  class="inline-flex items-center px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors duration-300 shadow-lg hover:shadow-accent/20"
+                >
+                  <Icon icon="heroicons:document-arrow-down" class="w-5 h-5 mr-2" />
+                  {{ $t('about.download_cv') }}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -207,6 +216,7 @@ import LivewireIcon from '../components/icons/LivewireIcon.vue'
 import { computed, onMounted, markRaw, ref } from 'vue'
 import { useTheme } from '../composables/theme'
 import NumberFlow from '@number-flow/vue'
+import { generateCV } from '../components/CvGenerator'
 
 const { t, locale, messages } = useI18n()
 
@@ -251,6 +261,35 @@ const stats = ref({
   technologies: 0,
   development: 0
 })
+
+const generateAndDownloadCV = async () => {
+  try {
+    // Recopilar datos para el CV
+    const cvData = {
+      education: {
+        items: educationItems.value
+      },
+      skills: {
+        categories: skillsCategories.value,
+        soft: {
+          title: messages.value[locale.value].about.skills.categories.soft.title,
+          items: messages.value[locale.value].about.skills.categories.soft.items
+        }
+      },
+      experience: {
+        positions: experiencePositions.value
+      }
+    }
+
+    // Generar el PDF
+    const pdf = await generateCV(cvData, { t })
+    
+    // Descargar el PDF
+    pdf.save(`israel-moreno-cv-${locale.value}.pdf`)
+  } catch (error) {
+    console.error('Error generating CV:', error)
+  }
+}
 
 onMounted(() => {
   // Simular un pequeño retraso para la animación

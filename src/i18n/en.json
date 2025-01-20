@@ -33,6 +33,7 @@
     "intro": "Hello! I'm Israel Moreno, a full stack web developer based in Spain.",
     "description": "I'm a web developer with over 3 years of experience in the industry, specializing in Laravel (PHP) development. I've participated in various projects, including reservation management systems, OpenAI integration, and payment gateway implementations. My expertise spans PHP, HTML, JavaScript, and CSS.",
     "mission": "My focus is on developing innovative and efficient solutions, optimizing processes, and adapting to each project's needs. I consider myself organized, motivated, and committed to teamwork and continuous improvement.",
+    "download_cv": "Download CV",
     "education": {
       "title": "Education",
       "items": [
