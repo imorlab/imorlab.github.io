@@ -13,6 +13,7 @@ Portfolio web personal desarrollado con Vue.js 3 y Tailwind CSS, mostrando mis h
 - Tema oscuro con acentos personalizados
 - Animaciones y transiciones suaves
 - Optimizado para SEO
+- Generación automática de CV en PDF
 - Construido con las últimas tecnologías web
 
 ## Tecnologías Utilizadas
@@ -23,6 +24,7 @@ Portfolio web personal desarrollado con Vue.js 3 y Tailwind CSS, mostrando mis h
 - **Icons:** Heroicons & Iconify
 - **Router:** Vue Router 4
 - **Animations:** CSS Transitions & Transforms
+- **PDF Generation:** jsPDF & html2canvas
 
 ## Secciones Principales
 
@@ -31,6 +33,25 @@ Portfolio web personal desarrollado con Vue.js 3 y Tailwind CSS, mostrando mis h
 - **Habilidades:** Competencias técnicas y blandas
 - **Proyectos:** Portfolio de trabajos destacados
 - **Contacto:** Formulario de contacto y redes sociales
+
+## Generación Automática de CV
+
+El portfolio incluye una función de generación automática de CV en PDF con las siguientes características:
+
+- Diseño profesional y moderno
+- Tema oscuro personalizado
+- Información actualizada desde el sistema de i18n
+- Generación dinámica de secciones:
+  - Información personal
+  - Experiencia laboral
+  - Educación
+  - Habilidades técnicas
+  - Idiomas
+
+Para generar el CV, simplemente:
+1. Navega a la sección "Sobre Mí"
+2. Haz clic en el botón "Descargar CV"
+3. El sistema generará automáticamente un PDF con tu información actualizada
 
 ## Instalación y Uso
 
