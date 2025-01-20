@@ -71,6 +71,13 @@
           "period": "Mayo 2023 - Actualidad",
           "location": "Sevilla, Andalucía, España (Híbrido)",
           "type": "Jornada completa",
+          "responsibilities": [
+            "Desarrollo de aplicaciones web con Laravel (PHP)",
+            "Implementación de sistema de gestión de reservas",
+            "Integración con la API de OpenAI para funcionalidades de IA",
+            "Implementación de pasarelas de pago",
+            "Desarrollo frontend utilizando Laravel Livewire y Vue.js"
+          ],
           "skills": ["PHP", "Laravel", "JavaScript", "MySQL", "Git", "API Integration"]
         },
         {

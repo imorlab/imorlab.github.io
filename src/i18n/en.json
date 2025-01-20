@@ -71,7 +71,14 @@
           "period": "May 2023 - Present",
           "location": "Seville, Andalusia, Spain (Hybrid)",
           "type": "Full-time",
-          "skills": ["PHP", "Laravel", "JavaScript", "MySQL", "Git", "API Integration"]
+          "skills": ["PHP", "Laravel", "JavaScript", "MySQL", "Git", "API Integration"],
+          "responsibilities": [
+            "Web application development with Laravel (PHP)",
+            "Implementation of reservation management system",
+            "Integration with OpenAI API for AI functionalities",
+            "Implementation of payment gateways",
+            "Frontend development using Laravel Livewire and Vue.js"
+          ]
         },
         {
           "role": "Web Developer",

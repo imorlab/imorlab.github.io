@@ -10,11 +10,21 @@ export const generateCV = async (data, { t: i18n }) => {
   const contentWidth = pageWidth - (margin * 2);
   let yPos = margin;
 
+  // Función para aplicar el fondo a la página actual
+  const applyBackground = () => {
+    pdf.setFillColor(45, 45, 45); // Color gris oscuro
+    pdf.rect(0, 0, pageWidth, pageHeight, 'F');
+  };
+
+  // Aplicar fondo a la primera página
+  applyBackground();
+
   // Colores
   const colors = {
-    primary: [8, 145, 178], // El color accent de tu tema
-    text: [75, 85, 99],     // Un gris oscuro para el texto principal
-    subtext: [156, 163, 175] // Un gris más claro para texto secundario
+    primary: [93, 233, 200],  // Azul más brillante para mejor contraste
+    // primary: [29, 185, 225],  // Azul más brillante para mejor contraste
+    text: [255, 255, 255],    // Texto blanco para máximo contraste
+    subtext: [200, 200, 200]  // Gris claro para texto secundario
   };
 
   // Configuración de estilos
@@ -57,6 +67,7 @@ export const generateCV = async (data, { t: i18n }) => {
       // Verificar si necesitamos una nueva página
       if (yPos > pageHeight - margin) {
         pdf.addPage();
+        applyBackground(); // Aplicar fondo a la nueva página
         yPos = margin;
       }
       pdf.text(line, x, yPos);
@@ -187,7 +198,7 @@ export const generateCV = async (data, { t: i18n }) => {
   const startY = yPos;
   
   // Imagen a la derecha
-  const imageUrl = new URL('/src/assets/images/perfil00.png', import.meta.url).href;
+  const imageUrl = new URL('/src/assets/images/perfil-dark.png', import.meta.url).href;
   const imageWidth = 40; // Ancho fijo en mm
   const imageHeight = 50; // Alto ajustado para mantener la proporción
   const imageX = pageWidth - margin - imageWidth;
