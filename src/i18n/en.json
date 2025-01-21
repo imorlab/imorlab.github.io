@@ -73,11 +73,14 @@
           "type": "Full-time",
           "skills": ["PHP", "Laravel", "JavaScript", "MySQL", "Git", "API Integration"],
           "responsibilities": [
-            "Web application development with Laravel (PHP)",
-            "Implementation of reservation management system",
-            "Integration with OpenAI API for AI functionalities",
-            "Implementation of payment gateways",
-            "Frontend development using Laravel Livewire and Vue.js"
+            "Web Development: Creation and maintenance of scalable, high-performance platforms with Laravel (PHP).",
+            "Reservation Management: Design of intuitive systems to optimize user experience.",
+            "Advanced Integrations: Implementation of OpenAI API for customization and automation.",
+            "Payment Gateways: Secure configuration and integration for global transactions.",
+            "Interactive Frontend: Dynamic interfaces with Laravel Livewire and Vue.js.",
+            "Technical Collaboration: Efficient project management with Git.",
+            "Database: MySQL optimization and management to ensure performance.",
+            "Event Apps: Customization of solutions with Meetmaps and Crowdcomms, working directly with clients."
           ]
         },
         {
@@ -87,11 +90,10 @@
           "location": "Seville, Andalusia, Spain",
           "type": "Internship",
           "responsibilities": [
-            "Development of applications using PHP, Javascript, MySQL",
-            "Web application maintenance",
-            "HTML, CSS, Bootstrap layout",
-            "XML and JSON data handling",
-            "Daily work optimization using Odoo"
+            "Development and maintenance of web applications using PHP, JavaScript and MySQL.",
+            "Web layout using HTML, CSS, Bootstrap.",
+            "Handling and optimization of XML and JSON data formats.",
+            "Use of Odoo to automate daily tasks."
           ]
         }
       ]
