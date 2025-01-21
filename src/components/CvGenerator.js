@@ -212,10 +212,9 @@ export const generateCV = async (data, { t: i18n }) => {
   const startY = yPos;
   
   // Imagen a la derecha
-  const imageUrl = new URL(
-    isDarkMode ? '/src/assets/images/perfil-dark.png' : '/src/assets/images/perfil-light.png',
-    import.meta.url
-  ).href;
+  const imageUrl = isDarkMode 
+    ? new URL('../assets/images/perfil-dark.png', import.meta.url).href
+    : new URL('../assets/images/perfil-light.png', import.meta.url).href;
   const imageWidth = 40; // Ancho fijo en mm
   const imageHeight = 50; // Alto ajustado para mantener la proporción
   const imageX = pageWidth - margin - imageWidth;
