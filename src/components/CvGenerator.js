@@ -10,22 +10,36 @@ export const generateCV = async (data, { t: i18n }) => {
   const contentWidth = pageWidth - (margin * 2);
   let yPos = margin;
 
+  // Obtener el tema actual de la aplicación
+  const isDarkMode = document.documentElement.classList.contains('dark');
+
+  // Configuración de colores para ambos temas
+  const themes = {
+    dark: {
+      primary: [93, 233, 200],    // Azul modo oscuro
+      text: [255, 255, 255],      // Texto blanco
+      subtext: [200, 200, 200],   // Gris claro para texto secundario
+      background: [45, 45, 45]    // Fondo oscuro
+    },
+    light: {
+      primary: [8, 145, 178],    // Azul modo claro
+      text: [62, 62, 62],         // Texto gris oscuro
+      subtext: [128, 128, 128],   // Gris medio para texto secundario
+      background: [255, 255, 255] // Fondo claro
+    }
+  };
+
+  // Seleccionar el tema actual
+  const colors = themes[isDarkMode ? 'dark' : 'light'];
+
   // Función para aplicar el fondo a la página actual
   const applyBackground = () => {
-    pdf.setFillColor(45, 45, 45); // Color gris oscuro
+    pdf.setFillColor(...colors.background);
     pdf.rect(0, 0, pageWidth, pageHeight, 'F');
   };
 
   // Aplicar fondo a la primera página
   applyBackground();
-
-  // Colores
-  const colors = {
-    primary: [93, 233, 200],  // Azul más brillante para mejor contraste
-    // primary: [29, 185, 225],  // Azul más brillante para mejor contraste
-    text: [255, 255, 255],    // Texto blanco para máximo contraste
-    subtext: [200, 200, 200]  // Gris claro para texto secundario
-  };
 
   // Configuración de estilos
   const styles = {
@@ -198,7 +212,10 @@ export const generateCV = async (data, { t: i18n }) => {
   const startY = yPos;
   
   // Imagen a la derecha
-  const imageUrl = new URL('/src/assets/images/perfil-dark.png', import.meta.url).href;
+  const imageUrl = new URL(
+    isDarkMode ? '/src/assets/images/perfil-dark.png' : '/src/assets/images/perfil-light.png',
+    import.meta.url
+  ).href;
   const imageWidth = 40; // Ancho fijo en mm
   const imageHeight = 50; // Alto ajustado para mantener la proporción
   const imageX = pageWidth - margin - imageWidth;
