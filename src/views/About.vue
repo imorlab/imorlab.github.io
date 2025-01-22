@@ -19,10 +19,10 @@
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.intro') }}</p>
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.description') }}</p>
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.mission') }}</p>
-              <div class="mt-6">
+              <div class="mt-8 text-end">
                 <button
                   @click="generateAndDownloadCV"
-                  class="inline-flex items-center px-6 py-3 bg-accent text-white dark:text-gray-800 rounded-lg hover:bg-accent/90 transition-colors duration-300 shadow-lg hover:shadow-accent/20 border-none"
+                  class="inline-flex items-center px-6 py-3 bg-accent/80 text-white dark:text-gray-800 rounded-lg hover:bg-accent/90 transition-colors duration-300 shadow-lg hover:shadow-accent/20 border-none"
                 >
                   <Icon icon="heroicons:document-arrow-down" class="w-5 h-5 mr-2" />
                   {{ $t('about.download_cv') }}
@@ -37,7 +37,7 @@
               <Icon icon="heroicons:academic-cap" class="w-6 h-6 text-accent" />
               {{ $t('about.education.title') }}
             </h2>
-            <div class="space-y-6">
+            <div class="space-y-11">
               <div v-for="(edu, index) in educationItems" :key="index" class="border-l-2 border-accent pl-4 text-start">
                 <h3 class="font-semibold text-accent">{{ edu.degree }}</h3>
                 <p class="text-gray-400 dark:text-gray-100">{{ edu.field }}</p>
@@ -176,7 +176,7 @@
               <Icon icon="heroicons:chart-bar" class="w-6 h-6 text-accent" />
               GitHub
             </h2>
-            <div class="space-y-4">
+            <div class="space-y-5">
               <div class="flex justify-center bg-primary/5 rounded-lg border border-accent p-4">
                 <div class="w-full">
                   <h3 class="text-lg text-accent font-semibold mb-2 text-center">{{ t('about.github.contributions') }}</h3>
