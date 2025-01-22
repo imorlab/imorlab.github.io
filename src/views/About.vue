@@ -19,7 +19,7 @@
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.intro') }}</p>
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.description') }}</p>
               <p class="text-gray-500 dark:text-gray-100">{{ $t('about.mission') }}</p>
-              <div class="mt-8 text-end">
+              <div class="pt-3 text-center">
                 <button
                   @click="generateAndDownloadCV"
                   class="inline-flex items-center px-6 py-3 bg-accent/80 text-white dark:text-gray-800 rounded-lg hover:bg-accent/90 transition-colors duration-300 shadow-lg hover:shadow-accent/20 border-none"
@@ -37,7 +37,7 @@
               <Icon icon="heroicons:academic-cap" class="w-6 h-6 text-accent" />
               {{ $t('about.education.title') }}
             </h2>
-            <div class="space-y-11">
+            <div class="space-y-8">
               <div v-for="(edu, index) in educationItems" :key="index" class="border-l-2 border-accent pl-4 text-start">
                 <h3 class="font-semibold text-accent">{{ edu.degree }}</h3>
                 <p class="text-gray-400 dark:text-gray-100">{{ edu.field }}</p>
@@ -160,8 +160,8 @@
                   </span>
                 </div>
                 <div v-if="position.responsibilities" class="mt-2">
-                  <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
-                    <li v-for="(resp, i) in position.responsibilities" :key="i">
+                  <ul class="list-disc space-y-1 pl-5 text-sm text-gray-400">
+                    <li v-for="(resp, i) in position.responsibilities" :key="i" class="pl-1">
                       {{ resp }}
                     </li>
                   </ul>
@@ -252,7 +252,7 @@ const githubStatsUrl = computed(() => {
 })
 
 const streakStatsUrl = computed(() => {
-  return `https://github-readme-streak-stats.herokuapp.com?user=imorlab&theme=dark&hide_border=true&background=ffffff00&ring=${accentColor.value}&fire=${accentColor.value}&currStreakLabel=${accentColor.value}&stroke=${isDark.value ? 'ffffff' : '6B7280'}&sideLabels=${isDark.value ? 'ffffff' : '6B7280'}&currStreakNum=${isDark.value ? 'ffffff' : '6B7280'}&sideNums=${isDark.value ? 'ffffff' : '6B7280'}&dates=${isDark.value ? 'ffffff' : '6B7280'}`
+  return `https://streak-stats.vercel.app?user=imorlab&theme=dark&hide_border=true&background=ffffff00&ring=${accentColor.value}&fire=${accentColor.value}&currStreakLabel=${accentColor.value}&stroke=${isDark.value ? 'ffffff' : '6B7280'}&sideLabels=${isDark.value ? 'ffffff' : '6B7280'}&currStreakNum=${isDark.value ? 'ffffff' : '6B7280'}&sideNums=${isDark.value ? 'ffffff' : '6B7280'}&dates=${isDark.value ? 'ffffff' : '6B7280'}`
 })
 
 const stats = ref({
@@ -261,6 +261,52 @@ const stats = ref({
   technologies: 0,
   development: 0
 })
+
+const fetchGithubContributions = async () => {
+  try {
+    const response = await fetch('https://api.github.com/graphql', {
+      method: 'POST',
+      headers: {
+        'Authorization': `bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: `
+          query {
+            user(login: "imorlab") {
+              contributionsCollection {
+                totalCommitContributions
+                totalIssueContributions
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalRepositoryContributions
+                contributionCalendar {
+                  totalContributions
+                }
+              }
+            }
+          }
+        `
+      })
+    })
+    
+    const { data } = await response.json()
+    const contributions = data.user.contributionsCollection
+    const totalFromCollection = 
+      contributions.totalCommitContributions +
+      contributions.totalIssueContributions +
+      contributions.totalPullRequestContributions +
+      contributions.totalPullRequestReviewContributions +
+      contributions.totalRepositoryContributions
+
+    // Usar el número del calendario que coincide con lo que muestra GitHub
+    stats.value.development = contributions.contributionCalendar.totalContributions
+  } catch (error) {
+    console.error('Error fetching GitHub contributions:', error)
+    // Si hay error, usar el valor por defecto de las traducciones
+    stats.value.development = Number(t('about.experience.stats.development').replace('+', ''))
+  }
+}
 
 const generateAndDownloadCV = async () => {
   try {
@@ -300,6 +346,9 @@ onMounted(() => {
       technologies: Number(t('about.experience.stats.technologies').replace('+', '')),
       development: Number(t('about.experience.stats.development').replace('+', ''))
     }
+    
+    // Obtener las contribuciones reales de GitHub
+    fetchGithubContributions()
   }, 500)
 })
 </script>
