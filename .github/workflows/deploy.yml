@@ -45,6 +45,8 @@ jobs:
         run: pnpm install
 
       - name: Build
+        env:
+          VITE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm build
 
       - name: Create .nojekyll file
