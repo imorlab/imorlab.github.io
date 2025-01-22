@@ -61,11 +61,11 @@ export const generateCV = async (data, { t: i18n }) => {
       marginTop: 4
     },
     normal: { 
-      fontSize: 11,
+      fontSize: 12, 
       color: colors.text
     },
     small: { 
-      fontSize: 10,
+      fontSize: 11,
       color: colors.subtext
     }
   };
@@ -82,14 +82,23 @@ export const generateCV = async (data, { t: i18n }) => {
     // Ajustar el espaciado entre líneas según si hay múltiples líneas
     const lineSpacing = lines.length > 1 ? 0.5 : 0.35;
     
-    lines.forEach(line => {
+    // Para textos que empiezan con bullet point, alinear las líneas subsiguientes
+    const isBulletPoint = text.trim().startsWith('•');
+    // La indentación debe ser igual al espacio entre el inicio del bullet y el texto (4mm)
+    const textIndent = isBulletPoint ? 0 : 0;
+    
+    lines.forEach((line, index) => {
       // Verificar si necesitamos una nueva página
       if (yPos > pageHeight - margin) {
         pdf.addPage();
         applyBackground(); // Aplicar fondo a la nueva página
         yPos = margin;
       }
-      pdf.text(line, x, yPos);
+      
+      // Si es una línea subsiguiente de un bullet point, aplicar la indentación
+      const lineX = (index > 0 && isBulletPoint) ? x + textIndent : x;
+      
+      pdf.text(line, lineX, yPos);
       yPos += (style.fontSize * lineSpacing);
     });
     
@@ -270,7 +279,27 @@ export const generateCV = async (data, { t: i18n }) => {
       if (position.responsibilities && position.responsibilities.length > 0) {
         yPos += 2;
         position.responsibilities.forEach(resp => {
-          addText(`• ${resp}`, styles.normal, margin + 5);
+          const bulletX = margin + 3;
+          const textX = bulletX + 4;
+          const lineSpacing = styles.normal.fontSize * 0.5;
+          
+          // Dividir el texto en líneas
+          const lines = pdf.splitTextToSize(resp, contentWidth - (textX - margin));
+          
+          // Guardar la posición Y actual
+          const currentY = yPos;
+          
+          // Añadir el bullet y la primera línea en la misma posición Y
+          pdf.text('•', bulletX, currentY);
+          pdf.text(lines[0], textX, currentY);
+          
+          // Añadir el resto de líneas
+          for (let i = 1; i < lines.length; i++) {
+            pdf.text(lines[i], textX, currentY + (i * lineSpacing));
+          }
+          
+          // Actualizar la posición Y para el siguiente item
+          yPos += Math.max(1, lines.length) * lineSpacing;
         });
       }
       
