@@ -263,12 +263,6 @@ const stats = ref({
 })
 
 const fetchGithubContributions = async () => {
-  // Si no hay token disponible, usar el valor por defecto
-  if (!import.meta.env.VITE_GITHUB_TOKEN) {
-    stats.value.development = Number(t('about.experience.stats.development').replace('+', ''))
-    return
-  }
-
   try {
     const response = await fetch('https://api.github.com/graphql', {
       method: 'POST',
@@ -295,6 +289,10 @@ const fetchGithubContributions = async () => {
         `
       })
     })
+    
+    if (!response.ok) {
+      throw new Error(`GitHub API responded with status: ${response.status}`)
+    }
     
     const { data } = await response.json()
     
