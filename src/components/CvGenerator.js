@@ -57,7 +57,8 @@ export const generateCV = async (data, { t: i18n }) => {
     subheader: { 
       fontSize: 14, 
       fontStyle: 'bold',
-      color: colors.text
+      color: colors.text,
+      marginTop: 4
     },
     normal: { 
       fontSize: 11,
@@ -77,6 +78,10 @@ export const generateCV = async (data, { t: i18n }) => {
     
     // Si el texto es muy largo, lo dividimos en múltiples líneas
     const lines = pdf.splitTextToSize(text, maxWidth);
+    
+    // Ajustar el espaciado entre líneas según si hay múltiples líneas
+    const lineSpacing = lines.length > 1 ? 0.5 : 0.35;
+    
     lines.forEach(line => {
       // Verificar si necesitamos una nueva página
       if (yPos > pageHeight - margin) {
@@ -85,28 +90,27 @@ export const generateCV = async (data, { t: i18n }) => {
         yPos = margin;
       }
       pdf.text(line, x, yPos);
-      yPos += (style.fontSize * 0.4);
+      yPos += (style.fontSize * lineSpacing);
     });
     
     // Añadir espacio extra después del texto solo si no es un título de sección
     if (!style.noExtraSpace) {
-      yPos += style.fontSize * 0.2;
+      yPos += style.fontSize * 0.15;
     }
   };
 
   // Función para añadir una línea divisoria
   const addDivider = () => {
-    // No añadir espacio antes de la línea cuando viene después de un título
     pdf.setDrawColor(...colors.primary);
     pdf.setLineWidth(0.5);
     pdf.line(margin, yPos, pageWidth - margin, yPos);
-    yPos += 6; // Espacio consistente después de cada línea divisoria
+    yPos += 6; // Reducido de 6 a 2
   };
 
   // Función para añadir sección
   const addSection = (title, content) => {
     // Añadir título de sección con margen superior consistente
-    addText(title.toUpperCase(), { ...styles.sectionTitle, marginTop: 6, noExtraSpace: true });
+    addText(title.toUpperCase(), { ...styles.sectionTitle, marginTop: 6, noExtraSpace: true }); // Reducido de 6 a 4
     addDivider();
 
     // Añadir contenido
@@ -136,7 +140,6 @@ export const generateCV = async (data, { t: i18n }) => {
 
     // Columna izquierda
     addText(leftTitle.toUpperCase(), { ...styles.sectionTitle, marginTop: 6, noExtraSpace: true });
-    yPos += 0.5; // Pequeño ajuste para alinear las líneas divisorias
     pdf.setDrawColor(...colors.primary);
     pdf.setLineWidth(0.5);
     pdf.line(margin, yPos, margin + columnWidth - margin/2, yPos);
@@ -162,7 +165,6 @@ export const generateCV = async (data, { t: i18n }) => {
     // Columna derecha
     yPos = startY;
     addText(rightTitle.toUpperCase(), { ...styles.sectionTitle, marginTop: 6, noExtraSpace: true }, rightColumnX);
-    yPos += 0.5; // Pequeño ajuste para alinear las líneas divisorias
     pdf.setDrawColor(...colors.primary);
     pdf.setLineWidth(0.5);
     pdf.line(rightColumnX, yPos, rightColumnX + columnWidth - margin/2, yPos);
@@ -252,9 +254,12 @@ export const generateCV = async (data, { t: i18n }) => {
   if (data.experience && data.experience.positions) {
     addSection(i18n('about.experience.title'), null);
     data.experience.positions.forEach((position, index) => {
-      if (index > 0) yPos += 6;
+      if (index > 0) yPos += 6; // Espacio entre posiciones
       
       // Título y empresa
+      if (index === 0) {
+        yPos -= 2; // Reducir espacio antes del primer trabajo
+      }
       addText(position.role, styles.subheader);
       addText(position.company, { ...styles.normal, fontStyle: 'bold' });
       

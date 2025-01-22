@@ -77,11 +77,9 @@
             "Integraciones avanzadas: Implementación de API de OpenAI para personalización y automatización.",
             "Pasarelas de pago: Configuración e integración segura para transacciones globales.",
             "Frontend interactivo: Interfaces dinámicas con Laravel Livewire y Vue.js.",
-            "Colaboración técnica: Gestión eficiente de proyectos con Git.",
-            "Base de datos: Optimización y manejo de MySQL para garantizar rendimiento.",
-            "Apps para eventos: Personalización de soluciones con Meetmaps y Crowdcomms, trabajando directamente con clientes."
+            "Soporte al cliente: Interacción directa para adaptar funcionalidades y ofrecer soluciones."
           ],
-          "skills": ["PHP", "Laravel", "JavaScript", "MySQL", "Git", "API Integration"]
+          "skills": ["PHP", "Laravel", "JavaScript", "MySQL", "GitHub", "API Integration"]
         },
         {
           "role": "Programador Web",
@@ -92,14 +90,13 @@
           "responsibilities": [
             "Desarrollo y mantenimiento de aplicaciones web con PHP, JavaScript y MySQL.",
             "Maquetación web utilizando HTML, CSS, Bootstrap.",
-            "Manejo y optimización de datos en formatos XML y JSON.",
-            "Uso de Odoo para automatizar tareas diarias."
+            "Manejo y optimización de datos en formatos XML y JSON."
           ]
         }
       ]
     },
     "github": {
-      "contributions": "Contribuciones último año"
+      "contributions": "Contribuciones ultimo año"
     },
     "skills": {
       "title": "Habilidades",
