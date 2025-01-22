@@ -263,6 +263,12 @@ const stats = ref({
 })
 
 const fetchGithubContributions = async () => {
+  // Si no hay token disponible, usar el valor por defecto
+  if (!import.meta.env.VITE_GITHUB_TOKEN) {
+    stats.value.development = Number(t('about.experience.stats.development').replace('+', ''))
+    return
+  }
+
   try {
     const response = await fetch('https://api.github.com/graphql', {
       method: 'POST',
@@ -291,6 +297,11 @@ const fetchGithubContributions = async () => {
     })
     
     const { data } = await response.json()
+    
+    if (!data?.user?.contributionsCollection) {
+      throw new Error('No contribution data available')
+    }
+
     const contributions = data.user.contributionsCollection
     const totalFromCollection = 
       contributions.totalCommitContributions +
