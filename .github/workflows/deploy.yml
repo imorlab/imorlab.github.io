@@ -53,7 +53,7 @@ jobs:
 
       - name: Build
         env:
-          VITE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VITE_GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: pnpm build
 
       - name: Create .nojekyll file
