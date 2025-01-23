@@ -2,6 +2,14 @@ import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
 
 export const generateCV = async (data, { t: i18n }) => {
+  // Enviar evento a Google Analytics
+  if (window.gtag) {
+    window.gtag('event', 'cv_download', {
+      'event_category': 'CV',
+      'event_label': 'CV Download'
+    });
+  }
+
   // Crear el PDF en formato A4
   const pdf = new jsPDF('p', 'mm', 'a4');
   const pageWidth = pdf.internal.pageSize.getWidth();
@@ -46,7 +54,7 @@ export const generateCV = async (data, { t: i18n }) => {
     header: { 
       fontSize: 28, 
       fontStyle: 'bold',
-      color: colors.primary
+      color: colors.text
     },
     sectionTitle: { 
       fontSize: 16, 
@@ -55,7 +63,7 @@ export const generateCV = async (data, { t: i18n }) => {
       marginTop: 6
     },
     subheader: { 
-      fontSize: 14, 
+      fontSize: 15, 
       fontStyle: 'bold',
       color: colors.text,
       marginTop: 4
@@ -142,60 +150,78 @@ export const generateCV = async (data, { t: i18n }) => {
   };
 
   // Función para añadir sección en dos columnas
-  const addTwoColumnSection = (leftTitle, leftContent, rightTitle, rightContent) => {
-    const columnWidth = (contentWidth - margin) / 2;
-    const rightColumnX = margin + columnWidth + margin;
+  const addTwoColumnSection = (sectionTitle, leftContent, rightTitle, rightContent) => {
+    // Columna izquierda ocupa 60% del espacio disponible
+    const leftColumnWidth = (contentWidth - margin * 3) * 0.7;
+    const rightColumnWidth = (contentWidth - margin * 3) * 0.5;
+    const rightColumnX = margin * 2 + leftColumnWidth;
     const startY = yPos;
 
-    // Columna izquierda
-    addText(leftTitle.toUpperCase(), { ...styles.sectionTitle, marginTop: 6, noExtraSpace: true });
-    pdf.setDrawColor(...colors.primary);
-    pdf.setLineWidth(0.5);
-    pdf.line(margin, yPos, margin + columnWidth - margin/2, yPos);
-    yPos += 6;
+    // Título principal de la sección
+    addText(sectionTitle.toUpperCase(), { ...styles.sectionTitle, marginTop: 6, noExtraSpace: true });
+    addDivider();
+    yPos += 4;
 
+    // Procesar contenido de la columna izquierda
     if (Array.isArray(leftContent)) {
       leftContent.forEach(item => {
-        if (typeof item === 'string') {
-          addText(item, styles.normal, margin, columnWidth);
-        } else {
-          Object.entries(item).forEach(([key, value]) => {
-            addText(`${key}: ${value}`, styles.normal, margin, columnWidth);
+        if (typeof item === 'object') {
+          Object.entries(item).forEach(([title, skills]) => {
+            // Fondo blanco para el título
+            pdf.setFillColor(...colors.background);
+            pdf.rect(margin, yPos - 2, leftColumnWidth, 8, 'F');
+            
+            // Título de la categoría
+            addText(title, { 
+              ...styles.subheader, 
+              fontSize: 12,
+              color: colors.text
+            }, margin, leftColumnWidth);
+            yPos += 3;
+
+            // Lista de habilidades
+            addText(skills, {
+              ...styles.small,
+              color: colors.subtext
+            }, margin + 5, leftColumnWidth - 7);
+            yPos += 3;
           });
         }
       });
-    } else if (leftContent) {
-      addText(leftContent, styles.normal, margin, columnWidth);
     }
 
     // Guardar la posición Y más baja de la columna izquierda
     const leftColumnEndY = yPos;
 
-    // Columna derecha
-    yPos = startY;
-    addText(rightTitle.toUpperCase(), { ...styles.sectionTitle, marginTop: 6, noExtraSpace: true }, rightColumnX);
-    pdf.setDrawColor(...colors.primary);
-    pdf.setLineWidth(0.5);
-    pdf.line(rightColumnX, yPos, rightColumnX + columnWidth - margin/2, yPos);
-    yPos += 6;
+    // Resetear posición Y para la columna derecha
+    yPos = startY + styles.sectionTitle.fontSize * 1;
 
+    // Procesar contenido de la columna derecha (Soft Skills)
     if (Array.isArray(rightContent)) {
-      rightContent.forEach(item => {
-        if (typeof item === 'string') {
-          addText(item, styles.normal, rightColumnX, columnWidth);
-        } else {
-          Object.entries(item).forEach(([key, value]) => {
-            addText(`${key}: ${value}`, styles.normal, rightColumnX, columnWidth);
-          });
-        }
+      // Fondo blanco para el título
+      pdf.setFillColor(...colors.background);
+      pdf.rect(rightColumnX, yPos - 2, rightColumnWidth, 8, 'F');
+
+      // Título de Soft Skills
+      addText(rightTitle, { 
+        ...styles.subheader, 
+        fontSize: 12,
+        color: colors.text
+      }, rightColumnX, rightColumnWidth);
+      yPos += 3;
+
+      // Lista de soft skills
+      rightContent.forEach(skill => {
+        addText(skill, {
+          ...styles.small,
+          color: colors.subtext
+        }, rightColumnX + 5, rightColumnWidth - 5);
+        yPos += styles.small.fontSize * 0.5;
       });
-    } else if (rightContent) {
-      addText(rightContent, styles.normal, rightColumnX, columnWidth);
     }
 
     // Usar la posición Y más baja de ambas columnas
-    yPos = Math.max(yPos, leftColumnEndY);
-    yPos += 8; // Espacio después de la sección
+    yPos = Math.max(yPos, leftColumnEndY) + 8;
   };
 
   // Función para cargar una imagen como base64
@@ -241,13 +267,27 @@ export const generateCV = async (data, { t: i18n }) => {
   
   // Añadir enlaces (ajustados al mismo ancho que el texto)
   const socialLinks = [
-    'Portfolio: https://imorlab.github.io/imorlab-portfolio/',
-    'LinkedIn: https://www.linkedin.com/in/israelmorenolabrador/',
-    'GitHub: https://github.com/imorlab'
+    { label: 'Portfolio', url: 'https://imorlab.github.io/imorlab-portfolio/' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/israelmorenolabrador/' },
+    { label: 'GitHub', url: 'https://github.com/imorlab' }
   ];
   
-  socialLinks.forEach(link => {
-    addText(link, { ...styles.small, color: colors.primary }, margin, textWidth);
+  socialLinks.forEach(({ label, url }) => {
+    const currentY = yPos;
+    
+    // Añadir la etiqueta en color primario
+    addText(`${label}:`, { ...styles.small, color: colors.primary }, margin);
+    
+    // Calcular el ancho del texto de la etiqueta
+    pdf.setFontSize(styles.small.fontSize);
+    const labelWidth = pdf.getTextWidth(`${label}:`) + 2; // 5px de espacio
+    
+    // Añadir la URL en color de texto normal en la misma línea
+    yPos = currentY; // Restaurar la posición Y para mantener la alineación
+    addText(url, { ...styles.small, color: colors.text }, margin + labelWidth);
+    
+    // Mover a la siguiente línea con menos espacio
+    yPos += styles.small.fontSize * 0.2; // Reducido de 1.5 a 1.2
   });
   
   yPos = Math.max(yPos, startY + imageHeight + 2); // Asegurarnos de que estamos debajo de la imagen
