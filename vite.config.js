@@ -4,6 +4,9 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    __GITHUB_TOKEN__: JSON.stringify(process.env.VITE_GITHUB_TOKEN || '')
+  },
   base: process.env.NODE_ENV === 'production' ? '/imorlab-portfolio/' : '/',
   plugins: [
     vue({
