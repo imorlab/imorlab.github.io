@@ -5,9 +5,9 @@
 :root {
   /* Light theme */
   --color-primary: 210 220 220;
-  --color-primary-dark: 26 26 26;  /* #1a1a1a */
-  --color-accent: 110 26 189;  /* #9333ea */
-  --color-accent-dark: 126 34 206;  /* #7e22ce */
+  --color-primary-dark: 26 26 26;
+  --color-accent: 110 26 189;
+  --color-accent-dark: 126 34 206;
   --color-accent-10: rgba(110, 26, 189, 0.1);
   --color-accent-20: rgba(110, 26, 189, 0.2);
   --color-accent-40: rgba(110, 26, 189, 0.4);
