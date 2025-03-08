@@ -4,15 +4,15 @@
 
 :root {
   /* Light theme */
-  --color-primary: 248 249 250;  /* #f8f9fa */
+  --color-primary: 210 220 220;  /* #f8f9fa */
   --color-primary-dark: 26 26 26;  /* #1a1a1a */
-  --color-accent: 8 145 178;  /* #0891b2 */
-  --color-accent-dark: 14 116 144;  /* #0e7490 */
-  --color-accent-10: rgba(8, 145, 178, 0.1);
-  --color-accent-20: rgba(8, 145, 178, 0.2);
-  --color-accent-40: rgba(8, 145, 178, 0.4);
-  --color-accent-60: rgba(8, 145, 178, 0.6);
-  --color-accent-80: rgba(8, 145, 178, 0.8);
+  --color-accent: 110 26 189;  /* #9333ea */
+  --color-accent-dark: 126 34 206;  /* #7e22ce */
+  --color-accent-10: rgba(110, 26, 189, 0.1);
+  --color-accent-20: rgba(110, 26, 189, 0.2);
+  --color-accent-40: rgba(110, 26, 189, 0.4);
+  --color-accent-60: rgba(110, 26, 189, 0.6);
+  --color-accent-80: rgba(110, 26, 189, 0.8);
 }
 
 /* Dark theme */

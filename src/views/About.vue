@@ -40,7 +40,7 @@
             <div class="space-y-8">
               <div v-for="(edu, index) in educationItems" :key="index" class="border-l-2 border-accent pl-4 text-start">
                 <h3 class="font-semibold text-accent">{{ edu.degree }}</h3>
-                <p class="text-gray-400 dark:text-gray-100">{{ edu.field }}</p>
+                <p class="text-gray-500 dark:text-gray-100">{{ edu.field }}</p>
                 <p class="text-gray-400 dark:text-gray-100">{{ edu.school }}</p>
                 <p class="text-sm text-gray-500">{{ edu.period }}</p>
                 <p v-if="edu.skills" class="text-sm text-gray-400 mt-2">{{ edu.skills }}</p>
@@ -149,18 +149,18 @@
               <div v-for="(position, index) in experiencePositions" :key="index" 
                 class="border-l-2 border-accent pl-4">
                 <h3 class="font-semibold text-accent">{{ position.role }}</h3>
-                <p class="text-gray-400">{{ position.company }}</p>
-                <p class="text-sm text-gray-500">{{ position.period }}</p>
-                <p class="text-sm text-gray-400">{{ position.location }}</p>
-                <p class="text-sm text-gray-500">{{ position.type }}</p>
+                <p class="text-gray-600 dark:text-gray-300">{{ position.company }}</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ position.period }}</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ position.location }}</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ position.type }}</p>
                 <div v-if="position.skills" class="flex flex-wrap gap-2 mt-2">
                   <span v-for="(skill, i) in position.skills" :key="i"
-                    class="px-2 py-1 bg-primary/10 rounded-full text-xs text-gray-400">
+                    class="px-2 py-1 bg-primary/10 rounded-full text-xs text-gray-600 dark:text-gray-300">
                     {{ skill }}
                   </span>
                 </div>
                 <div v-if="position.responsibilities" class="mt-2">
-                  <ul class="list-disc space-y-1 pl-5 text-sm text-gray-400">
+                  <ul class="list-disc space-y-1 pl-5 text-sm text-gray-500 dark:text-gray-400">
                     <li v-for="(resp, i) in position.responsibilities" :key="i" class="pl-1">
                       {{ resp }}
                     </li>

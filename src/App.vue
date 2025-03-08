@@ -74,7 +74,7 @@
                   :key="item.route"
                   :to="item.route"
                   class="px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-accent"
-                  :class="[$route.path === item.route ? 'text-accent font-bold' : 'text-gray-400']"
+                  :class="[$route.path === item.route ? 'text-accent font-bold' : 'text-gray-500']"
                 >
                   {{ $t(item.label) }}
                 </RouterLink>
@@ -138,7 +138,7 @@
       <!-- Footer -->
       <footer class="bg-secondary py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex flex-col items-center gap-2 text-sm text-gray-400 dark:text-gray-300">
+          <div class="flex flex-col items-center gap-2 text-sm text-gray-500 dark:text-gray-300">
             <p>
               {{ $t('footer.created') }}
               <span 

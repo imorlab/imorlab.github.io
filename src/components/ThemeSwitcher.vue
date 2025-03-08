@@ -3,7 +3,7 @@
     <button
       @click="toggleTheme"
       class="flex items-center justify-center w-10 h-10 rounded-lg
-            text-xl cursor-pointer hover:text-accent border-0 hover:border-0 focus:outline-none focus:ring-2 focus:ring-accent/20"
+            text-xl cursor-pointer text-gray-500 hover:text-accent border-0 hover:border-0 focus:outline-none focus:ring-2 focus:ring-accent/20"
       :class="[
         isDark
           ? 'bg-primary/10 hover:bg-primary/30'

@@ -7,7 +7,7 @@
           <div class="max-w-4xl mx-auto text-center md:text-left overflow-hidden -translate-y-32 sm:translate-y-0">            
             <div ref="greetingRef" class="overflow-hidden">
               <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-                <span class="text-gray-400 dark:text-gray-100 inline-block">{{ $t('home.greeting') }}</span>
+                <span class="text-gray-500 dark:text-gray-100 inline-block">{{ $t('home.greeting') }}</span>
                 <span class="text-accent block mt-2">Israel Moreno</span>
               </h1>
             </div>
@@ -25,7 +25,7 @@
                 to="/about"
                 class="inline-flex items-center px-6 py-3 
                        border-2 border-accent
-                       text-accent hover:text-gray-700
+                       text-accent hover:text-gray-300 dark:hover:text-gray-700
                        bg-transparent hover:bg-accent/90
                        transition-all duration-300 rounded-lg 
                        text-lg font-medium
@@ -38,7 +38,7 @@
                 to="/contact"
                 class="inline-flex items-center px-6 py-3 
                        border-2 border-accent
-                       text-gray-700 hover:text-accent
+                       text-gray-300 dark:text-gray-700 hover:text-accent dark:hover:text-accent
                        bg-accent hover:bg-transparent
                        transition-all duration-300 rounded-lg 
                        text-lg font-medium
