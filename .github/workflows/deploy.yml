@@ -6,17 +6,13 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    concurrency: ci-${{ github.ref }}
 
     steps:
       - name: Checkout
@@ -54,17 +50,8 @@ jobs:
           VITE_GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: pnpm build
 
-      - name: Create .nojekyll file
-        run: touch dist/.nojekyll
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: dist
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
+          folder: dist
+          branch: gh-pages
