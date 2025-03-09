@@ -30,10 +30,10 @@ export const generateCV = async (data, { t: i18n }) => {
       background: [45, 45, 45]    // Fondo oscuro
     },
     light: {
-      primary: [8, 145, 178],    // Azul modo claro
+      primary: [110, 26, 189],    // Azul modo claro
       text: [62, 62, 62],         // Texto gris oscuro
       subtext: [128, 128, 128],   // Gris medio para texto secundario
-      background: [255, 255, 255] // Fondo claro
+      background: [248, 249, 250] // Fondo claro
     }
   };
 
