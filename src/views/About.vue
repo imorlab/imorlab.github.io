@@ -267,7 +267,7 @@ const fetchGithubContributions = async () => {
     const response = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
-        'Authorization': `bearer ${process.env.VITE_GITHUB_TOKEN}`,
+        'Authorization': `bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
