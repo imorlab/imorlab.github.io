@@ -15,7 +15,7 @@ permissions:
 jobs:
   build-and-deploy:
     environment:
-      name: imorlab-portfolio
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
@@ -68,10 +68,10 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
-          name: imorlab-portfolio
+          name: github-pages
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
         with:
-          artifact_name: imorlab-portfolio
+          artifact_name: github-pages
