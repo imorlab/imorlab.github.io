@@ -1,69 +1,145 @@
 <template>
-  <div class="min-h-[calc(100vh-6rem)] pb-20 flex flex-col items-center justify-center px-4">
+  <div class="">
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-accent mb-4">{{ $t('projects.title') }}</h2>
       <p class="text-xl text-gray-500 dark:text-gray-200 mb-2">{{ $t('projects.experience') }}</p>
       <p class="text-lg text-gray-500 dark:text-gray-200">{{ $t('projects.description') }}</p>
     </div>
-
-    <!-- MacBook Pro Container -->
-    <div class="relative w-full max-w-4xl mx-auto perspective">
-      <!-- MacBook Body -->
-      <div class="macbook">
-        <!-- Screen -->
-        <div class="screen-container">
-          <!-- Camera and Notch -->
-          <div class="notch">
-            <div class="camera"></div>
-          </div>
-          <!-- Screen Content -->
-          <div class="screen">
-            <!-- Terminal Window -->
-            <div class="terminal">
-              <!-- Terminal Header -->
-              <div class="terminal-header">
-                <div class="terminal-buttons">
-                  <div class="close"></div>
-                  <div class="minimize"></div>
-                  <div class="maximize"></div>
+    <div class="relative flex flex-col items-center justify-center px-4 space-y-16 overflow-x-hidden">
+      <!-- Dynamic Project Loop -->
+      <div
+        v-for="(project, index) in tm('projects.list')"
+        :key="project.id"
+        class="bg-gray-800/10 dark:bg-gray-500/10 p-4 md:p-8 rounded-xl shadow-lg transition-all duration-300"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- MacBook Pro Container -->
+          <div
+            class="relative w-full max-w-4xl mx-auto perspective"
+            :class="index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'"
+          >
+            <div class="macbook">
+              <div class="screen-container">
+                <div class="notch"><div class="camera"></div></div>
+                <div class="screen overflow-hidden relative">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="relative w-full h-full">
+                      <!-- <iframe
+                        :src="project.url"
+                        class="w-[100vw] h-[100vh] md:w-[100dvw] md:h-[105dvh] border-0"
+                        style="transform-origin: 0 0;"
+                        allowfullscreen
+                        loading="lazy"
+                        :title="project.title"
+                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                      ></iframe> -->
+                      <img :src="getImageUrl(project.image)" :alt="project.title" class="w-full h-full object-cover object-top">
+                    </div>
+                  </div>
                 </div>
-                <div class="terminal-title">imorlab ~ projects</div>
               </div>
-              <!-- Terminal Content -->
-              <div class="terminal-content">
-                <!-- Professional Experience -->
-                <div class="command-block">
-                  <div class="command">
-                    <span class="prompt">$</span>
-                    <span class="typing-text">ls professional-experience/</span>
-                  </div>
-                  <div class="output">{{ $t('projects.professionalWork') }}</div>
-                </div>
-                <!-- Personal Projects -->
-                <div class="command-block">
-                  <div class="command">
-                    <span class="prompt">$</span>
-                    <span class="typing-text-2">ls personal-projects/</span>
-                  </div>
-                  <div class="output">{{ $t('projects.personalProjects') }}</div>
-                </div>
+              <div class="base">
+                <div class="base-top"></div>
+                <div class="base-bottom"></div>
               </div>
             </div>
           </div>
+
+          <!-- Project Description -->
+          <div
+            class="flex flex-col text-center"
+            :class="index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'"
+          >
+            <span class="text-accent font-semibold">{{ project.company }}</span>
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-3">{{ project.title }}</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-lg mb-6">{{ project.description }}</p>
+            <div class="flex justify-center gap-4 mt-auto pt-4">
+              <a
+                :href="project.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block bg-transparent border border-accent hover:bg-accent hover:border-accent dark:hover:border-accent hover:text-gray-300 dark:hover:text-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg"
+              >
+                {{ $t('projects.visitSite') }}
+              </a>
+              <button
+                @click="toggleDetails(project.id)"
+                class="inline-block bg-gray-800/50 border border-accent hover:bg-accent hover:border-accent dark:hover:border-accent hover:text-gray-300 dark:hover:text-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg"
+              >
+                {{ expandedProjectId === project.id ? $t('projects.viewLess') : $t('projects.viewMore') }}
+              </button>
+            </div>
+          </div>
         </div>
-        <!-- Base -->
-        <div class="base">
-          <div class="base-top"></div>
-          <div class="base-bottom"></div>
-        </div>
+
+        <!-- Collapsible Details Section -->
+        <transition name="expand">
+          <div v-if="expandedProjectId === project.id" class="mt-8 pt-8 border-t border-gray-700/50 px-2 lg:px-4 text-left">
+            <p class="text-gray-600 dark:text-gray-300 mb-6 text-lg">{{ project.long_description }}</p>
+            <p v-if="project.long_description_2" class="text-gray-600 dark:text-gray-300 mb-6 text-lg">{{ project.long_description_2 }}</p>
+            <p v-if="project.long_description_3" class="text-gray-600 dark:text-gray-300 mb-6 text-lg">{{ project.long_description_3 }}</p>
+            <ul v-if="project.details" class="list-disc text-left pl-6 text-gray-600 dark:text-gray-300 mb-6 text-lg space-y-2">
+              <li v-for="(detail, i) in project.details" :key="i">
+                {{ detail }}
+              </li>
+            </ul>
+            <div class="py-6 text-center">
+              <h4 class="text-xl font-semibold text-gray-800 dark:text-white/80 mb-4">Tecnologías Utilizadas</h4>
+              <div class="flex flex-wrap gap-3 justify-center">
+                <span v-for="tech in project.technologies" :key="tech" class="bg-accent/30 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                  {{ tech }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </transition>
       </div>
     </div>
+
+
+
   </div>
+
 </template>
 
+<style scoped>
+.expand-enter-active,
+.expand-leave-active {
+  transition: grid-template-rows 0.5s ease, opacity 0.5s ease;
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+</style>
+
 <script setup>
-import { onMounted } from 'vue'
-import gsap from 'gsap'
+import { ref, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
+import gsap from 'gsap';
+
+const { tm } = useI18n();
+
+const getImageUrl = (path) => {
+  // Las imágenes están en 'src/assets/images/projects/*'
+  // La ruta en el JSON es 'assets/images/projects/*'
+  // Necesitamos construir la URL relativa desde la ubicación de este componente.
+  return new URL(`../${path}`, import.meta.url).href;
+};
+
+const expandedProjectId = ref(null);
+
+const toggleDetails = (projectId) => {
+  if (expandedProjectId.value === projectId) {
+    expandedProjectId.value = null;
+  } else {
+    expandedProjectId.value = projectId;
+  }
+};
 
 onMounted(() => {
   // Animación del MacBook

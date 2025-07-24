@@ -230,7 +230,62 @@
     "experience": "Más de 3 años de experiencia profesional",
     "professionalWork": "Desarrollo de soluciones",
     "personalProjects": "Proyectos personales",
-    "description": "Combinando experiencia profesional con proyectos personales"
+    "description": "Combinando experiencia profesional con proyectos personales",
+    "list": [
+      {
+        "id": 1,
+        "company": "beon. Entertainment",
+        "title": "Multisite Web",
+        "description": "Desarrollo de la web principal de beon. Entertainment, enfocada en la presentación de producciones y venta de entradas. Se utilizó un diseño moderno y adaptativo para garantizar una experiencia de usuario óptima en todos los dispositivos.",
+        "url": "https://beon-entertainment.com/",
+        "long_description": "El proyecto para beon. Entertainment consistió en un rediseño completo y el desarrollo de su nueva plataforma web. El objetivo era crear un portal atractivo y funcional que sirviera como escaparate para sus producciones teatrales y eventos, facilitando al mismo tiempo la compra de entradas a través de la integración con sus sistemas de ticketing. Se puso especial énfasis en la optimización del rendimiento y en un diseño responsive que se adaptara a la perfección a móviles, tabletas y ordenadores.",
+        "long_description_2": "Como desarrollador web en beon. Worldwide, tuve la oportunidad de diseñar y construir proyectos clave. Esta plataforma multisite representa hasta la fecha una de mis contribuciones más significativas, un proyecto en el que desempeñé un rol central en su concepción, desarrollo y entrega, gestionando eficazmente tanto los tiempos como los recursos necesarios.",
+        "long_description_3": "Se resolvió el desafío de gestionar múltiples sitios web con requisitos de contenido e idioma diversos desde una única base de código. Construida con Laravel y Livewire, la plataforma ofrece:",
+        "details": [
+          "Administración Multisitio Unificada: Gestión eficiente del contenido para varios espectáculos (ej., Los pilares de la tierra, el musical, La histaoria interminable, el musical...) y el sitio principal de beon. Entertainment desde una única interfaz.",
+          "Sistema Multilingüe Sofisticado: Implementé un servicio de localización basado en el 'Patrón Estrategia' para un cambio de idioma dinámico, manteniendo el contexto de la página y soportando URLs traducidas amigables para SEO (ej., /la-productora ↔ /the-producer).",
+          "Gestión de Contenido Dinámico: Herramientas para crear páginas personalizadas, noticias y perfiles detallados para el elenco, staff y equipo creativo, todos con soporte multilingüe.",
+          "Optimización del Rendimiento: Se integró un pipeline de optimización de imágenes que convierte automáticamente las imágenes a formatos modernos (AVIF/WebP) con carga diferida, mejorando significativamente el rendimiento del sitio web.",
+          "Diseño Moderno y Adaptativo: Se puso un énfasis especial en un diseño responsive para una experiencia de usuario fluida en móviles, tabletas y ordenadores."
+        ],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "Docker", "GSAP"],
+        "image": "assets/images/projects/bent.avif"
+      },
+      {
+        "id": 2,
+        "company": "Finca Alfoliz Origen",
+        "title": "Landing Page para Evento",
+        "description": "Desarrollo de una landing page optimizada para el evento 'Finca Alfoliz Origen', con un sistema integrado para la gestión y venta de entradas.",
+        "url": "https://fincaalfolizorigen.com/",
+        "long_description": "Parte de mi trabajo como Desarrollador Web en beon. Worldwide, este proyecto se centró en crear una landing page de alto rendimiento para promocionar el evento y gestionar la venta de entradas de forma eficiente. La prioridad fue la optimización de recursos, asegurando una experiencia de usuario rápida y fluida, desde la consulta de información hasta la compra final del ticket.",
+        "details": [
+          "Diseño y desarrollo de una landing page enfocada en la conversión y la claridad de la información del evento.",
+          "Integración directa con una plataforma de ticketing para una gestión de entradas simplificada y segura.",
+          "Optimización de imágenes y tiempos de carga para garantizar el máximo rendimiento incluso en dispositivos móviles.",
+          "Configuración de pasarela de pago para procesar las transacciones de compra de entradas de forma segura.",
+          "Panel de administración para el seguimiento de las ventas y la gestión de los asistentes al evento."
+        ],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "JavaScript", "Docker"],
+        "image": "assets/images/projects/finca.avif"
+      },
+      {
+        "id": 3,
+        "company": "CTX Tech Experience",
+        "title": "Landing Page",
+        "description": "Landing page minimalista y moderna para CTx Tech Experience, con enfoque en la experiencia del usuario y la conversión. Se ha priorizado la optimización de recursos y la velocidad de carga.",
+        "url": "https://ctx-tech.com/",
+        "long_description": "Para CTx Tech Experience se desarrolló una landing page minimalista y moderna, centrada en ofrecer una experiencia de usuario fluida y directa. El objetivo principal cómo Desarrollador Web en beon. Worldwide fue crear una página de alto rendimiento, optimizando la velocidad de carga y los recursos para garantizar una navegación ágil. Construida con Laravel y Livewire, la página presenta el contenido de forma clara y atractiva, adaptándose perfectamente a cualquier dispositivo.",
+        "details": [
+          "Diseño minimalista y moderno enfocado en la usabilidad y la conversión.",
+          "Optimización de recursos y velocidad de carga para un rendimiento superior.",
+          "Desarrollo sobre Laravel para una base de código robusta y escalable.",
+          "Interfaz totalmente responsiva, garantizando una experiencia consistente en todos los dispositivos.",
+          "Potenciado por Livewire para construir una interfaz dinámica y reactiva de forma eficiente."
+        ],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "Flux"],
+        "image": "assets/images/projects/ctx.avif"
+      }
+    ]
   },
   "contact": {
     "title": "Contacto",
