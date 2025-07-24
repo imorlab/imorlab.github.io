@@ -23,16 +23,18 @@
                 <div class="notch"><div class="camera"></div></div>
                 <div class="screen overflow-hidden relative">
                   <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="relative w-full h-full">
-                      <!-- <iframe
+                    <div class="hidden md:block relative" style="transform: scale(0.27);">
+                      <iframe
                         :src="project.url"
-                        class="w-[100vw] h-[100vh] md:w-[100dvw] md:h-[105dvh] border-0"
+                        class="hidden md:block w-[1920px] h-[1130px] border-0"
                         style="transform-origin: 0 0;"
                         allowfullscreen
                         loading="lazy"
                         :title="project.title"
                         sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-                      ></iframe> -->
+                      ></iframe>
+                    </div>
+                    <div class="md:hidden relative w-full h-full">
                       <img :src="getImageUrl(project.image)" :alt="project.title" class="w-full h-full object-cover object-top">
                     </div>
                   </div>
