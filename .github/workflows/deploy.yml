@@ -59,10 +59,6 @@ jobs:
       - name: Create .nojekyll file
         run: touch dist/.nojekyll
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          base: ${{ github.event.repository.default_branch }}
 
       - name: Upload
         uses: actions/upload-pages-artifact@v3
