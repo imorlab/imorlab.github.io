@@ -4,11 +4,8 @@ import About from '../views/About.vue'
 import Projects from '../views/Projects.vue'
 import Contact from '../views/Contact.vue'
 
-const isProduction = import.meta.env.PROD
-const base = isProduction ? '/imorlab-portfolio/' : '/'
-
 const router = createRouter({
-  history: createWebHistory(base),
+  history: createWebHistory('/'),
   routes: [
     {
       path: '/',

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://imorlab.github.io/imorlab-portfolio/</loc>
+    <loc>https://imorlab.github.io/</loc>
     <lastmod>2025-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://imorlab.github.io/imorlab-portfolio/about</loc>
+    <loc>https://imorlab.github.io/about</loc>
     <lastmod>2025-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://imorlab.github.io/imorlab-portfolio/projects</loc>
+    <loc>https://imorlab.github.io/projects</loc>
     <lastmod>2025-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://imorlab.github.io/imorlab-portfolio/contact</loc>
+    <loc>https://imorlab.github.io/contact</loc>
     <lastmod>2025-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
