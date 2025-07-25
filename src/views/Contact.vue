@@ -2,7 +2,7 @@
   <div>
   <div class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8">
     <div class="w-full max-w-2xl mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-accent text-center">{{ $t('contact.title') }}</h2>
+      <h1 class="text-3xl font-bold mb-8 text-accent text-center">{{ $t('contact.title') }}</h1>
       
       <p class="text-gray-500 dark:text-gray-100 mb-8 text-center">
         {{ $t('contact.getInTouch') }}
