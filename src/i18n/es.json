@@ -58,7 +58,7 @@
         "years": "3+",
         "projects": "20+",
         "technologies": "15+",
-        "development": "1000+",
+        "development": "2500+",
         "years_label": "Años",
         "projects_label": "Proyectos",
         "technologies_label": "Tecnologías",
@@ -114,10 +114,6 @@
               "icon": "devicon:laravel"
             },
             {
-              "name": "Livewire",
-              "component": "LivewireIcon"
-            },
-            {
               "name": "MySQL",
               "icon": "devicon:mysql"
             }
@@ -128,24 +124,20 @@
           "icon": "heroicons:computer-desktop",
           "items": [
             {
-              "name": "JavaScript",
-              "icon": "devicon:javascript"
+              "name": "Livewire",
+              "component": "LivewireIcon"
             },
             {
-              "name": "HTML5",
-              "icon": "devicon:html5"
-            },
-            {
-              "name": "CSS3",
-              "icon": "devicon:css3"
-            },
-            {
-              "name": "Bootstrap",
-              "icon": "devicon:bootstrap"
+              "name": "Vue",
+              "icon": "devicon:vuejs"
             },
             {
               "name": "Tailwind",
               "icon": "devicon:tailwindcss"
+            },
+            {
+              "name": "Bootstrap",
+              "icon": "devicon:bootstrap"
             }
           ]
         },
