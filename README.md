@@ -20,6 +20,7 @@ Portfolio web personal desarrollado con Vue.js 3 y Tailwind CSS, mostrando mis h
 
 - **Frontend Framework:** Vue.js 3
 - **Build Tool:** Vite
+- **Static Site Generator:** vite-ssg
 - **CSS Framework:** Tailwind CSS
 - **Icons:** Heroicons & Iconify
 - **Router:** Vue Router 4
@@ -71,10 +72,11 @@ Para generar el CV, simplemente:
    npm run dev
    ```
 
-4. **Construir para producción**
+4. **Construir para producción (SSG)**
    ```bash
    npm run build
    ```
+   Este proyecto utiliza `vite-ssg` para la Generación de Sitios Estáticos (Static Site Generation). Este comando compila la aplicación y genera archivos HTML para cada ruta, optimizando el rendimiento y el SEO. El resultado se guarda en la carpeta `dist/`.
 
 ## Estructura del Proyecto
 
@@ -125,6 +127,6 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## Contacto
 
-- **Website:** [imorlab.com](https://imorlab.github.io/imorlab-portfolio/)
+- **Website:** [imorlab.com](https://imorlab.github.io)
 - **GitHub:** [@imorlab](https://github.com/imorlab)
-- **LinkedIn:** [Israel Moreno](https://linkedin.com/in/imorlab)
+- **LinkedIn:** [Israel Moreno](https://www.linkedin.com/in/israelmorenolabrador/)
