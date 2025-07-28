@@ -1,4 +1,4 @@
-// Función para aplicar el tema oscuro inmediatamente
+// Función para aplicar el tema oscuro
 function applyDarkMode() {
   const savedTheme = localStorage.getItem('theme')
   if (savedTheme === 'light') {
@@ -9,7 +9,5 @@ function applyDarkMode() {
   }
 }
 
-// Ejecutar inmediatamente
-applyDarkMode()
-
 export { applyDarkMode }
+

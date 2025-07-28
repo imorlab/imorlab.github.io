@@ -6,7 +6,7 @@ import es from './i18n/es.json'
 import en from './i18n/en.json'
 import './assets/main.css'
 import './style.css'
-import './utils/dark-mode'
+import { applyDarkMode } from './utils/dark-mode'
 
 const i18n = createI18n({
   legacy: false,
@@ -27,8 +27,12 @@ const i18n = createI18n({
 export const createApp = ViteSSG(
   App,
   { routes },
-  ({ app }) => {
+  ({ app, isClient }) => {
     app.use(i18n)
+
+    if (isClient) {
+      applyDarkMode()
+    }
   }
 )
 
