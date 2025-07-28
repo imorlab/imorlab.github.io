@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite-ssg build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,7 +16,7 @@
     "autoprefixer": "^10.4.20",
     "gsap": "^3.12.5",
     "html2canvas": "^1.4.1",
-    "jspdf": "^2.5.2",
+    "jspdf": "^3.0.1",
     "path": "^0.12.7",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
-    "vite": "^5.4.10"
+    "vite": "^5.3.3",
+    "vite-ssg": "^27.1.0"
   }
 }

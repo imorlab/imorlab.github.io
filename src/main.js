@@ -1,6 +1,6 @@
-import { createApp } from 'vue'
+import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
-import router from './router'
+import { routes } from './router'
 import { createI18n } from 'vue-i18n'
 import es from './i18n/es.json'
 import en from './i18n/en.json'
@@ -24,8 +24,11 @@ const i18n = createI18n({
   fallbackWarn: false
 })
 
-const app = createApp(App)
+export const createApp = ViteSSG(
+  App,
+  { routes },
+  ({ app }) => {
+    app.use(i18n)
+  }
+)
 
-app.use(router)
-app.use(i18n)
-app.mount('#app')
