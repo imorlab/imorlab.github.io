@@ -13,6 +13,7 @@ Portfolio web personal desarrollado con Vue.js 3 y Tailwind CSS, mostrando mis h
 - Tema oscuro con acentos personalizados
 - Animaciones y transiciones suaves
 - Optimizado para SEO
+- **🤖 Chatbot inteligente integrado** con IA local
 - Generación automática de CV en PDF
 - Construido con las últimas tecnologías web
 
@@ -33,6 +34,34 @@ Portfolio web personal desarrollado con Vue.js 3 y Tailwind CSS, mostrando mis h
 - **Habilidades:** Competencias técnicas y blandas
 - **Proyectos:** Portfolio de trabajos destacados
 - **Contacto:** Formulario de contacto y redes sociales
+- **🤖 Chatbot:** Asistente virtual inteligente para consultas
+
+## 🤖 Chatbot Asistente Virtual
+
+El portfolio incluye un chatbot inteligente con las siguientes características:
+
+### ✨ Funcionalidades Destacadas
+- **IA Local**: Sistema de procesamiento de lenguaje natural básico
+- **Soporte Bilingüe**: Respuestas en español e inglés
+- **Base de Conocimiento Completa**: Información sobre experiencia, habilidades, proyectos
+- **Diseño Adaptativo**: Compatible con temas oscuro y claro
+- **Respuestas Profesionales**: Formato markdown con call-to-actions
+
+### 💬 Capacidades del Chatbot
+- Información personal y profesional
+- Detalles sobre experiencia laboral
+- Habilidades técnicas y blandas
+- Descripción de proyectos
+- Metodologías de trabajo (Agile, Scrum)
+- Enlaces a GitHub y repositorios
+- Información de contacto
+
+### 🎯 Cómo Usar
+1. Haz clic en el botón flotante en la esquina inferior derecha
+2. Usa las acciones rápidas o escribe preguntas en lenguaje natural
+3. Recibe respuestas contextuales y detalladas
+
+**📋 Documentación completa:** Ver `CHATBOT_COMPLETE_DOCUMENTATION.md`
 
 ## Generación Automática de CV
 
@@ -83,12 +112,18 @@ imorlab-portfolio/
 ├── src/
 │   ├── assets/         # Imágenes y recursos estáticos
 │   ├── components/     # Componentes Vue reutilizables
+│   │   ├── ChatBot/    # 🤖 Sistema de chatbot inteligente
+│   │   │   ├── ChatBot.vue          # Componente UI del chat
+│   │   │   ├── chatbotService.js    # Motor de IA y respuestas
+│   │   │   └── README.md           # Documentación específica
+│   │   └── ...
 │   ├── router/         # Configuración de Vue Router
 │   ├── views/          # Componentes de página
 │   ├── App.vue         # Componente raíz
 │   └── main.js         # Punto de entrada
 ├── public/             # Archivos públicos
 ├── index.html          # Plantilla HTML
+├── CHATBOT_COMPLETE_DOCUMENTATION.md  # 📋 Documentación completa del chatbot
 └── package.json        # Dependencias y scripts
 ```
 
