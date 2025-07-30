@@ -1,6 +1,17 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { writeFileSync } from 'fs'
+
+// Plugin para crear .nojekyll en GitHub Pages
+const createNojekyllPlugin = () => {
+  return {
+    name: 'create-nojekyll',
+    writeBundle() {
+      writeFileSync('dist/.nojekyll', '')
+    }
+  }
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,7 +23,8 @@ export default defineConfig({
           isCustomElement: (tag) => tag.includes('ion-')
         }
       }
-    })
+    }),
+    createNojekyllPlugin()
   ],
   resolve: {
     alias: {
