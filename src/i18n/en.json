@@ -243,6 +243,23 @@
     "sending": "Sending...",
     "success": "Message sent successfully!"
   },
+  "chatbot": {
+    "title": "Virtual Assistant",
+    "subtitle": "Ask me about Israel",
+    "welcome": "Hello! 👋 I'm Israel Moreno's virtual assistant. I'm here to help you learn more about his professional experience, skills, projects, and how to contact him.",
+    "welcomeSubtitle": "You can use the quick actions below or write any question:",
+    "placeholder": "Type your question...",
+    "copy": "Copy message",
+    "regenerate": "Regenerate response",
+    "clearChat": "New conversation",
+    "helpMessage": "How can I help you?",
+    "quickActions": {
+      "skills": "Skills",
+      "projects": "Projects",
+      "experience": "Experience",
+      "contact": "Contact"
+    }
+  },
   "footer": {
     "created": "Created by imorlab with",
     "hosted": "Hosted on",

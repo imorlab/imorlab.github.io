@@ -155,20 +155,28 @@
         </div>
       </footer>
     </div>
+    
+    <!-- ChatBot -->
+    <ChatBot />
+    
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, provide } from 'vue'
 import { useRoute } from 'vue-router'
 import { RouterLink, RouterView } from 'vue-router'
 import { Icon } from '@iconify/vue'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
+import ChatBot from './components/ChatBot/ChatBot.vue'
 
 const route = useRoute()
 const isDark = ref(true)
 const isMenuOpen = ref(false)
+
+// Proporcionar el estado del tema a todos los componentes hijos
+provide('isDark', isDark)
 
 const mouseX = ref(0)
 const mouseY = ref(0)
