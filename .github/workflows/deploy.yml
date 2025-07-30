@@ -29,32 +29,21 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
+      - name: Cache dependencies
         uses: actions/cache@v3
         with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm ci
 
       - name: Build
         env:
           VITE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm build
+        run: npm run build
 
       - name: Create .nojekyll file
         run: touch dist/.nojekyll
