@@ -15,7 +15,7 @@ const createNojekyllPlugin = () => {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/imorlab-portfolio/' : '/',
+  base: '/', // Para repositorio de usuario (imorlab.github.io)
   plugins: [
     vue({
       template: {
