@@ -138,13 +138,13 @@
             v-model="currentMessage"
             @keypress.enter="sendMessage"
             :placeholder="$t('chatbot.placeholder')"
-            class="flex-1 px-3 py-2 text-sm bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-accent/50 transition-colors duration-200"
+            class="flex-1 px-3 py-2 text-sm bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-accent/50 transition-colors duration-200"
             :disabled="isTyping"
           />
           <button
             @click="sendMessage"
             :disabled="!currentMessage.trim() || isTyping"
-            class="p-2 bg-accent hover:bg-accent/70 disabled:bg-gray-300 disabled:cursor-not-allowed text-gray-900 rounded-full transition-colors duration-200"
+            class="p-2 bg-accent hover:bg-accent/70 disabled:bg-accent/30 disabled:cursor-not-allowed text-gray-900 text-gray-100 dark:text-gray-900 rounded-full transition-colors duration-200"
           >
             <Icon icon="heroicons:paper-airplane" class="w-4 h-4" />
           </button>
