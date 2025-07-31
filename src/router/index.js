@@ -4,8 +4,8 @@ import About from '../views/About.vue'
 import Projects from '../views/Projects.vue'
 import Contact from '../views/Contact.vue'
 
-const isProduction = import.meta.env.PROD
-const base = isProduction ? '/imorlab-portfolio/' : '/'
+// Para repositorio de usuario (imorlab.github.io), la base siempre es '/'
+const base = '/'
 
 const router = createRouter({
   history: createWebHistory(base),

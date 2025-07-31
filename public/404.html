@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Israel Moreno Portfolio</title>
-    <!-- <script type="text/javascript">
-      // Redirigir todas las rutas 404 a la SPA
+    <title>Israel Moreno | Desarrollador Web Full Stack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="text/javascript">
+      // Redirigir rutas SPA para GitHub Pages
       var path = window.location.pathname;
-      var redirectUrl = '/?/' + path;
-      window.location.replace(redirectUrl);
-    </script> -->
+      if (path !== '/') {
+        window.location.replace('/?/' + path);
+      }
+    </script>
   </head>
   <body>
-    <h1>404 - Página no encontrada</h1>
-    <p>Lo sentimos, la página que buscas no existe.</p>
-    <p><a href="/">Volver al inicio</a></p>
+    <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
