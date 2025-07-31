@@ -160,8 +160,6 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## Contacto
 
-- **Website:** [imorlab.com](https://imorlab.github.io/imorlab-portfolio/)
+- **Website:** [imorlab.com](https://imorlab.github.io)
 - **GitHub:** [@imorlab](https://github.com/imorlab)
 - **LinkedIn:** [Israel Moreno](https://linkedin.com/in/imorlab)
-# Test deploy - jueves, 31 de julio de 2025, 00:49:46 CEST
-# Deploy test - jueves, 31 de julio de 2025, 00:57:19 CEST
