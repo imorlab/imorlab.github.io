@@ -113,7 +113,7 @@
             <div 
               class="text-sm leading-relaxed"
               :class="message.type === 'bot' ? 'markdown-content' : 'whitespace-pre-wrap'"
-              v-html="message.content"
+              v-html="message.type === 'bot' ? processMarkdown(message.content) : message.content"
             ></div>
             <!-- <div class="text-xs opacity-70 mt-2">{{ formatTime(message.timestamp) }}</div> -->
           </div>
@@ -320,6 +320,30 @@ const formatTime = (timestamp) => {
   })
 }
 
+// Función para procesar markdown simple
+const processMarkdown = (text) => {
+  if (!text) return text
+  
+  return text
+    // Encabezados (##)
+    .replace(/^## (.+)$/gm, '<h3 class="text-base font-semibold text-accent mb-2 mt-3">$1</h3>')
+    // Texto en negrita (**texto** o <strong>)
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/<strong>([^<]+)<\/strong>/g, '<strong>$1</strong>')
+    // Enlaces
+    .replace(/<a href="([^"]+)" target="_blank">([^<]+)<\/a>/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$2 ↗</a>')
+    // Listas
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/s, '<ul class="list-disc list-inside my-2 space-y-1">$1</ul>')
+    // Código inline
+    .replace(/`([^`]+)`/g, '<code class="bg-gray-200 dark:bg-gray-600 px-1 py-0.5 rounded text-xs">$1</code>')
+    // Bloques de código
+    .replace(/```([^`]+)```/g, '<pre class="bg-gray-200 dark:bg-gray-600 p-2 rounded text-xs overflow-x-auto my-2"><code>$1</code></pre>')
+    // Saltos de línea
+    .replace(/\n\n/g, '<br><br>')
+    .replace(/\n/g, '<br>')
+}
+
 // Limpiar timer al desmontar el componente
 onUnmounted(() => {
   if (helpMessageTimer) {
@@ -425,6 +449,15 @@ onUnmounted(() => {
   line-height: 1.6;
 }
 
+:deep(.markdown-content h3) {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(var(--color-accent));
+  margin: 0.75rem 0 0.5rem 0;
+  border-bottom: 1px solid rgb(var(--color-accent) / 0.2);
+  padding-bottom: 0.25rem;
+}
+
 :deep(.markdown-content strong) {
   font-weight: 600;
   color: rgb(var(--color-accent));
@@ -449,20 +482,51 @@ onUnmounted(() => {
 }
 
 :deep(.markdown-content ul) {
-  margin: 0.5rem 0;
-  padding-left: 1rem;
+  margin: 0.75rem 0;
+  padding-left: 1.25rem;
 }
 
 :deep(.markdown-content li) {
   margin-bottom: 0.25rem;
+  position: relative;
+}
+
+:deep(.markdown-content code) {
+  background-color: rgb(156 163 175 / 0.2);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+}
+
+:deep(.markdown-content pre) {
+  background-color: rgb(156 163 175 / 0.2);
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
 }
 
 :deep(.markdown-content) {
   font-feature-settings: "liga" on, "calt" on;
 }
 
+.dark :deep(.markdown-content h3) {
+  color: rgb(var(--color-accent) / 0.9);
+}
+
 .dark :deep(.markdown-content strong) {
   color: rgb(var(--color-accent) / 0.9);
+}
+
+.dark :deep(.markdown-content code) {
+  background-color: rgb(75 85 99 / 0.5);
+}
+
+.dark :deep(.markdown-content pre) {
+  background-color: rgb(75 85 99 / 0.5);
 }
 
 .light :deep(.markdown-content strong) {

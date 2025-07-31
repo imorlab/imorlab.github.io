@@ -110,8 +110,8 @@ export const chatbotService = {
 
       // Enlaces importantes
       links: {
-        github: "GitHub: github.com/imorlab",
-        linkedin: "LinkedIn profesional disponible",
+        github: "GitHub: https://github.com/imorlab",
+        linkedin: "LinkedIn: https://www.linkedin.com/in/israelmorenolabrador/",
         portfolio: "Este portfolio contiene ejemplos detallados de proyectos"
       }
     },
@@ -324,115 +324,120 @@ export const chatbotService = {
         ],
         
         personal: [
-          `Israel Moreno es un ${kb.personal.role} con sede en ${kb.personal.location}. Tiene ${kb.personal.experience} y se especializa en ${kb.personal.specialization}. ${kb.personal.description}`,
-          `Te cuento sobre Israel: es desarrollador web full stack ubicado en España, con más de 3 años creando soluciones web innovadoras con Laravel y otras tecnologías modernas.`
+          `¡Hola! Te cuento sobre Israel. Es un desarrollador web full stack que vive en España y lleva más de 3 años creando soluciones web realmente interesantes. Se especializa principalmente en Laravel (PHP), que es donde más brilla, pero también maneja Vue.js y otras tecnologías modernas.
+
+Lo que más me gusta de él es que realmente se apasiona por la programación web, el diseño y la tecnología en general. No es solo trabajo para él, ¡se nota que le encanta lo que hace!
+
+¿Te gustaría saber algo más específico sobre él?`,
+          
+          `Israel es uno de esos desarrolladores que encuentras de vez en cuando que realmente sabe lo que hace. Está ubicado en España y tiene una sólida experiencia de más de 3 años en desarrollo web full stack.
+
+Su fuerte es Laravel - ahí es donde realmente se destaca - pero también tiene buen manejo de Vue.js y otras tecnologías del ecosistema web moderno. Lo que más me impresiona es su enfoque: no solo programa, sino que realmente entiende cómo crear experiencias web que funcionan bien.
+
+¿Hay algo específico de su background que te interese conocer?`
         ],
 
         experience: [
-          `## Experiencia Profesional de Israel
+          `Te cuento sobre la experiencia actual de Israel - está trabajando como Web Developer en **beon. worldwide** desde mayo de 2023, en Sevilla con modalidad híbrida.
 
-Israel cuenta con una sólida trayectoria en desarrollo web, combinando experiencia técnica con habilidades de colaboración.
+**Lo que hace día a día:**
+- Desarrolla plataformas web súper escalables con Laravel (es su especialidad)
+- Diseña sistemas de reservas que realmente funcionan bien para los usuarios
+- Integra APIs de OpenAI para automatización (¡está al día con la IA!)
+- Configura pasarelas de pago seguras para clientes internacionales
+- Crea interfaces dinámicas con Livewire y Vue.js
+- Da soporte directo a clientes, adaptando funcionalidades según sus necesidades
 
-### Puesto Actual
-🏢 <strong>${kb.experience.current.role}</strong> en ${kb.experience.current.company}
-📅 ${kb.experience.current.period}
-📍 ${kb.experience.current.location}
+Lo que más me llama la atención es que no solo programa - también interactúa directamente con los clientes para entender qué necesitan realmente. Eso le da una perspectiva súper valiosa.
 
-### Responsabilidades Clave
-- Desarrollo y mantenimiento de plataformas escalables con Laravel
-- Implementación de APIs avanzadas (incluyendo OpenAI)
-- Gestión de sistemas de reservas y pasarelas de pago
-- Creación de interfaces dinámicas con Livewire y Vue.js
-- Soporte directo al cliente y adaptación de funcionalidades
-
-### Logros Destacados
-Desarrollo de sistemas complejos multisite y optimización de rendimiento para aplicaciones de alto tráfico.
-
-<strong>¿Te interesa conocer detalles sobre algún proyecto específico o aspecto técnico?</strong>`,
+¿Te interesa saber más sobre algún aspecto específico de su trabajo?`,
           
-          `## Stack Tecnológico y Enfoque
+          `La experiencia de Israel es bastante sólida. Actualmente está en **beon. worldwide** como Web Developer, donde lleva desde mayo de 2023.
 
-Israel se especializa en el ecosistema Laravel con un enfoque full-stack moderno.
+**Sus principales fortalezas:**
+✨ **Backend robusto** - Laravel es su zona de confort, ahí realmente domina
+🔧 **Integraciones complejas** - APIs externas, sistemas de pago, OpenAI... lo que necesites
+🎨 **Frontend moderno** - Livewire y Vue.js para interfaces que realmente funcionan
+👥 **Trato directo con clientes** - no es solo un programador que recibe tickets, sino que entiende el negocio
 
-### Áreas de Expertise
-✨ <strong>Backend:</strong> Desarrollo de APIs robustas y sistemas escalables
-🔧 <strong>Integraciones:</strong> APIs externas, sistemas de pago, OpenAI
-🎨 <strong>Frontend:</strong> Interfaces reactivas con Livewire y Vue.js
-👥 <strong>Colaboración:</strong> Trabajo directo con clientes y equipos
+Ha trabajado en sistemas multisite complejos y optimización de rendimiento para aplicaciones de alto tráfico. Antes también tuvo una experiencia como programador web en Iwan21 durante sus prácticas.
 
-### Experiencia Práctica
-Más de 3 años resolviendo desafíos reales en entornos de producción, desde startups hasta empresas establecidas.
-
-<strong>¿Quieres explorar algún proyecto específico donde aplicó estas habilidades?</strong>`
+¿Quieres que te cuente sobre algún proyecto específico donde aplicó estas habilidades?`
         ],
 
         skills: [
-          `## Habilidades Técnicas y Nivel de Dominio
+          `Israel tiene una combinación muy sólida de habilidades técnicas. Te cuento lo que maneja:
 
-Israel posee un conjunto completo de habilidades para desarrollo web moderno, con especial expertise en el ecosistema PHP/Laravel.
+**Su fuerte (nivel avanzado):**
+**Backend** - PHP, Laravel, Livewire, MySQL (aquí es donde realmente domina)
 
-### Stack Principal
-<strong>Backend (Avanzado):</strong> ${kb.skills.backend.join(', ')}
-<strong>Frontend (Intermedio-Avanzado):</strong> ${kb.skills.frontend.join(', ')}
-<strong>Herramientas:</strong> ${kb.skills.tools.join(', ')}
-<strong>Diseño:</strong> ${kb.skills.design.join(', ')}
+**Frontend (nivel intermedio-avanzado):**
+JavaScript, HTML5, CSS3, Bootstrap, Tailwind CSS, Vue.js
 
-### Ejemplo de Aplicación
-En beon. Entertainment, implementó un sistema multisite complejo que gestiona múltiples producciones teatrales con:
-\`\`\`
-- Laravel para backend robusto
-- Livewire para interfaces dinámicas
-- Tailwind CSS para diseño responsive
-- MySQL para gestión de datos
-\`\`\`
+**Otras herramientas:** Git, GitHub, Trello, Adobe XD, Photoshop
 
-### Habilidades Blandas
+**Un ejemplo práctico:** En beon. Entertainment desarrolló un sistema multisite súper complejo que maneja múltiples producciones teatrales. Usó Laravel para el backend robusto, Livewire para interfaces dinámicas, Tailwind CSS para que se vea genial en todos los dispositivos, y MySQL para gestionar todos los datos.
+
+**Sus habilidades blandas también son geniales:**
 ${kb.skills.soft.join(' • ')}
 
-<strong>¿Te gustaría ver ejemplos específicos de cómo aplicó estas tecnologías en proyectos reales?</strong>`,
+Lo que más me gusta es que no solo sabe programar - entiende el negocio y puede hablar tanto con el equipo técnico como con los clientes.
+
+¿Te interesa saber cómo aplicó alguna de estas tecnologías en algún proyecto específico?`,
           
-          `## Especialización y Experiencia Práctica
+          `Las habilidades de Israel están muy bien balanceadas entre backend y frontend, con una especialización clara en Laravel.
 
-Israel combina conocimiento técnico profundo con experiencia práctica en proyectos de producción.
+**Lo que realmente domina:**
+🚀 **Laravel/PHP** - 3+ años desarrollando aplicaciones complejas (este es su superpoder)
+💻 **Frontend moderno** - JavaScript ES6+, Vue.js, Tailwind CSS
+🎨 **UI/UX** - Diseño responsive y experiencia de usuario
+🔧 **DevOps** - Git, Docker, optimización de rendimiento
 
-### Áreas de Especialización
-🚀 <strong>Laravel/PHP:</strong> 3+ años desarrollando aplicaciones complejas
-💻 <strong>Frontend Moderno:</strong> JavaScript ES6+, Vue.js, Tailwind CSS
-🎨 <strong>UI/UX:</strong> Diseño responsive y experiencia de usuario
-🔧 <strong>DevOps:</strong> Git, Docker, optimización de rendimiento
+**Su enfoque de desarrollo:**
+- Código limpio y mantenible (no de esos que escriben código "rápido y sucio")
+- Optimización de rendimiento real
+- Experiencia de usuario como prioridad
+- Integración continua y buenas prácticas
 
-### Enfoque de Desarrollo
-- Código limpio y mantenible
-- Optimización de rendimiento
-- Experiencia de usuario centrada
-- Integración continua
+En CTX Tech Experience, por ejemplo, utilizó Laravel + Livewire + Tailwind para crear una landing page optimizada que logró excelentes métricas de conversión.
 
-<strong>¿Quieres conocer más sobre su experiencia con alguna tecnología específica?</strong>`
+¿Quieres que te cuente más sobre su experiencia con alguna tecnología específica?`
         ],
 
         projects: [
-          `Israel ha trabajado en proyectos destacados:
+          `¡Los proyectos de Israel están geniales! Te cuento sobre los tres más destacados:
 
-<strong>1. Multisite Web - beon. Entertainment</strong>
-🔗 <a href="${kb.projects[0].url}" target="_blank">${kb.projects[0].url}</a>
-Plataforma web principal para presentación de producciones y venta de entradas.
+**1. Multisite Web - beon. Entertainment**
+<a href="${kb.projects[0].url}" target="_blank">${kb.projects[0].url}</a>
+Es la plataforma principal para presentar producciones teatrales y vender entradas. Lo interesante es que maneja múltiples sitios desde una sola instalación - súper eficiente. Tecnologías: Laravel, Livewire, Tailwind CSS, Docker, GSAP.
 
-<strong>2. Finca Alfoliz Origen</strong>
-🔗 <a href="${kb.projects[1].url}" target="_blank">${kb.projects[1].url}</a>
-Landing page optimizada con sistema de gestión de entradas.
+**2. Finca Alfoliz Origen**
+<a href="${kb.projects[1].url}" target="_blank">${kb.projects[1].url}</a>
+Una landing page optimizada para un evento, pero con un sistema integrado completo para gestión y venta de entradas. No es solo una página bonita, ¡funciona de verdad!
 
-<strong>3. CTX Tech Experience</strong>
-🔗 <a href="${kb.projects[2].url}" target="_blank">${kb.projects[2].url}</a>
-Landing page minimalista enfocada en conversión.`,
+**3. CTX Tech Experience**
+<a href="${kb.projects[2].url}" target="_blank">${kb.projects[2].url}</a>
+Esta me encanta por su diseño minimalista y moderno. Está súper enfocada en la experiencia del usuario y la conversión. Desarrollada con Laravel, Livewire, Tailwind CSS y Flux.
+
+Lo que más me llama la atención es la variedad: desde plataformas complejas hasta landing pages optimizadas. ¡Israel realmente sabe adaptarse a diferentes necesidades!
+
+¿Te gustaría saber más detalles técnicos de alguno de estos proyectos?`,
           
-          `Los proyectos de Israel demuestran su versatilidad:
+          `Los proyectos de Israel demuestran su versatilidad muy bien:
 
-🎭 Plataformas de entretenimiento con gestión de reservas
-🎫 Sistemas de venta de entradas integrados
-🚀 Landing pages optimizadas para conversión
-⚡ Sitios web de alto rendimiento
+🎭 **Plataformas de entretenimiento** con gestión completa de reservas
+🎫 **Sistemas de venta de entradas** integrados y funcionales  
+🚀 **Landing pages** súper optimizadas para conversión
+⚡ **Sitios web de alto rendimiento** que realmente funcionan
 
-Todos desarrollados con Laravel, Livewire y tecnologías modernas.`
+**Los highlights:**
+- **beon. Entertainment**: Sistema multisite complejo que gestiona múltiples producciones
+- **Finca Alfoliz Origen**: Landing con sistema de gestión integrado
+- **CTX Tech Experience**: Diseño minimalista enfocado en resultados
+
+Todos desarrollados con su stack favorito: Laravel, Livewire y tecnologías modernas. Lo que más me gusta es que no son solo proyectos técnicos - cada uno resuelve un problema real de negocio.
+
+¿Hay algún aspecto técnico específico de estos proyectos que te interese conocer?`
         ],
 
         education: [
@@ -448,33 +453,25 @@ Su formación se complementa con aprendizaje continuo en tecnologías web modern
         ],
 
         contact: [
-          `## Contacto y Medios de Comunicación
+          `¡Perfecto! Si quieres contactar con Israel, te cuento las mejores formas:
 
-Israel mantiene varios canales de comunicación para diferentes tipos de consultas profesionales.
+**Para propuestas de proyectos y trabajo:** 
+📧 **Formulario de contacto del portfolio** - Esta es la opción que más recomienda para temas profesionales. Es la forma más directa y él suele responder dentro de 24-48 horas.
 
-### Contacto Preferido para Proyectos
-📧 <strong>Formulario de Contacto del Portfolio</strong> - Ideal para propuestas profesionales
-${kb.contact.preferred}
+**Para networking y consultas técnicas:**
+💼 **LinkedIn** - Perfil profesional completo
+💻 **GitHub** - ${kb.links.github} (aquí puedes ver ejemplos de su código)
 
-### Redes Profesionales
-💼 <strong>LinkedIn:</strong> Perfil profesional y networking
-� <strong>GitHub:</strong> ${kb.links.github}
+**Tipos de consultas que maneja:**
+- Propuestas de nuevos proyectos
+- Colaboraciones a largo plazo  
+- Consultoría técnica
+- Desarrollo de MVPs
+- Optimización de aplicaciones existentes
 
-### Información Adicional Disponible
-- ${kb.contact.message}
-- ${kb.contact.socialMedia}
+Israel está disponible para proyectos freelance y colaboraciones. Le gusta trabajar tanto en proyectos desde cero como mejorar aplicaciones que ya existen.
 
-### Tipos de Consultas
-- <strong>Propuestas de proyectos:</strong> Usa el formulario de contacto
-- <strong>Consultas técnicas:</strong> GitHub o LinkedIn
-- <strong>Networking profesional:</strong> LinkedIn
-- <strong>Colaboraciones:</strong> Cualquier canal
-
-### Tiempo de Respuesta
-Israel generalmente responde a consultas profesionales dentro de 24-48 horas.
-
-<strong>¿Prefieres que te guíe al formulario de contacto?</strong>
-<strong>¿O necesitas información sobre algún canal específico?</strong>`
+¿Tienes algún proyecto específico en mente? ¡Cuéntame y te puedo dar algunos tips sobre cómo planteárselo!`
         ],
 
         availability: [
@@ -605,58 +602,51 @@ Si necesitas información específica sobre rates, disponibilidad detallada o re
         ],
 
         general: [
-          `## ¡Excelente pregunta!
+          `¡Excelente pregunta! Estoy aquí para contarte todo sobre Israel Moreno y su experiencia como desarrollador.
 
-Estoy aquí para proporcionarte información detallada sobre la experiencia y habilidades de Israel Moreno.
+**Puedo ayudarte con:**
+- 💼 **Su experiencia profesional** - qué hace actualmente, sus responsabilidades y logros
+- 🛠️ **Habilidades técnicas** - su stack principal y en qué es realmente bueno
+- 🚀 **Proyectos destacados** - ejemplos reales de su trabajo con detalles técnicos
+- 📞 **Cómo contactarlo** - las mejores formas según tu tipo de consulta
+- 🎯 **Disponibilidad** - tipos de proyectos que le interesan y modalidades de trabajo
 
-### Puedo ayudarte con:
-- <strong>Experiencia profesional:</strong> Roles, responsabilidades y logros específicos  
-- <strong>Habilidades técnicas:</strong> Nivel de dominio y ejemplos de aplicación
-- <strong>Proyectos destacados:</strong> Detalles técnicos, desafíos y soluciones implementadas
-- <strong>Metodologías de trabajo:</strong> Enfoques Agile y herramientas de colaboración
-- <strong>Disponibilidad:</strong> Tipos de proyectos y modalidades de colaboración
-- <strong>Contacto:</strong> Mejores canales según tu tipo de consulta
+**Algunas preguntas populares:**
+"¿Qué experiencia tiene con Laravel?" "¿Cuáles son sus proyectos más interesantes?" "¿Cómo puedo contactarlo para un proyecto?"
 
-### Sugerencias de Consulta
-¿Te interesa conocer sobre alguna tecnología específica como Laravel o Vue.js? ¿O prefieres información sobre algún proyecto particular?
-
-<strong>¿Qué aspecto específico de la experiencia de Israel te gustaría explorar?</strong>`,
+¿Qué aspecto específico te gustaría explorar primero? ¡Pregúntame lo que quieras!`,
           
-          `## Información Disponible sobre Israel
+          `¡Genial! Me encanta que tengas curiosidad por conocer más sobre Israel.
 
-Como asistente virtual, tengo acceso a información completa sobre la trayectoria profesional de Israel.
+Tengo información súper completa sobre su trayectoria profesional, y puedo contarte desde detalles técnicos específicos hasta cómo es su enfoque de trabajo.
 
-### Áreas de Expertise que Puedo Detallarte:
-📊 <strong>Experiencia laboral:</strong> 3+ años en desarrollo web profesional
-🛠️ <strong>Stack tecnológico:</strong> Laravel, Vue.js, MySQL, Tailwind CSS
-🚀 <strong>Proyectos reales:</strong> Desde landing pages hasta sistemas complejos
-🤝 <strong>Metodologías:</strong> Agile, colaboración directa con clientes
+**Lo que más le gusta preguntar a la gente:**
+� Su experiencia actual en beon. worldwide
+� Sus habilidades con Laravel y Vue.js  
+🌟 Los proyectos más cool en los que ha trabajado
+📬 La mejor forma de contactarlo según tu necesidad
 
-### Llamadas a la Acción Disponibles:
-- Revisar proyectos específicos en GitHub
-- Contactar para discutir colaboraciones
-- Explorar secciones del portfolio
-- Descargar CV completo
+**Dato curioso:** Israel no es solo un programador típico - también interactúa directamente con clientes, lo que le da una perspectiva única sobre cómo crear soluciones que realmente funcionen en el mundo real.
 
-<strong>¿Por dónde te gustaría comenzar? ¡Pregúntame sobre cualquier aspecto específico!</strong>`,
+¿Por dónde te gustaría empezar? ¡Puedes preguntarme cualquier cosa específica!`,
           
-          `## ¡Perfecto! Estás en el lugar correcto
+          `¡Perfecto! Estás en el lugar indicado para conocer todo sobre Israel Moreno.
 
-Israel es un desarrollador full-stack especializado en crear soluciones web robustas y escalables.
+Es un desarrollador full-stack que realmente sabe lo que hace, especializado en crear soluciones web robustas y escalables. Lo que más me gusta de él es que combina conocimiento técnico sólido con experiencia práctica en proyectos reales.
 
-### Lo Más Destacado:
-✨ <strong>Especialista en Laravel</strong> con experiencia en proyectos complejos
-🎯 <strong>Enfoque en resultados</strong> con ejemplos medibles de éxito
-🔧 <strong>Integrador de tecnologías</strong> (APIs, pagos, IA)
-👥 <strong>Colaborador efectivo</strong> con equipos y clientes
+**Highlights rápidos:**
+✨ **3+ años** de experiencia profesional
+🚀 **Especialista en Laravel** con experiencia en sistemas complejos
+🎯 **Enfoque en resultados** con ejemplos medibles de éxito
+🤝 **Colaborador efectivo** tanto con equipos como con clientes
 
-### Próximos Pasos Sugeridos:
-1. Explora sus proyectos destacados para ver ejemplos reales
-2. Revisa su stack tecnológico y nivel de experiencia
-3. Conoce su disponibilidad para nuevos proyectos
-4. Contacta directamente para propuestas específicas
+**Siguientes pasos sugeridos:**
+1. Pregúntame sobre sus proyectos para ver ejemplos reales
+2. Conoce su stack tecnológico y nivel de experiencia  
+3. Averigua sobre su disponibilidad si tienes un proyecto en mente
+4. Descubre la mejor forma de contactarlo
 
-<strong>¿Qué te gustaría saber primero sobre Israel y su experiencia?</strong>`
+¿Qué te llama más la atención? ¡Estoy aquí para resolver todas tus dudas!`
         ]
       },
 
