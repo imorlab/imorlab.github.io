@@ -45,12 +45,15 @@ const router = createRouter({
   }
 })
 
-// Manejar la redirección inicial si es necesario
+// Manejar la redirección de GitHub Pages SPA
 if (typeof window !== 'undefined') {
-  const { pathname, search } = window.location
+  const { search, pathname } = window.location
+  
+  // Si hay un query parameter que empieza con ?/ (de nuestra redirección 404)
   if (search && search.startsWith('?/')) {
-    const path = search.slice(2)
-    router.push(path || '/')
+    const path = decodeURIComponent(search.slice(2))
+    // Reemplazar la URL sin recargar la página
+    window.history.replaceState(null, null, path || '/')
   }
 }
 
