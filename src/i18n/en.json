@@ -58,7 +58,7 @@
         "years": "3+",
         "projects": "20+",
         "technologies": "15+",
-        "development": "1000+",
+        "development": "3000+",
         "years_label": "Years",
         "projects_label": "Projects",
         "technologies_label": "Technologies",
@@ -230,7 +230,62 @@
     "experience": "Over 3 years of professional experience",
     "professionalWork": "Solution development",
     "personalProjects": "Personal projects",
-    "description": "Combining professional experience with personal projects"
+    "description": "Combining professional experience with personal projects",
+    "list": [
+      {
+        "id": 1,
+        "company": "beon. Entertainment",
+        "title": "Multisite Web",
+        "description": "Development of beon. Entertainment's main website, focused on showcasing productions and ticket sales. A modern and adaptive design was used to ensure an optimal user experience across all devices.",
+        "url": "https://beon-entertainment.com/",
+        "long_description": "The project for beon. Entertainment consisted of a complete redesign and development of their new web platform. The goal was to create an attractive and functional portal that would serve as a showcase for their theatrical productions and events, while facilitating ticket purchases through integration with their ticketing systems. Special emphasis was placed on performance optimization and a responsive design that would adapt perfectly to mobile devices, tablets, and computers.",
+        "long_description_2": "As a web developer at beon. Worldwide, I had the opportunity to design and build key projects. This multisite platform represents to date one of my most significant contributions, a project in which I played a central role in its conception, development, and delivery, effectively managing both the time and resources required.",
+        "long_description_3": "The challenge of managing multiple websites with diverse content and language requirements from a single codebase was solved. Built with Laravel and Livewire, the platform offers:",
+        "details": [
+          "Unified Multisite Administration: Efficient content management for multiple shows (e.g., The Pillars of the Earth, the musical, The Neverending Story, the musical...) and the main beon. Entertainment site from a single interface.",
+          "Sophisticated Multilingual System: I implemented a localization service based on the 'Strategy Pattern' for dynamic language switching, maintaining page context and supporting SEO-friendly translated URLs (e.g., /la-productora ↔ /the-producer).",
+          "Dynamic Content Management: Tools to create custom pages, news, and detailed profiles for cast, staff, and creative team, all with multilingual support.",
+          "Performance Optimization: An image optimization pipeline was integrated that automatically converts images to modern formats (AVIF/WebP) with lazy loading, significantly improving website performance.",
+          "Modern and Adaptive Design: Special emphasis was placed on responsive design for a seamless user experience on mobile devices, tablets, and computers."
+        ],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "Docker", "GSAP"],
+        "image": "assets/images/projects/bent.avif"
+      },
+      {
+        "id": 2,
+        "company": "Finca Alfoliz Origen",
+        "title": "Event Landing Page",
+        "description": "Development of an optimized landing page for the 'Finca Alfoliz Origen' event, with an integrated system for ticket management and sales.",
+        "url": "https://fincaalfolizorigen.com/",
+        "long_description": "Part of my work as a Web Developer at beon. Worldwide, this project focused on creating a high-performance landing page to promote the event and efficiently manage ticket sales. The priority was resource optimization, ensuring a fast and smooth user experience, from information consultation to the final ticket purchase.",
+        "details": [
+          "Design and development of a landing page focused on conversion and clarity of event information.",
+          "Direct integration with a ticketing platform for simplified and secure ticket management.",
+          "Image optimization and load times to ensure maximum performance even on mobile devices.",
+          "Payment gateway configuration to securely process ticket purchase transactions.",
+          "Administration panel for tracking sales and managing event attendees."
+        ],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "JavaScript", "Docker"],
+        "image": "assets/images/projects/finca.avif"
+      },
+      {
+        "id": 3,
+        "company": "CTX Tech Experience",
+        "title": "Landing Page",
+        "description": "Minimalist and modern landing page for CTx Tech Experience, with a focus on user experience and conversion. Resource optimization and loading speed have been prioritized.",
+        "url": "https://ctx-tech.com/",
+        "long_description": "For CTx Tech Experience, a minimalist and modern landing page was developed, focused on offering a smooth and direct user experience. The main objective as a Web Developer at beon. Worldwide was to create a high-performance page, optimizing loading speed and resources to ensure agile navigation. Built with Laravel and Livewire, the page presents content clearly and attractively, adapting perfectly to any device.",
+        "details": [
+          "Minimalist and modern design focused on usability and conversion.",
+          "Resource optimization and loading speed for superior performance.",
+          "Development on Laravel for a robust and scalable codebase.",
+          "Fully responsive interface, ensuring a consistent experience across all devices.",
+          "Powered by Livewire to efficiently build a dynamic and reactive interface."
+        ],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS"],
+        "image": "assets/images/projects/ctx.avif"
+      }
+    ]
   },
   "contact": {
     "title": "Contact",

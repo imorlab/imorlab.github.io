@@ -58,7 +58,7 @@
         "years": "3+",
         "projects": "20+",
         "technologies": "15+",
-        "development": "1000+",
+        "development": "3000+",
         "years_label": "Años",
         "projects_label": "Proyectos",
         "technologies_label": "Tecnologías",
@@ -282,7 +282,7 @@
           "Interfaz totalmente responsiva, garantizando una experiencia consistente en todos los dispositivos.",
           "Potenciado por Livewire para construir una interfaz dinámica y reactiva de forma eficiente."
         ],
-        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "Flux"],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS"],
         "image": "assets/images/projects/ctx.avif"
       }
     ]
