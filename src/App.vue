@@ -1,5 +1,24 @@
 <template>
   <div class="relative min-h-screen bg-primary text-gray-300">
+    <!-- PixelBlast Background -->
+    <!-- <div class="fixed inset-0 w-full h-full overflow-hidden z-10">
+      <PixelBlast
+        variant="circle"
+        :pixel-size="6"
+        color="#ffffff"
+        :pattern-scale="1.5"
+        :pattern-density="1.3"
+        :liquid="true"
+        :liquid-strength="0.15"
+        :liquid-radius="1.5"
+        :enable-ripples="true"
+        :ripple-intensity-scale="1.5"
+        :ripple-speed="0.4"
+        :speed="0.6"
+        :edge-fade="0.3"
+        :transparent="true"
+      />
+    </div> -->
     <!-- Background Effects -->
     <div class="fixed inset-0 w-full h-full overflow-hidden z-0">
       <!-- Animated Background Orbs -->
@@ -170,6 +189,8 @@ import { Icon } from '@iconify/vue'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
 import ChatBot from './components/ChatBot/ChatBot.vue'
+import PixelBlast from './components/PixelBlast.vue'
+
 
 const route = useRoute()
 const isDark = ref(true)

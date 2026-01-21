@@ -227,10 +227,20 @@
     "viewLess": "Ver menos",
     "visitSite": "Visitar sitio",
     "viewCode": "Ver código",
+    "viewDetails": "Ver detalles",
     "experience": "Más de 3 años de experiencia profesional",
     "professionalWork": "Desarrollo de soluciones",
     "personalProjects": "Proyectos personales",
     "description": "Combinando experiencia profesional con proyectos personales",
+    "otherProjects": "Otros Proyectos",
+    "otherProjectsDescription": "Más trabajos realizados durante mi trayectoria profesional",
+    "backToProjects": "Volver a Proyectos",
+    "notFound": "Proyecto no encontrado",
+    "aboutProject": "Sobre el Proyecto",
+    "keyFeatures": "Características Principales",
+    "technologiesUsed": "Tecnologías Utilizadas",
+    "exploreMore": "Explora más proyectos",
+    "viewAllProjects": "Ver todos los proyectos",
     "list": [
       {
         "id": 1,
@@ -253,6 +263,24 @@
       },
       {
         "id": 2,
+        "company": "CTX Tech Experience Hub",
+        "title": "Plataforma Web",
+        "description": "Desarrollo de la plataforma web para CTx, el mayor evento tecnológico del sur de Europa. Una experiencia inmersiva que conecta tecnología, empresas y talento con +50k asistentes y +150 speakers.",
+        "url": "https://ctx-tech.com/",
+        "long_description": "CTx Tech Experience Hub es el mayor evento tecnológico del sur de Europa, celebrado en Sevilla. Una experiencia inmersiva que conecta tecnología, empresas y talento, generando sinergias estratégicas, atrayendo inversión y proyectando nuevas formas de innovación. Como Desarrollador Web en beon. Worldwide, participé activamente en el desarrollo de esta plataforma web moderna y dinámica.",
+        "details": [
+          "Diseño moderno e inmersivo con animaciones fluidas y efectos visuales impactantes para reflejar la esencia tech del evento.",
+          "Integración con Aurora, un asistente virtual IA para mejorar la experiencia del usuario.",
+          "Plataforma de venta de entradas integrada con diferentes tipos de acceso y experiencias.",
+          "Sistema completo de gestión de speakers con perfiles detallados de +150 líderes de la industria tecnológica.",
+          "Sección dinámica de startups y empresas participantes con +1000 empresas emergentes.",
+          "Optimización del rendimiento y diseño totalmente responsive para todos los dispositivos."
+        ],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS"],
+        "image": "assets/images/projects/ctx.avif"
+      },
+      {
+        "id": 3,
         "company": "Finca Alfoliz Origen",
         "title": "Landing Page para Evento",
         "description": "Desarrollo de una landing page optimizada para el evento 'Finca Alfoliz Origen', con un sistema integrado para la gestión y venta de entradas.",
@@ -269,21 +297,22 @@
         "image": "assets/images/projects/finca.avif"
       },
       {
-        "id": 3,
-        "company": "CTX Tech Experience",
-        "title": "Landing Page",
-        "description": "Landing page minimalista y moderna para CTx Tech Experience, con enfoque en la experiencia del usuario y la conversión. Se ha priorizado la optimización de recursos y la velocidad de carga.",
-        "url": "https://ctx-tech.com/",
-        "long_description": "Para CTx Tech Experience se desarrolló una landing page minimalista y moderna, centrada en ofrecer una experiencia de usuario fluida y directa. El objetivo principal cómo Desarrollador Web en beon. Worldwide fue crear una página de alto rendimiento, optimizando la velocidad de carga y los recursos para garantizar una navegación ágil. Construida con Laravel y Livewire, la página presenta el contenido de forma clara y atractiva, adaptándose perfectamente a cualquier dispositivo.",
+        "id": 4,
+        "company": "ZigZag Expo Retail",
+        "title": "Web para Feria de Retail",
+        "description": "Desarrollo de la plataforma web para ZigZag, la primera feria de expansión retail en la Península Ibérica, celebrada en el Palacio de Convenciones de Madrid.",
+        "url": "https://zigzagexpo.com/",
+        "long_description": "ZigZag Expo Retail es un evento especializado donde marcas, franquicias, centros comerciales, desarrolladores inmobiliarios y consultoras del sector retail se reúnen para impulsar su crecimiento, encontrar nuevas ubicaciones y generar alianzas estratégicas. Como Desarrollador Web en beon. Worldwide, participé en la creación de esta plataforma web moderna y atractiva.",
         "details": [
-          "Diseño minimalista y moderno enfocado en la usabilidad y la conversión.",
-          "Optimización de recursos y velocidad de carga para un rendimiento superior.",
-          "Desarrollo sobre Laravel para una base de código robusta y escalable.",
-          "Interfaz totalmente responsiva, garantizando una experiencia consistente en todos los dispositivos.",
-          "Potenciado por Livewire para construir una interfaz dinámica y reactiva de forma eficiente."
+          "Desarrollo de una web corporativa con diseño moderno y animaciones fluidas para captar la atención de los visitantes.",
+          "Sistema de venta de entradas integrado con diferentes tipos de acceso (Premium, General) y precios early bird.",
+          "Gestión de contenido multilingüe en 5 idiomas (español, inglés, italiano, portugués y francés) para alcanzar un público internacional.",
+          "Secciones dinámicas para mostrar expositores, categorías del evento (Moda, Alimentación, Hogar, Deportes, etc.) y estadísticas.",
+          "Integración de información sobre el evento ZigZag Party en el Teatro Calderón con speakers destacados.",
+          "Optimización del rendimiento con imágenes en formato AVIF y diseño totalmente responsive."
         ],
-        "technologies": ["Laravel", "Livewire", "Tailwind CSS"],
-        "image": "assets/images/projects/ctx.avif"
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "GSAP", "Docker"],
+        "image": "assets/images/projects/zigzag.avif"
       }
     ]
   },

@@ -227,10 +227,20 @@
     "viewLess": "View less",
     "visitSite": "Visit site",
     "viewCode": "View code",
+    "viewDetails": "View details",
     "experience": "Over 3 years of professional experience",
     "professionalWork": "Solution development",
     "personalProjects": "Personal projects",
     "description": "Combining professional experience with personal projects",
+    "otherProjects": "Other Projects",
+    "otherProjectsDescription": "More work done during my professional career",
+    "backToProjects": "Back to Projects",
+    "notFound": "Project not found",
+    "aboutProject": "About the Project",
+    "keyFeatures": "Key Features",
+    "technologiesUsed": "Technologies Used",
+    "exploreMore": "Explore more projects",
+    "viewAllProjects": "View all projects",
     "list": [
       {
         "id": 1,
@@ -253,6 +263,24 @@
       },
       {
         "id": 2,
+        "company": "CTX Tech Experience Hub",
+        "title": "Web Platform",
+        "description": "Development of the web platform for CTx, the largest tech event in Southern Europe. An immersive experience connecting technology, businesses, and talent with +50k attendees and +150 speakers.",
+        "url": "https://ctx-tech.com/",
+        "long_description": "CTx Tech Experience Hub is the largest tech event in Southern Europe, held in Seville. An immersive experience that connects technology, businesses, and talent, generating strategic synergies, attracting investment, and projecting new forms of innovation. As a Web Developer at beon. Worldwide, I actively participated in the development of this modern and dynamic web platform.",
+        "details": [
+          "Modern and immersive design with fluid animations and striking visual effects to reflect the tech essence of the event.",
+          "Integration with Aurora, an AI virtual assistant to enhance user experience.",
+          "Integrated ticket sales platform with different access types and experiences.",
+          "Complete speaker management system with detailed profiles of +150 tech industry leaders.",
+          "Dynamic section for participating startups and companies with +1000 emerging businesses.",
+          "Performance optimization and fully responsive design for all devices."
+        ],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS"],
+        "image": "assets/images/projects/ctx.avif"
+      },
+      {
+        "id": 3,
         "company": "Finca Alfoliz Origen",
         "title": "Event Landing Page",
         "description": "Development of an optimized landing page for the 'Finca Alfoliz Origen' event, with an integrated system for ticket management and sales.",
@@ -269,21 +297,22 @@
         "image": "assets/images/projects/finca.avif"
       },
       {
-        "id": 3,
-        "company": "CTX Tech Experience",
-        "title": "Landing Page",
-        "description": "Minimalist and modern landing page for CTx Tech Experience, with a focus on user experience and conversion. Resource optimization and loading speed have been prioritized.",
-        "url": "https://ctx-tech.com/",
-        "long_description": "For CTx Tech Experience, a minimalist and modern landing page was developed, focused on offering a smooth and direct user experience. The main objective as a Web Developer at beon. Worldwide was to create a high-performance page, optimizing loading speed and resources to ensure agile navigation. Built with Laravel and Livewire, the page presents content clearly and attractively, adapting perfectly to any device.",
+        "id": 4,
+        "company": "ZigZag Expo Retail",
+        "title": "Retail Fair Website",
+        "description": "Development of the web platform for ZigZag, the first retail expansion fair in the Iberian Peninsula, held at the Palacio de Convenciones in Madrid.",
+        "url": "https://zigzagexpo.com/",
+        "long_description": "ZigZag Expo Retail is a specialized event where brands, franchises, shopping centers, real estate developers, and retail sector consultants come together to boost their growth, find new locations, and generate strategic alliances. As a Web Developer at beon. Worldwide, I participated in creating this modern and attractive web platform.",
         "details": [
-          "Minimalist and modern design focused on usability and conversion.",
-          "Resource optimization and loading speed for superior performance.",
-          "Development on Laravel for a robust and scalable codebase.",
-          "Fully responsive interface, ensuring a consistent experience across all devices.",
-          "Powered by Livewire to efficiently build a dynamic and reactive interface."
+          "Development of a corporate website with modern design and fluid animations to capture visitors' attention.",
+          "Integrated ticket sales system with different access types (Premium, General) and early bird pricing.",
+          "Multilingual content management in 5 languages (Spanish, English, Italian, Portuguese, and French) to reach an international audience.",
+          "Dynamic sections to showcase exhibitors, event categories (Fashion, Food, Home, Sports, etc.) and statistics.",
+          "Integration of information about the ZigZag Party event at Teatro Calderón with featured speakers.",
+          "Performance optimization with AVIF format images and fully responsive design."
         ],
-        "technologies": ["Laravel", "Livewire", "Tailwind CSS"],
-        "image": "assets/images/projects/ctx.avif"
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "GSAP", "Docker"],
+        "image": "assets/images/projects/zigzag.avif"
       }
     ]
   },

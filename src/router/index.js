@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Projects from '../views/Projects.vue'
+import ProjectDetail from '../views/ProjectDetail.vue'
 import Contact from '../views/Contact.vue'
+import PixelBlastDemo from '../views/PixelBlastDemo.vue'
 
 // Para repositorio de usuario (imorlab.github.io), la base siempre es '/'
 const base = '/'
@@ -27,9 +29,19 @@ const router = createRouter({
       component: Projects
     },
     {
+      path: '/projects/:id',
+      name: 'ProjectDetail',
+      component: ProjectDetail
+    },
+    {
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/demo',
+      name: 'PixelBlastDemo',
+      component: PixelBlastDemo
     },
     {
       path: '/:pathMatch(.*)*',
