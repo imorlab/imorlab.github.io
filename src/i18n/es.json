@@ -79,7 +79,14 @@
             "Frontend interactivo: Interfaces dinámicas con Laravel Livewire y Vue.js.",
             "Soporte al cliente: Interacción directa para adaptar funcionalidades y ofrecer soluciones."
           ],
-          "skills": ["PHP", "Laravel", "JavaScript", "MySQL", "GitHub", "API Integration"]
+          "skills": [
+            "PHP",
+            "Laravel",
+            "JavaScript",
+            "MySQL",
+            "GitHub",
+            "API Integration"
+          ]
         },
         {
           "role": "Programador Web",
@@ -258,7 +265,13 @@
           "Optimización del Rendimiento: Se integró un pipeline de optimización de imágenes que convierte automáticamente las imágenes a formatos modernos (AVIF/WebP) con carga diferida, mejorando significativamente el rendimiento del sitio web.",
           "Diseño Moderno y Adaptativo: Se puso un énfasis especial en un diseño responsive para una experiencia de usuario fluida en móviles, tabletas y ordenadores."
         ],
-        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "Docker", "GSAP"],
+        "technologies": [
+          "Laravel",
+          "Livewire",
+          "Tailwind CSS",
+          "Docker",
+          "GSAP"
+        ],
         "image": "assets/images/projects/bent.avif"
       },
       {
@@ -276,7 +289,11 @@
           "Sección dinámica de startups y empresas participantes con +1000 empresas emergentes.",
           "Optimización del rendimiento y diseño totalmente responsive para todos los dispositivos."
         ],
-        "technologies": ["Laravel", "Livewire", "Tailwind CSS"],
+        "technologies": [
+          "Laravel",
+          "Livewire",
+          "Tailwind CSS"
+        ],
         "image": "assets/images/projects/ctx.avif"
       },
       {
@@ -293,7 +310,13 @@
           "Configuración de pasarela de pago para procesar las transacciones de compra de entradas de forma segura.",
           "Panel de administración para el seguimiento de las ventas y la gestión de los asistentes al evento."
         ],
-        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "JavaScript", "Docker"],
+        "technologies": [
+          "Laravel",
+          "Livewire",
+          "Tailwind CSS",
+          "JavaScript",
+          "Docker"
+        ],
         "image": "assets/images/projects/finca.avif"
       },
       {
@@ -311,8 +334,37 @@
           "Integración de información sobre el evento ZigZag Party en el Teatro Calderón con speakers destacados.",
           "Optimización del rendimiento con imágenes en formato AVIF y diseño totalmente responsive."
         ],
-        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "GSAP", "Docker"],
+        "technologies": [
+          "Laravel",
+          "Livewire",
+          "Tailwind CSS",
+          "GSAP",
+          "Docker"
+        ],
         "image": "assets/images/projects/zigzag.avif"
+      },
+      {
+        "id": 5,
+        "company": "Plaza Río 2",
+        "title": "Ciclo Healthy - Web de Eventos Fitness",
+        "description": "Desarrollo completo de la plataforma web para Ciclo Healthy, un evento de actividades fitness gratuitas en la terraza mirador de Plaza Río 2, con sistema de registro y panel de administración.",
+        "url": "https://ciclohealthyplazario2.com/",
+        "long_description": "Ciclo Healthy es un evento de sesiones saludables gratuitas celebradas en la Terraza Mirador de Plaza Río 2 en Madrid. El evento incluye actividades como Barré, Running y Yoga impartidas por instructores profesionales. Este fue mi primer proyecto desarrollado en solitario dentro de beon. Worldwide, donde gestioné de forma autónoma todo el ciclo de desarrollo, desde la planificación hasta la entrega.",
+        "details": [
+          "Desarrollo completo de una web corporativa para la promoción del evento con diseño moderno y atractivo.",
+          "Sistema de registro de usuarios integrado para la inscripción a las diferentes actividades (Barré, Running, Yoga).",
+          "Panel de administración (Dashboard) para la gestión de los registros y seguimiento de las inscripciones.",
+          "Secciones dinámicas con información sobre los instructores, fechas del evento y tipos de actividades.",
+          "Primer proyecto desarrollado de forma autónoma en beon. Worldwide, gestionando tiempos y entregables de manera independiente.",
+          "Diseño responsive optimizado para todos los dispositivos con imágenes en formato moderno."
+        ],
+        "technologies": [
+          "Laravel",
+          "Livewire",
+          "Tailwind CSS",
+          "Docker"
+        ],
+        "image": "assets/images/projects/ciclohealthy.avif"
       }
     ]
   },
@@ -339,7 +391,7 @@
     "helpMessage": "¿En qué puedo ayudarte?",
     "quickActions": {
       "skills": "Habilidades",
-      "projects": "Proyectos", 
+      "projects": "Proyectos",
       "experience": "Experiencia",
       "contact": "Contacto"
     }

@@ -112,8 +112,42 @@
           class="group bg-gray-800/10 dark:bg-gray-500/10 rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] transform cursor-pointer"
           @click="goToProjectDetail(project.id)"
         >
-          <!-- MacBook Pro Container Mini -->
-          <div class="relative w-full perspective p-4 pb-0">
+          <!-- Browser Screenshot para proyectos 3, 4, 5 -->
+          <div v-if="[3, 4, 5].includes(project.id)" class="relative w-full p-4 pb-0">
+            <div class="browser-screenshot relative rounded-xl overflow-hidden shadow-xl">
+              <!-- Browser bar -->
+              <div class="bg-gray-100 dark:bg-gray-800 px-4 py-2.5 flex items-center gap-2">
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                </div>
+                <div class="flex-1 bg-white dark:bg-gray-700 rounded-md px-3 py-1 text-xs text-gray-500 dark:text-gray-400 truncate ml-2">
+                  {{ project.url.replace('https://', '') }}
+                </div>
+              </div>
+              
+              <!-- Screenshot image -->
+              <div class="relative overflow-hidden">
+                <img 
+                  :src="getImageUrl(project.image)" 
+                  :alt="project.title" 
+                  class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                >
+                <!-- Overlay con efecto hover -->
+                <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/20 transition-colors duration-500 flex items-center justify-center">
+                  <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    <span class="bg-white/90 dark:bg-gray-900/90 text-accent font-semibold px-6 py-3 rounded-full shadow-lg backdrop-blur-sm">
+                      {{ $t('projects.viewDetails') }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MacBook Pro Container Mini para otros proyectos -->
+          <div v-else class="relative w-full perspective p-4 pb-0">
             <div class="macbook-mini">
               <div class="screen-container-mini">
                 <div class="notch-mini"><div class="camera-mini"></div></div>
@@ -232,6 +266,16 @@ onMounted(() => {
     opacity: 0,
     duration: 1,
     stagger: 0.2,
+    ease: 'power2.out',
+    delay: 0.5
+  })
+
+  // Animación browser screenshots (proyectos 3, 4, 5)
+  gsap.from('.browser-screenshot', {
+    y: 20,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
     ease: 'power2.out',
     delay: 0.5
   })

@@ -162,16 +162,71 @@
 
       <!-- Navigation to Other Projects -->
       <div class="border-t border-gray-700/30 pt-12">
-        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-6 text-center">{{ $t('projects.exploreMore') }}</h3>
-        <div class="flex justify-center">
+        <div class="flex items-center justify-between mb-8">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-white">{{ $t('projects.exploreMore') }}</h3>
           <router-link
             to="/projects"
-            class="inline-flex items-center gap-2 text-accent hover:underline font-medium text-lg"
+            class="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors duration-300"
           >
             {{ $t('projects.viewAllProjects') }}
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
+          </router-link>
+        </div>
+        
+        <!-- Related Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <router-link
+            v-for="relatedProject in relatedProjects"
+            :key="relatedProject.id"
+            :to="{ name: 'ProjectDetail', params: { id: relatedProject.id } }"
+            class="group bg-gray-800/10 dark:bg-gray-500/10 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] transform"
+          >
+            <!-- Project Image with Browser Bar -->
+            <div class="relative">
+              <div class="bg-gray-100 dark:bg-gray-800 px-3 py-2 flex items-center gap-2">
+                <div class="flex gap-1">
+                  <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                  <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                  <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                </div>
+                <div class="flex-1 bg-white dark:bg-gray-700 rounded px-2 py-0.5 text-[10px] text-gray-500 dark:text-gray-400 truncate ml-1">
+                  {{ relatedProject.url.replace('https://', '') }}
+                </div>
+              </div>
+              <div class="relative overflow-hidden">
+                <img 
+                  :src="getImageUrl(relatedProject.image)" 
+                  :alt="relatedProject.title" 
+                  class="w-full h-36 object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+            </div>
+            
+            <!-- Project Info -->
+            <div class="p-5">
+              <span class="text-accent text-xs font-semibold uppercase tracking-wider">{{ relatedProject.company }}</span>
+              <h4 class="text-lg font-bold text-gray-800 dark:text-white mt-1 mb-2 group-hover:text-accent transition-colors duration-300 line-clamp-1">{{ relatedProject.title }}</h4>
+              
+              <!-- Tech badges -->
+              <div class="flex flex-wrap gap-1.5 items-center justify-center">
+                <span 
+                  v-for="tech in relatedProject.technologies?.slice(0, 3)" 
+                  :key="tech" 
+                  class="bg-accent/15 text-accent text-[10px] font-medium px-2 py-0.5 rounded-full"
+                >
+                  {{ tech }}
+                </span>
+                <span 
+                  v-if="relatedProject.technologies?.length > 3" 
+                  class="bg-gray-500/20 text-gray-500 dark:text-gray-400 text-[10px] font-medium px-2 py-0.5 rounded-full"
+                >
+                  +{{ relatedProject.technologies.length - 3 }}
+                </span>
+              </div>
+            </div>
           </router-link>
         </div>
       </div>
@@ -191,9 +246,18 @@ const { tm } = useI18n();
 
 const projectId = computed(() => parseInt(route.params.id));
 
+// Use tm directly in computed - the issue was the spread operator breaking reactivity
 const project = computed(() => {
   const projects = tm('projects.list');
+  if (!projects) return null;
   return projects.find(p => p.id === projectId.value);
+});
+
+// Get 3 related projects (excluding current project)
+const relatedProjects = computed(() => {
+  const projects = tm('projects.list');
+  if (!projects || !projects.length) return [];
+  return projects.filter(p => p.id !== projectId.value).slice(0, 3);
 });
 
 const getImageUrl = (path) => {
@@ -205,21 +269,12 @@ const goBack = () => {
 };
 
 onMounted(() => {
-  // Animación de entrada
+  // Animación de entrada solo para el MacBook
   gsap.from('.macbook-large', {
     rotateX: 45,
     opacity: 0,
     duration: 1.5,
     ease: 'power2.out'
-  });
-
-  gsap.from('.bg-gray-800\\/10', {
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: 'power2.out',
-    delay: 0.3
   });
 });
 </script>
