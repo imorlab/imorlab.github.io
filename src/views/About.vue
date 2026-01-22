@@ -264,52 +264,31 @@ const stats = ref({
 
 const fetchGithubContributions = async () => {
   try {
-    const response = await fetch('https://api.github.com/graphql', {
-      method: 'POST',
-      headers: {
-        'Authorization': `bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: `
-          query {
-            user(login: "imorlab") {
-              contributionsCollection {
-                totalCommitContributions
-                totalIssueContributions
-                totalPullRequestContributions
-                totalPullRequestReviewContributions
-                totalRepositoryContributions
-                contributionCalendar {
-                  totalContributions
-                }
-              }
-            }
-          }
-        `
-      })
-    })
+    // Usamos github-contributions-api.jogruber.de que proporciona datos JSON públicos y soporta CORS
+    const response = await fetch('https://github-contributions-api.jogruber.de/v4/imorlab')
     
     if (!response.ok) {
-      throw new Error(`GitHub API responded with status: ${response.status}`)
+      throw new Error(`Contributions API responded with status: ${response.status}`)
     }
     
-    const { data } = await response.json()
+    const data = await response.json()
     
-    if (!data?.user?.contributionsCollection) {
-      throw new Error('No contribution data available')
+    if (data && data.total) {
+      // Sumar los totales por año (excluyendo 'lastYear' que es un periodo móvil)
+      let totalCommits = 0
+      
+      Object.entries(data.total).forEach(([year, count]) => {
+        // Solo sumar si la clave es un año numérico (ignorar 'lastYear')
+        if (!isNaN(year)) {
+          totalCommits += count
+        }
+      })
+      
+      if (totalCommits > 0) {
+        stats.value.development = totalCommits
+      }
     }
-
-    const contributions = data.user.contributionsCollection
-    const totalFromCollection = 
-      contributions.totalCommitContributions +
-      contributions.totalIssueContributions +
-      contributions.totalPullRequestContributions +
-      contributions.totalPullRequestReviewContributions +
-      contributions.totalRepositoryContributions
-
-    // Usar el número del calendario que coincide con lo que muestra GitHub
-    stats.value.development = contributions.contributionCalendar.totalContributions
+    
   } catch (error) {
     console.error('Error fetching GitHub contributions:', error)
     // Si hay error, usar el valor por defecto de las traducciones
