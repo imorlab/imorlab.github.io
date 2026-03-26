@@ -281,23 +281,6 @@
       },
       {
         "id": 3,
-        "company": "Finca Alfoliz Origen",
-        "title": "Event Landing Page",
-        "description": "Development of an optimized landing page for the 'Finca Alfoliz Origen' event, with an integrated system for ticket management and sales.",
-        "url": "https://fincaalfolizorigen.com/",
-        "long_description": "Part of my work as a Web Developer at beon. Worldwide, this project focused on creating a high-performance landing page to promote the event and efficiently manage ticket sales. The priority was resource optimization, ensuring a fast and smooth user experience, from information consultation to the final ticket purchase.",
-        "details": [
-          "Design and development of a landing page focused on conversion and clarity of event information.",
-          "Direct integration with a ticketing platform for simplified and secure ticket management.",
-          "Image optimization and load times to ensure maximum performance even on mobile devices.",
-          "Payment gateway configuration to securely process ticket purchase transactions.",
-          "Administration panel for tracking sales and managing event attendees."
-        ],
-        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "JavaScript", "Docker"],
-        "image": "assets/images/projects/finca.avif"
-      },
-      {
-        "id": 4,
         "company": "ZigZag Expo Retail",
         "title": "Retail Fair Website",
         "description": "Development of the web platform for ZigZag, the first retail expansion fair in the Iberian Peninsula, held at the Palacio de Convenciones in Madrid.",
@@ -313,6 +296,42 @@
         ],
         "technologies": ["Laravel", "Livewire", "Tailwind CSS", "GSAP", "Docker"],
         "image": "assets/images/projects/zigzag.avif"
+      },
+      {
+        "id": 4,
+        "company": "Plaza Río 2",
+        "title": "Ciclo Healthy - Fitness Event Website",
+        "description": "Complete development of the web platform for Ciclo Healthy, a free fitness activities event at Plaza Río 2's lookout terrace, with registration system and admin panel.",
+        "url": "https://ciclohealthyplazario2.com/",
+        "long_description": "Ciclo Healthy is an event of free healthy sessions held at the Mirador Terrace of Plaza Río 2 in Madrid. The event includes activities such as Barré, Running, and Yoga taught by professional instructors. This was my first solo project at beon. Worldwide, where I autonomously managed the entire development cycle from planning to delivery.",
+        "details": [
+          "Complete development of a corporate website for event promotion with modern and attractive design.",
+          "Integrated user registration system for signing up for different activities (Barré, Running, Yoga).",
+          "Admin panel (Dashboard) for managing registrations and tracking sign-ups.",
+          "Dynamic sections with information about instructors, event dates, and types of activities.",
+          "First project developed independently at beon. Worldwide, managing timelines and deliverables autonomously.",
+          "Responsive design optimized for all devices with modern format images."
+        ],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "Docker"],
+        "image": "assets/images/projects/ciclohealthy.avif"
+      },
+      {
+        "id": 5,
+        "company": "Finca Alfoliz Origen",
+        "title": "Event Landing Page",
+        "description": "Development of an optimized landing page for the 'Finca Alfoliz Origen' event, with an integrated system for ticket management and sales.",
+        "url": "https://fincaalfolizorigen.com/",
+        "long_description": "Part of my work as a Web Developer at beon. Worldwide, this project focused on creating a high-performance landing page to promote the event and efficiently manage ticket sales. The priority was resource optimization, ensuring a fast and smooth user experience, from information consultation to the final ticket purchase.",
+        "details": [
+          "Design and development of a landing page focused on conversion and clarity of event information.",
+          "Direct integration with a ticketing platform for simplified and secure ticket management.",
+          "Image optimization and load times to ensure maximum performance even on mobile devices.",
+          "Payment gateway configuration to securely process ticket purchase transactions.",
+          "Administration panel for tracking sales and managing event attendees."
+        ],
+        "technologies": ["Laravel", "Livewire", "Tailwind CSS", "JavaScript", "Docker"],
+        "image": "assets/images/projects/finca.avif",
+        "maintenance": true
       }
     ]
   },

@@ -298,29 +298,6 @@
       },
       {
         "id": 3,
-        "company": "Finca Alfoliz Origen",
-        "title": "Landing Page para Evento",
-        "description": "Desarrollo de una landing page optimizada para el evento 'Finca Alfoliz Origen', con un sistema integrado para la gestión y venta de entradas.",
-        "url": "https://fincaalfolizorigen.com/",
-        "long_description": "Parte de mi trabajo como Desarrollador Web en beon. Worldwide, este proyecto se centró en crear una landing page de alto rendimiento para promocionar el evento y gestionar la venta de entradas de forma eficiente. La prioridad fue la optimización de recursos, asegurando una experiencia de usuario rápida y fluida, desde la consulta de información hasta la compra final del ticket.",
-        "details": [
-          "Diseño y desarrollo de una landing page enfocada en la conversión y la claridad de la información del evento.",
-          "Integración directa con una plataforma de ticketing para una gestión de entradas simplificada y segura.",
-          "Optimización de imágenes y tiempos de carga para garantizar el máximo rendimiento incluso en dispositivos móviles.",
-          "Configuración de pasarela de pago para procesar las transacciones de compra de entradas de forma segura.",
-          "Panel de administración para el seguimiento de las ventas y la gestión de los asistentes al evento."
-        ],
-        "technologies": [
-          "Laravel",
-          "Livewire",
-          "Tailwind CSS",
-          "JavaScript",
-          "Docker"
-        ],
-        "image": "assets/images/projects/finca.avif"
-      },
-      {
-        "id": 4,
         "company": "ZigZag Expo Retail",
         "title": "Web para Feria de Retail",
         "description": "Desarrollo de la plataforma web para ZigZag, la primera feria de expansión retail en la Península Ibérica, celebrada en el Palacio de Convenciones de Madrid.",
@@ -344,7 +321,7 @@
         "image": "assets/images/projects/zigzag.avif"
       },
       {
-        "id": 5,
+        "id": 4,
         "company": "Plaza Río 2",
         "title": "Ciclo Healthy - Web de Eventos Fitness",
         "description": "Desarrollo completo de la plataforma web para Ciclo Healthy, un evento de actividades fitness gratuitas en la terraza mirador de Plaza Río 2, con sistema de registro y panel de administración.",
@@ -365,6 +342,30 @@
           "Docker"
         ],
         "image": "assets/images/projects/ciclohealthy.avif"
+      },
+      {
+        "id": 5,
+        "company": "Finca Alfoliz Origen",
+        "title": "Landing Page para Evento",
+        "description": "Desarrollo de una landing page optimizada para el evento 'Finca Alfoliz Origen', con un sistema integrado para la gestión y venta de entradas.",
+        "url": "https://fincaalfolizorigen.com/",
+        "long_description": "Parte de mi trabajo como Desarrollador Web en beon. Worldwide, este proyecto se centró en crear una landing page de alto rendimiento para promocionar el evento y gestionar la venta de entradas de forma eficiente. La prioridad fue la optimización de recursos, asegurando una experiencia de usuario rápida y fluida, desde la consulta de información hasta la compra final del ticket.",
+        "details": [
+          "Diseño y desarrollo de una landing page enfocada en la conversión y la claridad de la información del evento.",
+          "Integración directa con una plataforma de ticketing para una gestión de entradas simplificada y segura.",
+          "Optimización de imágenes y tiempos de carga para garantizar el máximo rendimiento incluso en dispositivos móviles.",
+          "Configuración de pasarela de pago para procesar las transacciones de compra de entradas de forma segura.",
+          "Panel de administración para el seguimiento de las ventas y la gestión de los asistentes al evento."
+        ],
+        "technologies": [
+          "Laravel",
+          "Livewire",
+          "Tailwind CSS",
+          "JavaScript",
+          "Docker"
+        ],
+        "image": "assets/images/projects/finca.avif",
+        "maintenance": true
       }
     ]
   },

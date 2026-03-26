@@ -40,7 +40,8 @@
               <div class="notch-large"><div class="camera-large"></div></div>
               <div class="screen-large overflow-hidden relative">
                 <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="hidden md:block relative" style="transform: scale(0.35);">
+                  <!-- Show iframe for normal projects, image for maintenance projects -->
+                  <div v-if="!project.maintenance" class="hidden md:block relative" style="transform: scale(0.35);">
                     <iframe
                       :src="project.url"
                       class="hidden md:block w-[1920px] h-[1080px] border-0"
@@ -50,6 +51,9 @@
                       :title="project.title"
                       sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                     ></iframe>
+                  </div>
+                  <div v-else class="hidden md:block w-full h-full">
+                    <img :src="getImageUrl(project.image)" :alt="project.title" class="w-full h-full object-cover object-top">
                   </div>
                   <div class="md:hidden relative w-full h-full">
                     <img :src="getImageUrl(project.image)" :alt="project.title" class="w-full h-full object-cover object-top">
@@ -71,7 +75,7 @@
           <p class="text-gray-600 dark:text-gray-300 text-lg md:text-xl max-w-3xl mx-auto mb-8">{{ project.description }}</p>
           
           <!-- CTA Buttons -->
-          <div class="flex flex-wrap justify-center gap-4">
+          <div v-if="!project.maintenance" class="flex flex-wrap justify-center gap-4">
             <a
               :href="project.url"
               target="_blank"

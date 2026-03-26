@@ -56,6 +56,7 @@
             <p class="text-gray-600 dark:text-gray-300 text-lg mb-6">{{ project.description }}</p>
             <div class="flex justify-center gap-4 mt-auto pt-4">
               <a
+                v-if="!project.maintenance"
                 :href="project.url"
                 target="_blank"
                 rel="noopener noreferrer"
