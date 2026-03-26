@@ -189,10 +189,24 @@
               </div>
               <div class="flex justify-center bg-primary/5 rounded-lg border border-accent p-4">
                 <img 
+                  v-if="!githubStatsError"
                   :src="githubStatsUrl" 
                   alt="GitHub Languages Stats" 
                   class="rounded-lg max-w-full"
+                  @error="handleGithubStatsError"
                 />
+                <div v-else class="text-center py-8">
+                  <Icon icon="heroicons:exclamation-triangle" class="w-12 h-12 text-accent/50 mx-auto mb-3" />
+                  <p class="text-gray-500 dark:text-gray-400 text-sm">Stats temporarily unavailable</p>
+                  <a 
+                    href="https://github.com/imorlab" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="text-accent hover:underline text-sm mt-2 inline-block"
+                  >
+                    View on GitHub
+                  </a>
+                </div>
               </div>
               <div class="flex justify-center bg-primary/5 rounded-lg border border-accent p-4">
                 <img 
@@ -239,6 +253,15 @@ const experiencePositions = computed(() => {
 
 const { isDark } = useTheme()
 
+// Mirrors para las estadísticas de GitHub
+const githubStatsMirrors = [
+  'https://github-readme-stats.vercel.app',
+  'https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app',
+  'https://github-readme-stats-sigma-five.vercel.app'
+]
+const currentMirrorIndex = ref(0)
+const githubStatsError = ref(false)
+
 const chartUrl = computed(() => {
   return 'https://ghchart.rshah.org/imorlab'
 })
@@ -248,8 +271,17 @@ const accentColor = computed(() => {
 })
 
 const githubStatsUrl = computed(() => {
-  return `https://github-readme-stats.vercel.app/api/top-langs/?username=imorlab&layout=compact&theme=dark&hide_border=true&title_color=${accentColor.value}&text_color=${isDark.value ? 'ffffff' : '6B7280'}&bg_color=ffffff00&include_all_commits=true&count_private=true&hide=others`
+  const baseUrl = githubStatsMirrors[currentMirrorIndex.value] || githubStatsMirrors[0]
+  return `${baseUrl}/api/top-langs/?username=imorlab&layout=compact&theme=dark&hide_border=true&title_color=${accentColor.value}&text_color=${isDark.value ? 'ffffff' : '6B7280'}&bg_color=ffffff00&include_all_commits=true&count_private=true&hide=others`
 })
+
+const handleGithubStatsError = () => {
+  if (currentMirrorIndex.value < githubStatsMirrors.length - 1) {
+    currentMirrorIndex.value++
+  } else {
+    githubStatsError.value = true
+  }
+}
 
 const streakStatsUrl = computed(() => {
   return `https://streak-stats.vercel.app?user=imorlab&theme=dark&hide_border=true&background=ffffff00&ring=${accentColor.value}&fire=${accentColor.value}&currStreakLabel=${accentColor.value}&stroke=${isDark.value ? 'ffffff' : '6B7280'}&sideLabels=${isDark.value ? 'ffffff' : '6B7280'}&currStreakNum=${isDark.value ? 'ffffff' : '6B7280'}&sideNums=${isDark.value ? 'ffffff' : '6B7280'}&dates=${isDark.value ? 'ffffff' : '6B7280'}`
