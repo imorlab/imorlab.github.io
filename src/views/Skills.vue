@@ -43,16 +43,8 @@
           </h2>
           <ul class="space-y-2">
             <li class="flex items-center gap-2">
-              <Icon icon="logos:html-5" class="w-6 h-6" />
-              <span>HTML5</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Icon icon="logos:css-3" class="w-6 h-6" />
-              <span>CSS3</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Icon icon="logos:javascript" class="w-6 h-6" />
-              <span>JavaScript</span>
+              <Icon icon="simple-icons:livewire" class="w-6 h-6 text-[#FB70A9]" />
+              <span>Livewire</span>
             </li>
             <li class="flex items-center gap-2">
               <Icon icon="logos:vue" class="w-6 h-6" />
@@ -88,6 +80,10 @@
               <Icon icon="logos:python" class="w-6 h-6" />
               <span>Python</span>
             </li>
+            <li class="flex items-center gap-2">
+              <Icon icon="logos:postgresql" class="w-6 h-6" />
+              <span>PostgreSQL</span>
+            </li>
           </ul>
         </div>
 
@@ -121,8 +117,12 @@
           </h2>
           <ul class="space-y-2">
             <li class="flex items-center gap-2">
-              <Icon icon="logos:git-icon" class="w-6 h-6" />
-              <span>Git</span>
+              <Icon icon="logos:vercel-icon" class="w-6 h-6" />
+              <span>Vercel</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon icon="logos:supabase-icon" class="w-6 h-6" />
+              <span>Supabase</span>
             </li>
             <li class="flex items-center gap-2">
               <Icon icon="logos:docker-icon" class="w-6 h-6" />

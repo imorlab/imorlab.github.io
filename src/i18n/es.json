@@ -121,12 +121,12 @@
               "icon": "devicon:laravel"
             },
             {
-              "name": "Livewire",
-              "component": "LivewireIcon"
-            },
-            {
               "name": "MySQL",
               "icon": "devicon:mysql"
+            },
+            {
+              "name": "PostgreSQL",
+              "icon": "devicon:postgresql"
             }
           ]
         },
@@ -135,16 +135,12 @@
           "icon": "heroicons:computer-desktop",
           "items": [
             {
-              "name": "JavaScript",
-              "icon": "devicon:javascript"
+              "name": "Livewire",
+              "component": "LivewireIcon"
             },
             {
-              "name": "HTML5",
-              "icon": "devicon:html5"
-            },
-            {
-              "name": "CSS3",
-              "icon": "devicon:css3"
+              "name": "Vue.js",
+              "icon": "devicon:vuejs"
             },
             {
               "name": "Bootstrap",
@@ -161,8 +157,12 @@
           "icon": "heroicons:wrench-screwdriver",
           "items": [
             {
-              "name": "Git",
-              "icon": "devicon:git"
+              "name": "Vercel",
+              "icon": "devicon:vercel"
+            },
+            {
+              "name": "Supabase",
+              "icon": "devicon:supabase"
             },
             {
               "name": "GitHub",
