@@ -203,13 +203,9 @@
           ]
         },
         "design": {
-          "title": "Diseño / UX",
+          "title": "Diseño / UX / Vídeo",
           "icon": "heroicons:paint-brush",
           "items": [
-            {
-              "name": "Figma",
-              "icon": "devicon:figma"
-            },
             {
               "name": "Adobe XD",
               "icon": "simple-icons:adobexd"
@@ -217,6 +213,10 @@
             {
               "name": "Photoshop",
               "icon": "simple-icons:adobephotoshop"
+            },
+            {
+              "name": "Adobe Media Encoder",
+              "component": "MediaEncoderIcon"
             }
           ]
         },

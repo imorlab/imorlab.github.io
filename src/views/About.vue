@@ -54,26 +54,26 @@
               <Icon icon="heroicons:code-bracket" class="w-6 h-6 text-accent" />
               {{ $t('about.skills.title') }}
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-              <div v-for="(category, key) in Object.entries(skillsCategories).filter(([k]) => k !== 'soft')" :key="key" 
+            <div class="space-y-4">
+              <div v-for="(category, key) in Object.entries(skillsCategories).filter(([k]) => k !== 'soft')" :key="key"
                 class="bg-primary/5 rounded-lg p-4 hover:border hover:border-accent transition-ease-in-out duration-300">
                 <h3 class="font-semibold text-accent flex items-center gap-2 mb-3">
                   <Icon :icon="category[1].icon" class="w-6 h-6" />
                   {{ category[1].title }}
                 </h3>
-                <div class="gap-2">
-                  <span v-for="(item, i) in category[1].items" :key="i" 
-                    class="ps-3 py-1.5 text-sm text-gray-500 dark:text-gray-300 hover:bg-primary/700 transition-colors duration-300 cursor-default flex items-center gap-2">
-                    <component 
+                <div class="flex flex-wrap gap-2">
+                  <span v-for="(item, i) in category[1].items" :key="i"
+                    class="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-500 dark:text-gray-300 hover:bg-primary/40 transition-colors duration-300 cursor-default">
+                    <component
                       v-if="item.component"
-                      :is="components.LivewireIcon"
-                      class="w-6 h-6"
+                      :is="components[item.component]"
+                      class="w-5 h-5"
                     />
-                    <Icon 
+                    <Icon
                       v-else
-                      :icon="isDark.value && item.darkIcon ? item.darkIcon : item.icon" 
+                      :icon="isDark.value && item.darkIcon ? item.darkIcon : item.icon"
                       :class="[
-                        'w-6 h-6',
+                        'w-5 h-5',
                         isDark.value && item.name === 'GitHub' ? 'text-white' : '',
                         isDark.value && item.name === 'Next.js' ? 'text-white' : '',
                       ]"
@@ -227,6 +227,7 @@
 import { Icon } from '@iconify/vue'
 import { useI18n } from 'vue-i18n'
 import LivewireIcon from '../components/icons/LivewireIcon.vue'
+import MediaEncoderIcon from '../components/icons/MediaEncoderIcon.vue'
 import { computed, onMounted, markRaw, ref } from 'vue'
 import { useTheme } from '../composables/theme'
 import NumberFlow from '@number-flow/vue'
@@ -234,9 +235,10 @@ import { generateCV } from '../components/CvGenerator'
 
 const { t, locale, messages } = useI18n()
 
-// Registramos el componente LivewireIcon para uso dinámico
+// Registramos los componentes de iconos para uso dinámico
 const components = {
-  LivewireIcon: markRaw(LivewireIcon)
+  LivewireIcon: markRaw(LivewireIcon),
+  MediaEncoderIcon: markRaw(MediaEncoderIcon)
 }
 
 const educationItems = computed(() => {

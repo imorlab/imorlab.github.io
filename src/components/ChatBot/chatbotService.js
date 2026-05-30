@@ -42,7 +42,7 @@ export const chatbotService = {
         frontend: ["React", "Next.js", "JavaScript (ES6+)", "Tailwind CSS", "Vue.js", "HTML5", "CSS3"],
         backend: ["Supabase", "Laravel (PHP)", "MySQL", "PostgreSQL", "Livewire", "REST APIs"],
         tools: ["AI-Driven Development", "Git", "GitHub", "Trello"],
-        design: ["Figma", "Adobe XD", "Photoshop"],
+        design: ["Adobe XD", "Photoshop", "Adobe Media Encoder"],
         soft: [
           "Trabajo en equipo",
           "Comunicación efectiva",
@@ -159,7 +159,7 @@ export const chatbotService = {
         frontend: ["React", "Next.js", "JavaScript (ES6+)", "Tailwind CSS", "Vue.js", "HTML5", "CSS3"],
         backend: ["Supabase", "Laravel (PHP)", "MySQL", "PostgreSQL", "Livewire", "REST APIs"],
         tools: ["AI-Driven Development", "Git", "GitHub", "Trello"],
-        design: ["Figma", "Adobe XD", "Photoshop"],
+        design: ["Adobe XD", "Photoshop", "Adobe Media Encoder"],
         soft: [
           "Teamwork",
           "Effective Communication",
@@ -709,7 +709,7 @@ Additionally, he excels in soft skills like teamwork, effective communication, a
 🗄️ Backend & data with Supabase, Laravel/PHP and MySQL/PostgreSQL
 🤖 AI-Driven Development - his superpower for speed and code quality
 🔧 Version control and CI with Git and GitHub
-🎯 Design with Figma, Adobe XD and Photoshop`
+🎯 Design with Adobe XD, Photoshop and Adobe Media Encoder`
         ],
 
         projects: [
