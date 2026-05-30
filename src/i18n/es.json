@@ -30,9 +30,9 @@
     "title": "Sobre Mí",
     "title_first": "Sobre",
     "title_second": "Mí",
-    "intro": "¡Hola! Soy Israel Moreno, un desarrollador web full stack con sede en España.",
-    "description": "Soy programador web con más de 3 años de experiencia en el sector, especializándome en el desarrollo con Laravel (PHP). He participado en diversos proyectos, incluyendo gestión de reservas, integración con la IA de OpenAI e implementación de pasarelas de pago. Mi experiencia abarca PHP, HTML, JavaScript y CSS.",
-    "mission": "Mi enfoque se centra en desarrollar soluciones innovadoras y eficientes, optimizando procesos y adaptándome a las necesidades de cada proyecto. Me considero una persona organizada, motivada y comprometida con el trabajo en equipo y la mejora continua.",
+    "intro": "¡Hola! Soy Israel Moreno, desarrollador web Full Stack con sede en España.",
+    "description": "Desarrollador Web Full Stack con más de 3 años de experiencia liderando la creación de plataformas de alto rendimiento y productos digitales. Especializado en el desarrollo ágil mediante stacks modernos (React, Next.js y Supabase) y arquitecturas robustas en Laravel (PHP).",
+    "mission": "Mi enfoque actual integra herramientas de Inteligencia Artificial (AI-driven development) para maximizar la velocidad de entrega, optimizar la limpieza del código y garantizar un rendimiento extremo (100% Core Web Vitals). Experto en pasarelas de pago, integraciones complejas de APIs (incluyendo OpenAI) y automatización de procesos.",
     "download_cv": "Descargar CV",
     "education": {
       "title": "Educación",
@@ -66,26 +66,25 @@
       },
       "positions": [
         {
-          "role": "Web Developer",
+          "role": "Full Stack Developer",
           "company": "beon. worldwide",
           "period": "Mayo 2023 - Actualidad",
           "location": "Sevilla, Andalucía, España (Híbrido)",
           "type": "Jornada completa",
           "responsibilities": [
-            "Desarrollo web: Creación y mantenimiento de plataformas escalables y de alto rendimiento con Laravel (PHP).",
-            "Gestión de reservas: Diseño de sistemas intuitivos para optimizar la experiencia del usuario.",
-            "Integraciones avanzadas: Implementación de API de OpenAI para personalización y automatización.",
-            "Pasarelas de pago: Configuración e integración segura para transacciones globales.",
-            "Frontend interactivo: Interfaces dinámicas con Laravel Livewire y Vue.js.",
-            "Soporte al cliente: Interacción directa para adaptar funcionalidades y ofrecer soluciones."
+            "Ingeniería de Software: Dirección técnica y desarrollo de plataformas web escalables y de alta disponibilidad utilizando Laravel, React y Vue.js.",
+            "Optimización e IA: Integración avanzada de modelos de OpenAI para la automatización de flujos de trabajo internos y personalización de la experiencia de usuario.",
+            "Arquitectura de Datos y Seguridad: Diseño e implementación de bases de datos relacionales complejas y configuración de pasarelas de pago seguras para transacciones globales.",
+            "Rendimiento Frontend: Desarrollo de interfaces dinámicas y ultra-rápidas optimizando la arquitectura de componentes para cumplir con los estándares más exigentes de rendimiento."
           ],
           "skills": [
-            "PHP",
+            "React",
             "Laravel",
+            "Supabase",
             "JavaScript",
             "MySQL",
-            "GitHub",
-            "API Integration"
+            "API Integration",
+            "GitHub"
           ]
         },
         {
@@ -108,16 +107,54 @@
     "skills": {
       "title": "Habilidades",
       "categories": {
+        "frontend": {
+          "title": "Frontend",
+          "icon": "heroicons:computer-desktop",
+          "items": [
+            {
+              "name": "React",
+              "icon": "devicon:react"
+            },
+            {
+              "name": "Next.js",
+              "icon": "simple-icons:nextdotjs"
+            },
+            {
+              "name": "JavaScript (ES6+)",
+              "icon": "devicon:javascript"
+            },
+            {
+              "name": "Tailwind CSS",
+              "icon": "devicon:tailwindcss"
+            },
+            {
+              "name": "Vue.js",
+              "icon": "devicon:vuejs"
+            },
+            {
+              "name": "HTML5",
+              "icon": "devicon:html5"
+            },
+            {
+              "name": "CSS3",
+              "icon": "devicon:css3"
+            },
+            {
+              "name": "Bootstrap",
+              "icon": "devicon:bootstrap"
+            }
+          ]
+        },
         "backend": {
-          "title": "Backend",
+          "title": "Backend y BBDD",
           "icon": "heroicons:server",
           "items": [
             {
-              "name": "PHP",
-              "icon": "devicon:php"
+              "name": "Supabase",
+              "icon": "devicon:supabase"
             },
             {
-              "name": "Laravel",
+              "name": "Laravel (PHP)",
               "icon": "devicon:laravel"
             },
             {
@@ -127,42 +164,28 @@
             {
               "name": "PostgreSQL",
               "icon": "devicon:postgresql"
-            }
-          ]
-        },
-        "frontend": {
-          "title": "Frontend",
-          "icon": "heroicons:computer-desktop",
-          "items": [
+            },
             {
               "name": "Livewire",
               "component": "LivewireIcon"
             },
             {
-              "name": "Vue.js",
-              "icon": "devicon:vuejs"
-            },
-            {
-              "name": "Bootstrap",
-              "icon": "devicon:bootstrap"
-            },
-            {
-              "name": "Tailwind",
-              "icon": "devicon:tailwindcss"
+              "name": "REST APIs",
+              "icon": "mdi:api"
             }
           ]
         },
-        "tools": {
-          "title": "Herramientas",
-          "icon": "heroicons:wrench-screwdriver",
+        "methodology": {
+          "title": "Metodología e IA",
+          "icon": "heroicons:cpu-chip",
           "items": [
             {
-              "name": "Vercel",
-              "icon": "devicon:vercel"
+              "name": "AI-Driven Development",
+              "icon": "heroicons:sparkles"
             },
             {
-              "name": "Supabase",
-              "icon": "devicon:supabase"
+              "name": "Git",
+              "icon": "devicon:git"
             },
             {
               "name": "GitHub",
@@ -172,13 +195,21 @@
             {
               "name": "Trello",
               "icon": "devicon:trello"
+            },
+            {
+              "name": "Automatizaciones",
+              "icon": "heroicons:bolt"
             }
           ]
         },
         "design": {
-          "title": "Diseño",
+          "title": "Diseño / UX",
           "icon": "heroicons:paint-brush",
           "items": [
+            {
+              "name": "Figma",
+              "icon": "devicon:figma"
+            },
             {
               "name": "Adobe XD",
               "icon": "simple-icons:adobexd"
@@ -186,16 +217,6 @@
             {
               "name": "Photoshop",
               "icon": "simple-icons:adobephotoshop"
-            }
-          ]
-        },
-        "cms": {
-          "title": "CMS",
-          "icon": "heroicons:document-text",
-          "items": [
-            {
-              "name": "WordPress",
-              "icon": "mdi:wordpress"
             }
           ]
         },

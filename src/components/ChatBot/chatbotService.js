@@ -9,25 +9,23 @@ export const chatbotService = {
         role: "Desarrollador Web Full Stack",
         location: "España",
         experience: "más de 3 años de experiencia profesional",
-        specialization: "desarrollo con Laravel (PHP)",
+        specialization: "desarrollo Full Stack con React, Supabase y Laravel, potenciado con IA",
         description: "Me apasiona el universo de la programación web, el diseño y desarrollo web y la tecnología en general."
       },
 
       // Experiencia profesional
       experience: {
         current: {
-          role: "Web Developer",
+          role: "Full Stack Developer",
           company: "beon. worldwide",
           period: "Mayo 2023 - Actualidad",
           location: "Sevilla, Andalucía, España (Híbrido)",
           type: "Jornada completa",
           responsibilities: [
-            "Desarrollo web: Creación y mantenimiento de plataformas escalables y de alto rendimiento con Laravel (PHP)",
-            "Gestión de reservas: Diseño de sistemas intuitivos para optimizar la experiencia del usuario",
-            "Integraciones avanzadas: Implementación de API de OpenAI para personalización y automatización",
-            "Pasarelas de pago: Configuración e integración segura para transacciones globales",
-            "Frontend interactivo: Interfaces dinámicas con Laravel Livewire y Vue.js",
-            "Soporte al cliente: Interacción directa para adaptar funcionalidades y ofrecer soluciones"
+            "Ingeniería de Software: Dirección técnica y desarrollo de plataformas web escalables y de alta disponibilidad con Laravel, React y Vue.js",
+            "Optimización e IA: Integración avanzada de modelos de OpenAI para automatizar flujos de trabajo y personalizar la experiencia de usuario",
+            "Arquitectura de Datos y Seguridad: Diseño de bases de datos relacionales complejas y pasarelas de pago seguras para transacciones globales",
+            "Rendimiento Frontend: Interfaces dinámicas y ultra-rápidas optimizando la arquitectura de componentes para máximo rendimiento (Core Web Vitals)"
           ]
         },
         previous: {
@@ -41,14 +39,13 @@ export const chatbotService = {
 
       // Habilidades técnicas
       skills: {
-        backend: ["PHP", "Laravel", "Livewire", "MySQL"],
-        frontend: ["JavaScript", "HTML5", "CSS3", "Bootstrap", "Tailwind"],
-        tools: ["Git", "GitHub", "Trello"],
-        design: ["Adobe XD", "Photoshop"],
-        cms: ["WordPress"],
+        frontend: ["React", "Next.js", "JavaScript (ES6+)", "Tailwind CSS", "Vue.js", "HTML5", "CSS3"],
+        backend: ["Supabase", "Laravel (PHP)", "MySQL", "PostgreSQL", "Livewire", "REST APIs"],
+        tools: ["AI-Driven Development", "Git", "GitHub", "Trello"],
+        design: ["Figma", "Adobe XD", "Photoshop"],
         soft: [
           "Trabajo en equipo",
-          "Comunicación efectiva", 
+          "Comunicación efectiva",
           "Resolución de problemas",
           "Adaptabilidad",
           "Gestión del tiempo",
@@ -123,25 +120,23 @@ export const chatbotService = {
         role: "Full Stack Web Developer",
         location: "Spain",
         experience: "over 3 years of professional experience",
-        specialization: "Laravel (PHP) development",
+        specialization: "Full Stack development with React, Supabase and Laravel, AI-powered",
         description: "I love the universe of web programming, design and web development, and general technology."
       },
 
       // Experiencia profesional
       experience: {
         current: {
-          role: "Web Developer",
+          role: "Full Stack Developer",
           company: "beon. worldwide",
           period: "May 2023 - Present",
           location: "Seville, Andalusia, Spain (Hybrid)",
           type: "Full-time",
           responsibilities: [
-            "Web Development: Creation and maintenance of scalable, high-performance platforms with Laravel (PHP)",
-            "Reservation Management: Design of intuitive systems to optimize user experience",
-            "Advanced Integrations: Implementation of OpenAI API for customization and automation",
-            "Payment Gateways: Secure configuration and integration for global transactions",
-            "Interactive Frontend: Dynamic interfaces with Laravel Livewire and Vue.js",
-            "Customer Support: Direct interaction to adapt functionalities and provide solutions"
+            "Software Engineering: Technical leadership and development of scalable, high-availability web platforms with Laravel, React and Vue.js",
+            "Optimization & AI: Advanced integration of OpenAI models to automate workflows and personalize the user experience",
+            "Data Architecture & Security: Design of complex relational databases and secure payment gateways for global transactions",
+            "Frontend Performance: Dynamic, ultra-fast interfaces, optimizing component architecture for maximum performance (Core Web Vitals)"
           ]
         },
         previous: {
@@ -155,15 +150,14 @@ export const chatbotService = {
 
       // Habilidades técnicas
       skills: {
-        backend: ["PHP", "Laravel", "Livewire", "MySQL"],
-        frontend: ["JavaScript", "HTML5", "CSS3", "Bootstrap", "Tailwind"],
-        tools: ["Git", "GitHub", "Trello"],
-        design: ["Adobe XD", "Photoshop"],
-        cms: ["WordPress"],
+        frontend: ["React", "Next.js", "JavaScript (ES6+)", "Tailwind CSS", "Vue.js", "HTML5", "CSS3"],
+        backend: ["Supabase", "Laravel (PHP)", "MySQL", "PostgreSQL", "Livewire", "REST APIs"],
+        tools: ["AI-Driven Development", "Git", "GitHub", "Trello"],
+        design: ["Figma", "Adobe XD", "Photoshop"],
         soft: [
           "Teamwork",
           "Effective Communication",
-          "Problem Solving", 
+          "Problem Solving",
           "Adaptability",
           "Time Management",
           "Continuous Learning"
@@ -257,7 +251,7 @@ export const chatbotService = {
         education: /\b(educación|estudios|formación|universidad|título|grado|certificado)\b/i,
         contact: /\b(contacto|contactar|email|correo|teléfono|linkedin|github|cómo contactar)\b/i,
         availability: /\b(disponible|disponibilidad|freelance|trabajar|colaborar|contratar)\b/i,
-        technologies: /\b(laravel|php|javascript|vue|mysql|html|css|tailwind|bootstrap|git)\b/i,
+        technologies: /\b(react|next|nextjs|next\.js|supabase|laravel|php|javascript|vue|mysql|postgres|postgresql|html|css|tailwind|bootstrap|git|ia|ai)\b/i,
         methodologies: /\b(metodologías|agile|scrum|kanban|metodología|proceso|enfoque|workflow)\b/i,
         github: /\b(github|git|repositorio|código|source code|repos)\b/i,
         cv: /\b(cv|curriculum|resumé|resume|descargar|pdf)\b/i
@@ -273,7 +267,7 @@ export const chatbotService = {
         education: /\b(education|studies|training|university|degree|certificate)\b/i,
         contact: /\b(contact|email|phone|linkedin|github|how to contact)\b/i,
         availability: /\b(available|availability|freelance|work|collaborate|hire)\b/i,
-        technologies: /\b(laravel|php|javascript|vue|mysql|html|css|tailwind|bootstrap|git)\b/i,
+        technologies: /\b(react|next|nextjs|next\.js|supabase|laravel|php|javascript|vue|mysql|postgres|postgresql|html|css|tailwind|bootstrap|git|ai)\b/i,
         methodologies: /\b(methodologies|agile|scrum|kanban|methodology|process|approach|workflow)\b/i,
         github: /\b(github|git|repository|code|source code|repos)\b/i,
         cv: /\b(cv|curriculum|resume|download|pdf)\b/i
@@ -324,43 +318,42 @@ export const chatbotService = {
         ],
         
         personal: [
-          `¡Hola! Te cuento sobre Israel. Es un desarrollador web full stack que vive en España y lleva más de 3 años creando soluciones web realmente interesantes. Se especializa principalmente en Laravel (PHP), que es donde más brilla, pero también maneja Vue.js y otras tecnologías modernas.
+          `¡Hola! Te cuento sobre Israel. Es un desarrollador web Full Stack que vive en España y lleva más de 3 años liderando la creación de plataformas de alto rendimiento. Su stack moderno gira en torno a React, Next.js y Supabase, apoyado en arquitecturas robustas con Laravel (PHP). Y lo más interesante: integra IA en su flujo de trabajo (AI-driven development) para entregar más rápido y con un código más limpio.
 
 Lo que más me gusta de él es que realmente se apasiona por la programación web, el diseño y la tecnología en general. No es solo trabajo para él, ¡se nota que le encanta lo que hace!
 
 ¿Te gustaría saber algo más específico sobre él?`,
-          
-          `Israel es uno de esos desarrolladores que encuentras de vez en cuando que realmente sabe lo que hace. Está ubicado en España y tiene una sólida experiencia de más de 3 años en desarrollo web full stack.
 
-Su fuerte es Laravel - ahí es donde realmente se destaca - pero también tiene buen manejo de Vue.js y otras tecnologías del ecosistema web moderno. Lo que más me impresiona es su enfoque: no solo programa, sino que realmente entiende cómo crear experiencias web que funcionan bien.
+          `Israel es uno de esos desarrolladores que encuentras de vez en cuando que realmente sabe lo que hace. Está ubicado en España y tiene una sólida experiencia de más de 3 años en desarrollo web Full Stack.
+
+Hoy su fuerte es el desarrollo moderno con React, Next.js y Supabase, sin perder el músculo de backend que le dan Laravel y PHP. Lo que más me impresiona es su enfoque: combina IA, código limpio y rendimiento extremo (Core Web Vitals) para crear experiencias web que de verdad funcionan.
 
 ¿Hay algo específico de su background que te interese conocer?`
         ],
 
         experience: [
-          `Te cuento sobre la experiencia actual de Israel - está trabajando como Web Developer en **beon. worldwide** desde mayo de 2023, en Sevilla con modalidad híbrida.
+          `Te cuento sobre la experiencia actual de Israel - está trabajando como Full Stack Developer en **beon. worldwide** desde mayo de 2023, en Sevilla con modalidad híbrida.
 
 **Lo que hace día a día:**
-- Desarrolla plataformas web súper escalables con Laravel (es su especialidad)
-- Diseña sistemas de reservas que realmente funcionan bien para los usuarios
-- Integra APIs de OpenAI para automatización (¡está al día con la IA!)
-- Configura pasarelas de pago seguras para clientes internacionales
-- Crea interfaces dinámicas con Livewire y Vue.js
-- Da soporte directo a clientes, adaptando funcionalidades según sus necesidades
+- Lidera técnicamente el desarrollo de plataformas escalables con React, Vue.js y Laravel
+- Integra modelos de OpenAI para automatizar flujos de trabajo (¡IA aplicada de verdad!)
+- Diseña arquitecturas de datos complejas y pasarelas de pago seguras para transacciones globales
+- Optimiza el rendimiento frontend para cumplir con los estándares más exigentes (Core Web Vitals)
+- Toma decisiones de arquitectura y traduce necesidades de negocio en producto
 
-Lo que más me llama la atención es que no solo programa - también interactúa directamente con los clientes para entender qué necesitan realmente. Eso le da una perspectiva súper valiosa.
+Lo que más me llama la atención es que no solo programa - también dirige el desarrollo técnico e interactúa con los clientes para entender qué necesitan realmente. Eso le da una perspectiva súper valiosa.
 
 ¿Te interesa saber más sobre algún aspecto específico de su trabajo?`,
-          
-          `La experiencia de Israel es bastante sólida. Actualmente está en **beon. worldwide** como Web Developer, donde lleva desde mayo de 2023.
+
+          `La experiencia de Israel es bastante sólida. Actualmente está en **beon. worldwide** como Full Stack Developer, donde lleva desde mayo de 2023.
 
 **Sus principales fortalezas:**
-✨ **Backend robusto** - Laravel es su zona de confort, ahí realmente domina
-🔧 **Integraciones complejas** - APIs externas, sistemas de pago, OpenAI... lo que necesites
-🎨 **Frontend moderno** - Livewire y Vue.js para interfaces que realmente funcionan
-👥 **Trato directo con clientes** - no es solo un programador que recibe tickets, sino que entiende el negocio
+⚛️ **Frontend moderno** - React, Next.js y Vue.js para interfaces ultra-rápidas
+🗄️ **Backend robusto** - Supabase y Laravel para arquitecturas escalables y seguras
+🤖 **Desarrollo con IA** - integra OpenAI y AI-driven development para entregar más rápido
+🔧 **Integraciones complejas** - APIs externas, sistemas de pago, automatizaciones... lo que necesites
 
-Ha trabajado en sistemas multisite complejos y optimización de rendimiento para aplicaciones de alto tráfico. Antes también tuvo una experiencia como programador web en Iwan21 durante sus prácticas.
+Ha liderado el desarrollo de sistemas multisite complejos y la optimización de rendimiento para aplicaciones de alto tráfico. Antes también tuvo una experiencia como programador web en Iwan21 durante sus prácticas.
 
 ¿Quieres que te cuente sobre algún proyecto específico donde aplicó estas habilidades?`
         ],
@@ -368,15 +361,13 @@ Ha trabajado en sistemas multisite complejos y optimización de rendimiento para
         skills: [
           `Israel tiene una combinación muy sólida de habilidades técnicas. Te cuento lo que maneja:
 
-**Su fuerte (nivel avanzado):**
-**Backend** - PHP, Laravel, Livewire, MySQL (aquí es donde realmente domina)
+**Su stack de valor (nivel avanzado):**
+**Frontend** - ${kb.skills.frontend.join(', ')}
+**Backend y BBDD** - ${kb.skills.backend.join(', ')}
 
-**Frontend (nivel intermedio-avanzado):**
-JavaScript, HTML5, CSS3, Bootstrap, Tailwind CSS, Vue.js
+**Su superpoder:** AI-Driven Development - integra IA en todo el ciclo para entregar más rápido, con código más limpio y un rendimiento extremo.
 
-**Otras herramientas:** Git, GitHub, Trello, Adobe XD, Photoshop
-
-**Un ejemplo práctico:** En beon. Entertainment desarrolló un sistema multisite súper complejo que maneja múltiples producciones teatrales. Usó Laravel para el backend robusto, Livewire para interfaces dinámicas, Tailwind CSS para que se vea genial en todos los dispositivos, y MySQL para gestionar todos los datos.
+**Otras herramientas:** ${kb.skills.tools.join(', ')}, ${kb.skills.design.join(', ')}
 
 **Sus habilidades blandas también son geniales:**
 ${kb.skills.soft.join(' • ')}
@@ -384,22 +375,20 @@ ${kb.skills.soft.join(' • ')}
 Lo que más me gusta es que no solo sabe programar - entiende el negocio y puede hablar tanto con el equipo técnico como con los clientes.
 
 ¿Te interesa saber cómo aplicó alguna de estas tecnologías en algún proyecto específico?`,
-          
-          `Las habilidades de Israel están muy bien balanceadas entre backend y frontend, con una especialización clara en Laravel.
+
+          `Las habilidades de Israel están muy bien balanceadas entre frontend y backend, con un enfoque claro en stacks modernos y desarrollo con IA.
 
 **Lo que realmente domina:**
-🚀 **Laravel/PHP** - 3+ años desarrollando aplicaciones complejas (este es su superpoder)
-💻 **Frontend moderno** - JavaScript ES6+, Vue.js, Tailwind CSS
-🎨 **UI/UX** - Diseño responsive y experiencia de usuario
-🔧 **DevOps** - Git, Docker, optimización de rendimiento
+⚛️ **Frontend moderno** - React, Next.js, Vue.js y Tailwind CSS
+🗄️ **Backend y datos** - Supabase, Laravel/PHP, MySQL/PostgreSQL
+🤖 **AI-Driven Development** - su superpoder para maximizar velocidad y calidad
+🔧 **Buenas prácticas** - Git, integración continua y optimización de rendimiento
 
 **Su enfoque de desarrollo:**
 - Código limpio y mantenible (no de esos que escriben código "rápido y sucio")
-- Optimización de rendimiento real
+- Optimización de rendimiento real (Core Web Vitals)
 - Experiencia de usuario como prioridad
 - Integración continua y buenas prácticas
-
-En CTX Tech Experience, por ejemplo, utilizó Laravel + Livewire + Tailwind para crear una landing page optimizada que logró excelentes métricas de conversión.
 
 ¿Quieres que te cuente más sobre su experiencia con alguna tecnología específica?`
         ],
@@ -477,7 +466,7 @@ Israel está disponible para proyectos freelance y colaboraciones. Le gusta trab
         availability: [
           `## Disponibilidad y Colaboraciones
 
-Israel está actualmente disponible para nuevos proyectos y colaboraciones, especializándose en desarrollo web full-stack con Laravel.
+Israel está actualmente disponible para nuevos proyectos y colaboraciones, especializándose en desarrollo web Full Stack con React, Supabase y Laravel, potenciado con IA.
 
 ### Tipos de Proyectos Ideales
 💼 <strong>Desarrollo de aplicaciones web</strong> - Sistemas complejos y escalables
@@ -509,17 +498,17 @@ Para discutir rates específicos, tiempos de entrega y detalles del proyecto, ut
 Israel trabaja con un conjunto cuidadosamente seleccionado de tecnologías modernas, optimizadas para crear aplicaciones web escalables y mantenibles.
 
 ### Tecnologías Core
-🚀 <strong>Laravel</strong> - Framework PHP robusto para aplicaciones empresariales
-⚡ <strong>Livewire</strong> - Interfaces dinámicas sin complejidad JavaScript excesiva
-💻 <strong>Vue.js</strong> - Framework reactivo para experiencias de usuario fluidas
+⚛️ <strong>React / Next.js</strong> - Interfaces modernas, reactivas y ultra-rápidas
+🟢 <strong>Supabase</strong> - Backend, base de datos y autenticación en tiempo real
+🚀 <strong>Laravel (PHP)</strong> - Arquitecturas robustas para aplicaciones empresariales
 🎨 <strong>Tailwind CSS</strong> - Framework CSS utilitario para diseño eficiente
-🗄️ <strong>MySQL</strong> - Base de datos relacional confiable
+🤖 <strong>AI-Driven Development</strong> - IA integrada (OpenAI) para velocidad y calidad de código
 
 ### Enfoque de Selección
 Cada tecnología es elegida por su capacidad de resolver problemas específicos y su integración con el ecosistema general.
 
 ### Ejemplo Práctico
-En CTX Tech Experience, utilizó Laravel + Livewire + Tailwind para crear una landing page optimizada que logró excelentes métricas de conversión.
+Combina React y Supabase para construir productos digitales rápidamente, apoyándose en IA para optimizar la limpieza del código y garantizar un rendimiento extremo (100% Core Web Vitals).
 
 <strong>¿Te interesa conocer cómo aplica alguna de estas tecnologías en proyectos específicos?</strong>`
         ],
@@ -671,7 +660,7 @@ Es un desarrollador full-stack que realmente sabe lo que hace, especializado en 
         
         personal: [
           `Israel Moreno is a ${kb.personal.role} based in ${kb.personal.location}. He has ${kb.personal.experience} and specializes in ${kb.personal.specialization}. ${kb.personal.description}`,
-          `Let me tell you about Israel: he's a full stack web developer located in Spain, with over 3 years creating innovative web solutions with Laravel and other modern technologies.`
+          `Let me tell you about Israel: he's a Full Stack web developer located in Spain, with over 3 years leading the creation of high-performance platforms with modern stacks (React, Next.js, Supabase) and robust Laravel architectures, now powered by AI-driven development.`
         ],
 
         experience: [
@@ -695,20 +684,20 @@ His main responsibilities include Laravel development, reservation management, O
         skills: [
           `Israel masters a wide range of technologies:
 
-<strong>Backend:</strong> ${kb.skills.backend.join(', ')}
 <strong>Frontend:</strong> ${kb.skills.frontend.join(', ')}
-<strong>Tools:</strong> ${kb.skills.tools.join(', ')}
+<strong>Backend & DB:</strong> ${kb.skills.backend.join(', ')}
+<strong>Methodology & AI:</strong> ${kb.skills.tools.join(', ')}
 <strong>Design:</strong> ${kb.skills.design.join(', ')}
 
 Additionally, he excels in soft skills like teamwork, effective communication, and problem-solving.`,
-          
+
           `Israel's technical skills include:
 
-🚀 Specialization in Laravel and PHP
-💻 Modern frontend with JavaScript, HTML5, CSS3
-🎨 Frameworks like Tailwind CSS and Bootstrap
-🔧 Version control with Git and GitHub
-🎯 Design with Adobe XD and Photoshop`
+⚛️ Modern frontend with React, Next.js, Vue.js and Tailwind CSS
+🗄️ Backend & data with Supabase, Laravel/PHP and MySQL/PostgreSQL
+🤖 AI-Driven Development - his superpower for speed and code quality
+🔧 Version control and CI with Git and GitHub
+🎯 Design with Figma, Adobe XD and Photoshop`
         ],
 
         projects: [
@@ -759,7 +748,7 @@ Don't hesitate to get in touch to discuss projects or collaborations! 🚀`
         ],
 
         availability: [
-          `Israel is available for new projects and collaborations. His experience in full stack web development with Laravel makes him an ideal candidate for:
+          `Israel is available for new projects and collaborations. His experience in Full Stack web development with React, Supabase and Laravel, powered by AI, makes him an ideal candidate for:
 
 💼 Web application development
 🔧 API and system integration
@@ -772,11 +761,11 @@ Contact him to discuss your project!`
         technologies: [
           `Israel works primarily with modern technologies:
 
-🚀 <strong>Laravel</strong> - PHP framework for robust applications
-⚡ <strong>Livewire</strong> - Dynamic interfaces without complex JavaScript
-💻 <strong>Vue.js</strong> - Reactive JavaScript framework
+⚛️ <strong>React / Next.js</strong> - Modern, reactive and ultra-fast interfaces
+🟢 <strong>Supabase</strong> - Backend, database and real-time authentication
+🚀 <strong>Laravel (PHP)</strong> - Robust architectures for enterprise applications
 🎨 <strong>Tailwind CSS</strong> - Utility-first CSS framework
-🗄️ <strong>MySQL</strong> - Relational database
+🤖 <strong>AI-Driven Development</strong> - AI (OpenAI) integrated for speed and code quality
 
 His tech stack is optimized for creating modern and scalable web applications.`
         ],

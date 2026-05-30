@@ -267,7 +267,7 @@ export const generateCV = async (data, { t: i18n }) => {
   
   // Añadir enlaces (ajustados al mismo ancho que el texto)
   const socialLinks = [
-    { label: 'Portfolio', url: 'https://imorlab.github.io/imorlab-portfolio/' },
+    { label: 'Portfolio', url: 'https://imorlab.github.io' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/israelmorenolabrador/' },
     { label: 'GitHub', url: 'https://github.com/imorlab' }
   ];

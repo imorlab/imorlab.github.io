@@ -43,8 +43,12 @@
           </h2>
           <ul class="space-y-2">
             <li class="flex items-center gap-2">
-              <Icon icon="simple-icons:livewire" class="w-6 h-6 text-[#FB70A9]" />
-              <span>Livewire</span>
+              <Icon icon="logos:react" class="w-6 h-6" />
+              <span>React</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon icon="logos:nextjs-icon" class="w-6 h-6" />
+              <span>Next.js</span>
             </li>
             <li class="flex items-center gap-2">
               <Icon icon="logos:vue" class="w-6 h-6" />
@@ -53,6 +57,10 @@
             <li class="flex items-center gap-2">
               <Icon icon="logos:tailwindcss-icon" class="w-6 h-6" />
               <span>Tailwind CSS</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon icon="simple-icons:livewire" class="w-6 h-6 text-[#FB70A9]" />
+              <span>Livewire</span>
             </li>
           </ul>
         </div>

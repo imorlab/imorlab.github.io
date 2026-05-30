@@ -75,7 +75,7 @@
                       :class="[
                         'w-6 h-6',
                         isDark.value && item.name === 'GitHub' ? 'text-white' : '',
-                        isDark.value && item.name === 'WordPress' ? 'text-white' : '',
+                        isDark.value && item.name === 'Next.js' ? 'text-white' : '',
                       ]"
                     />
                     {{ item.name }}
