@@ -56,22 +56,28 @@ export const chatbotService = {
       // Proyectos destacados
       projects: [
         {
-          name: "Multisite Web - beon. Entertainment",
-          description: "Desarrollo de la web principal de beon. Entertainment, enfocada en la presentación de producciones y venta de entradas",
-          technologies: ["Laravel", "Livewire", "Tailwind CSS", "Docker", "GSAP"],
+          name: "PopStars Madrid - Restaurante (React + Supabase)",
+          description: "Plataforma full stack para un restaurante con show en directo: reservas con lógica serverless (Supabase Edge Functions), lista de espera con auto-promoción, fidelización con QR de un solo uso y escáner, y panel de administración privado",
+          technologies: ["React", "Supabase", "Edge Functions", "Three.js", "Tailwind CSS", "Vite (Rolldown)", "WhatsApp API"],
+          url: "https://popstarsmadrid.com/"
+        },
+        {
+          name: "CMS Multisite (TALL Stack) - beon. Entertainment",
+          description: "Plataforma multisite a medida (TALL Stack) que gestiona múltiples musicales desde un único código base, cada uno con identidad visual y analítica propias, con animaciones de scroll cinematográficas (GSAP) y media optimizada en AVIF",
+          technologies: ["Laravel", "Livewire", "Alpine.js", "Tailwind CSS", "GSAP", "Vite", "Docker"],
           url: "https://beon-entertainment.com/"
+        },
+        {
+          name: "Plataforma de Ticketing & E-commerce - CTX Tech Experience",
+          description: "Sistema de ticketing y e-commerce propio (TALL Stack) para el mayor evento tech del sur de Europa, con integración de pagos Redsys (tarjeta y Bizum), facturación y tracking multi-plataforma",
+          technologies: ["Laravel", "Livewire", "Alpine.js", "Tailwind CSS", "Redsys", "GSAP"],
+          url: "https://ctx-tech.com/"
         },
         {
           name: "Landing Page - Finca Alfoliz Origen",
           description: "Landing page optimizada para evento con sistema integrado para gestión y venta de entradas",
           technologies: ["Laravel", "Livewire", "Tailwind CSS", "JavaScript", "Docker"],
           url: "https://fincaalfolizorigen.com/"
-        },
-        {
-          name: "Landing Page - CTX Tech Experience",
-          description: "Landing page minimalista y moderna con enfoque en la experiencia del usuario y la conversión",
-          technologies: ["Laravel", "Livewire", "Tailwind CSS", "Flux"],
-          url: "https://ctx-tech.com/"
         }
       ],
 
@@ -167,22 +173,28 @@ export const chatbotService = {
       // Proyectos destacados
       projects: [
         {
-          name: "Multisite Web - beon. Entertainment",
-          description: "Development of beon. Entertainment's main website, focused on production presentation and ticket sales",
-          technologies: ["Laravel", "Livewire", "Tailwind CSS", "Docker", "GSAP"],
+          name: "PopStars Madrid - Restaurant (React + Supabase)",
+          description: "Full stack platform for a restaurant with a live show: serverless booking logic (Supabase Edge Functions), waitlist with auto-promotion, single-use QR loyalty system with scanner, and a private admin panel",
+          technologies: ["React", "Supabase", "Edge Functions", "Three.js", "Tailwind CSS", "Vite (Rolldown)", "WhatsApp API"],
+          url: "https://popstarsmadrid.com/"
+        },
+        {
+          name: "Multisite CMS (TALL Stack) - beon. Entertainment",
+          description: "Custom multisite platform (TALL Stack) that manages multiple musicals from a single codebase, each with its own visual identity and analytics, with cinematic scroll animations (GSAP) and AVIF-optimized media",
+          technologies: ["Laravel", "Livewire", "Alpine.js", "Tailwind CSS", "GSAP", "Vite", "Docker"],
           url: "https://beon-entertainment.com/"
+        },
+        {
+          name: "Ticketing & E-commerce Platform - CTX Tech Experience",
+          description: "Custom ticketing and e-commerce system (TALL Stack) for the largest tech event in Southern Europe, with Redsys payment integration (card and Bizum), invoicing and multi-platform tracking",
+          technologies: ["Laravel", "Livewire", "Alpine.js", "Tailwind CSS", "Redsys", "GSAP"],
+          url: "https://ctx-tech.com/"
         },
         {
           name: "Landing Page - Finca Alfoliz Origen",
           description: "Optimized landing page for event with integrated system for ticket management and sales",
           technologies: ["Laravel", "Livewire", "Tailwind CSS", "JavaScript", "Docker"],
           url: "https://fincaalfolizorigen.com/"
-        },
-        {
-          name: "Landing Page - CTX Tech Experience", 
-          description: "Minimalist and modern landing page focused on user experience and conversion",
-          technologies: ["Laravel", "Livewire", "Tailwind CSS", "Flux"],
-          url: "https://ctx-tech.com/"
         }
       ],
 
@@ -394,37 +406,37 @@ Lo que más me gusta es que no solo sabe programar - entiende el negocio y puede
         ],
 
         projects: [
-          `¡Los proyectos de Israel están geniales! Te cuento sobre los tres más destacados:
+          `¡Los proyectos de Israel están geniales! Te cuento sobre los más destacados:
 
-**1. Multisite Web - beon. Entertainment**
+**1. PopStars Madrid (React + Supabase)** ⭐
 <a href="${kb.projects[0].url}" target="_blank">${kb.projects[0].url}</a>
-Es la plataforma principal para presentar producciones teatrales y vender entradas. Lo interesante es que maneja múltiples sitios desde una sola instalación - súper eficiente. Tecnologías: Laravel, Livewire, Tailwind CSS, Docker, GSAP.
+Su proyecto estrella full stack: la plataforma de un restaurante con show en directo. La lógica de negocio vive en el servidor con Supabase Edge Functions: reservas con validación de disponibilidad, lista de espera con auto-promoción serverless, fidelización con QR de un solo uso (escáner en sala con BarcodeDetector) y un panel de administración privado con gestión de turnos y confirmación por WhatsApp. Stack: React, Supabase (Edge Functions), Three.js y Vite con Rolldown.
 
-**2. Finca Alfoliz Origen**
+**2. CMS Multisite (TALL Stack) - beon. Entertainment**
 <a href="${kb.projects[1].url}" target="_blank">${kb.projects[1].url}</a>
-Una landing page optimizada para un evento, pero con un sistema integrado completo para gestión y venta de entradas. No es solo una página bonita, ¡funciona de verdad!
+Plataforma multisite a medida (TALL Stack) que gestiona múltiples musicales desde una sola base de código, cada uno con su propia identidad visual y analítica. Tecnologías: Laravel, Livewire, Alpine.js, Tailwind CSS y GSAP.
 
 **3. CTX Tech Experience**
 <a href="${kb.projects[2].url}" target="_blank">${kb.projects[2].url}</a>
-Esta me encanta por su diseño minimalista y moderno. Está súper enfocada en la experiencia del usuario y la conversión. Desarrollada con Laravel, Livewire, Tailwind CSS y Flux.
+Un sistema de ticketing y e-commerce propio para el mayor evento tech del sur de Europa, con integración de pagos Redsys (tarjeta y Bizum), facturación y tracking multi-plataforma. Construido con el TALL Stack (Laravel, Livewire, Alpine.js y Tailwind).
 
-Lo que más me llama la atención es la variedad: desde plataformas complejas hasta landing pages optimizadas. ¡Israel realmente sabe adaptarse a diferentes necesidades!
+Lo que más me llama la atención es la variedad: desde una plataforma full stack moderna con React y Supabase hasta sistemas complejos de eventos. ¡Israel realmente sabe adaptarse a diferentes necesidades!
 
 ¿Te gustaría saber más detalles técnicos de alguno de estos proyectos?`,
           
           `Los proyectos de Israel demuestran su versatilidad muy bien:
 
-🎭 **Plataformas de entretenimiento** con gestión completa de reservas
-🎫 **Sistemas de venta de entradas** integrados y funcionales  
-🚀 **Landing pages** súper optimizadas para conversión
+⚛️ **Producto full stack** con React + Supabase (PopStars Madrid)
+🤖 **Automatizaciones reales** - lista de espera, QR de canjeo y confirmación por WhatsApp
+🎫 **Sistemas de venta de entradas** integrados y funcionales
 ⚡ **Sitios web de alto rendimiento** que realmente funcionan
 
 **Los highlights:**
-- **beon. Entertainment**: Sistema multisite complejo que gestiona múltiples producciones
-- **Finca Alfoliz Origen**: Landing con sistema de gestión integrado
-- **CTX Tech Experience**: Diseño minimalista enfocado en resultados
+- **PopStars Madrid**: plataforma de restaurante con reservas, carta dinámica y panel de administración a medida (React + Supabase)
+- **beon. Entertainment**: sistema multisite complejo que gestiona múltiples producciones
+- **CTX Tech Experience**: la plataforma del mayor evento tech del sur de Europa
 
-Todos desarrollados con su stack favorito: Laravel, Livewire y tecnologías modernas. Lo que más me gusta es que no son solo proyectos técnicos - cada uno resuelve un problema real de negocio.
+Hoy su stack estrella es React + Supabase potenciado con IA, sin perder el músculo de backend de Laravel. Lo que más me gusta es que no son solo proyectos técnicos - cada uno resuelve un problema real de negocio.
 
 ¿Hay algún aspecto técnico específico de estos proyectos que te interese conocer?`
         ],
@@ -703,26 +715,26 @@ Additionally, he excels in soft skills like teamwork, effective communication, a
         projects: [
           `Israel has worked on notable projects:
 
-<strong>1. Multisite Web - beon. Entertainment</strong>
+<strong>1. PopStars Madrid (React + Supabase)</strong> ⭐
 🔗 <a href="${kb.projects[0].url}" target="_blank">${kb.projects[0].url}</a>
-Main web platform for production presentation and ticket sales.
+His flagship full stack project: a restaurant platform with a live show. Business logic runs on the server with Supabase Edge Functions: bookings with availability validation, a waitlist with serverless auto-promotion, a single-use QR loyalty system (on-site scanner with BarcodeDetector) and a private admin panel with shift management and WhatsApp confirmation. Stack: React, Supabase (Edge Functions), Three.js and Vite (Rolldown).
 
-<strong>2. Finca Alfoliz Origen</strong>
+<strong>2. Multisite CMS (TALL Stack) - beon. Entertainment</strong>
 🔗 <a href="${kb.projects[1].url}" target="_blank">${kb.projects[1].url}</a>
-Optimized landing page with integrated ticket management system.
+Custom multisite platform (TALL Stack) that manages multiple musicals from a single codebase, each with its own visual identity and analytics.
 
 <strong>3. CTX Tech Experience</strong>
 🔗 <a href="${kb.projects[2].url}" target="_blank">${kb.projects[2].url}</a>
-Minimalist landing page focused on conversion.`,
+A custom ticketing and e-commerce system for the largest tech event in Southern Europe, with Redsys payment integration (card and Bizum), invoicing and multi-platform tracking. Built with the TALL Stack (Laravel, Livewire, Alpine.js and Tailwind).`,
           
           `Israel's projects demonstrate his versatility:
 
-🎭 Entertainment platforms with reservation management
+⚛️ Full stack product with React + Supabase (PopStars Madrid)
+🤖 Real automations - waitlist, redeemable QR and WhatsApp confirmation
 🎫 Integrated ticket sales systems
-🚀 Conversion-optimized landing pages
 ⚡ High-performance websites
 
-All developed with Laravel, Livewire and modern technologies.`
+His flagship stack today is React + Supabase, AI-powered, without losing Laravel's backend muscle.`
         ],
 
         education: [

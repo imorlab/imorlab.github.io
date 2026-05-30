@@ -65,36 +65,14 @@
                 {{ $t('projects.visitSite') }}
               </a>
               <button
-                @click="toggleDetails(project.id)"
+                @click="goToProjectDetail(project.id)"
                 class="inline-block bg-gray-800/50 border border-accent hover:bg-accent hover:border-accent dark:hover:border-accent hover:text-gray-300 dark:hover:text-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg"
               >
-                {{ expandedProjectId === project.id ? $t('projects.viewLess') : $t('projects.viewMore') }}
+                {{ $t('projects.viewDetails') }}
               </button>
             </div>
           </div>
         </div>
-
-        <!-- Collapsible Details Section -->
-        <transition name="expand">
-          <div v-if="expandedProjectId === project.id" class="mt-8 pt-8 border-t border-gray-700/50 px-2 lg:px-4 text-left">
-            <p class="text-gray-600 dark:text-gray-300 mb-6 text-lg">{{ project.long_description }}</p>
-            <p v-if="project.long_description_2" class="text-gray-600 dark:text-gray-300 mb-6 text-lg">{{ project.long_description_2 }}</p>
-            <p v-if="project.long_description_3" class="text-gray-600 dark:text-gray-300 mb-6 text-lg">{{ project.long_description_3 }}</p>
-            <ul v-if="project.details" class="list-disc text-left pl-6 text-gray-600 dark:text-gray-300 mb-6 text-lg space-y-2">
-              <li v-for="(detail, i) in project.details" :key="i">
-                {{ detail }}
-              </li>
-            </ul>
-            <div class="py-6 text-center">
-              <h4 class="text-xl font-semibold text-gray-800 dark:text-white/80 mb-4">{{ $t('projects.technologiesUsed') }}</h4>
-              <div class="flex flex-wrap gap-3 justify-center">
-                <span v-for="tech in project.technologies" :key="tech" class="bg-accent/30 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">
-                  {{ tech }}
-                </span>
-              </div>
-            </div>
-          </div>
-        </transition>
       </div>
     </div>
 
@@ -206,23 +184,8 @@
   </div>
 </template>
 
-<style scoped>
-.expand-enter-active,
-.expand-leave-active {
-  transition: grid-template-rows 0.5s ease, opacity 0.5s ease;
-  grid-template-rows: 1fr;
-  opacity: 1;
-}
-
-.expand-enter-from,
-.expand-leave-to {
-  grid-template-rows: 0fr;
-  opacity: 0;
-}
-</style>
-
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 import gsap from 'gsap';
@@ -232,21 +195,11 @@ const router = useRouter();
 
 // Separar proyectos principales (primeros 2) de los secundarios
 const allProjects = computed(() => tm('projects.list'));
-const mainProjects = computed(() => allProjects.value.slice(0, 2));
-const otherProjects = computed(() => allProjects.value.slice(2));
+const mainProjects = computed(() => allProjects.value.slice(0, 3));
+const otherProjects = computed(() => allProjects.value.slice(3));
 
 const getImageUrl = (path) => {
   return new URL(`../${path}`, import.meta.url).href;
-};
-
-const expandedProjectId = ref(null);
-
-const toggleDetails = (projectId) => {
-  if (expandedProjectId.value === projectId) {
-    expandedProjectId.value = null;
-  } else {
-    expandedProjectId.value = projectId;
-  }
 };
 
 const goToProjectDetail = (projectId) => {
