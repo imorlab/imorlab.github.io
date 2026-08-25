@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-seo.mjs",
-    "build": "vite-ssg build",
+    "build": "node scripts/generate-seo.mjs && vite-ssg build",
     "seo": "node scripts/generate-seo.mjs",
     "preview": "vite preview"
   },
@@ -15,6 +14,7 @@
     "@heroicons/vue": "^2.2.0",
     "@iconify/vue": "^4.1.2",
     "@number-flow/vue": "^0.3.1",
+    "@unhead/vue": "^2.1.17",
     "autoprefixer": "^10.4.20",
     "gsap": "^3.12.5",
     "html2canvas": "^1.4.1",

@@ -314,6 +314,24 @@
     "sending": "Enviando...",
     "success": "¡Mensaje enviado correctamente!"
   },
+  "chatbot": {
+    "title": "Asistente Virtual",
+    "subtitle": "Pregúntame sobre Israel",
+    "welcome": "¡Hola! 👋 Soy el asistente virtual de Israel Moreno. Estoy aquí para ayudarte a conocer más sobre su experiencia profesional, habilidades, proyectos y cómo contactar con él.",
+    "welcomeSubtitle": "Puedes usar las acciones rápidas de abajo o escribir cualquier pregunta:",
+    "placeholder": "Escribe tu pregunta...",
+    "copy": "Copiar mensaje",
+    "regenerate": "Regenerar respuesta",
+    "send": "Enviar",
+    "clearChat": "Nueva conversación",
+    "helpMessage": "¿En qué puedo ayudarte?",
+    "quickActions": {
+      "skills": "Habilidades",
+      "projects": "Proyectos",
+      "experience": "Experiencia",
+      "contact": "Contacto"
+    }
+  },
   "footer": {
     "created": "Creado por imorlab con",
     "hosted": "Alojado en",

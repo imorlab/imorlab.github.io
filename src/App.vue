@@ -157,21 +157,27 @@
         </div>
       </footer>
     </div>
+
+    <!-- ChatBot -->
+    <ChatBot />
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, provide } from 'vue'
 import { useRoute } from 'vue-router'
 import { RouterLink, RouterView } from 'vue-router'
 import { Icon } from '@iconify/vue'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
+import ChatBot from './components/ChatBot/ChatBot.vue'
 import { useLocalePath } from './composables/useLocalePath'
 
 const route = useRoute()
 const localePath = useLocalePath()
 const isDark = ref(true)
+// Estado del tema para componentes hijos (ChatBot)
+provide('isDark', isDark)
 const isMenuOpen = ref(false)
 
 const mouseX = ref(0)
