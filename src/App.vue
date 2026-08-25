@@ -58,11 +58,12 @@
     <!-- Main Content Wrapper -->
     <div class="relative z-10">
       <!-- Navigation -->
+      <header>
       <nav class="fixed top-0 left-0 right-0 z-50 bg-primary/15 backdrop-blur-md border-b border-accent/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between h-16">
             <!-- Logo -->
-            <RouterLink to="/" class="text-accent hover:text-accent/80 transition-colors duration-300">
+            <RouterLink :to="localePath('/')" class="text-accent hover:text-accent/80 transition-colors duration-300">
               <span class="text-xl font-bold">IM</span>
             </RouterLink>
             
@@ -72,9 +73,9 @@
                 <RouterLink
                   v-for="item in navItems"
                   :key="item.route"
-                  :to="item.route"
+                  :to="localePath(item.route)"
                   class="px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-accent"
-                  :class="[$route.path === item.route ? 'text-accent font-bold' : 'text-gray-500']"
+                  :class="[$route.path === localePath(item.route) ? 'text-accent font-bold' : 'text-gray-500']"
                 >
                   {{ $t(item.label) }}
                 </RouterLink>
@@ -108,10 +109,10 @@
               <RouterLink
                 v-for="item in navItems"
                 :key="item.route"
-                :to="item.route"
+                :to="localePath(item.route)"
                 @click="isMenuOpen = false"
                 class="block px-3 py-2 text-base font-medium transition-colors duration-300 hover:text-accent rounded-md"
-                :class="[$route.path === item.route ? 'text-accent font-bold bg-accent/10' : 'text-gray-400']"
+                :class="[$route.path === localePath(item.route) ? 'text-accent font-bold bg-accent/10' : 'text-gray-400']"
               >
                 {{ $t(item.label) }}
               </RouterLink>
@@ -119,6 +120,7 @@
           </div>
         </div>
       </nav>
+      </header>
 
       <!-- Main Content -->
       <main class="pt-16">
@@ -165,8 +167,10 @@ import { RouterLink, RouterView } from 'vue-router'
 import { Icon } from '@iconify/vue'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
+import { useLocalePath } from './composables/useLocalePath'
 
 const route = useRoute()
+const localePath = useLocalePath()
 const isDark = ref(true)
 const isMenuOpen = ref(false)
 

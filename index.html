@@ -55,16 +55,34 @@
     <!-- Schema.org -->
     <script type="application/ld+json">
       {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "url": "https://imorlab.github.io/",
-        "name": "Israel Moreno | Desarrollador Web Full Stack",
-        "description": "Desarrollador Web Full Stack con experiencia en Laravel y Vue.js. Explora mis proyectos y conoce mis habilidades en tecnologías web.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://imorlab.github.io/?s={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://imorlab.github.io/#person",
+            "name": "Israel Moreno",
+            "url": "https://imorlab.github.io/",
+            "image": "https://imorlab.github.io/og-image.jpg",
+            "jobTitle": "Desarrollador Web Full Stack",
+            "description": "Desarrollador web full stack con más de 3 años de experiencia, especializado en Laravel (PHP), Vue.js y JavaScript.",
+            "worksFor": { "@type": "Organization", "name": "beon. worldwide" },
+            "address": { "@type": "PostalAddress", "addressLocality": "Sevilla", "addressRegion": "Andalucía", "addressCountry": "ES" },
+            "knowsAbout": ["PHP", "Laravel", "Livewire", "Vue.js", "JavaScript", "MySQL", "Tailwind CSS", "Desarrollo web"],
+            "sameAs": [
+              "https://github.com/imorlab",
+              "https://www.linkedin.com/in/israelmorenolabrador/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://imorlab.github.io/#website",
+            "url": "https://imorlab.github.io/",
+            "name": "Israel Moreno | Desarrollador Web Full Stack",
+            "description": "Portfolio de Israel Moreno, desarrollador web full stack en Sevilla.",
+            "inLanguage": ["es", "en"],
+            "author": { "@id": "https://imorlab.github.io/#person" }
+          }
+        ]
       }
     </script>
     <script type="text/javascript">

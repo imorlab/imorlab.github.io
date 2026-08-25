@@ -1,4 +1,35 @@
+# Buscadores y rastreadores de IA: acceso permitido a todo el sitio.
 User-agent: *
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://imorlab.github.io/sitemap.xml
+# Resumen del sitio para modelos de lenguaje:
+# https://imorlab.github.io/llms.txt
+# https://imorlab.github.io/llms-full.txt

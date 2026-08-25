@@ -48,9 +48,13 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRoute, useRouter } from 'vue-router'
+import { localizePath } from '../router'
 import { Icon } from '@iconify/vue'
 
 const { locale, availableLocales } = useI18n()
+const route = useRoute()
+const router = useRouter()
 const isOpen = ref(false)
 const isDark = ref(true)
 
@@ -83,9 +87,10 @@ onUnmounted(() => {
 })
 
 const changeLocale = (newLocale) => {
-  locale.value = newLocale
   isOpen.value = false
   localStorage.setItem('locale', newLocale)
+  // La URL manda: /about ↔ /en/about. El guard del router actualiza el locale.
+  router.push(localizePath(route.path, newLocale))
 }
 
 const handleClickOutside = (event) => {

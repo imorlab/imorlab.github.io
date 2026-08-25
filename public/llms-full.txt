@@ -1,0 +1,174 @@
+# Israel Moreno — Desarrollador Web Full Stack
+
+¡Hola! Soy Israel Moreno, un desarrollador web full stack con sede en España.
+
+Soy programador web con más de 3 años de experiencia en el sector, especializándome en el desarrollo con Laravel (PHP). He participado en diversos proyectos, incluyendo gestión de reservas, integración con la IA de OpenAI e implementación de pasarelas de pago. Mi experiencia abarca PHP, HTML, JavaScript y CSS.
+
+Mi enfoque se centra en desarrollar soluciones innovadoras y eficientes, optimizando procesos y adaptándome a las necesidades de cada proyecto. Me considero una persona organizada, motivada y comprometida con el trabajo en equipo y la mejora continua.
+
+## Experiencia Profesional
+### Web Developer — beon. worldwide
+- Mayo 2023 - Actualidad · Sevilla, Andalucía, España (Híbrido) · Jornada completa
+- Desarrollo web: Creación y mantenimiento de plataformas escalables y de alto rendimiento con Laravel (PHP).
+- Gestión de reservas: Diseño de sistemas intuitivos para optimizar la experiencia del usuario.
+- Integraciones avanzadas: Implementación de API de OpenAI para personalización y automatización.
+- Pasarelas de pago: Configuración e integración segura para transacciones globales.
+- Frontend interactivo: Interfaces dinámicas con Laravel Livewire y Vue.js.
+- Soporte al cliente: Interacción directa para adaptar funcionalidades y ofrecer soluciones.
+- Tecnologías: PHP, Laravel, JavaScript, MySQL, GitHub, API Integration
+
+### Programador Web — Iwan21
+- Marzo 2020 - Junio 2020 · Sevilla, Andalucía, España · Prácticas
+- Desarrollo y mantenimiento de aplicaciones web con PHP, JavaScript y MySQL.
+- Maquetación web utilizando HTML, CSS, Bootstrap.
+- Manejo y optimización de datos en formatos XML y JSON.
+- Tecnologías: 
+
+## Educación
+- Ciclo Formativo de Grado Superior — Desarrollo de Aplicaciones Web. Cesur, 2020. Desarrollo web, JSON y tecnologías web modernas
+- Acceso a la Universidad — Prueba de acceso a la Universidad. Universidad Nacional de Educación a Distancia - U.N.E.D., 2015
+
+## Habilidades
+- Backend: PHP, Laravel, MySQL
+- Frontend: Livewire, Vue, Tailwind, Bootstrap
+- Herramientas: Git, GitHub, Trello
+- Diseño: Adobe XD, Photoshop
+- CMS: WordPress
+- Habilidades Blandas: Trabajo en equipo, Comunicación efectiva, Resolución de problemas, Adaptabilidad, Gestión del tiempo, Aprendizaje continuo
+
+## Proyectos
+### Multisite Web — beon. Entertainment
+- URL: https://beon-entertainment.com/
+- Desarrollo de la web principal de beon. Entertainment, enfocada en la presentación de producciones y venta de entradas. Se utilizó un diseño moderno y adaptativo para garantizar una experiencia de usuario óptima en todos los dispositivos.
+- El proyecto para beon. Entertainment consistió en un rediseño completo y el desarrollo de su nueva plataforma web. El objetivo era crear un portal atractivo y funcional que sirviera como escaparate para sus producciones teatrales y eventos, facilitando al mismo tiempo la compra de entradas a través de la integración con sus sistemas de ticketing. Se puso especial énfasis en la optimización del rendimiento y en un diseño responsive que se adaptara a la perfección a móviles, tabletas y ordenadores.
+- Como desarrollador web en beon. Worldwide, tuve la oportunidad de diseñar y construir proyectos clave. Esta plataforma multisite representa hasta la fecha una de mis contribuciones más significativas, un proyecto en el que desempeñé un rol central en su concepción, desarrollo y entrega, gestionando eficazmente tanto los tiempos como los recursos necesarios.
+- Se resolvió el desafío de gestionar múltiples sitios web con requisitos de contenido e idioma diversos desde una única base de código. Construida con Laravel y Livewire, la plataforma ofrece:
+- Administración Multisitio Unificada: Gestión eficiente del contenido para varios espectáculos (ej., Los pilares de la tierra, el musical, La histaoria interminable, el musical...) y el sitio principal de beon. Entertainment desde una única interfaz.
+- Sistema Multilingüe Sofisticado: Implementé un servicio de localización basado en el 'Patrón Estrategia' para un cambio de idioma dinámico, manteniendo el contexto de la página y soportando URLs traducidas amigables para SEO (ej., /la-productora ↔ /the-producer).
+- Gestión de Contenido Dinámico: Herramientas para crear páginas personalizadas, noticias y perfiles detallados para el elenco, staff y equipo creativo, todos con soporte multilingüe.
+- Optimización del Rendimiento: Se integró un pipeline de optimización de imágenes que convierte automáticamente las imágenes a formatos modernos (AVIF/WebP) con carga diferida, mejorando significativamente el rendimiento del sitio web.
+- Diseño Moderno y Adaptativo: Se puso un énfasis especial en un diseño responsive para una experiencia de usuario fluida en móviles, tabletas y ordenadores.
+- Tecnologías: Laravel, Livewire, Tailwind CSS, Docker, GSAP
+
+### Experiencia Digital — Finca Alfoliz Origen
+- URL: https://fincaalfolizorigen.com/
+- Desarrollo de una landing page optimizada para el evento 'Finca Alfoliz Origen', con un sistema integrado para la gestión y venta de entradas.
+- Parte de mi trabajo como Desarrollador Web en beon. Worldwide, este proyecto se centró en crear una landing page de alto rendimiento para promocionar el evento y gestionar la venta de entradas de forma eficiente. La prioridad fue la optimización de recursos, asegurando una experiencia de usuario rápida y fluida, desde la consulta de información hasta la compra final del ticket.
+- Diseño y desarrollo de una landing page enfocada en la conversión y la claridad de la información del evento.
+- Integración directa con una plataforma de ticketing para una gestión de entradas simplificada y segura.
+- Optimización de imágenes y tiempos de carga para garantizar el máximo rendimiento incluso en dispositivos móviles.
+- Configuración de pasarela de pago para procesar las transacciones de compra de entradas de forma segura.
+- Panel de administración para el seguimiento de las ventas y la gestión de los asistentes al evento.
+- Tecnologías: Laravel, Livewire, Tailwind CSS, JavaScript, Docker
+
+### Landing Page — CTX Tech Experience
+- URL: https://ctx-tech.com/
+- Landing page minimalista y moderna para CTx Tech Experience, con enfoque en la experiencia del usuario y la conversión. Se ha priorizado la optimización de recursos y la velocidad de carga.
+- Para CTx Tech Experience se desarrolló una landing page minimalista y moderna, centrada en ofrecer una experiencia de usuario fluida y directa. El objetivo principal cómo Desarrollador Web en beon. Worldwide fue crear una página de alto rendimiento, optimizando la velocidad de carga y los recursos para garantizar una navegación ágil. Construida con Laravel y Livewire, la página presenta el contenido de forma clara y atractiva, adaptándose perfectamente a cualquier dispositivo.
+- Diseño minimalista y moderno enfocado en la usabilidad y la conversión.
+- Optimización de recursos y velocidad de carga para un rendimiento superior.
+- Desarrollo sobre Laravel para una base de código robusta y escalable.
+- Interfaz totalmente responsiva, garantizando una experiencia consistente en todos los dispositivos.
+- Potenciado por Livewire para construir una interfaz dinámica y reactiva de forma eficiente.
+- Tecnologías: Laravel, Livewire, Tailwind CSS, Flux
+
+## Contacto
+- ¿Interesado en trabajar juntos? Ponte en contacto conmigo
+- Formulario: https://imorlab.github.io/contact
+- GitHub: https://github.com/imorlab
+- LinkedIn: https://www.linkedin.com/in/israelmorenolabrador/
+
+## Páginas
+- [Israel Moreno – Desarrollador Web Full Stack](https://imorlab.github.io/): Israel Moreno, desarrollador web full stack en Sevilla especializado en Laravel, PHP y Vue.js. Descubre quién soy, mis proyectos y cómo contactarme.
+- [Sobre mí – Israel Moreno · Desarrollador Web Full Stack](https://imorlab.github.io/about): Conoce a Israel Moreno: más de 3 años de experiencia como desarrollador web con Laravel, PHP, JavaScript y Vue.js. Formación, experiencia profesional y habilidades técnicas.
+- [Proyectos – Israel Moreno · Desarrollador Web Full Stack](https://imorlab.github.io/projects): Proyectos web desarrollados por Israel Moreno: aplicaciones con Laravel, Vue.js, React y Supabase, integraciones con IA y pasarelas de pago.
+- [Contacto – Israel Moreno · Desarrollador Web Full Stack](https://imorlab.github.io/contact): Contacta con Israel Moreno, desarrollador web full stack en Sevilla. Formulario de contacto, LinkedIn y GitHub para colaborar en tu próximo proyecto web.
+
+
+---
+
+# Israel Moreno — Full Stack Web Developer
+
+Hello! I'm Israel Moreno, a full stack web developer based in Spain.
+
+I'm a web developer with over 3 years of experience in the industry, specializing in Laravel (PHP) development. I've participated in various projects, including reservation management systems, OpenAI integration, and payment gateway implementations. My expertise spans PHP, HTML, JavaScript, and CSS.
+
+My focus is on developing innovative and efficient solutions, optimizing processes, and adapting to each project's needs. I consider myself organized, motivated, and committed to teamwork and continuous improvement.
+
+## Professional Experience
+### Web Developer — beon. worldwide
+- May 2023 - Present · Seville, Andalusia, Spain (Hybrid) · Full-time
+- Web Development: Creation and maintenance of scalable, high-performance platforms with Laravel (PHP).
+- Reservation Management: Design of intuitive systems to optimize user experience.
+- Advanced Integrations: Implementation of OpenAI API for customization and automation.
+- Payment Gateways: Secure configuration and integration for global transactions.
+- Interactive Frontend: Dynamic interfaces with Laravel Livewire and Vue.js.
+- Customer Support: Direct interaction to adapt functionalities and provide solutions.
+- Technologies: PHP, Laravel, JavaScript, MySQL, GitHub, API Integration
+
+### Web Developer — Iwan21
+- March 2020 - June 2020 · Seville, Andalusia, Spain · Internship
+- Development and maintenance of web applications using PHP, JavaScript and MySQL.
+- Web layout using HTML, CSS, Bootstrap.
+- Handling and optimization of XML and JSON data formats.
+- Technologies: 
+
+## Education
+- Higher Technical Certificate — Web Application Development. Cesur, 2020. Web development, JSON, and modern web technologies
+- University Access — University Entrance Examination. National University of Distance Education - U.N.E.D., 2015
+
+## Skills
+- Backend: PHP, Laravel, MySQL
+- Frontend: Livewire, Vue, Tailwind, Bootstrap
+- Tools: Git, GitHub, Trello
+- Design: Adobe XD, Photoshop
+- CMS: WordPress
+- Soft Skills: Teamwork, Effective Communication, Problem Solving, Adaptability, Time Management, Continuous Learning
+
+## Projects
+### Multisite Web — beon. Entertainment
+- URL: https://beon-entertainment.com/
+- Development of the main website of beon. Entertainment, focused on the presentation of productions and ticket sales. A modern and adaptive design was used to ensure an optimal user experience on all devices.
+- The project for beon. Entertainment consisted of a complete redesign and the development of its new website. The objective was to create an attractive and functional portal that served as a showcase for its theatrical productions and events, facilitating at the same time the purchase of tickets through the integration with its ticketing systems. Special emphasis was placed on performance optimization and a responsive design that would perfectly adapt to mobile devices, tablets, and computers.
+- As a web developer at beon. Worldwide, I had the opportunity to design and build key projects. This multisite platform represents to date one of my most significant contributions, a project in which I played a central role in its conception, development, and delivery, managing efficiently both time and resources.
+- The challenge of managing multiple websites with content and language requirements diverse from a single codebase was resolved. Built with Laravel and Livewire, the platform offers:
+- Unified Multisite Management: Efficient management of content for various productions (e.g., The Pillars of the Earth, the musical, The History Interminable, the musical...) and the main site of beon. Entertainment from a single interface.
+- Sophisticated Multilingual System: Implemented a localization service based on the 'Strategy Pattern' for dynamic language changes, maintaining page context and supporting friendly URLs for SEO (e.g., /la-productora ↔ /the-producer).
+- Dynamic Content Management: Tools for creating personalized pages, news, and detailed profiles for the cast, staff, and creative team, all with multilingual support.
+- Performance Optimization: An image optimization pipeline was integrated that automatically converts images to modern formats (AVIF/WebP) with lazy loading, significantly improving the website's performance.
+- Modern and Responsive Design: Special emphasis was placed on a responsive design for a fluid user experience on mobile devices, tablets, and computers.
+- Technologies: Laravel, Livewire, Tailwind CSS, Docker, GSAP
+
+### Experiencia Digital — Finca Alfoliz Origen
+- URL: https://fincaalfolizorigen.com/
+- Development of a landing page optimized for the 'Finca Alfoliz Origen' event, with an integrated system for ticket management and sales.
+- As a web developer at beon. Worldwide, this project focused on creating a high-performance landing page to promote the event and efficiently manage ticket sales. The priority was resource optimization, ensuring a fast and fluid user experience from information consultation to final ticket purchase.
+- Landing page design and development focused on conversion and event information clarity.
+- Direct integration with a ticketing platform for simplified and secure ticket management.
+- Image optimization pipeline integrated that automatically converts images to modern formats (AVIF/WebP) with lazy loading, significantly improving the website's performance.
+- Payment gateway configuration for secure ticket purchase transactions.
+- Admin panel for tracking sales and managing event attendees.
+- Technologies: Laravel, Livewire, Tailwind CSS, JavaScript, Docker
+
+### Landing Page — CTX Tech Experience
+- URL: https://ctx-tech.com/
+- Development of a minimal and modern landing page for CTx Tech Experience, with a focus on user experience and conversion. Resource optimization and speed were prioritized.
+- For CTx Tech Experience, a minimal and modern landing page was developed, centered on offering a fluid and direct user experience. The main goal as a web developer at beon. Worldwide was to create a high-performance page, optimizing loading speed and resources to ensure smooth navigation. Built with Laravel and Livewire, the page presents content clearly and attractively, adapting perfectly to any device.
+- Minimal and modern design focused on usability and conversion.
+- Resource optimization and speed for superior performance.
+- Development on Laravel for a robust and scalable codebase.
+- Fully responsive interface, ensuring consistent experience across all devices.
+- Powered by Livewire to build an efficient dynamic and reactive interface.
+- Technologies: Laravel, Livewire, Tailwind CSS, Flux
+
+## Contact
+- Interested in working together? Get in touch with me
+- Form: https://imorlab.github.io/en/contact
+- GitHub: https://github.com/imorlab
+- LinkedIn: https://www.linkedin.com/in/israelmorenolabrador/
+
+## Pages
+- [Israel Moreno – Full Stack Web Developer](https://imorlab.github.io/en): Israel Moreno, full stack web developer based in Seville, Spain, specialized in Laravel, PHP and Vue.js. Discover who I am, my projects and how to contact me.
+- [About me – Israel Moreno · Full Stack Web Developer](https://imorlab.github.io/en/about): Meet Israel Moreno: 3+ years of experience as a web developer with Laravel, PHP, JavaScript and Vue.js. Education, professional experience and technical skills.
+- [Projects – Israel Moreno · Full Stack Web Developer](https://imorlab.github.io/en/projects): Web projects built by Israel Moreno: applications with Laravel, Vue.js, React and Supabase, AI integrations and payment gateways.
+- [Contact – Israel Moreno · Full Stack Web Developer](https://imorlab.github.io/en/contact): Get in touch with Israel Moreno, full stack web developer in Seville. Contact form, LinkedIn and GitHub to collaborate on your next web project.

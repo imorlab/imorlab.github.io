@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/generate-seo.mjs",
     "build": "vite-ssg build",
+    "seo": "node scripts/generate-seo.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

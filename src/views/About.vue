@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-[calc(100vh-4rem)] py-16">
+  <section aria-labelledby="about-title" class="min-h-[calc(100vh-4rem)] py-16">
     <div class="max-w-7xl mx-auto px-0 lg:px-8 relative z-10">
-      <h1 class="text-4xl text-gray-500 dark:text-gray-100 font-bold text-center mb-16">
+      <h1 id="about-title" class="text-4xl text-gray-500 dark:text-gray-100 font-bold text-center mb-16">
         {{ $t('about.title_first') }} <span class="text-accent">{{ $t('about.title_second') }}</span>
       </h1>
 
@@ -27,6 +27,9 @@
                   <Icon icon="heroicons:document-arrow-down" class="w-5 h-5 mr-2" />
                   {{ $t('about.download_cv') }}
                 </button>
+              </div>
+              <div class="pt-6 border-t border-gray-300/30 dark:border-gray-600/30">
+                <AskAI align="center" />
               </div>
             </div>
           </div>
@@ -206,10 +209,13 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
+import AskAI from '../components/AskAI.vue'
+import { usePageMeta } from '../composables/usePageMeta'
+usePageMeta('about', '/about')
 import { Icon } from '@iconify/vue'
 import { useI18n } from 'vue-i18n'
 import LivewireIcon from '../components/icons/LivewireIcon.vue'

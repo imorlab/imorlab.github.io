@@ -1,13 +1,13 @@
 <template>
-  <div class="min-h-[calc(100vh-4rem)] py-16">
+  <section aria-labelledby="projects-title" class="min-h-[calc(100vh-4rem)] py-16">
     <div class="text-center mb-12">
-      <h1 class="text-3xl md:text-4xl font-bold text-accent mb-4"><span class="text-white">Mis </span>{{ $t('projects.title') }}</h1>
+      <h1 id="projects-title" class="text-3xl md:text-4xl font-bold text-accent mb-4"><span class="text-white">Mis </span>{{ $t('projects.title') }}</h1>
       <!-- <p class="text-xl text-gray-500 dark:text-gray-200 mb-2">{{ $t('projects.experience') }}</p>
       <p class="text-lg text-gray-500 dark:text-gray-200">{{ $t('projects.description') }}</p> -->
     </div>
     <div class="relative flex flex-col items-center justify-center px-4 space-y-16 overflow-x-hidden">
       <!-- Dynamic Project Loop -->
-      <div
+      <article
         v-for="(project, index) in tm('projects.list')"
         :key="project.id"
         class="bg-gray-800/10 dark:bg-gray-500/10 p-4 md:p-8 rounded-xl shadow-lg transition-all duration-300"
@@ -95,12 +95,12 @@
             </div>
           </div>
         </transition>
-      </div>
+      </article>
     </div>
 
 
 
-  </div>
+  </section>
 
 </template>
 
@@ -120,6 +120,8 @@
 </style>
 
 <script setup>
+import { usePageMeta } from '../composables/usePageMeta'
+usePageMeta('projects', '/projects')
 import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import gsap from 'gsap';

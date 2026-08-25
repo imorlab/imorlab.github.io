@@ -1,0 +1,40 @@
+# Israel Moreno — Desarrollador Web Full Stack / Full Stack Web Developer
+
+> Israel Moreno, desarrollador web full stack en Sevilla especializado en Laravel, PHP y Vue.js. Descubre quién soy, mis proyectos y cómo contactarme.
+> Israel Moreno, full stack web developer based in Seville, Spain, specialized in Laravel, PHP and Vue.js. Discover who I am, my projects and how to contact me.
+
+## Quién es / Who
+- Nombre / Name: Israel Moreno
+- Rol / Role: Desarrollador Web Full Stack (Full Stack Web Developer)
+- Ubicación / Location: Sevilla, Andalucía, España (Híbrido)
+- Trabajo actual / Current job: Web Developer en beon. worldwide (Mayo 2023 - Actualidad)
+- Formación / Education: Ciclo Formativo de Grado Superior — Desarrollo de Aplicaciones Web (Cesur, 2020)
+
+## Habilidades / Skills
+- Backend: PHP, Laravel, MySQL
+- Frontend: Livewire, Vue, Tailwind, Bootstrap
+- Herramientas: Git, GitHub, Trello
+- Diseño: Adobe XD, Photoshop
+- CMS: WordPress
+- Habilidades Blandas: Trabajo en equipo, Comunicación efectiva, Resolución de problemas, Adaptabilidad, Gestión del tiempo, Aprendizaje continuo
+
+## Páginas (español)
+- [Israel Moreno – Desarrollador Web Full Stack](https://imorlab.github.io/): Israel Moreno, desarrollador web full stack en Sevilla especializado en Laravel, PHP y Vue.js. Descubre quién soy, mis proyectos y cómo contactarme.
+- [Sobre mí – Israel Moreno · Desarrollador Web Full Stack](https://imorlab.github.io/about): Conoce a Israel Moreno: más de 3 años de experiencia como desarrollador web con Laravel, PHP, JavaScript y Vue.js. Formación, experiencia profesional y habilidades técnicas.
+- [Proyectos – Israel Moreno · Desarrollador Web Full Stack](https://imorlab.github.io/projects): Proyectos web desarrollados por Israel Moreno: aplicaciones con Laravel, Vue.js, React y Supabase, integraciones con IA y pasarelas de pago.
+- [Contacto – Israel Moreno · Desarrollador Web Full Stack](https://imorlab.github.io/contact): Contacta con Israel Moreno, desarrollador web full stack en Sevilla. Formulario de contacto, LinkedIn y GitHub para colaborar en tu próximo proyecto web.
+
+## Pages (English)
+- [Israel Moreno – Full Stack Web Developer](https://imorlab.github.io/en): Israel Moreno, full stack web developer based in Seville, Spain, specialized in Laravel, PHP and Vue.js. Discover who I am, my projects and how to contact me.
+- [About me – Israel Moreno · Full Stack Web Developer](https://imorlab.github.io/en/about): Meet Israel Moreno: 3+ years of experience as a web developer with Laravel, PHP, JavaScript and Vue.js. Education, professional experience and technical skills.
+- [Projects – Israel Moreno · Full Stack Web Developer](https://imorlab.github.io/en/projects): Web projects built by Israel Moreno: applications with Laravel, Vue.js, React and Supabase, AI integrations and payment gateways.
+- [Contact – Israel Moreno · Full Stack Web Developer](https://imorlab.github.io/en/contact): Get in touch with Israel Moreno, full stack web developer in Seville. Contact form, LinkedIn and GitHub to collaborate on your next web project.
+
+## Contacto / Contact
+- Web: https://imorlab.github.io/
+- Formulario / Form: https://imorlab.github.io/contact
+- GitHub: https://github.com/imorlab
+- LinkedIn: https://www.linkedin.com/in/israelmorenolabrador/
+
+## Versión extendida / Full version
+- https://imorlab.github.io/llms-full.txt

@@ -1,12 +1,12 @@
 <template>
-  <div class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-16">
+  <section aria-labelledby="hero-title" class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-16">
     <div class="w-full max-w-6xl mx-auto relative z-20">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <!-- Text Content -->
         <div class="z-10 order-2 md:order-1">
           <div class="max-w-4xl mx-auto text-center md:text-left overflow-hidden -translate-y-32 sm:translate-y-0">            
             <div ref="greetingRef" class="overflow-hidden">
-              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+              <h1 id="hero-title" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
                 <span class="text-gray-500 dark:text-gray-100 inline-block">{{ $t('home.greeting') }}</span>
                 <span class="text-accent block mt-2">Israel Moreno</span>
               </h1>
@@ -20,33 +20,38 @@
                 <span class="inline-block w-0.5 h-5 bg-accent animate-cursor-blink ml-0.5 -mb-0.5"></span>
               </p>
             </div>
-            <div ref="buttonsRef" class="flex flex-wrap gap-4 justify-center md:justify-start opacity-0">
-              <RouterLink
-                to="/about"
-                class="inline-flex items-center px-6 py-3 
-                       border-2 border-accent
-                       text-accent hover:text-gray-300 dark:hover:text-gray-700
-                       bg-transparent hover:bg-accent/90
-                       transition-all duration-300 rounded-lg 
-                       text-lg font-medium
-                       shadow-lg shadow-accent/20"
-              >
-                {{ $t('home.cta') }}
-                <Icon icon="heroicons:arrow-right" class="ml-2 w-5 h-5" />
-              </RouterLink>
-              <RouterLink
-                to="/contact"
-                class="inline-flex items-center px-6 py-3 
-                       border-2 border-accent
-                       text-gray-300 dark:text-gray-700 hover:text-accent dark:hover:text-accent
-                       bg-accent hover:bg-transparent
-                       transition-all duration-300 rounded-lg 
-                       text-lg font-medium
-                       shadow-lg shadow-accent/20"
-              >
-                {{ $t('home.contact') }}
-                <Icon icon="heroicons:envelope" class="ml-2 w-5 h-5" />
-              </RouterLink>
+            <div ref="buttonsRef" class="opacity-0">
+              <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <RouterLink
+                  :to="localePath('/about')"
+                  class="inline-flex items-center px-6 py-3
+                         border-2 border-accent
+                         text-accent hover:text-gray-300 dark:hover:text-gray-700
+                         bg-transparent hover:bg-accent/90
+                         transition-all duration-300 rounded-lg
+                         text-lg font-medium
+                         shadow-lg shadow-accent/20"
+                >
+                  {{ $t('home.cta') }}
+                  <Icon icon="heroicons:arrow-right" class="ml-2 w-5 h-5" />
+                </RouterLink>
+                <RouterLink
+                  :to="localePath('/contact')"
+                  class="inline-flex items-center px-6 py-3
+                         border-2 border-accent
+                         text-gray-300 dark:text-gray-700 hover:text-accent dark:hover:text-accent
+                         bg-accent hover:bg-transparent
+                         transition-all duration-300 rounded-lg
+                         text-lg font-medium
+                         shadow-lg shadow-accent/20"
+                >
+                  {{ $t('home.contact') }}
+                  <Icon icon="heroicons:envelope" class="ml-2 w-5 h-5" />
+                </RouterLink>
+              </div>
+              <div class="mt-8">
+                <AskAI title="askAi.or_title" />
+              </div>
             </div>
           </div>
         </div>
@@ -69,7 +74,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -77,8 +82,13 @@ import { ref, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Icon } from '@iconify/vue'
 import gsap from 'gsap'
+import AskAI from '../components/AskAI.vue'
+import { usePageMeta } from '../composables/usePageMeta'
+import { useLocalePath } from '../composables/useLocalePath'
 
-const { t, locale } = useI18n()
+const { locale } = useI18n()
+usePageMeta('home', '/')
+const localePath = useLocalePath()
 
 const greetingRef = ref(null)
 const roleRef = ref(null)

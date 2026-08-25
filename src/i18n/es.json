@@ -19,6 +19,30 @@
     "en": "English",
     "es": "Español"
   },
+  "meta": {
+    "home": {
+      "title": "Israel Moreno – Desarrollador Web Full Stack",
+      "description": "Israel Moreno, desarrollador web full stack en Sevilla especializado en Laravel, PHP y Vue.js. Descubre quién soy, mis proyectos y cómo contactarme."
+    },
+    "about": {
+      "title": "Sobre mí – Israel Moreno · Desarrollador Web Full Stack",
+      "description": "Conoce a Israel Moreno: más de 3 años de experiencia como desarrollador web con Laravel, PHP, JavaScript y Vue.js. Formación, experiencia profesional y habilidades técnicas."
+    },
+    "projects": {
+      "title": "Proyectos – Israel Moreno · Desarrollador Web Full Stack",
+      "description": "Proyectos web desarrollados por Israel Moreno: aplicaciones con Laravel, Vue.js, React y Supabase, integraciones con IA y pasarelas de pago."
+    },
+    "contact": {
+      "title": "Contacto – Israel Moreno · Desarrollador Web Full Stack",
+      "description": "Contacta con Israel Moreno, desarrollador web full stack en Sevilla. Formulario de contacto, LinkedIn y GitHub para colaborar en tu próximo proyecto web."
+    }
+  },
+  "askAi": {
+    "or_title": "O pregunta a los proveedores de IA:",
+    "title": "Pregunta a la IA sobre mí",
+    "tooltip": "Preguntar a {provider} sobre Israel Moreno",
+    "prompt": "Háblame sobre {name} con base en {domain}. Resume quién es esta persona, qué hace y cómo puedo contactarla."
+  },
   "home": {
     "greeting": "¡Hola! Soy",
     "role": "Desarrollador Web Full Stack",

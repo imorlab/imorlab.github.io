@@ -19,6 +19,30 @@
     "en": "English",
     "es": "Spanish"
   },
+  "meta": {
+    "home": {
+      "title": "Israel Moreno – Full Stack Web Developer",
+      "description": "Israel Moreno, full stack web developer based in Seville, Spain, specialized in Laravel, PHP and Vue.js. Discover who I am, my projects and how to contact me."
+    },
+    "about": {
+      "title": "About me – Israel Moreno · Full Stack Web Developer",
+      "description": "Meet Israel Moreno: 3+ years of experience as a web developer with Laravel, PHP, JavaScript and Vue.js. Education, professional experience and technical skills."
+    },
+    "projects": {
+      "title": "Projects – Israel Moreno · Full Stack Web Developer",
+      "description": "Web projects built by Israel Moreno: applications with Laravel, Vue.js, React and Supabase, AI integrations and payment gateways."
+    },
+    "contact": {
+      "title": "Contact – Israel Moreno · Full Stack Web Developer",
+      "description": "Get in touch with Israel Moreno, full stack web developer in Seville. Contact form, LinkedIn and GitHub to collaborate on your next web project."
+    }
+  },
+  "askAi": {
+    "or_title": "Or ask the AI providers:",
+    "title": "Ask AI about me",
+    "tooltip": "Ask {provider} about Israel Moreno",
+    "prompt": "Tell me about {name} based on {domain}. Summarize who this person is, what they do and how I can contact them."
+  },
   "home": {
     "greeting": "Hi! I'm",
     "role": "Full Stack Web Developer",
