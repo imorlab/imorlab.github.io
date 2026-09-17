@@ -110,6 +110,18 @@ export const chatbotService = {
           url: "https://ctx-tech.com/"
         },
         {
+          name: "Web para Feria de Retail - ZigZag Expo Retail",
+          description: "Plataforma web para la primera feria de expansión retail de la Península Ibérica, con venta de entradas por tipo de acceso, contenido en 5 idiomas y secciones dinámicas de expositores",
+          technologies: ["Laravel", "Livewire", "Tailwind CSS", "GSAP", "Docker"],
+          url: "https://zigzagexpo.com/"
+        },
+        {
+          name: "Ciclo Healthy - Plaza Río 2",
+          description: "Web de eventos fitness gratuitos con sistema de registro para las distintas actividades y panel de administración para gestionar las inscripciones. Primer proyecto desarrollado en solitario en beon. Worldwide",
+          technologies: ["Laravel", "Livewire", "Tailwind CSS", "Docker"],
+          url: "https://ciclohealthyplazario2.com/"
+        },
+        {
           name: "Landing Page - Finca Alfoliz Origen",
           description: "Landing page optimizada para evento con sistema integrado para gestión y venta de entradas",
           technologies: ["Laravel", "Livewire", "Tailwind CSS", "JavaScript", "Docker"],
@@ -225,6 +237,18 @@ export const chatbotService = {
           description: "Custom ticketing and e-commerce system (TALL Stack) for the largest tech event in Southern Europe, with Redsys payment integration (card and Bizum), invoicing and multi-platform tracking",
           technologies: ["Laravel", "Livewire", "Alpine.js", "Tailwind CSS", "Redsys", "GSAP"],
           url: "https://ctx-tech.com/"
+        },
+        {
+          name: "Retail Fair Website - ZigZag Expo Retail",
+          description: "Web platform for the first retail expansion fair in the Iberian Peninsula, with ticket sales by access type, content in 5 languages and dynamic exhibitor sections",
+          technologies: ["Laravel", "Livewire", "Tailwind CSS", "GSAP", "Docker"],
+          url: "https://zigzagexpo.com/"
+        },
+        {
+          name: "Ciclo Healthy - Plaza Río 2",
+          description: "Website for free fitness events with a registration system for the different activities and an admin panel to manage sign-ups. First project developed solo at beon. Worldwide",
+          technologies: ["Laravel", "Livewire", "Tailwind CSS", "Docker"],
+          url: "https://ciclohealthyplazario2.com/"
         },
         {
           name: "Landing Page - Finca Alfoliz Origen",
