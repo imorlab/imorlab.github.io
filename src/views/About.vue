@@ -57,28 +57,28 @@
               <Icon icon="heroicons:code-bracket" class="w-6 h-6 text-accent" />
               {{ $t('about.skills.title') }}
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-              <div v-for="(category, key) in Object.entries(skillsCategories).filter(([k]) => k !== 'soft')" :key="key" 
+            <div class="space-y-4">
+              <div v-for="(category, key) in Object.entries(skillsCategories).filter(([k]) => k !== 'soft')" :key="key"
                 class="bg-primary/5 rounded-lg p-4 hover:border hover:border-accent transition-ease-in-out duration-300">
                 <h3 class="font-semibold text-accent flex items-center gap-2 mb-3">
                   <Icon :icon="category[1].icon" class="w-6 h-6" />
                   {{ category[1].title }}
                 </h3>
-                <div class="gap-2">
-                  <span v-for="(item, i) in category[1].items" :key="i" 
-                    class="ps-3 py-1.5 text-sm text-gray-500 dark:text-gray-300 hover:bg-primary/700 transition-colors duration-300 cursor-default flex items-center gap-2">
-                    <component 
+                <div class="flex flex-wrap gap-2">
+                  <span v-for="(item, i) in category[1].items" :key="i"
+                    class="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/20 rounded-full text-sm text-gray-500 dark:text-gray-300 hover:bg-primary/40 transition-colors duration-300 cursor-default">
+                    <component
                       v-if="item.component"
-                      :is="components.LivewireIcon"
-                      class="w-6 h-6"
+                      :is="components[item.component]"
+                      class="w-5 h-5"
                     />
-                    <Icon 
+                    <Icon
                       v-else
-                      :icon="isDark.value && item.darkIcon ? item.darkIcon : item.icon" 
+                      :icon="isDark.value && item.darkIcon ? item.darkIcon : item.icon"
                       :class="[
-                        'w-6 h-6',
+                        'w-5 h-5',
                         isDark.value && item.name === 'GitHub' ? 'text-white' : '',
-                        isDark.value && item.name === 'WordPress' ? 'text-white' : '',
+                        isDark.value && item.name === 'Next.js' ? 'text-white' : '',
                       ]"
                     />
                     {{ item.name }}
@@ -192,10 +192,24 @@
               </div>
               <div class="flex justify-center bg-primary/5 rounded-lg border border-accent p-4">
                 <img 
+                  v-if="!githubStatsError"
                   :src="githubStatsUrl" 
                   alt="GitHub Languages Stats" 
                   class="rounded-lg max-w-full"
+                  @error="handleGithubStatsError"
                 />
+                <div v-else class="text-center py-8">
+                  <Icon icon="heroicons:exclamation-triangle" class="w-12 h-12 text-accent/50 mx-auto mb-3" />
+                  <p class="text-gray-500 dark:text-gray-400 text-sm">Stats temporarily unavailable</p>
+                  <a 
+                    href="https://github.com/imorlab" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="text-accent hover:underline text-sm mt-2 inline-block"
+                  >
+                    View on GitHub
+                  </a>
+                </div>
               </div>
               <div class="flex justify-center bg-primary/5 rounded-lg border border-accent p-4">
                 <img 
@@ -219,6 +233,7 @@ usePageMeta('about', '/about')
 import { Icon } from '@iconify/vue'
 import { useI18n } from 'vue-i18n'
 import LivewireIcon from '../components/icons/LivewireIcon.vue'
+import MediaEncoderIcon from '../components/icons/MediaEncoderIcon.vue'
 import { computed, onMounted, markRaw, ref } from 'vue'
 import { useTheme } from '../composables/theme'
 import NumberFlow from '@number-flow/vue'
@@ -226,9 +241,10 @@ import { generateCV } from '../components/CvGenerator'
 
 const { t, locale, messages } = useI18n()
 
-// Registramos el componente LivewireIcon para uso dinámico
+// Registramos los componentes de iconos para uso dinámico
 const components = {
-  LivewireIcon: markRaw(LivewireIcon)
+  LivewireIcon: markRaw(LivewireIcon),
+  MediaEncoderIcon: markRaw(MediaEncoderIcon)
 }
 
 const educationItems = computed(() => {
@@ -245,6 +261,15 @@ const experiencePositions = computed(() => {
 
 const { isDark } = useTheme()
 
+// Mirrors para las estadísticas de GitHub
+const githubStatsMirrors = [
+  'https://github-readme-stats.vercel.app',
+  'https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app',
+  'https://github-readme-stats-sigma-five.vercel.app'
+]
+const currentMirrorIndex = ref(0)
+const githubStatsError = ref(false)
+
 const chartUrl = computed(() => {
   return 'https://ghchart.rshah.org/imorlab'
 })
@@ -254,8 +279,17 @@ const accentColor = computed(() => {
 })
 
 const githubStatsUrl = computed(() => {
-  return `https://github-readme-stats.vercel.app/api/top-langs/?username=imorlab&layout=compact&theme=dark&hide_border=true&title_color=${accentColor.value}&text_color=${isDark.value ? 'ffffff' : '6B7280'}&bg_color=ffffff00&include_all_commits=true&count_private=true&hide=others`
+  const baseUrl = githubStatsMirrors[currentMirrorIndex.value] || githubStatsMirrors[0]
+  return `${baseUrl}/api/top-langs/?username=imorlab&layout=compact&theme=dark&hide_border=true&title_color=${accentColor.value}&text_color=${isDark.value ? 'ffffff' : '6B7280'}&bg_color=ffffff00&include_all_commits=true&count_private=true&hide=others`
 })
+
+const handleGithubStatsError = () => {
+  if (currentMirrorIndex.value < githubStatsMirrors.length - 1) {
+    currentMirrorIndex.value++
+  } else {
+    githubStatsError.value = true
+  }
+}
 
 const streakStatsUrl = computed(() => {
   return `https://streak-stats.vercel.app?user=imorlab&theme=dark&hide_border=true&background=ffffff00&ring=${accentColor.value}&fire=${accentColor.value}&currStreakLabel=${accentColor.value}&stroke=${isDark.value ? 'ffffff' : '6B7280'}&sideLabels=${isDark.value ? 'ffffff' : '6B7280'}&currStreakNum=${isDark.value ? 'ffffff' : '6B7280'}&sideNums=${isDark.value ? 'ffffff' : '6B7280'}&dates=${isDark.value ? 'ffffff' : '6B7280'}`
@@ -270,52 +304,31 @@ const stats = ref({
 
 const fetchGithubContributions = async () => {
   try {
-    const response = await fetch('https://api.github.com/graphql', {
-      method: 'POST',
-      headers: {
-        'Authorization': `bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: `
-          query {
-            user(login: "imorlab") {
-              contributionsCollection {
-                totalCommitContributions
-                totalIssueContributions
-                totalPullRequestContributions
-                totalPullRequestReviewContributions
-                totalRepositoryContributions
-                contributionCalendar {
-                  totalContributions
-                }
-              }
-            }
-          }
-        `
-      })
-    })
+    // Usamos github-contributions-api.jogruber.de que proporciona datos JSON públicos y soporta CORS
+    const response = await fetch('https://github-contributions-api.jogruber.de/v4/imorlab')
     
     if (!response.ok) {
-      throw new Error(`GitHub API responded with status: ${response.status}`)
+      throw new Error(`Contributions API responded with status: ${response.status}`)
     }
     
-    const { data } = await response.json()
+    const data = await response.json()
     
-    if (!data?.user?.contributionsCollection) {
-      throw new Error('No contribution data available')
+    if (data && data.total) {
+      // Sumar los totales por año (excluyendo 'lastYear' que es un periodo móvil)
+      let totalCommits = 0
+      
+      Object.entries(data.total).forEach(([year, count]) => {
+        // Solo sumar si la clave es un año numérico (ignorar 'lastYear')
+        if (!isNaN(year)) {
+          totalCommits += count
+        }
+      })
+      
+      if (totalCommits > 0) {
+        stats.value.development = totalCommits
+      }
     }
-
-    const contributions = data.user.contributionsCollection
-    const totalFromCollection = 
-      contributions.totalCommitContributions +
-      contributions.totalIssueContributions +
-      contributions.totalPullRequestContributions +
-      contributions.totalPullRequestReviewContributions +
-      contributions.totalRepositoryContributions
-
-    // Usar el número del calendario que coincide con lo que muestra GitHub
-    stats.value.development = contributions.contributionCalendar.totalContributions
+    
   } catch (error) {
     console.error('Error fetching GitHub contributions:', error)
     // Si hay error, usar el valor por defecto de las traducciones
