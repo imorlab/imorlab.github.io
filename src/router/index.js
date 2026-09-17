@@ -31,6 +31,14 @@ export const routes = [
     component: r.component,
     meta: { lang: 'en' }
   })),
+  // Banco de pruebas del fondo WebGL: carga diferida para que three.js no entre
+  // en el bundle principal; sin variante /en y fuera del sitemap.
+  {
+    path: '/demo',
+    name: 'PixelBlastDemo',
+    component: () => import('../views/PixelBlastDemo.vue'),
+    meta: { lang: 'es' }
+  },
   { path: '/home', redirect: '/' },
   { path: '/:pathMatch(.*)*', redirect: '/' }
 ]
