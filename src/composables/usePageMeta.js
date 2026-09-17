@@ -1,4 +1,4 @@
-import { computed } from 'vue'
+import { computed, toValue } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useHead } from '@unhead/vue'
 import { localizePath, LOCALES } from '../router'
@@ -11,14 +11,18 @@ const absolute = (path) => `${SITE_URL}${path}`
 
 /**
  * Metadatos por página: title, description, canonical, hreflang, Open Graph y Twitter.
- * @param {string} page  clave dentro de i18n `meta.*`
- * @param {string} path  ruta base (sin prefijo de idioma), p. ej. '/about'
+ * @param {string} page       clave dentro de i18n `meta.*`
+ * @param {string|Function} path  ruta base (sin prefijo de idioma), p. ej. '/about'.
+ *                                Acepta un getter/ref para rutas dinámicas (/projects/:id).
+ * @param {{title?: any, description?: any}} overrides  title/description propios (ref o getter),
+ *                                                      para páginas sin clave fija en `meta.*`.
  */
-export function usePageMeta(page, path = '/') {
+export function usePageMeta(page, path = '/', overrides = {}) {
   const { t, locale } = useI18n()
-  const url = computed(() => absolute(localizePath(path, locale.value)))
-  const title = computed(() => t(`meta.${page}.title`))
-  const description = computed(() => t(`meta.${page}.description`))
+  const basePath = computed(() => toValue(path))
+  const url = computed(() => absolute(localizePath(basePath.value, locale.value)))
+  const title = computed(() => toValue(overrides.title) || t(`meta.${page}.title`))
+  const description = computed(() => toValue(overrides.description) || t(`meta.${page}.description`))
   const ogLocale = computed(() => OG_LOCALES[locale.value] || OG_LOCALES.es)
   const ogAlternates = computed(() =>
     LOCALES.filter((l) => l !== locale.value).map((l) => ({ property: 'og:locale:alternate', content: OG_LOCALES[l] }))
@@ -27,11 +31,11 @@ export function usePageMeta(page, path = '/') {
   useHead({
     title,
     htmlAttrs: { lang: locale },
-    link: [
-      { rel: 'canonical', href: url },
-      ...LOCALES.map((l) => ({ rel: 'alternate', hreflang: l, href: absolute(localizePath(path, l)) })),
-      { rel: 'alternate', hreflang: 'x-default', href: absolute(localizePath(path, 'es')) }
-    ],
+    link: computed(() => [
+      { rel: 'canonical', href: url.value },
+      ...LOCALES.map((l) => ({ rel: 'alternate', hreflang: l, href: absolute(localizePath(basePath.value, l)) })),
+      { rel: 'alternate', hreflang: 'x-default', href: absolute(localizePath(basePath.value, 'es')) }
+    ]),
     meta: [
       { name: 'title', content: title },
       { name: 'description', content: description },

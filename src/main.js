@@ -27,7 +27,13 @@ const createI18nInstance = (locale) =>
   })
 
 // Solo las páginas reales generan HTML; las redirecciones (/home, comodín) no.
-export const includedRoutes = (paths, allRoutes) => allRoutes.filter((r) => !r.redirect).map((r) => r.path)
+// Las rutas dinámicas (/projects/:id) se expanden a una página por proyecto.
+const PROJECT_IDS = es.projects.list.map((p) => p.id)
+
+export const includedRoutes = (paths, allRoutes) =>
+  allRoutes
+    .filter((r) => !r.redirect)
+    .flatMap((r) => (r.path.includes(':id') ? PROJECT_IDS.map((id) => r.path.replace(':id', id)) : [r.path]))
 
 export const createApp = ViteSSG(
   App,
