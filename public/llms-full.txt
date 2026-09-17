@@ -37,20 +37,82 @@ Mi enfoque se centra en desarrollar soluciones innovadoras y eficientes, optimiz
 - Habilidades Blandas: Trabajo en equipo, Comunicación efectiva, Resolución de problemas, Adaptabilidad, Gestión del tiempo, Aprendizaje continuo
 
 ## Proyectos
-### Multisite Web — beon. Entertainment
-- URL: https://beon-entertainment.com/
-- Desarrollo de la web principal de beon. Entertainment, enfocada en la presentación de producciones y venta de entradas. Se utilizó un diseño moderno y adaptativo para garantizar una experiencia de usuario óptima en todos los dispositivos.
-- El proyecto para beon. Entertainment consistió en un rediseño completo y el desarrollo de su nueva plataforma web. El objetivo era crear un portal atractivo y funcional que sirviera como escaparate para sus producciones teatrales y eventos, facilitando al mismo tiempo la compra de entradas a través de la integración con sus sistemas de ticketing. Se puso especial énfasis en la optimización del rendimiento y en un diseño responsive que se adaptara a la perfección a móviles, tabletas y ordenadores.
-- Como desarrollador web en beon. Worldwide, tuve la oportunidad de diseñar y construir proyectos clave. Esta plataforma multisite representa hasta la fecha una de mis contribuciones más significativas, un proyecto en el que desempeñé un rol central en su concepción, desarrollo y entrega, gestionando eficazmente tanto los tiempos como los recursos necesarios.
-- Se resolvió el desafío de gestionar múltiples sitios web con requisitos de contenido e idioma diversos desde una única base de código. Construida con Laravel y Livewire, la plataforma ofrece:
-- Administración Multisitio Unificada: Gestión eficiente del contenido para varios espectáculos (ej., Los pilares de la tierra, el musical, La histaoria interminable, el musical...) y el sitio principal de beon. Entertainment desde una única interfaz.
-- Sistema Multilingüe Sofisticado: Implementé un servicio de localización basado en el 'Patrón Estrategia' para un cambio de idioma dinámico, manteniendo el contexto de la página y soportando URLs traducidas amigables para SEO (ej., /la-productora ↔ /the-producer).
-- Gestión de Contenido Dinámico: Herramientas para crear páginas personalizadas, noticias y perfiles detallados para el elenco, staff y equipo creativo, todos con soporte multilingüe.
-- Optimización del Rendimiento: Se integró un pipeline de optimización de imágenes que convierte automáticamente las imágenes a formatos modernos (AVIF/WebP) con carga diferida, mejorando significativamente el rendimiento del sitio web.
-- Diseño Moderno y Adaptativo: Se puso un énfasis especial en un diseño responsive para una experiencia de usuario fluida en móviles, tabletas y ordenadores.
-- Tecnologías: Laravel, Livewire, Tailwind CSS, Docker, GSAP
+### Plataforma de Restauración & Reservas — PopStars Madrid
+- URL: https://popstarsmadrid.com/
+- Plataforma web full stack para PopStars Madrid (gastronomía, música y show en directo), construida con React y Supabase. Incluye sistema de reservas con validación de disponibilidad, carta dinámica, lista de espera automatizada y un panel de administración a medida.
+- PopStars Madrid es el nuevo restaurante de moda en Madrid, donde la gastronomía se fusiona con la música en vivo y el espectáculo. Desarrollé su plataforma web completa de forma independiente como una SPA en React + Vite (con Rolldown, el nuevo bundler en Rust), usando Supabase como backend sin servidor propio (PostgreSQL, Auth, Realtime y Edge Functions) para orquestar todos los flujos de negocio: reservas de mesa, eventos corporativos, tardeo y la gestión de la carta.
+- Tomé las decisiones de arquitectura de principio a fin. La lógica de negocio crítica vive en el servidor mediante Supabase Edge Functions, aislada del cliente, y prioricé el rendimiento (code splitting agresivo con un chunk por página y precarga anticipada de rutas) junto a una experiencia visual diferencial: una capa global de Three.js montada como elemento fijo y persistente que se renderiza de forma continua sobre toda la SPA sin destruirse entre navegaciones, integrando su ciclo de vida con React Router.
+- Más allá de la web pública, construí un panel de administración privado con autenticación propia y automatizaciones de negocio reales. La plataforma incluye:
+- Reservas con lógica en servidor: el flujo se gestiona en una Supabase Edge Function (public-create-reservation) que evalúa la disponibilidad y, según el caso, confirma la reserva al instante o propone unirse a la lista de espera. El calendario, construido desde cero en React, solo habilita viernes, sábado y domingo y valida las fechas cerradas sincronizadas con Supabase.
+- Validación client-side robusta: comprueba día disponible, campos completos, formato de email, teléfono con prefijo internacional, observaciones obligatorias para grupos de +10 personas y aceptación de privacidad, con mensajes específicos por error mediante SweetAlert2.
+- Lista de espera con auto-promoción serverless: cuando se libera una plaza, la lógica del servidor (Edge Function / trigger de PostgreSQL) avisa automáticamente al primero de la lista, sin polling ni cron en el frontend.
+- Sistema de fidelización con QR de un solo uso: tras el registro de tardeo (Edge Function public-tardeo-signup) se genera un token único por usuario; el QR se renderiza en cliente y se canjea en sala con un escáner de cámara (BarcodeDetector nativo + html5-qrcode como fallback) que marca el token como usado y detecta los ya canjeados.
+- Panel de administración privado (/dashboard) con autenticación propia: gestión de todas las reservas y de los turnos del restaurante, escáner de QR para el canjeo y reenvío del voucher por email.
+- Confirmación de asistencia por WhatsApp: el cliente confirma su reserva con un solo toque desde un botón.
+- Carta dinámica desde Supabase: menú gestionado desde el backend con precios, descripciones y etiquetas de alérgenos, navegable mediante un carrusel de categorías (Swiper).
+- Experiencia visual diferencial: capa 3D persistente con Three.js y vídeo hero adaptativo según la orientación del dispositivo (vertical en móvil, horizontal en escritorio).
+- Marketing y rendimiento: tracking de conversiones integrado (Google Tag Manager con evento en reserva confirmada, Meta Pixel y TikTok Pixel) y SEO/Open Graph completo para un negocio de restauración.
+- Tecnologías: React, Supabase, Edge Functions, Three.js, Tailwind CSS, Vite (Rolldown), React Router, WhatsApp API
 
-### Experiencia Digital — Finca Alfoliz Origen
+### CMS Multisite (TALL Stack) — beon. Entertainment
+- URL: https://beon-entertainment.com/
+- Plataforma multisite a medida construida con Laravel y TALL Stack (Tailwind, Alpine.js, Livewire) que gestiona múltiples espectáculos musicales desde un único código base, cada uno con identidad visual, contenido y analítica propios. Animaciones de scroll cinematográficas con GSAP y media optimizada en AVIF.
+- El proyecto para beon. Entertainment consistió en el diseño y desarrollo de una plataforma web multisite para una productora teatral con múltiples musicales en cartel. El reto era que cada espectáculo funcionara como un site independiente —con su propia identidad visual, URL, idioma y contenido— manteniendo un único código base mantenible y escalable. Está construida sobre el TALL Stack (Tailwind CSS, Alpine.js, Livewire y Laravel).
+- Como desarrollador en beon. Worldwide, desempeñé un rol central en su concepción, desarrollo y entrega, gestionando eficazmente tanto los tiempos como los recursos. Es hasta la fecha una de mis contribuciones más significativas: una arquitectura que permite lanzar un nuevo espectáculo sin duplicar componentes, reutilizando la base y aplicando un tema visual completo por show.
+- Estas son las claves técnicas de la plataforma:
+- Arquitectura multisite: cada espectáculo es un site independiente (identidad visual, contenido, idioma y analítica propios) servido desde un único código base Laravel, lo que permite escalar a nuevas producciones sin reescribir componentes.
+- Theming multi-tema con Tailwind: paleta de colores y tokens de diseño definidos por espectáculo, generando un tema visual completo por site en el proceso de build sin duplicar la interfaz.
+- Arquitectura híbrida reactiva (TALL Stack): Livewire aporta la reactividad en servidor (seguimiento de interacciones, formularios con validación) y Alpine.js la interactividad en cliente (menús, paneles deslizables, zoom de galería con seguimiento del cursor), todo sin recargas de página.
+- Animación de scroll cinematográfica: sección hero con GSAP + ScrollTrigger y posicionamiento sticky para fijar las imágenes mientras el texto avanza con el scroll, además de un canvas de partículas animado en JavaScript puro.
+- Pipeline de imágenes responsive en AVIF: más de 140 elementos picture con variantes por breakpoint (móvil/escritorio) servidas desde CDN, con conversión y optimización automática para un alto rendimiento pese a la gran carga multimedia.
+- Internacionalización (i18n): rutas localizadas por idioma (/es, /en) con slugs semánticos traducidos y amigables para SEO en cada espectáculo.
+- Analítica independiente por producción: cada site integra su propio stack de medición y consentimiento de cookies (GDPR), permitiendo medir el rendimiento de cada musical de forma aislada.
+- Formularios con protección anti-spam en servidor (honeypot y validación server-side) y protección CSRF de Laravel.
+- SEO técnico: datos estructurados JSON-LD (schema.org) por producción, Open Graph y Twitter Cards para una compartición óptima en redes.
+- Tecnologías: Laravel, Livewire, Alpine.js, Tailwind CSS, GSAP, Vite, Docker
+
+### Plataforma de Ticketing & E-commerce — CTX Tech Experience Hub
+- URL: https://ctx-tech.com/
+- Plataforma web para CTx, el mayor evento tecnológico del sur de Europa (+50k asistentes, +150 speakers). Su núcleo es un sistema de ticketing y e-commerce propio construido desde cero (TALL Stack) con integración de la pasarela bancaria Redsys (tarjeta y Bizum), facturación, tracking multi-plataforma y galería con descargas bajo demanda.
+- CTx Tech Experience Hub es el mayor evento tecnológico del sur de Europa, celebrado en Sevilla. Como desarrollador en beon. Worldwide, participé en el desarrollo de esta plataforma, cuyo núcleo es un sistema de venta de entradas y e-commerce completo construido a medida con el TALL Stack (Laravel, Livewire, Alpine.js y Tailwind), sin depender de ninguna plataforma de ticketing de terceros.
+- El reto técnico más alto fue la integración de pagos con Redsys, la pasarela bancaria estándar en España. Implementé el flujo completo: firma HMAC-SHA256 de los parámetros, envío POST con redirección al TPV (con soporte de tarjeta y Bizum), validación de la firma de respuesta, gestión de la notificación asíncrona del banco y control de estados del pedido (pendiente, pagado, fallido) con idempotencia para no procesar un pago dos veces.
+- Alrededor de ese núcleo construí el resto de piezas de la plataforma:
+- Checkout en dos pasos con Livewire: catálogo de 7 tipos de entrada (de gratuita a corporate) filtrables por perfil de asistente, carrito en tiempo real, códigos promocionales y cálculo de IVA (21%) en servidor.
+- Pagos con Redsys (tarjeta y Bizum): firma HMAC-SHA256, flujo POST con redirección al TPV, validación de la respuesta, notificación asíncrona y gestión de estados de pedido con idempotencia.
+- Facturación fiscalmente correcta: distinción entre recibo simplificado y factura completa con NIF/CIF, con flujos de email y plantillas PDF diferenciados tras el pago.
+- Panel de administración: gestión de pedidos por estado, descarga de facturas, gestión de asistentes por tipo de entrada y validación de acceso por QR.
+- Tracking e-commerce multi-plataforma: eventos del funnel de compra (enhanced e-commerce) enviados de forma simultánea a Google Analytics 4, GTM, Meta, TikTok y LinkedIn para medir conversiones cross-channel.
+- Galería con descarga ZIP bajo demanda: cientos de imágenes con carga diferida, filtrables por día y sala, con generación del ZIP en servidor al vuelo (sin pre-generar archivos).
+- Animaciones avanzadas: fondo generativo WebGL (efecto eléctrico), scroll con GSAP + ScrollTrigger, rotación de palabras letra a letra con Alpine.js y carrusel de partners con auto-scroll y pausa al pasar el cursor.
+- Secciones dinámicas a gran escala: gestión de +150 speakers con perfiles detallados y un directorio de +1000 startups y empresas participantes.
+- Integración con Aurora, la plataforma de networking del evento impulsada por IA, e i18n completo ES/EN con slugs localizados (/es/entradas, /en/tickets).
+- Tecnologías: Laravel, Livewire, Alpine.js, Tailwind CSS, Redsys, GSAP, WebGL
+
+### Web para Feria de Retail — ZigZag Expo Retail
+- URL: https://zigzagexpo.com/
+- Desarrollo de la plataforma web para ZigZag, la primera feria de expansión retail en la Península Ibérica, celebrada en el Palacio de Convenciones de Madrid.
+- ZigZag Expo Retail es un evento especializado donde marcas, franquicias, centros comerciales, desarrolladores inmobiliarios y consultoras del sector retail se reúnen para impulsar su crecimiento, encontrar nuevas ubicaciones y generar alianzas estratégicas. Como Desarrollador Web en beon. Worldwide, participé en la creación de esta plataforma web moderna y atractiva.
+- Desarrollo de una web corporativa con diseño moderno y animaciones fluidas para captar la atención de los visitantes.
+- Sistema de venta de entradas integrado con diferentes tipos de acceso (Premium, General) y precios early bird.
+- Gestión de contenido multilingüe en 5 idiomas (español, inglés, italiano, portugués y francés) para alcanzar un público internacional.
+- Secciones dinámicas para mostrar expositores, categorías del evento (Moda, Alimentación, Hogar, Deportes, etc.) y estadísticas.
+- Integración de información sobre el evento ZigZag Party en el Teatro Calderón con speakers destacados.
+- Optimización del rendimiento con imágenes en formato AVIF y diseño totalmente responsive.
+- Tecnologías: Laravel, Livewire, Tailwind CSS, GSAP, Docker
+
+### Ciclo Healthy - Web de Eventos Fitness — Plaza Río 2
+- URL: https://ciclohealthyplazario2.com/
+- Desarrollo completo de la plataforma web para Ciclo Healthy, un evento de actividades fitness gratuitas en la terraza mirador de Plaza Río 2, con sistema de registro y panel de administración.
+- Ciclo Healthy es un evento de sesiones saludables gratuitas celebradas en la Terraza Mirador de Plaza Río 2 en Madrid. El evento incluye actividades como Barré, Running y Yoga impartidas por instructores profesionales. Este fue mi primer proyecto desarrollado en solitario dentro de beon. Worldwide, donde gestioné de forma autónoma todo el ciclo de desarrollo, desde la planificación hasta la entrega.
+- Desarrollo completo de una web corporativa para la promoción del evento con diseño moderno y atractivo.
+- Sistema de registro de usuarios integrado para la inscripción a las diferentes actividades (Barré, Running, Yoga).
+- Panel de administración (Dashboard) para la gestión de los registros y seguimiento de las inscripciones.
+- Secciones dinámicas con información sobre los instructores, fechas del evento y tipos de actividades.
+- Primer proyecto desarrollado de forma autónoma en beon. Worldwide, gestionando tiempos y entregables de manera independiente.
+- Diseño responsive optimizado para todos los dispositivos con imágenes en formato moderno.
+- Tecnologías: Laravel, Livewire, Tailwind CSS, Docker
+
+### Landing Page para Evento — Finca Alfoliz Origen
 - URL: https://fincaalfolizorigen.com/
 - Desarrollo de una landing page optimizada para el evento 'Finca Alfoliz Origen', con un sistema integrado para la gestión y venta de entradas.
 - Parte de mi trabajo como Desarrollador Web en beon. Worldwide, este proyecto se centró en crear una landing page de alto rendimiento para promocionar el evento y gestionar la venta de entradas de forma eficiente. La prioridad fue la optimización de recursos, asegurando una experiencia de usuario rápida y fluida, desde la consulta de información hasta la compra final del ticket.
@@ -60,17 +122,6 @@ Mi enfoque se centra en desarrollar soluciones innovadoras y eficientes, optimiz
 - Configuración de pasarela de pago para procesar las transacciones de compra de entradas de forma segura.
 - Panel de administración para el seguimiento de las ventas y la gestión de los asistentes al evento.
 - Tecnologías: Laravel, Livewire, Tailwind CSS, JavaScript, Docker
-
-### Landing Page — CTX Tech Experience
-- URL: https://ctx-tech.com/
-- Landing page minimalista y moderna para CTx Tech Experience, con enfoque en la experiencia del usuario y la conversión. Se ha priorizado la optimización de recursos y la velocidad de carga.
-- Para CTx Tech Experience se desarrolló una landing page minimalista y moderna, centrada en ofrecer una experiencia de usuario fluida y directa. El objetivo principal cómo Desarrollador Web en beon. Worldwide fue crear una página de alto rendimiento, optimizando la velocidad de carga y los recursos para garantizar una navegación ágil. Construida con Laravel y Livewire, la página presenta el contenido de forma clara y atractiva, adaptándose perfectamente a cualquier dispositivo.
-- Diseño minimalista y moderno enfocado en la usabilidad y la conversión.
-- Optimización de recursos y velocidad de carga para un rendimiento superior.
-- Desarrollo sobre Laravel para una base de código robusta y escalable.
-- Interfaz totalmente responsiva, garantizando una experiencia consistente en todos los dispositivos.
-- Potenciado por Livewire para construir una interfaz dinámica y reactiva de forma eficiente.
-- Tecnologías: Laravel, Livewire, Tailwind CSS, Flux
 
 ## Contacto
 - ¿Interesado en trabajar juntos? Ponte en contacto conmigo
@@ -126,40 +177,91 @@ My focus is on developing innovative and efficient solutions, optimizing process
 - Soft Skills: Teamwork, Effective Communication, Problem Solving, Adaptability, Time Management, Continuous Learning
 
 ## Projects
-### Multisite Web — beon. Entertainment
+### Restaurant Platform & Booking System — PopStars Madrid
+- URL: https://popstarsmadrid.com/
+- Full stack web platform for PopStars Madrid (gastronomy, music and live show), built with React and Supabase. It includes a booking system with availability validation, a dynamic menu, an automated waitlist, and a custom admin panel.
+- PopStars Madrid is the new trendy restaurant in Madrid, where gastronomy merges with live music and entertainment. I independently developed its complete web platform as a React + Vite SPA (with Rolldown, the new Rust-based bundler), using Supabase as a serverless backend (PostgreSQL, Auth, Realtime and Edge Functions) to orchestrate every business flow: table reservations, corporate events, tardeo, and menu management.
+- I made the architecture decisions end to end. Critical business logic lives on the server through Supabase Edge Functions, isolated from the client, and I prioritized performance (aggressive code splitting with one chunk per page and anticipatory route preloading) alongside a distinctive visual experience: a global Three.js layer mounted as a fixed, persistent element that renders continuously over the entire SPA without being destroyed between navigations, integrating its lifecycle with React Router.
+- Beyond the public site, I built a private admin panel with its own authentication and real business automations. The platform includes:
+- Server-side booking logic: the flow is handled in a Supabase Edge Function (public-create-reservation) that evaluates availability and either confirms the reservation instantly or offers to join the waitlist. The calendar, built from scratch in React, only enables Fridays, Saturdays and Sundays and validates closed dates synced with Supabase.
+- Robust client-side validation: checks for available day, complete fields, email format, international phone prefix, mandatory notes for groups of +10 people, and privacy acceptance, with specific per-error messages via SweetAlert2.
+- Waitlist with serverless auto-promotion: when a spot opens up, the server-side logic (Edge Function / PostgreSQL trigger) automatically notifies the first person on the list, with no polling or cron in the frontend.
+- Single-use QR loyalty system: after tardeo signup (Edge Function public-tardeo-signup) a unique token is generated per user; the QR is rendered client-side and redeemed on-site with a camera scanner (native BarcodeDetector + html5-qrcode fallback) that marks the token as used and detects already-redeemed ones.
+- Private admin panel (/dashboard) with its own authentication: management of all reservations and restaurant shifts, the QR redemption scanner, and resending the voucher by email.
+- WhatsApp attendance confirmation: the customer confirms their reservation with a single tap from a button.
+- Dynamic menu from Supabase: backend-managed menu with prices, descriptions and allergen tags, navigable through a category carousel (Swiper).
+- Distinctive visual experience: a persistent 3D layer with Three.js and an adaptive hero video based on device orientation (vertical on mobile, horizontal on desktop).
+- Marketing and performance: integrated conversion tracking (Google Tag Manager with an event on confirmed reservation, Meta Pixel and TikTok Pixel) and full SEO/Open Graph for a hospitality business.
+- Technologies: React, Supabase, Edge Functions, Three.js, Tailwind CSS, Vite (Rolldown), React Router, WhatsApp API
+
+### Multisite CMS (TALL Stack) — beon. Entertainment
 - URL: https://beon-entertainment.com/
-- Development of the main website of beon. Entertainment, focused on the presentation of productions and ticket sales. A modern and adaptive design was used to ensure an optimal user experience on all devices.
-- The project for beon. Entertainment consisted of a complete redesign and the development of its new website. The objective was to create an attractive and functional portal that served as a showcase for its theatrical productions and events, facilitating at the same time the purchase of tickets through the integration with its ticketing systems. Special emphasis was placed on performance optimization and a responsive design that would perfectly adapt to mobile devices, tablets, and computers.
-- As a web developer at beon. Worldwide, I had the opportunity to design and build key projects. This multisite platform represents to date one of my most significant contributions, a project in which I played a central role in its conception, development, and delivery, managing efficiently both time and resources.
-- The challenge of managing multiple websites with content and language requirements diverse from a single codebase was resolved. Built with Laravel and Livewire, the platform offers:
-- Unified Multisite Management: Efficient management of content for various productions (e.g., The Pillars of the Earth, the musical, The History Interminable, the musical...) and the main site of beon. Entertainment from a single interface.
-- Sophisticated Multilingual System: Implemented a localization service based on the 'Strategy Pattern' for dynamic language changes, maintaining page context and supporting friendly URLs for SEO (e.g., /la-productora ↔ /the-producer).
-- Dynamic Content Management: Tools for creating personalized pages, news, and detailed profiles for the cast, staff, and creative team, all with multilingual support.
-- Performance Optimization: An image optimization pipeline was integrated that automatically converts images to modern formats (AVIF/WebP) with lazy loading, significantly improving the website's performance.
-- Modern and Responsive Design: Special emphasis was placed on a responsive design for a fluid user experience on mobile devices, tablets, and computers.
-- Technologies: Laravel, Livewire, Tailwind CSS, Docker, GSAP
+- Custom multisite platform built with Laravel and the TALL Stack (Tailwind, Alpine.js, Livewire) that manages multiple musical shows from a single codebase, each with its own visual identity, content and analytics. Cinematic scroll animations with GSAP and AVIF-optimized media.
+- The beon. Entertainment project consisted of designing and developing a multisite web platform for a theatrical producer with multiple musicals running at once. The challenge was making each show work as an independent site —with its own visual identity, URL, language and content— while keeping a single, maintainable and scalable codebase. It is built on the TALL Stack (Tailwind CSS, Alpine.js, Livewire and Laravel).
+- As a developer at beon. Worldwide, I played a central role in its conception, development and delivery, effectively managing both time and resources. It remains one of my most significant contributions to date: an architecture that allows launching a new show without duplicating components, reusing the base and applying a complete visual theme per show.
+- These are the platform's technical highlights:
+- Multisite architecture: each show is an independent site (its own visual identity, content, language and analytics) served from a single Laravel codebase, allowing the platform to scale to new productions without rewriting components.
+- Multi-theme theming with Tailwind: color palette and design tokens defined per show, generating a complete visual theme per site at build time without duplicating the interface.
+- Reactive hybrid architecture (TALL Stack): Livewire provides server-side reactivity (interaction tracking, validated forms) and Alpine.js the client-side interactivity (menus, slide-over panels, gallery zoom that follows the cursor), all with no full page reloads.
+- Cinematic scroll animation: a hero section using GSAP + ScrollTrigger and sticky positioning to pin the images while the text advances with scroll, plus an animated particle canvas in pure JavaScript.
+- Responsive AVIF image pipeline: 140+ picture elements with per-breakpoint variants (mobile/desktop) served from a CDN, with automatic conversion and optimization for high performance despite the heavy media load.
+- Internationalization (i18n): per-language localized routes (/es, /en) with translated, SEO-friendly semantic slugs for each show.
+- Independent analytics per production: each site integrates its own measurement stack and cookie consent (GDPR), enabling isolated performance tracking for every musical.
+- Forms with server-side anti-spam protection (honeypot and server-side validation) and Laravel CSRF protection.
+- Technical SEO: JSON-LD structured data (schema.org) per production, Open Graph and Twitter Cards for optimal social sharing.
+- Technologies: Laravel, Livewire, Alpine.js, Tailwind CSS, GSAP, Vite, Docker
 
-### Experiencia Digital — Finca Alfoliz Origen
-- URL: https://fincaalfolizorigen.com/
-- Development of a landing page optimized for the 'Finca Alfoliz Origen' event, with an integrated system for ticket management and sales.
-- As a web developer at beon. Worldwide, this project focused on creating a high-performance landing page to promote the event and efficiently manage ticket sales. The priority was resource optimization, ensuring a fast and fluid user experience from information consultation to final ticket purchase.
-- Landing page design and development focused on conversion and event information clarity.
-- Direct integration with a ticketing platform for simplified and secure ticket management.
-- Image optimization pipeline integrated that automatically converts images to modern formats (AVIF/WebP) with lazy loading, significantly improving the website's performance.
-- Payment gateway configuration for secure ticket purchase transactions.
-- Admin panel for tracking sales and managing event attendees.
-- Technologies: Laravel, Livewire, Tailwind CSS, JavaScript, Docker
-
-### Landing Page — CTX Tech Experience
+### Ticketing & E-commerce Platform — CTX Tech Experience Hub
 - URL: https://ctx-tech.com/
-- Development of a minimal and modern landing page for CTx Tech Experience, with a focus on user experience and conversion. Resource optimization and speed were prioritized.
-- For CTx Tech Experience, a minimal and modern landing page was developed, centered on offering a fluid and direct user experience. The main goal as a web developer at beon. Worldwide was to create a high-performance page, optimizing loading speed and resources to ensure smooth navigation. Built with Laravel and Livewire, the page presents content clearly and attractively, adapting perfectly to any device.
-- Minimal and modern design focused on usability and conversion.
-- Resource optimization and speed for superior performance.
-- Development on Laravel for a robust and scalable codebase.
-- Fully responsive interface, ensuring consistent experience across all devices.
-- Powered by Livewire to build an efficient dynamic and reactive interface.
-- Technologies: Laravel, Livewire, Tailwind CSS, Flux
+- Web platform for CTx, the largest tech event in Southern Europe (+50k attendees, +150 speakers). Its core is a custom ticketing and e-commerce system built from scratch (TALL Stack) with integration of the Spanish bank gateway Redsys (card and Bizum), invoicing, multi-platform tracking and on-demand gallery downloads.
+- CTx Tech Experience Hub is the largest tech event in Southern Europe, held in Seville. As a developer at beon. Worldwide, I participated in building this platform, whose core is a complete custom ticketing and e-commerce system built with the TALL Stack (Laravel, Livewire, Alpine.js and Tailwind), with no reliance on any third-party ticketing platform.
+- The highest technical challenge was the Redsys payment integration, Spain's standard bank gateway. I implemented the full flow: HMAC-SHA256 signing of the parameters, a POST redirect to the bank's terminal (supporting card and Bizum), response signature validation, handling of the bank's asynchronous notification, and order state management (pending, paid, failed) with idempotency to avoid processing a payment twice.
+- Around that core I built the rest of the platform's pieces:
+- Two-step checkout with Livewire: a catalog of 7 ticket types (from free to corporate) filterable by attendee profile, a real-time cart, promo codes and server-side VAT (21%) calculation.
+- Payments with Redsys (card and Bizum): HMAC-SHA256 signature, POST redirect to the bank terminal, response validation, asynchronous notification and order state management with idempotency.
+- Fiscally correct invoicing: distinction between a simplified receipt and a full invoice with tax ID, with separate email flows and PDF templates after payment.
+- Admin panel: order management by status, invoice download, attendee management by ticket type and QR access validation.
+- Multi-platform e-commerce tracking: purchase-funnel events (enhanced e-commerce) sent simultaneously to Google Analytics 4, GTM, Meta, TikTok and LinkedIn to measure cross-channel conversions.
+- On-demand ZIP gallery download: hundreds of lazy-loaded images, filterable by day and room, with the ZIP generated on the server on the fly (no pre-generated files).
+- Advanced animations: a generative WebGL background (lightning effect), GSAP + ScrollTrigger scroll animations, letter-by-letter word rotation with Alpine.js, and a partners carousel with auto-scroll and hover pause.
+- Large-scale dynamic sections: management of +150 speakers with detailed profiles and a directory of +1000 startups and participating companies.
+- Integration with Aurora, the event's AI-powered networking platform, and full ES/EN i18n with localized slugs (/es/entradas, /en/tickets).
+- Technologies: Laravel, Livewire, Alpine.js, Tailwind CSS, Redsys, GSAP, WebGL
+
+### Retail Fair Website — ZigZag Expo Retail
+- URL: https://zigzagexpo.com/
+- Development of the web platform for ZigZag, the first retail expansion fair in the Iberian Peninsula, held at the Palacio de Convenciones in Madrid.
+- ZigZag Expo Retail is a specialized event where brands, franchises, shopping centers, real estate developers, and retail sector consultants come together to boost their growth, find new locations, and generate strategic alliances. As a Web Developer at beon. Worldwide, I participated in creating this modern and attractive web platform.
+- Development of a corporate website with modern design and fluid animations to capture visitors' attention.
+- Integrated ticket sales system with different access types (Premium, General) and early bird pricing.
+- Multilingual content management in 5 languages (Spanish, English, Italian, Portuguese, and French) to reach an international audience.
+- Dynamic sections to showcase exhibitors, event categories (Fashion, Food, Home, Sports, etc.) and statistics.
+- Integration of information about the ZigZag Party event at Teatro Calderón with featured speakers.
+- Performance optimization with AVIF format images and fully responsive design.
+- Technologies: Laravel, Livewire, Tailwind CSS, GSAP, Docker
+
+### Ciclo Healthy - Fitness Event Website — Plaza Río 2
+- URL: https://ciclohealthyplazario2.com/
+- Complete development of the web platform for Ciclo Healthy, a free fitness activities event at Plaza Río 2's lookout terrace, with registration system and admin panel.
+- Ciclo Healthy is an event of free healthy sessions held at the Mirador Terrace of Plaza Río 2 in Madrid. The event includes activities such as Barré, Running, and Yoga taught by professional instructors. This was my first solo project at beon. Worldwide, where I autonomously managed the entire development cycle from planning to delivery.
+- Complete development of a corporate website for event promotion with modern and attractive design.
+- Integrated user registration system for signing up for different activities (Barré, Running, Yoga).
+- Admin panel (Dashboard) for managing registrations and tracking sign-ups.
+- Dynamic sections with information about instructors, event dates, and types of activities.
+- First project developed independently at beon. Worldwide, managing timelines and deliverables autonomously.
+- Responsive design optimized for all devices with modern format images.
+- Technologies: Laravel, Livewire, Tailwind CSS, Docker
+
+### Event Landing Page — Finca Alfoliz Origen
+- URL: https://fincaalfolizorigen.com/
+- Development of an optimized landing page for the 'Finca Alfoliz Origen' event, with an integrated system for ticket management and sales.
+- Part of my work as a Web Developer at beon. Worldwide, this project focused on creating a high-performance landing page to promote the event and efficiently manage ticket sales. The priority was resource optimization, ensuring a fast and smooth user experience, from information consultation to the final ticket purchase.
+- Design and development of a landing page focused on conversion and clarity of event information.
+- Direct integration with a ticketing platform for simplified and secure ticket management.
+- Image optimization and load times to ensure maximum performance even on mobile devices.
+- Payment gateway configuration to securely process ticket purchase transactions.
+- Administration panel for tracking sales and managing event attendees.
+- Technologies: Laravel, Livewire, Tailwind CSS, JavaScript, Docker
 
 ## Contact
 - Interested in working together? Get in touch with me

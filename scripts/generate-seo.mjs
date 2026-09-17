@@ -24,10 +24,13 @@ const PAGES = [
   { path: '/projects', key: 'projects', priority: '0.8' },
   { path: '/contact', key: 'contact', priority: '0.6' }
 ]
+// Una página de detalle por proyecto (/projects/:id)
+const PROJECT_PAGES = es.projects.list.map((p) => ({ path: `/projects/${p.id}`, priority: '0.7' }))
+
 const url = (path, lang) => (lang === 'es' ? `${SITE}${path}` : `${SITE}/en${path === '/' ? '' : path}`)
 
 // ---------- sitemap.xml ----------
-const sitemapUrls = PAGES.flatMap((p) =>
+const sitemapUrls = [...PAGES, ...PROJECT_PAGES].flatMap((p) =>
   ['es', 'en'].map((lang) => `  <url>
     <loc>${url(p.path, lang)}</loc>
     <lastmod>${now}</lastmod>
@@ -138,4 +141,4 @@ write('public/llms-full.txt', `${section('es', es)}
 
 ${section('en', en)}`)
 
-console.log(`[generate-seo] sitemap.xml (${PAGES.length * 2} URLs), llms.txt y llms-full.txt generados · ${now}`)
+console.log(`[generate-seo] sitemap.xml (${(PAGES.length + PROJECT_PAGES.length) * 2} URLs), llms.txt y llms-full.txt generados · ${now}`)
