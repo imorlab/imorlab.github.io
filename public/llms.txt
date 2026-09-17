@@ -7,15 +7,14 @@
 - Nombre / Name: Israel Moreno
 - Rol / Role: Desarrollador Web Full Stack (Full Stack Web Developer)
 - Ubicación / Location: Sevilla, Andalucía, España (Híbrido)
-- Trabajo actual / Current job: Web Developer en beon. worldwide (Mayo 2023 - Actualidad)
+- Trabajo actual / Current job: Full Stack Developer en beon. worldwide (Mayo 2023 - Actualidad)
 - Formación / Education: Ciclo Formativo de Grado Superior — Desarrollo de Aplicaciones Web (Cesur, 2020)
 
 ## Habilidades / Skills
-- Backend: PHP, Laravel, MySQL
-- Frontend: Livewire, Vue, Tailwind, Bootstrap
-- Herramientas: Git, GitHub, Trello
-- Diseño: Adobe XD, Photoshop
-- CMS: WordPress
+- Frontend: React, Next.js, JavaScript (ES6+), Tailwind CSS, Vue.js, HTML5, CSS3, Bootstrap
+- Backend y BBDD: Supabase, Laravel (PHP), MySQL, PostgreSQL, Livewire, REST APIs
+- Metodología e IA: AI-Driven Development, Git, GitHub, Trello, Automatizaciones
+- Diseño / UX / Vídeo: Adobe XD, Photoshop, Adobe Media Encoder
 - Habilidades Blandas: Trabajo en equipo, Comunicación efectiva, Resolución de problemas, Adaptabilidad, Gestión del tiempo, Aprendizaje continuo
 
 ## Páginas (español)

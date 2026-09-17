@@ -1,21 +1,19 @@
 # Israel Moreno — Desarrollador Web Full Stack
 
-¡Hola! Soy Israel Moreno, un desarrollador web full stack con sede en España.
+¡Hola! Soy Israel Moreno, desarrollador web Full Stack con sede en España.
 
-Soy programador web con más de 3 años de experiencia en el sector, especializándome en el desarrollo con Laravel (PHP). He participado en diversos proyectos, incluyendo gestión de reservas, integración con la IA de OpenAI e implementación de pasarelas de pago. Mi experiencia abarca PHP, HTML, JavaScript y CSS.
+Desarrollador Web Full Stack con más de 3 años de experiencia liderando la creación de plataformas de alto rendimiento y productos digitales. Especializado en el desarrollo ágil mediante stacks modernos (React, Next.js y Supabase) y arquitecturas robustas en Laravel (PHP).
 
-Mi enfoque se centra en desarrollar soluciones innovadoras y eficientes, optimizando procesos y adaptándome a las necesidades de cada proyecto. Me considero una persona organizada, motivada y comprometida con el trabajo en equipo y la mejora continua.
+Mi enfoque actual integra herramientas de Inteligencia Artificial (AI-driven development) para maximizar la velocidad de entrega, optimizar la limpieza del código y garantizar un rendimiento extremo (100% Core Web Vitals). Experto en pasarelas de pago, integraciones complejas de APIs (incluyendo OpenAI) y automatización de procesos.
 
 ## Experiencia Profesional
-### Web Developer — beon. worldwide
+### Full Stack Developer — beon. worldwide
 - Mayo 2023 - Actualidad · Sevilla, Andalucía, España (Híbrido) · Jornada completa
-- Desarrollo web: Creación y mantenimiento de plataformas escalables y de alto rendimiento con Laravel (PHP).
-- Gestión de reservas: Diseño de sistemas intuitivos para optimizar la experiencia del usuario.
-- Integraciones avanzadas: Implementación de API de OpenAI para personalización y automatización.
-- Pasarelas de pago: Configuración e integración segura para transacciones globales.
-- Frontend interactivo: Interfaces dinámicas con Laravel Livewire y Vue.js.
-- Soporte al cliente: Interacción directa para adaptar funcionalidades y ofrecer soluciones.
-- Tecnologías: PHP, Laravel, JavaScript, MySQL, GitHub, API Integration
+- Ingeniería de Software: Dirección técnica y desarrollo de plataformas web escalables y de alta disponibilidad utilizando Laravel, React y Vue.js.
+- Optimización e IA: Integración avanzada de modelos de OpenAI para la automatización de flujos de trabajo internos y personalización de la experiencia de usuario.
+- Arquitectura de Datos y Seguridad: Diseño e implementación de bases de datos relacionales complejas y configuración de pasarelas de pago seguras para transacciones globales.
+- Rendimiento Frontend: Desarrollo de interfaces dinámicas y ultra-rápidas optimizando la arquitectura de componentes para cumplir con los estándares más exigentes de rendimiento.
+- Tecnologías: React, Laravel, Supabase, JavaScript, MySQL, API Integration, GitHub
 
 ### Programador Web — Iwan21
 - Marzo 2020 - Junio 2020 · Sevilla, Andalucía, España · Prácticas
@@ -29,11 +27,10 @@ Mi enfoque se centra en desarrollar soluciones innovadoras y eficientes, optimiz
 - Acceso a la Universidad — Prueba de acceso a la Universidad. Universidad Nacional de Educación a Distancia - U.N.E.D., 2015
 
 ## Habilidades
-- Backend: PHP, Laravel, MySQL
-- Frontend: Livewire, Vue, Tailwind, Bootstrap
-- Herramientas: Git, GitHub, Trello
-- Diseño: Adobe XD, Photoshop
-- CMS: WordPress
+- Frontend: React, Next.js, JavaScript (ES6+), Tailwind CSS, Vue.js, HTML5, CSS3, Bootstrap
+- Backend y BBDD: Supabase, Laravel (PHP), MySQL, PostgreSQL, Livewire, REST APIs
+- Metodología e IA: AI-Driven Development, Git, GitHub, Trello, Automatizaciones
+- Diseño / UX / Vídeo: Adobe XD, Photoshop, Adobe Media Encoder
 - Habilidades Blandas: Trabajo en equipo, Comunicación efectiva, Resolución de problemas, Adaptabilidad, Gestión del tiempo, Aprendizaje continuo
 
 ## Proyectos
@@ -140,22 +137,20 @@ Mi enfoque se centra en desarrollar soluciones innovadoras y eficientes, optimiz
 
 # Israel Moreno — Full Stack Web Developer
 
-Hello! I'm Israel Moreno, a full stack web developer based in Spain.
+Hello! I'm Israel Moreno, a Full Stack web developer based in Spain.
 
-I'm a web developer with over 3 years of experience in the industry, specializing in Laravel (PHP) development. I've participated in various projects, including reservation management systems, OpenAI integration, and payment gateway implementations. My expertise spans PHP, HTML, JavaScript, and CSS.
+Full Stack Web Developer with over 3 years of experience leading the creation of high-performance platforms and digital products. Specialized in agile development with modern stacks (React, Next.js and Supabase) and robust architectures in Laravel (PHP).
 
-My focus is on developing innovative and efficient solutions, optimizing processes, and adapting to each project's needs. I consider myself organized, motivated, and committed to teamwork and continuous improvement.
+My current approach integrates Artificial Intelligence tools (AI-driven development) to maximize delivery speed, optimize code cleanliness, and ensure extreme performance (100% Core Web Vitals). Expert in payment gateways, complex API integrations (including OpenAI), and process automation.
 
 ## Professional Experience
-### Web Developer — beon. worldwide
+### Full Stack Developer — beon. worldwide
 - May 2023 - Present · Seville, Andalusia, Spain (Hybrid) · Full-time
-- Web Development: Creation and maintenance of scalable, high-performance platforms with Laravel (PHP).
-- Reservation Management: Design of intuitive systems to optimize user experience.
-- Advanced Integrations: Implementation of OpenAI API for customization and automation.
-- Payment Gateways: Secure configuration and integration for global transactions.
-- Interactive Frontend: Dynamic interfaces with Laravel Livewire and Vue.js.
-- Customer Support: Direct interaction to adapt functionalities and provide solutions.
-- Technologies: PHP, Laravel, JavaScript, MySQL, GitHub, API Integration
+- Software Engineering: Technical leadership and development of scalable, high-availability web platforms using Laravel, React and Vue.js.
+- Optimization & AI: Advanced integration of OpenAI models to automate internal workflows and personalize the user experience.
+- Data Architecture & Security: Design and implementation of complex relational databases and secure payment gateway configuration for global transactions.
+- Frontend Performance: Development of dynamic, ultra-fast interfaces, optimizing component architecture to meet the most demanding performance standards.
+- Technologies: React, Laravel, Supabase, JavaScript, MySQL, API Integration, GitHub
 
 ### Web Developer — Iwan21
 - March 2020 - June 2020 · Seville, Andalusia, Spain · Internship
@@ -169,11 +164,10 @@ My focus is on developing innovative and efficient solutions, optimizing process
 - University Access — University Entrance Examination. National University of Distance Education - U.N.E.D., 2015
 
 ## Skills
-- Backend: PHP, Laravel, MySQL
-- Frontend: Livewire, Vue, Tailwind, Bootstrap
-- Tools: Git, GitHub, Trello
-- Design: Adobe XD, Photoshop
-- CMS: WordPress
+- Frontend: React, Next.js, JavaScript (ES6+), Tailwind CSS, Vue.js, HTML5, CSS3, Bootstrap
+- Backend & DB: Supabase, Laravel (PHP), MySQL, PostgreSQL, Livewire, REST APIs
+- Methodology & AI: AI-Driven Development, Git, GitHub, Trello, Automations
+- Design / UX / Video: Adobe XD, Photoshop, Adobe Media Encoder
 - Soft Skills: Teamwork, Effective Communication, Problem Solving, Adaptability, Time Management, Continuous Learning
 
 ## Projects
