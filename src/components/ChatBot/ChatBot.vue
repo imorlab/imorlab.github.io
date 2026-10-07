@@ -165,6 +165,7 @@
 import { ref, nextTick, inject, onMounted, onUnmounted, watch } from 'vue'
 import { Icon } from '@iconify/vue'
 import { useI18n } from 'vue-i18n'
+import { track } from '../../utils/analytics'
 
 const { locale } = useI18n()
 const isDark = inject('isDark', ref(true))
@@ -236,6 +237,7 @@ const toggleChat = async () => {
   showHelpMessage.value = false
 
   if (isOpen.value) {
+    track('chatbot_open')
     hasNewMessage.value = false
     clearTimers()
     loadService() // precarga mientras el usuario lee la bienvenida
@@ -260,6 +262,7 @@ const QUICK_QUESTIONS = {
 }
 
 const handleQuickAction = (action) => {
+  track('chatbot_quick_action', { topic: action })
   const q = QUICK_QUESTIONS[action]
   currentMessage.value = q[locale.value] || q.es
   sendMessage()
@@ -280,6 +283,7 @@ const sendMessage = async () => {
   if (!text || isTyping.value) return
 
   messages.value.push({ id: nextId(), type: 'user', content: text, timestamp: new Date() })
+  track('chatbot_message') // sin el texto: puede contener datos personales
   currentMessage.value = ''
   isTyping.value = true
   await scrollToBottom()

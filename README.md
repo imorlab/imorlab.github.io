@@ -83,6 +83,30 @@ Para generar el CV, simplemente:
 2. Haz clic en el botón "Descargar CV"
 3. El sistema generará automáticamente un PDF con tu información actualizada
 
+## Analítica
+
+- **Google Analytics 4** (`G-6HX5VF642H`, en `index.html`): visitas, páginas vistas (medición mejorada, también en la navegación SPA), clics salientes y scroll al 90 %.
+- **Eventos propios** (`src/utils/analytics.js`): se envían con `track(evento, parámetros)` o, para clics, marcando el elemento con `data-track="evento"` y `data-track-*` (los atributos pasan a ser parámetros: `data-track-project-id` → `project_id`).
+- **Microsoft Clarity** (opcional): mapas de calor y grabaciones. Se activa definiendo `VITE_CLARITY_ID` (en `.env` en local y como variable del repositorio en GitHub Actions).
+
+| Evento | Cuándo | Parámetros |
+| --- | --- | --- |
+| `generate_lead` | Formulario de contacto enviado | `form` |
+| `contact_error` | Fallo al enviar el formulario | `form` |
+| `file_download` | Descarga del CV en PDF | `file_name`, `file_extension` |
+| `project_visit` | Clic en "Visitar sitio" de un proyecto | `project_id`, `project_name`, `link_url` |
+| `social_click` | Clic en LinkedIn / GitHub | `network`, `link_url` |
+| `ask_ai` | Clic en "Pregunta a la IA" | `provider`, `link_url` |
+| `cta_click` | Botones de la portada | `cta` |
+| `chatbot_open` / `chatbot_message` | Abrir el chatbot / enviar un mensaje (sin el texto) | — |
+| `chatbot_quick_action` | Acción rápida del chatbot | `topic` |
+| `language_change` / `theme_change` | Cambio de idioma / tema | `language` / `theme` |
+| `scroll` | 25 %, 50 % y 75 % de la página (el 90 % lo envía GA4) | `percent_scrolled` |
+| `page_not_found` | URL inexistente (redirigida a la portada) | `not_found_path` |
+| `LCP`, `INP`, `CLS`, `FCP`, `TTFB` | Core Web Vitals de visitas reales | `metric_value`, `metric_rating`, … |
+
+Para ver los parámetros en los informes de GA4 hay que registrarlos en *Administrar → Definiciones personalizadas* como dimensiones de ámbito evento.
+
 ## Instalación y Uso
 
 1. **Clonar el repositorio**

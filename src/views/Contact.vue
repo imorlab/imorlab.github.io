@@ -57,7 +57,8 @@
       <div class="mt-12">
         <h3 class="text-xl font-semibold mb-4 text-accent">{{ $t('contact.socialMedia') }}</h3>
         <div class="flex justify-center space-x-6">
-          <a href="https://www.linkedin.com/in/israelmorenolabrador/" target="_blank" rel="noopener noreferrer" 
+          <a href="https://www.linkedin.com/in/israelmorenolabrador/" target="_blank" rel="noopener noreferrer"
+             data-track="social_click" data-track-network="linkedin"
              class="flex items-center gap-2 text-gray-500 dark:text-gray-300 hover:text-accent transition-colors duration-300">
               <span class="p-2 rounded-lg bg-accent/10">
                 <img src="@/assets/images/logos/linkedin-black.svg" alt="LinkedIn" class="w-6 h-6 block dark:hidden" />
@@ -65,7 +66,8 @@
               </span>
             LinkedIn
           </a>
-          <a href="https://github.com/imorlab" target="_blank" rel="noopener noreferrer" 
+          <a href="https://github.com/imorlab" target="_blank" rel="noopener noreferrer"
+             data-track="social_click" data-track-network="github"
              class="flex items-center gap-2 text-gray-500 dark:text-gray-300 hover:text-accent transition-colors duration-300">
               <span class="p-2 rounded-lg bg-accent/10">
                 <img src="@/assets/images/logos/github-mark.svg" alt="GitHub" class="w-6 h-6 block dark:hidden" />
@@ -137,6 +139,7 @@ import { usePageMeta } from '../composables/usePageMeta'
 usePageMeta('contact', '/contact')
 import { ref, onUnmounted } from 'vue'
 import emailjs from '@emailjs/browser'
+import { track } from '../utils/analytics'
 
 const loading = ref(false)
 const success = ref(false)
@@ -172,8 +175,10 @@ const sendEmail = async (e) => {
     success.value = true
     e.target.reset()
     hideNotification()
+    track('generate_lead', { form: 'contact' })
   } catch (err) {
     error.value = true
+    track('contact_error', { form: 'contact' })
     hideNotification()
   } finally {
     loading.value = false

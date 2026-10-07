@@ -40,5 +40,5 @@ export const routes = [
     meta: { lang: 'es' }
   },
   { path: '/home', redirect: '/' },
-  { path: '/:pathMatch(.*)*', redirect: '/' }
+  { path: '/:pathMatch(.*)*', name: 'NotFound', redirect: '/' }
 ]

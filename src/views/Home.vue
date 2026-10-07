@@ -24,6 +24,8 @@
               <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                 <RouterLink
                   :to="localePath('/about')"
+                  data-track="cta_click"
+                  data-track-cta="about"
                   class="inline-flex items-center px-6 py-3
                          border-2 border-accent
                          text-accent hover:text-gray-300 dark:hover:text-gray-700
@@ -37,6 +39,8 @@
                 </RouterLink>
                 <RouterLink
                   :to="localePath('/contact')"
+                  data-track="cta_click"
+                  data-track-cta="contact"
                   class="inline-flex items-center px-6 py-3
                          border-2 border-accent
                          text-gray-300 dark:text-gray-700 hover:text-accent dark:hover:text-accent

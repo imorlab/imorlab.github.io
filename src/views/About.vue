@@ -202,9 +202,11 @@
                   <Icon icon="heroicons:exclamation-triangle" class="w-12 h-12 text-accent/50 mx-auto mb-3" />
                   <p class="text-gray-500 dark:text-gray-400 text-sm">Stats temporarily unavailable</p>
                   <a 
-                    href="https://github.com/imorlab" 
-                    target="_blank" 
+                    href="https://github.com/imorlab"
+                    target="_blank"
                     rel="noopener noreferrer"
+                    data-track="social_click"
+                    data-track-network="github"
                     class="text-accent hover:underline text-sm mt-2 inline-block"
                   >
                     View on GitHub
@@ -238,6 +240,7 @@ import { computed, onMounted, markRaw, ref } from 'vue'
 import { useTheme } from '../composables/theme'
 import NumberFlow from '@number-flow/vue'
 import { generateCV } from '../components/CvGenerator'
+import { track } from '../utils/analytics'
 
 const { t, locale, messages } = useI18n()
 
@@ -359,7 +362,9 @@ const generateAndDownloadCV = async () => {
     const pdf = await generateCV(cvData, { t })
     
     // Descargar el PDF
-    pdf.save(`israel-moreno-cv-${locale.value}.pdf`)
+    const fileName = `israel-moreno-cv-${locale.value}.pdf`
+    pdf.save(fileName)
+    track('file_download', { file_name: fileName, file_extension: 'pdf' })
   } catch (error) {
     console.error('Error generating CV:', error)
   }

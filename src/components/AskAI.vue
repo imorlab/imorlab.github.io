@@ -10,6 +10,8 @@
         :href="provider.url"
         target="_blank"
         rel="noopener noreferrer"
+        data-track="ask_ai"
+        :data-track-provider="provider.id"
         :title="$t('askAi.tooltip', { provider: provider.name })"
         :aria-label="$t('askAi.tooltip', { provider: provider.name })"
         class="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-2 whitespace-nowrap

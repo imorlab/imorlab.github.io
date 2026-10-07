@@ -80,6 +80,9 @@
               :href="project.url"
               target="_blank"
               rel="noopener noreferrer"
+              data-track="project_visit"
+              :data-track-project-id="project.id"
+              :data-track-project-name="project.title"
               class="inline-flex items-center gap-2 text-white hover:text-white/80 font-bold py-4 px-8 border border-accent hover:bg-accent/10 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

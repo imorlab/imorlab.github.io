@@ -7,6 +7,7 @@ import en from './i18n/en.json'
 import './assets/main.css'
 import './style.css'
 import { applyDarkMode } from './utils/dark-mode'
+import { initAnalytics } from './utils/analytics'
 
 const localeFromPath = (path = '/') => (/^\/en(\/|$)/.test(path) ? 'en' : DEFAULT_LOCALE)
 
@@ -63,6 +64,7 @@ export const createApp = ViteSSG(
 
     if (isClient) {
       applyDarkMode()
+      initAnalytics(router)
     }
   }
 )

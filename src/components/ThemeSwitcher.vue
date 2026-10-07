@@ -29,12 +29,14 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { Icon } from '@iconify/vue'
+import { track } from '../utils/analytics'
 
 const isDark = ref(true)
 
 const toggleTheme = () => {
   isDark.value = !isDark.value
   applyTheme()
+  track('theme_change', { theme: isDark.value ? 'dark' : 'light' })
 }
 
 const applyTheme = () => {

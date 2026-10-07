@@ -60,6 +60,9 @@
                 :href="project.url"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="project_visit"
+                :data-track-project-id="project.id"
+                :data-track-project-name="project.title"
                 class="inline-block bg-transparent border border-accent hover:bg-accent hover:border-accent dark:hover:border-accent hover:text-gray-300 dark:hover:text-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg"
               >
                 {{ $t('projects.visitSite') }}

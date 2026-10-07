@@ -51,6 +51,7 @@ import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { localizePath } from '../router'
 import { Icon } from '@iconify/vue'
+import { track } from '../utils/analytics'
 
 const { locale, availableLocales } = useI18n()
 const route = useRoute()
@@ -88,6 +89,7 @@ onUnmounted(() => {
 
 const changeLocale = (newLocale) => {
   isOpen.value = false
+  if (newLocale !== locale.value) track('language_change', { language: newLocale })
   localStorage.setItem('locale', newLocale)
   // La URL manda: /about ↔ /en/about. El guard del router actualiza el locale.
   router.push(localizePath(route.path, newLocale))

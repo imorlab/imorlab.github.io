@@ -54,6 +54,8 @@ jobs:
       - name: Build
         env:
           VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
+          # Variable del repositorio (no secreta): Settings → Secrets and variables → Actions → Variables
+          VITE_CLARITY_ID: ${{ vars.VITE_CLARITY_ID }}
         run: pnpm build
 
       - name: Create .nojekyll file
