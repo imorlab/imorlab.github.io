@@ -93,7 +93,7 @@ Para generar el CV, simplemente:
 | --- | --- | --- |
 | `generate_lead` | Formulario de contacto enviado | `form` |
 | `contact_error` | Fallo al enviar el formulario | `form` |
-| `file_download` | Descarga del CV en PDF | `file_name`, `file_extension` |
+| `cv_download` | Descarga del CV en PDF (`src/components/CvGenerator.js`) | — |
 | `project_visit` | Clic en "Visitar sitio" de un proyecto | `project_id`, `project_name`, `link_url` |
 | `social_click` | Clic en LinkedIn / GitHub | `network`, `link_url` |
 | `ask_ai` | Clic en "Pregunta a la IA" | `provider`, `link_url` |

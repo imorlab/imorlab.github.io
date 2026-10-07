@@ -240,7 +240,6 @@ import { computed, onMounted, markRaw, ref } from 'vue'
 import { useTheme } from '../composables/theme'
 import NumberFlow from '@number-flow/vue'
 import { generateCV } from '../components/CvGenerator'
-import { track } from '../utils/analytics'
 
 const { t, locale, messages } = useI18n()
 
@@ -362,9 +361,7 @@ const generateAndDownloadCV = async () => {
     const pdf = await generateCV(cvData, { t })
     
     // Descargar el PDF
-    const fileName = `israel-moreno-cv-${locale.value}.pdf`
-    pdf.save(fileName)
-    track('file_download', { file_name: fileName, file_extension: 'pdf' })
+    pdf.save(`israel-moreno-cv-${locale.value}.pdf`)
   } catch (error) {
     console.error('Error generating CV:', error)
   }
