@@ -453,5 +453,31 @@
     "created": "Created by imorlab with",
     "hosted": "Hosted on",
     "rights": " All rights reserved. Left ones too."
+  },
+  "cookies": {
+    "title": "Analytics cookies",
+    "text": "I use {providers} cookies to know how many visits the portfolio gets and how people navigate it. They are only set if you accept, and you can change your mind at any time from “Cookie settings” at the bottom of the page.",
+    "moreInfo": "More information",
+    "lessInfo": "Less information",
+    "details": "If you reject, analytics is sent without cookies or persistent identifiers. Language and theme preferences are stored in your browser and do not require consent.",
+    "table": {
+      "name": "Cookie",
+      "purpose": "Purpose",
+      "duration": "Duration"
+    },
+    "purposes": {
+      "gaUser": "Distinguishes unique visitors",
+      "gaSession": "Keeps the session state",
+      "clarityUser": "Recognises the visitor across sessions",
+      "claritySession": "Groups the page views of a session"
+    },
+    "durations": {
+      "years2": "2 years",
+      "year1": "1 year",
+      "day1": "1 day"
+    },
+    "accept": "Accept",
+    "reject": "Reject",
+    "settings": "Cookie settings"
   }
 }

@@ -88,6 +88,7 @@ Para generar el CV, simplemente:
 - **Google Analytics 4** (`G-6HX5VF642H`, en `index.html`): visitas, páginas vistas (medición mejorada, también en la navegación SPA), clics salientes y scroll al 90 %.
 - **Eventos propios** (`src/utils/analytics.js`): se envían con `track(evento, parámetros)` o, para clics, marcando el elemento con `data-track="evento"` y `data-track-*` (los atributos pasan a ser parámetros: `data-track-project-id` → `project_id`).
 - **Microsoft Clarity** (opcional): mapas de calor y grabaciones. Se activa definiendo `VITE_CLARITY_ID` (en `.env` en local y como variable del repositorio en GitHub Actions).
+- **Consentimiento de cookies** (`src/components/CookieBanner.vue`, `src/utils/consent.js`): GA4 arranca con Consent Mode v2 denegado (`index.html`) y Clarity recibe `consentv2`. Hasta que el visitante acepta, ambos miden sin cookies. La decisión se guarda un año en `localStorage` (`cookie-consent`) y se puede cambiar desde "Configurar cookies", en el pie. Al rechazar se borran las cookies `_ga*`.
 
 | Evento | Cuándo | Parámetros |
 | --- | --- | --- |

@@ -7,6 +7,20 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      // Consent Mode v2: sin cookies de analítica hasta que el visitante acepte en el banner.
+      // Misma clave y caducidad que src/utils/consent.js.
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+      });
+      try {
+        var consent = JSON.parse(localStorage.getItem('cookie-consent'));
+        if (consent && consent.value === 'granted' && Date.now() - new Date(consent.date) < 365 * 864e5) {
+          gtag('consent', 'update', { analytics_storage: 'granted' });
+        }
+      } catch (e) {}
       gtag('js', new Date());
 
       gtag('config', 'G-6HX5VF642H');

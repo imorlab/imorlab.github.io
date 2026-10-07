@@ -1,12 +1,17 @@
 // Analítica del portfolio: Google Analytics 4 (gtag, cargado en index.html) y,
 // opcionalmente, Microsoft Clarity (mapas de calor y grabaciones de sesión).
+// Ambos usan cookies solo si el visitante las acepta en el banner (utils/consent.js);
+// sin consentimiento envían datos sin cookies (Consent Mode v2 / Clarity consentv2).
 //
 // Las páginas vistas las registra GA4 por su cuenta (medición mejorada → cambios en
 // el historial). Aquí se añade lo que GA4 no ve solo: los eventos de interacción,
 // la profundidad de scroll intermedia, las Core Web Vitals y las URLs rotas.
 // Listado de eventos y parámetros: README.md → "Analítica".
 
+import { readConsent, sendClarityConsent } from './consent'
+
 const CLARITY_ID = import.meta.env.VITE_CLARITY_ID
+export const CLARITY_ENABLED = Boolean(CLARITY_ID)
 
 // GA4 ya envía `scroll` al 90 %; se completan los cortes intermedios.
 const SCROLL_MARKS = [25, 50, 75]
@@ -113,6 +118,10 @@ export function initAnalytics(router) {
   const whenIdle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1))
   whenIdle(() => {
     trackWebVitals()
-    if (CLARITY_ID) loadClarity(CLARITY_ID)
+    if (CLARITY_ID) {
+      loadClarity(CLARITY_ID)
+      // Sin consentimiento, Clarity funciona sin cookies (una sesión por página vista).
+      sendClarityConsent(readConsent() === 'granted')
+    }
   })
 }

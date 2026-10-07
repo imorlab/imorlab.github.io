@@ -153,6 +153,14 @@
             </p>
             
             <p>Copyright {{ new Date().getFullYear() }}. {{ $t('footer.rights') }}</p>
+
+            <button
+              type="button"
+              class="p-0 border-0 bg-transparent text-accent hover:text-accent/80 transition-colors duration-300"
+              @click="openConsentBanner"
+            >
+              {{ $t('cookies.settings') }}
+            </button>
           </div>
         </div>
       </footer>
@@ -160,6 +168,8 @@
 
     <!-- ChatBot -->
     <ChatBot />
+
+    <CookieBanner />
   </div>
 </template>
 
@@ -171,7 +181,9 @@ import { Icon } from '@iconify/vue'
 import LanguageSwitcher from './components/LanguageSwitcher.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
 import ChatBot from './components/ChatBot/ChatBot.vue'
+import CookieBanner from './components/CookieBanner.vue'
 import { useLocalePath } from './composables/useLocalePath'
+import { openConsentBanner } from './utils/consent'
 
 const route = useRoute()
 const localePath = useLocalePath()

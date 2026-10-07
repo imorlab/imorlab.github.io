@@ -494,5 +494,31 @@
     "created": "Creado por imorlab con",
     "hosted": "Alojado en",
     "rights": " Todos los derechos reservados. Los izquierdos también."
+  },
+  "cookies": {
+    "title": "Cookies de analítica",
+    "text": "Uso cookies de {providers} para saber cuántas visitas recibe el portfolio y cómo se navega por él. Solo se instalan si aceptas, y puedes cambiar de opinión cuando quieras desde «Configurar cookies», al pie de la página.",
+    "moreInfo": "Más información",
+    "lessInfo": "Menos información",
+    "details": "Si rechazas, la analítica se envía sin cookies ni identificadores persistentes. Las preferencias de idioma y tema se guardan en tu navegador y no necesitan consentimiento.",
+    "table": {
+      "name": "Cookie",
+      "purpose": "Finalidad",
+      "duration": "Duración"
+    },
+    "purposes": {
+      "gaUser": "Distingue visitantes únicos",
+      "gaSession": "Mantiene el estado de la sesión",
+      "clarityUser": "Reconoce al visitante entre sesiones",
+      "claritySession": "Agrupa las páginas vistas de una sesión"
+    },
+    "durations": {
+      "years2": "2 años",
+      "year1": "1 año",
+      "day1": "1 día"
+    },
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "settings": "Configurar cookies"
   }
 }
