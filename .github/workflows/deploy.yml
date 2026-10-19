@@ -22,54 +22,39 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
-          node-version: 20
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          # Misma versión LTS que en local; npm instala exactamente lo de package-lock.json
+          node-version: 22
+          cache: npm
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm ci
 
       - name: Build
         env:
           VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
           # Variable del repositorio (no secreta): Settings → Secrets and variables → Actions → Variables
           VITE_CLARITY_ID: ${{ vars.VITE_CLARITY_ID }}
-        run: pnpm build
+        run: npm run build
 
       - name: Create .nojekyll file
         run: touch dist/.nojekyll
 
-
       - name: Upload
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './dist'
           name: github-pages
+          # Desde la v4 los archivos ocultos se excluyen por defecto; se mantienen
+          # para publicar lo mismo que antes (.nojekyll, .vite/)
+          include-hidden-files: true
 
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
         with:
           artifact_name: github-pages
