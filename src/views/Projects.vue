@@ -206,9 +206,11 @@ const allProjects = computed(() => tm('projects.list'));
 const mainProjects = computed(() => allProjects.value.slice(0, 3));
 const otherProjects = computed(() => allProjects.value.slice(3));
 
-const getImageUrl = (path) => {
-  return new URL(`../${path}`, import.meta.url).href;
-};
+// Glob acotado a las imágenes de proyecto: con `new URL(`../${path}`)` Vite globaba todo src/
+// (publicaba el código fuente como assets) y en el SSG dejaba rutas file:// en el HTML.
+const projectImages = import.meta.glob('../assets/images/projects/*.avif', { eager: true, import: 'default' });
+
+const getImageUrl = (path) => projectImages[`../${path}`];
 
 const goToProjectDetail = (projectId) => {
   router.push(localePath(`/projects/${projectId}`));
