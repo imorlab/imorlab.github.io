@@ -4,7 +4,7 @@ Portfolio personal de Israel Moreno (https://imorlab.github.io): sitio estático
 prerenderizado con vite-ssg y desplegado en GitHub Pages. Responde y comenta el código en español.
 
 ## Stack
-- Vue 3.5 (Composition API, `<script setup>`), Vite 5, vite-ssg 27, vue-router 4, vue-i18n 10
+- Vue 3.5 (Composition API, `<script setup>`), Vite 6, vite-ssg 27, vue-router 4, vue-i18n 10
   (`legacy: false`), @unhead/vue 2, Tailwind CSS 3 (`darkMode: 'class'`). Alias `@` → `src/`.
 - JavaScript, sin TypeScript. Extras: GSAP, three.js + postprocessing (`PixelBlast`),
   jsPDF + html2canvas (CV en PDF), EmailJS (formulario de contacto).
