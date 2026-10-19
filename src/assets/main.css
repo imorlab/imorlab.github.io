@@ -2,30 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Paleta por proporción áurea a partir de un único color de marca (#64FFDA):
+ *   1. Base   (accent)    → el color de marca: H 165.7, S 100 %.
+ *   2. Acento (highlight) → el tono girado el ángulo áureo: H − 137.5° (360 − 360 / 1.618).
+ *   3. Apoyo  (support)   → la base desaturada un 60 %: S × 0.4. También da el fondo (primary).
+ * Tono y saturación salen de la fórmula; entre modos solo se ajusta la luminosidad
+ * (para contraste WCAG AA en claro). Los canales son HSL: hsl(var(--color-x) / <alpha>).
+ */
 :root {
+  --brand-h: 165.7;
+  --brand-s: 100%;
+  --golden-h: calc(var(--brand-h) - 137.5);
+  --support-s: calc(var(--brand-s) * 0.4);
+
   /* Light theme */
-  --color-primary: 210 220 220;
-  --color-primary-dark: 26 26 26;
-  --color-accent: 110 26 189;
-  --color-accent-dark: 126 34 206; /* #6e1abd */
-  --color-accent-10: rgba(110, 26, 189, 0.1);
-  --color-accent-20: rgba(110, 26, 189, 0.2);
-  --color-accent-40: rgba(110, 26, 189, 0.4);
-  --color-accent-60: rgba(110, 26, 189, 0.6);
-  --color-accent-80: rgba(110, 26, 189, 0.8);
+  --color-primary: var(--brand-h) var(--support-s) 93%;      /* #E6F4F1 */
+  --color-primary-dark: var(--brand-h) var(--support-s) 10%;
+  --color-accent: var(--brand-h) var(--brand-s) 24%;         /* #007A5D */
+  --color-accent-dark: var(--brand-h) var(--brand-s) 18%;
+  --color-highlight: var(--golden-h) var(--brand-s) 36%;     /* #B85600 */
+  --color-support: var(--brand-h) var(--support-s) 40%;      /* #3D8F7B */
 }
 
 /* Dark theme */
 .dark {
-  --color-primary: 26 26 26;
-  --color-primary-dark: 248 249 250;
-  --color-accent: 100 255 218;
-  --color-accent-dark: 79 209 197;
-  --color-accent-10: rgba(100, 255, 218, 0.1);
-  --color-accent-20: rgba(100, 255, 218, 0.2);
-  --color-accent-40: rgba(100, 255, 218, 0.4);
-  --color-accent-60: rgba(100, 255, 218, 0.6);
-  --color-accent-80: rgba(100, 255, 218, 0.8);
+  --color-primary: var(--brand-h) var(--support-s) 7%;       /* #0B1916 */
+  --color-primary-dark: var(--brand-h) var(--support-s) 97%;
+  --color-accent: var(--brand-h) var(--brand-s) 69.6%;       /* #64FFDA */
+  --color-accent-dark: var(--brand-h) var(--brand-s) 60%;
+  --color-highlight: var(--golden-h) var(--brand-s) 69.6%;   /* #FFAD64 */
+  --color-support: var(--brand-h) var(--support-s) 69.6%;    /* #92D0C2 */
+}
+
+::selection {
+  background-color: hsl(var(--color-highlight) / 0.3);
 }
 
 /* Smooth transitions for theme changes */
@@ -41,24 +52,24 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgb(var(--color-primary));
+  background-color: hsl(var(--color-primary));
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(var(--color-accent));
+  background-color: hsl(var(--color-accent));
   border-radius: 5px;
-  border: 2px solid rgb(var(--color-primary));
+  border: 2px solid hsl(var(--color-primary));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(var(--color-accent-dark));
+  background-color: hsl(var(--color-highlight));
 }
 
 /* Firefox Scrollbar Styles */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgb(var(--color-accent)) rgb(var(--color-primary));
+  scrollbar-color: hsl(var(--color-accent)) hsl(var(--color-primary));
 }
 
 /* Hide scrollbar for mobile devices while maintaining functionality */

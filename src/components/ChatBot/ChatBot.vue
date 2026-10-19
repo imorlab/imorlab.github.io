@@ -351,7 +351,7 @@ onUnmounted(clearTimers)
 }
 
 .scrollbar-thumb-accent\/20::-webkit-scrollbar-thumb {
-  background-color: rgb(var(--color-accent) / 0.2);
+  background-color: hsl(var(--color-accent) / 0.2);
   border-radius: 2px;
 }
 
@@ -445,15 +445,15 @@ onUnmounted(clearTimers)
 :deep(.markdown-content h3) {
   font-size: 0.9rem;
   font-weight: 600;
-  color: rgb(var(--color-accent));
+  color: hsl(var(--color-accent));
   margin: 0.75rem 0 0.5rem 0;
-  border-bottom: 1px solid rgb(var(--color-accent) / 0.2);
+  border-bottom: 1px solid hsl(var(--color-accent) / 0.2);
   padding-bottom: 0.25rem;
 }
 
 :deep(.markdown-content strong) {
   font-weight: 600;
-  color: rgb(var(--color-accent));
+  color: hsl(var(--color-accent));
 }
 
 :deep(.markdown-content br) {
@@ -461,13 +461,13 @@ onUnmounted(clearTimers)
 }
 
 :deep(.markdown-content a) {
-  color: rgb(var(--color-accent));
+  color: hsl(var(--color-accent));
   text-decoration: underline;
   transition: color 0.2s ease;
 }
 
 :deep(.markdown-content a:hover) {
-  color: rgb(var(--color-accent) / 0.8);
+  color: hsl(var(--color-accent) / 0.8);
 }
 
 :deep(.markdown-content p) {
@@ -507,11 +507,11 @@ onUnmounted(clearTimers)
 }
 
 .dark :deep(.markdown-content h3) {
-  color: rgb(var(--color-accent) / 0.9);
+  color: hsl(var(--color-accent) / 0.9);
 }
 
 .dark :deep(.markdown-content strong) {
-  color: rgb(var(--color-accent) / 0.9);
+  color: hsl(var(--color-accent) / 0.9);
 }
 
 .dark :deep(.markdown-content code) {
@@ -523,6 +523,6 @@ onUnmounted(clearTimers)
 }
 
 .light :deep(.markdown-content strong) {
-  color: rgb(var(--color-accent) / 1);
+  color: hsl(var(--color-accent) / 1);
 }
 </style>

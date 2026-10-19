@@ -110,7 +110,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-2 py-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
-                <span class="text-3xl font-bold text-accent">
+                <span class="text-3xl font-bold text-highlight">
                   +<NumberFlow :value="stats.years" :duration="3000" />
                 </span>
                 <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.title') }}</span>
@@ -118,7 +118,7 @@
             </div>
             <div class="bg-primary/40 backdrop-blur-sm rounded-lg p-2 py-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
-                <span class="text-3xl font-bold text-accent">
+                <span class="text-3xl font-bold text-highlight">
                   +<NumberFlow :value="stats.projects" :duration="3000" />
                 </span>
                 <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.stats.projects_label') }}</span>
@@ -126,7 +126,7 @@
             </div>
             <div class="bg-primary/40 backdrop-blur-sm rounded-lg px-2 py-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
-                <span class="text-3xl font-bold text-accent">
+                <span class="text-3xl font-bold text-highlight">
                   +<NumberFlow :value="stats.technologies" :duration="3000" />
                 </span>
                 <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.stats.technologies_label') }}</span>
@@ -134,7 +134,7 @@
             </div>
             <div class="bg-primary/40 backdrop-blur-sm rounded-lg px-2 py-6 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
               <div class="flex flex-col items-center">
-                <span class="text-3xl font-bold text-accent">
+                <span class="text-3xl font-bold text-highlight">
                   +<NumberFlow :value="stats.development" :duration="3000" />
                 </span>
                 <span class="text-sm text-gray-500 dark:text-gray-300 mt-2 text-center">{{ $t('about.experience.stats.development_label') }}</span>
@@ -277,7 +277,7 @@ const chartUrl = computed(() => {
 })
 
 const accentColor = computed(() => {
-  return isDark.value ? '64ffda' : '0891b2'
+  return isDark.value ? '64ffda' : '007a5d'
 })
 
 const githubStatsUrl = computed(() => {

@@ -8,22 +8,25 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Paleta por proporción áurea: ver los tokens en src/assets/main.css
         primary: {
-          DEFAULT: 'rgb(var(--color-primary) / 1)',
-          dark: 'rgb(var(--color-primary-dark) / 1)',
+          DEFAULT: 'hsl(var(--color-primary) / <alpha-value>)',
+          dark: 'hsl(var(--color-primary-dark) / <alpha-value>)',
         },
         accent: {
-          DEFAULT: 'rgb(var(--color-accent) / 1)',
-          dark: 'rgb(var(--color-accent-dark) / 1)',
-          '10': 'rgb(var(--color-accent) / 0.1)',
-          '20': 'rgb(var(--color-accent) / 0.2)',
-          '40': 'rgb(var(--color-accent) / 0.4)',
-          '60': 'rgb(var(--color-accent) / 0.6)',
-          '80': 'rgb(var(--color-accent) / 0.8)',
+          DEFAULT: 'hsl(var(--color-accent) / <alpha-value>)',
+          dark: 'hsl(var(--color-accent-dark) / <alpha-value>)',
+          '10': 'hsl(var(--color-accent) / 0.1)',
+          '20': 'hsl(var(--color-accent) / 0.2)',
+          '40': 'hsl(var(--color-accent) / 0.4)',
+          '60': 'hsl(var(--color-accent) / 0.6)',
+          '80': 'hsl(var(--color-accent) / 0.8)',
         },
+        highlight: 'hsl(var(--color-highlight) / <alpha-value>)',
+        support: 'hsl(var(--color-support) / <alpha-value>)',
       },
       backgroundImage: {
-        'grid-pattern': 'linear-gradient(to right, rgb(var(--color-accent) / 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgb(var(--color-accent) / 0.05) 1px, transparent 1px)',
+        'grid-pattern': 'linear-gradient(to right, hsl(var(--color-accent) / 0.05) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--color-accent) / 0.05) 1px, transparent 1px)',
       },
       backgroundSize: {
         'grid-pattern': '80px 80px',

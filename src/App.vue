@@ -16,7 +16,7 @@
                transform: `translate(${mouseX * 150}px, ${mouseY * 150}px) scale(${1 + Math.abs(mouseSpeed.value)})`,
                opacity: isDark ? '0.25' : '0.30'
              }"
-             :class="isDark ? 'bg-accent/25' : 'bg-accent/30'"></div>
+             :class="isDark ? 'bg-support/25' : 'bg-support/30'"></div>
         
         <!-- Dramatic Center Pulse -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] rounded-full blur-[140px] mix-blend-multiply transition-all duration-200 ease-out will-change-transform animate-pulse"
@@ -32,19 +32,19 @@
                transform: `translate(${mouseX * 250}px, ${mouseY * 250}px) rotate(${mouseX * 30}deg)`,
                opacity: isDark ? 0.35 : 0.30
              }"
-             :class="isDark ? 'bg-accent/35' : 'bg-accent/30'"></div>
+             :class="isDark ? 'bg-highlight/35' : 'bg-highlight/30'"></div>
         <div class="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vh] rounded-full blur-[100px] mix-blend-multiply transition-all duration-200 ease-out will-change-transform animate-float-slower"
              :style="{ 
                transform: `translate(${mouseX * -250}px, ${mouseY * -250}px) rotate(${mouseX * -30}deg)`,
                opacity: isDark ? 0.35 : 0.30
              }"
-             :class="isDark ? 'bg-accent/35' : 'bg-accent/30'"></div>
+             :class="isDark ? 'bg-support/35' : 'bg-support/30'"></div>
         
         <!-- Cursor Follower -->
         <div class="absolute w-[60px] h-[60px] rounded-full blur-[30px] transition-all duration-75 pointer-events-none"
              :style="{ 
                transform: `translate(${lastMouseX.value}px, ${lastMouseY.value}px) translate(-50%, -50%)`,
-               boxShadow: `0 0 60px 30px ${isDark ? 'rgb(var(--color-accent) / 0.2)' : 'rgb(var(--color-accent) / 0.1)'}`,
+               boxShadow: `0 0 60px 30px ${isDark ? 'hsl(var(--color-accent) / 0.2)' : 'hsl(var(--color-accent) / 0.1)'}`,
                opacity: Math.min(mouseSpeed.value + 0.2, 0.8)
              }">
         </div>

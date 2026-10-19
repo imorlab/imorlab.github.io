@@ -46,7 +46,7 @@ const applyTheme = () => {
     updateThemeColor('#64ffda')
   } else {
     root.classList.remove('dark')
-    updateThemeColor('#0891b2')
+    updateThemeColor('#007a5d')
   }
   localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
 }
@@ -73,20 +73,3 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
-:root {
-  --color-accent-dark: #0891b2;
-}
-
-.dark {
-  --color-accent: #64ffda;
-}
-
-.text-accent {
-  color: var(--color-accent);
-}
-
-.text-accent-dark {
-  color: var(--color-accent-dark);
-}
-</style>

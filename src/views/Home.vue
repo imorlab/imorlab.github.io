@@ -17,7 +17,7 @@
             <div ref="descriptionRef" class="overflow-hidden">
               <p class="text-lg text-gray-500 dark:text-gray-300 mb-12">
                 <span>{{ fullText }}</span>
-                <span class="inline-block w-0.5 h-5 bg-accent animate-cursor-blink ml-0.5 -mb-0.5"></span>
+                <span class="inline-block w-0.5 h-5 bg-highlight animate-cursor-blink ml-0.5 -mb-0.5"></span>
               </p>
             </div>
             <div ref="buttonsRef" class="opacity-0">
@@ -42,12 +42,12 @@
                   data-track="cta_click"
                   data-track-cta="contact"
                   class="inline-flex items-center px-6 py-3
-                         border-2 border-accent
-                         text-gray-300 dark:text-gray-700 hover:text-accent dark:hover:text-accent
-                         bg-accent hover:bg-transparent
+                         border-2 border-highlight
+                         text-white dark:text-gray-900 hover:text-highlight dark:hover:text-highlight
+                         bg-highlight hover:bg-transparent
                          transition-all duration-300 rounded-lg
                          text-lg font-medium
-                         shadow-lg shadow-accent/20"
+                         shadow-lg shadow-highlight/20"
                 >
                   {{ $t('home.contact') }}
                   <Icon icon="heroicons:envelope" class="ml-2 w-5 h-5" />

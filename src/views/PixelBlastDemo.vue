@@ -309,6 +309,6 @@ const resetToDefaults = () => {
 
 <style scoped>
 input[type="range"] {
-  accent-color: rgb(var(--color-accent));
+  accent-color: hsl(var(--color-accent));
 }
 </style>

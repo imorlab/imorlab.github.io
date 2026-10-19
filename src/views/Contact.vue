@@ -48,7 +48,7 @@
         <button
           type="submit"
           :disabled="loading"
-          class="w-full bg-accent hover:bg-accent/90 text-white dark:text-gray-700 font-bold py-2 px-4 rounded-md transition-colors duration-200 disabled:opacity-50 border-0 hover:border-0 focus:outline-none focus:ring-2 focus:ring-accent/20"
+          class="w-full bg-highlight hover:bg-highlight/90 text-white dark:text-gray-900 font-bold py-2 px-4 rounded-md transition-colors duration-200 disabled:opacity-50 border-0 hover:border-0 focus:outline-none focus:ring-2 focus:ring-highlight/20"
         >
           {{ loading ? $t('contact.sending') : $t('contact.send') }}
         </button>
