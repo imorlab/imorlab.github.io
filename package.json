@@ -18,7 +18,7 @@
     "autoprefixer": "^10.4.20",
     "gsap": "^3.12.5",
     "html2canvas": "^1.4.1",
-    "jspdf": "^3.0.1",
+    "jspdf": "^4.2.1",
     "path": "^0.12.7",
     "postcss": "^8.4.49",
     "postprocessing": "^6.39.5",
